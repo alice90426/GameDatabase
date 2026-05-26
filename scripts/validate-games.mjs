@@ -4,10 +4,10 @@ const gamesPath = new URL("../src/data/games.json", import.meta.url);
 const games = JSON.parse(readFileSync(gamesPath, "utf8"));
 
 const ranges = {
-  rtp: [95, 97],
+  rtp: [94, 97],
   hitRate: [10, 42],
-  maxWin: [100, 15000],
-  volatility: [4, 15]
+  maxWin: [100, 100000],
+  volatility: [4, 16]
 };
 // npm.cmd run validate:data
 

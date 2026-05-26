@@ -48,7 +48,7 @@ export function GameCard({ game, locale }: GameCardProps) {
             <SpecPanel
               icon={<Activity size={16} />}
               label={dictionary.features.maxWin}
-              value={game.maxWin.toString()}
+              value={formatNumber(game.maxWin)}
             />
             <VolatilityPanel
               label={dictionary.features.volatility}
@@ -65,7 +65,7 @@ export function GameCard({ game, locale }: GameCardProps) {
             <SpecPanel
               icon={<RadioTower size={16} />}
               label={dictionary.features.lineMechanic}
-              value={game.lineMechanic}
+              value={formatLineMechanic(game.lineMechanic)}
             />
           </div>
         </div>
@@ -140,7 +140,23 @@ function VolatilityPanel({
 }
 
 function formatPercent(value: number) {
-  return `${value} %`;
+  return `${formatNumber(value)} %`;
+}
+
+function formatNumber(value: number) {
+  return new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 2
+  }).format(value);
+}
+
+function formatLineMechanic(value: string) {
+  const trimmedValue = value.trim();
+
+  if (/^\d+$/.test(trimmedValue)) {
+    return `${trimmedValue} ${trimmedValue === "1" ? "Line" : "Lines"}`;
+  }
+
+  return trimmedValue.replace(/^1 Lines$/i, "1 Line");
 }
 
 function formatGameName(id: string) {
