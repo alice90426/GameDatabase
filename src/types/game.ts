@@ -5,9 +5,10 @@ export type VolatilityLevel = 1 | 2 | 3 | 4 | 5;
 export type Game = {
   id: string;
   genre: string[];
-  hitRate: number;
-  volatility: number;
   rtp: number;
+  hitRate: number;
+  maxWin: number;
+  volatility: number;
   boardSize: string;
   lineMechanic: string;
   tags: string[];

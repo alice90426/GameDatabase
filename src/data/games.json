@@ -2,68 +2,676 @@
   {
     "id": "GB002",
     "genre": [
-      "Slot",
-      "Classic"
+      "Slot"
     ],
     "rtp": 95.977,
+    "hitRate": 28.658,
+    "maxWin": 477,
+    "volatility": 5.2254,
     "boardSize": "3x5",
     "lineMechanic": "10 Lines",
-    "hitRate": 28.658,
-    "volatility": 12,
     "tags": [
       "Mixed Symbol",
       "Bonus Game"
     ]
   },
   {
-    "id": "cosmic-treasure",
+    "id": "GB003",
     "genre": [
-      "Slot",
-      "Sci-Fi"
+      "Slot"
     ],
-    "hitRate": 28.6,
-    "volatility": 8,
-    "rtp": 96.2,
-    "boardSize": "6x4",
+    "rtp": 95.950,
+    "hitRate": 21.600,
+    "maxWin": 5166.67,
+    "volatility": 9.0639,
+    "boardSize": "1x3",
+    "lineMechanic": "1 Line",
+    "tags": [
+      "Mixed Symbol",
+      "Repeat Win",
+      "Bonus Game"
+    ]
+  },
+  {
+    "id": "GB005",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 74.134,
+    "hitRate": 33.353,
+    "maxWin": 7118.3,
+    "volatility": 8.1563,
+    "boardSize": "4x6",
     "lineMechanic": "4096 Ways",
     "tags": [
-      "wild",
-      "ways",
-      "space"
+      "Cascade Reel",
+      "Expand Wild",
+      "Symbol Transform",
+      "Win Multiplier",
+      "Free Game"
     ]
   },
   {
-    "id": "jungle-gold",
+    "id": "GB006",
     "genre": [
-      "Slot",
-      "Adventure"
+      "Slot"
     ],
-    "hitRate": 36.8,
-    "volatility": 5,
-    "rtp": 95.9,
-    "boardSize": "5x3",
-    "lineMechanic": "20 Lines",
-    "tags": [
-      "low-volatility",
-      "bonus",
-      "jungle"
-    ]
-  },
-  {
-    "id": "mega-fruits",
-    "genre": [
-      "Slot",
-      "Classic"
-    ],
-    "hitRate": 33.4,
-    "volatility": 8,
-    "rtp": 96,
-    "boardSize": "5x3",
+    "rtp": 96.024,
+    "hitRate": 28.763,
+    "maxWin": 5000,
+    "volatility": 7.8053,
+    "boardSize": "3x5",
     "lineMechanic": "10 Lines",
     "tags": [
-      "fruit",
-      "classic",
-      "simple"
+      "Multiplier Wild",
+      "Nudge Wild",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "GB008",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.039,
+    "hitRate": 28.235,
+    "maxWin": 5816,
+    "volatility": 8.2107,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "GB009",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.006,
+    "hitRate": 29.884,
+    "maxWin": 14582.6,
+    "volatility": 10.2597,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Repeat Win",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "GB012",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.152,
+    "hitRate": 25.927,
+    "maxWin": 1542.925,
+    "volatility": 8.5169,
+    "boardSize": "4x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Sticky Wild",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "GB015",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.012,
+    "hitRate": 23.212,
+    "maxWin": 1399.9,
+    "volatility": 7.8650,
+    "boardSize": "3x5",
+    "lineMechanic": "50 Lines",
+    "tags": [
+      "Giant Symbol",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "GB016",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.196,
+    "hitRate": 29.910,
+    "maxWin": 5092.9,
+    "volatility": 8.2800,
+    "boardSize": "3x5",
+    "lineMechanic": "20 Lines",
+    "tags": [
+      "Multiplier Wild",
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ001",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.239,
+    "hitRate": 27.500,
+    "maxWin": 1232.22,
+    "volatility": 6.0745,
+    "boardSize": "3x5",
+    "lineMechanic": "9 Lines",
+    "tags": [
+      "Classic"
+    ]
+  },
+  {
+    "id": "HQ005",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 95.994,
+    "hitRate": 30.302,
+    "maxWin": 1518.75,
+    "volatility": 8.6639,
+    "boardSize": "4x5",
+    "lineMechanic": "1024 Ways",
+    "tags": [
+      "Multiplier Wild",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ006",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 95.994,
+    "hitRate": 30.302,
+    "maxWin": 1518.75,
+    "volatility": 8.6639,
+    "boardSize": "4x5",
+    "lineMechanic": "1024 Ways",
+    "tags": [
+      "Multiplier Wild",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ007",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.187,
+    "hitRate": 26.420,
+    "maxWin": 7903.77,
+    "volatility": 8.6139,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ008",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.112,
+    "hitRate": 28.258,
+    "maxWin": 4396.2,
+    "volatility": 7.6554,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ009",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.085,
+    "hitRate": 30.777,
+    "maxWin": 6903.41,
+    "volatility": 8.3055,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ010",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 95.99,
+    "hitRate": 31.17,
+    "maxWin": 3534.55,
+    "volatility": 6.4738,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ012",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.047,
+    "hitRate": 27.210,
+    "maxWin": 492,
+    "volatility": 4.9746,
+    "boardSize": "3x5",
+    "lineMechanic": "30 Lines",
+    "tags": [
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ015",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.120,
+    "hitRate": 26.840,
+    "maxWin": 4026,
+    "volatility": 9.0324,
+    "boardSize": "3x5",
+    "lineMechanic": "15 Lines",
+    "tags": [
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ016",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.009,
+    "hitRate": 27.294,
+    "maxWin": 1773.33,
+    "volatility": 7.5296,
+    "boardSize": "3x5",
+    "lineMechanic": "15 Lines",
+    "tags": [
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ017",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 95.998,
+    "hitRate": 27.497,
+    "maxWin": 715.5,
+    "volatility": 7.0933,
+    "boardSize": "3x5",
+    "lineMechanic": "20 Lines",
+    "tags": [
+      "Expanding Wild",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ018",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.025,
+    "hitRate": 28.925,
+    "maxWin": 1483.375,
+    "volatility": 8.2057,
+    "boardSize": "4x5",
+    "lineMechanic": "40 Lines",
+    "tags": [
+      "Expanding Wild",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ019",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.070,
+    "hitRate": 41.950,
+    "maxWin": 253,
+    "volatility": 5.2659,
+    "boardSize": "3x5",
+    "lineMechanic": "20 Lines",
+    "tags": [
+      "Mixed Symbol",
+      "Bonus Wheel"
+    ]
+  },
+  {
+    "id": "HQ020",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 95.845,
+    "hitRate": 28.899,
+    "maxWin": 520,
+    "volatility": 7.0996,
+    "boardSize": "3x5",
+    "lineMechanic": "10 Lines",
+    "tags": [
+      "Mixed Symbol",
+      "Bonus Wheel"
+    ]
+  },
+  {
+    "id": "HQ021",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.176,
+    "hitRate": 16.895,
+    "maxWin": 266.67,
+    "volatility": 5.3434,
+    "boardSize": "1x3",
+    "lineMechanic": "1 Line",
+    "tags": [
+      "Mixed Symbol"
+    ]
+  },
+  {
+    "id": "HQ022",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.185,
+    "hitRate": 23.224,
+    "maxWin": 100,
+    "volatility": 4.1372,
+    "boardSize": "1x3",
+    "lineMechanic": "1 Line",
+    "tags": [
+      "Mixed Symbol"
+    ]
+  },
+  {
+    "id": "HQ023",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.124,
+    "hitRate": 28.073,
+    "maxWin": 1193.25,
+    "volatility": 6.8234,
+    "boardSize": "3x5",
+    "lineMechanic": "8 Lines",
+    "tags": [
+      "Prize Symbol",
+      "Bonus Game"
+    ]
+  },
+  {
+    "id": "HQ024",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.108,
+    "hitRate": 24.188,
+    "maxWin": 303.15,
+    "volatility": 5.3532,
+    "boardSize": "3x5",
+    "lineMechanic": "Any 5",
+    "tags": [
+      "Prize Symbol",
+      "Bonus Game"
+    ]
+  },
+  {
+    "id": "HQ025",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.128,
+    "hitRate": 10.459,
+    "maxWin": 100,
+    "volatility": 5.6785,
+    "boardSize": "1x3",
+    "lineMechanic": "1 Line",
+    "tags": [
+      "Mixed Symbol"
+    ]
+  },
+  {
+    "id": "HQ026",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.108,
+    "hitRate": 17.948,
+    "maxWin": 1000,
+    "volatility": 9.9180,
+    "boardSize": "1x3",
+    "lineMechanic": "1 Line",
+    "tags": [
+      "Mixed Symbol",
+      "Multiplier Wild"
+    ]
+  },
+  {
+    "id": "HQ027",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.147,
+    "hitRate": 39.756,
+    "maxWin": 2544.9,
+    "volatility": 6.8630,
+    "boardSize": "4x5",
+    "lineMechanic": "1024 Ways",
+    "tags": [
+      "Mystery Symbol",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ029",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.209,
+    "hitRate": 30.987,
+    "maxWin": 2391,
+    "volatility": 6.7502,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Cascading Reels",
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ030",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.052,
+    "hitRate": 25.001,
+    "maxWin": 2214.8,
+    "volatility": 6.3421,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Win Multiplier",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ031",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.059,
+    "hitRate": 33.650,
+    "maxWin": 2236.25,
+    "volatility": 8.2056,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Select Free Game"
+    ]
+  },
+  {
+    "id": "HQ032",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.203,
+    "hitRate": 32.419,
+    "maxWin": 6023.5,
+    "volatility": 8.6639,
+    "boardSize": "3x5",
+    "lineMechanic": "10 Lines",
+    "tags": [
+      "Expand Symbol",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ033",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.143,
+    "hitRate": 29.495,
+    "maxWin": 2092.17,
+    "volatility": 7.5645,
+    "boardSize": "4x5",
+    "lineMechanic": "60 Lines",
+    "tags": [
+      "Sticky Wild",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ034",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.055,
+    "hitRate": 27.634,
+    "maxWin": 457.25,
+    "volatility": 5.5330,
+    "boardSize": "3x5",
+    "lineMechanic": "40 Lines",
+    "tags": [
+      "Split Symbol",
+      "Selcet Free Game"
+    ]
+  },
+  {
+    "id": "HQ035",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.022,
+    "hitRate": 34.078,
+    "maxWin": 853.58,
+    "volatility": 5.9850,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Cascading Reels",
+      "Win Multiplier",
+      "Free Game",
+      "Bonus Game"
+    ]
+  },
+  {
+    "id": "HQ036",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.054,
+    "hitRate": 32.689,
+    "maxWin": 1006.4,
+    "volatility": 6.7260,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Cascading Reels",
+      "Win Multiplier",
+      "Free Game",
+      "Bonus Game"
+    ]
+  },
+  {
+    "id": "HQ037",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.991,
+    "hitRate": 12.500,
+    "maxWin": 133.33,
+    "volatility": 5.6185,
+    "boardSize": "1x3",
+    "lineMechanic": "1 Line",
+    "tags": [
+      "Mixed Symbol"
+    ]
+  },
+  {
+    "id": "HQ038",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.125,
+    "hitRate": 23.923,
+    "maxWin": 1641.5,
+    "volatility": 8.6511,
+    "boardSize": "3x5",
+    "lineMechanic": "40 Lines",
+    "tags": [
+      "Copy Reel",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ039",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.030,
+    "hitRate": 29.101,
+    "maxWin": 5097.6,
+    "volatility": 8.3117,
+    "boardSize": "3x5",
+    "lineMechanic": "243 Ways",
+    "tags": [
+      "Swap Reel",
+      "Free Game"
+    ]
+  },
+  {
+    "id": "HQ040",
+    "genre": [
+      "Slot"
+    ],
+    "rtp": 96.109,
+    "hitRate": 27.907,
+    "maxWin": 10020.666666666666666666666667,
+    "volatility": 10.4397,
+    "boardSize": "4x5",
+    "lineMechanic": "60 Lines",
+    "tags": [
+      "Sticky Wild",
+      "Free Game"
     ]
   }
 ]

@@ -41,11 +41,30 @@ export function GameCard({ game, locale }: GameCardProps) {
         </div>
 
         <div className="space-y-3 border-t border-white/10 pt-4">
-          <SpecPanel
-            icon={<Percent size={16} />}
-            label={dictionary.features.rtp}
-            value={formatPercent(game.rtp)}
-          />
+          <div className="grid gap-3 sm:grid-cols-2">
+            <SpecPanel
+              icon={<Percent size={16} />}
+              label={dictionary.features.rtp}
+              value={formatPercent(game.rtp)}
+            />
+            <SpecPanel
+              icon={<Activity size={16} />}
+              label={dictionary.features.hitRate}
+              value={formatPercent(game.hitRate)}
+            />
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <SpecPanel
+              icon={<Activity size={16} />}
+              label={dictionary.features.maxWin}
+              value={game.maxWin.toString()}
+            />
+            <VolatilityPanel
+              label={dictionary.features.volatility}
+              rawValue={game.volatility}
+            />
+          </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
             <SpecPanel
@@ -57,18 +76,6 @@ export function GameCard({ game, locale }: GameCardProps) {
               icon={<RadioTower size={16} />}
               label={dictionary.features.lineMechanic}
               value={game.lineMechanic}
-            />
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            <SpecPanel
-              icon={<Activity size={16} />}
-              label={dictionary.features.hitRate}
-              value={formatPercent(game.hitRate)}
-            />
-            <VolatilityPanel
-              label={dictionary.features.volatility}
-              rawValue={game.volatility}
             />
           </div>
         </div>

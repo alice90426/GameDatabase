@@ -25,9 +25,10 @@ export const dictionaries = {
       featured: "精選遊戲"
     },
     features: {
-      hitRate: "中獎率",
-      volatility: "波動度",
       rtp: "RTP",
+      hitRate: "中獎率",
+      maxWin: "最大倍數",
+      volatility: "波動度",
       boardSize: "盤面大小",
       lineMechanic: "連線方式"
     },
@@ -79,9 +80,10 @@ export const dictionaries = {
       featured: "Featured Games"
     },
     features: {
-      hitRate: "Hit Rate",
-      volatility: "Volatility",
       rtp: "RTP",
+      hitRate: "Hit Rate",
+      maxWin: "Max Win",
+      volatility: "Volatility",
       boardSize: "Board Size",
       lineMechanic: "Line Mechanic"
     },
