@@ -29,16 +29,6 @@ export function GameCard({ game, locale }: GameCardProps) {
       </div>
 
       <div className="space-y-5 p-5">
-        <div className="flex flex-wrap gap-2">
-          {game.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-semibold text-slate-300"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
 
         <div className="space-y-3 border-t border-white/10 pt-4">
           <div className="grid gap-3 sm:grid-cols-2">
@@ -78,6 +68,17 @@ export function GameCard({ game, locale }: GameCardProps) {
               value={game.lineMechanic}
             />
           </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {game.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-semibold text-slate-300"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </article>
