@@ -1,0 +1,69 @@
+[
+  {
+    "id": "GB002",
+    "genre": [
+      "Slot",
+      "Classic"
+    ],
+    "rtp": 95.977,
+    "boardSize": "3x5",
+    "lineMechanic": "10 Lines",
+    "hitRate": 28.658,
+    "volatility": 12,
+    "tags": [
+      "Mixed Symbol",
+      "Bonus Game"
+    ]
+  },
+  {
+    "id": "cosmic-treasure",
+    "genre": [
+      "Slot",
+      "Sci-Fi"
+    ],
+    "hitRate": 28.6,
+    "volatility": 8,
+    "rtp": 96.2,
+    "boardSize": "6x4",
+    "lineMechanic": "4096 Ways",
+    "tags": [
+      "wild",
+      "ways",
+      "space"
+    ]
+  },
+  {
+    "id": "jungle-gold",
+    "genre": [
+      "Slot",
+      "Adventure"
+    ],
+    "hitRate": 36.8,
+    "volatility": 5,
+    "rtp": 95.9,
+    "boardSize": "5x3",
+    "lineMechanic": "20 Lines",
+    "tags": [
+      "low-volatility",
+      "bonus",
+      "jungle"
+    ]
+  },
+  {
+    "id": "mega-fruits",
+    "genre": [
+      "Slot",
+      "Classic"
+    ],
+    "hitRate": 33.4,
+    "volatility": 8,
+    "rtp": 96,
+    "boardSize": "5x3",
+    "lineMechanic": "10 Lines",
+    "tags": [
+      "fruit",
+      "classic",
+      "simple"
+    ]
+  }
+]
