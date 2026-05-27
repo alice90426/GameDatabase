@@ -42,7 +42,6 @@ export function GameCard({ game, locale }: GameCardProps) {
       </div>
 
       <div className="space-y-5 p-5">
-
         <div className="space-y-3 border-t border-white/10 pt-4">
           <div className="grid gap-3 sm:grid-cols-2">
             <SpecPanel
@@ -113,7 +112,6 @@ export function GameCard({ game, locale }: GameCardProps) {
             </span>
           ))}
         </div>
-
       </div>
     </article>
   );

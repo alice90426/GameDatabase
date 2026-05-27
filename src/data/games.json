@@ -50,7 +50,8 @@
       "Symbol Transform",
       "Win Multiplier",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/GB5/"
   },
   {
     "id": "GB006",
@@ -67,7 +68,8 @@
       "Multiplier Wild",
       "Nudge Wild",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/GB6/"
   },
   {
     "id": "GB008",
@@ -83,7 +85,8 @@
     "tags": [
       "Win Multiplier",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/GB8/"
   },
   {
     "id": "GB009",
@@ -99,7 +102,8 @@
     "tags": [
       "Repeat Win",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/GB9/"
   },
   {
     "id": "GB012",
@@ -115,7 +119,8 @@
     "tags": [
       "Sticky Wild",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/GB12/"
   },
   {
     "id": "GB015",
@@ -131,7 +136,8 @@
     "tags": [
       "Giant Symbol",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/GB15/"
   },
   {
     "id": "GB016",
@@ -1393,7 +1399,8 @@
       "Random Wild",
       "Win Multiplier",
       "Select Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/118/"
   },
   {
     "id": "HQ122",
@@ -1427,7 +1434,8 @@
     "tags": [
       "Sticky Wild",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/124/"
   },
   {
     "id": "HQ126",
@@ -1492,7 +1500,8 @@
     "tags": [
       "Sticky Symbol",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/132/"
   },
   {
     "id": "HQ134",
@@ -1557,7 +1566,8 @@
     "tags": [
       "Sticky Wild",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/140/"
   },
   {
     "id": "HQ143",
@@ -1589,7 +1599,8 @@
     "tags": [
       "Multiplier Wild",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/147/"
   },
   {
     "id": "HQ148",
@@ -1686,7 +1697,8 @@
     "tags": [
       "Random Wild",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/154/"
   },
   {
     "id": "HQ160",
@@ -1850,7 +1862,8 @@
     "tags": [
       "Mystery Symbol",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/184/"
   },
   {
     "id": "HQ185",
@@ -1900,7 +1913,8 @@
       "Multiplier Wild",
       "Nudge Wild",
       "Free Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/195/"
   },
   {
     "id": "HQ199",
