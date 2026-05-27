@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Boxes, Database } from "lucide-react";
 import { GameCard } from "@/components/game-card";
-import { allGames, getFeaturedGames, getGameGenres } from "@/lib/games";
+import { allGames, getFeaturedGames, getGameLines, getGameTags } from "@/lib/games";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { localizedPath } from "@/lib/routes";
 import type { Locale } from "@/types/game";
@@ -15,7 +15,8 @@ export default async function HomePage({
   const locale = (isLocale(localeParam) ? localeParam : "zh") as Locale;
   const dictionary = getDictionary(locale);
   const featuredGames = getFeaturedGames();
-  const genreCount = getGameGenres().length;
+  const tagCount = getGameTags().length;
+  const lineCount = getGameLines().length;
 
   return (
     <div>
@@ -57,10 +58,11 @@ export default async function HomePage({
                 label={dictionary.home.metricGames}
               />
               <Metric
-                value={String(genreCount).padStart(2, "0")}
-                label={dictionary.home.metricGenres}
+                value={String(tagCount).padStart(2, "0")}
+                label={dictionary.home.metricTags}
               />
-              <Metric value="05" label={dictionary.home.metricFeatures} />
+              <Metric
+                value={String(lineCount).padStart(2, "0")} label={dictionary.home.metricLines} />
             </div>
             <div className="mt-5 overflow-hidden rounded border border-white/10 bg-void">
               <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">

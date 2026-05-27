@@ -21,6 +21,7 @@ export const dictionaries = {
       viewAbout: "查看說明",
       all: "全部",
       genres: "類型",
+      tags: "標籤",
       reset: "重設",
       featured: "精選遊戲"
     },
@@ -32,22 +33,27 @@ export const dictionaries = {
       boardSize: "盤面大小",
       lineMechanic: "連線方式"
     },
+    actions: {
+      gameInfo: "遊戲說明",
+      simulation: "模擬數據",
+      demo: "Demo"
+    },
     home: {
       title: "整理遊戲規格、數值特徵與玩法分類的資料庫",
       intro:
-        "用清楚的資料欄位管理每款遊戲的中獎率、波動度、RTP、盤面大小與連線方式，方便比較、篩選與展示。",
+        "用清楚的資料欄位管理每款遊戲的RTP、中獎率、最大倍數、波動度、盤面大小與連線方式，方便比較、篩選與展示。",
       metricGames: "款遊戲資料",
-      metricGenres: "種遊戲分類",
-      metricFeatures: "個核心特徵",
+      metricTags: "種遊戲特色",
+      metricLines: "種連線方式",
       featured: "精選遊戲",
       pipeline: "資料整理流程",
       pipelineText:
-        "先統一欄位，再補齊數值，最後用分類與標籤讓資料可以快速搜尋、比較和維護。"
+        "先統一欄位，再補齊數值，最後用標籤與波動度讓資料可以快速搜尋、比較和維護。"
     },
     games: {
       title: "遊戲資料",
-      intro: "使用類型、波動度與關鍵字快速篩選遊戲規格。",
-      search: "搜尋 ID、標籤或特徵",
+      intro: "使用標籤與波動度快速篩選遊戲規格。",
+      search: "搜尋 ID",
       empty: "沒有符合條件的遊戲。"
     },
     about: {
@@ -59,7 +65,7 @@ export const dictionaries = {
       skills: "欄位",
       contact: "備註",
       contactText:
-        "目前資料卡片已改為顯示中獎率、波動度、RTP、盤面大小與連線方式。"
+        "目前資料卡片已改為顯示RTP、中獎率、最大倍數、波動度、盤面大小與連線方式。"
     }
   },
   en: {
@@ -76,6 +82,7 @@ export const dictionaries = {
       viewAbout: "View Notes",
       all: "All",
       genres: "Genres",
+      tags: "Tags",
       reset: "Reset",
       featured: "Featured Games"
     },
@@ -87,13 +94,18 @@ export const dictionaries = {
       boardSize: "Board Size",
       lineMechanic: "Line Mechanic"
     },
+    actions: {
+      gameInfo: "Game Info",
+      simulation: "Simulation",
+      demo: "Demo"
+    },
     home: {
       title: "A database for game specs, numerical traits, and play categories",
       intro:
         "Track hit rate, volatility, RTP, board size, and line mechanics in a consistent structure for comparison and filtering.",
       metricGames: "game records",
-      metricGenres: "game genres",
-      metricFeatures: "core features",
+      metricTags: "game tags",
+      metricLines: "line mechanisms",
       featured: "Featured Games",
       pipeline: "Data Workflow",
       pipelineText:
@@ -102,7 +114,7 @@ export const dictionaries = {
     games: {
       title: "Game Database",
       intro: "Filter game specs by genre, volatility, and keyword.",
-      search: "Search ID, tags, or features",
+      search: "Search ID",
       empty: "No games match the current filters."
     },
     about: {
@@ -114,7 +126,7 @@ export const dictionaries = {
       skills: "Fields",
       contact: "Notes",
       contactText:
-        "Game cards now show hit rate, volatility, RTP, board size, and line mechanic."
+        "Game cards now show RTP, hit rate, max win, volatility, board size, and line mechanic."
     }
   }
 } as const;

@@ -11,6 +11,7 @@ type GameFiltersProps = {
   games: Game[];
   genres: string[];
   volatilities: VolatilityLevel[];
+  tags: string[];
   locale: Locale;
 };
 
@@ -18,12 +19,14 @@ export function GameFilters({
   games,
   genres,
   volatilities,
+  tags,
   locale
 }: GameFiltersProps) {
   const dictionary = getDictionary(locale);
   const [query, setQuery] = useState("");
   const [genre, setGenre] = useState("all");
   const [volatility, setVolatility] = useState<VolatilityLevel | "all">("all");
+  const [tag, setTag] = useState("all");
 
   const filteredGames = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -49,14 +52,16 @@ export function GameFilters({
       const matchesGenre = genre === "all" || game.genre.includes(genre);
       const matchesVolatility =
         volatility === "all" || volatilityLevel === volatility;
+      const matchesTags = tag === "all" || game.tags.includes(tag);
 
-      return matchesQuery && matchesGenre && matchesVolatility;
+      return matchesQuery && matchesGenre && matchesVolatility && matchesTags;
     });
-  }, [games, genre, query, volatility]);
+  }, [games, genre, query, volatility, tag]);
 
   function resetFilters() {
     setQuery("");
     setGenre("all");
+    setTag("all");
     setVolatility("all");
   }
 
@@ -79,13 +84,13 @@ export function GameFilters({
           </label>
 
           <SelectFilter
-            label={dictionary.common.genres}
-            value={genre}
-            options={["all", ...genres]}
+            label={dictionary.common.tags}
+            value={tag}
+            options={["all", ...tags]}
             getLabel={(value) =>
               value === "all" ? dictionary.common.all : value
             }
-            onChange={setGenre}
+            onChange={setTag}
           />
           <SelectFilter
             label={dictionary.features.volatility}

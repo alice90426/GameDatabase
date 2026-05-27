@@ -11,5 +11,6 @@ export type Game = {
   volatility: number;
   boardSize: string;
   lineMechanic: string;
+  demoUrl?: string;
   tags: string[];
 };

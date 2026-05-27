@@ -30,7 +30,8 @@
       "Mixed Symbol",
       "Repeat Win",
       "Bonus Game"
-    ]
+    ],
+    "demoUrl": "https://alice90426.github.io/GB3/"
   },
   {
     "id": "GB005",
@@ -318,7 +319,7 @@
     "boardSize": "3x5",
     "lineMechanic": "20 Lines",
     "tags": [
-      "Expanding Wild",
+      "Expand Wild",
       "Free Game"
     ]
   },
@@ -334,7 +335,7 @@
     "boardSize": "4x5",
     "lineMechanic": "40 Lines",
     "tags": [
-      "Expanding Wild",
+      "Expand Wild",
       "Free Game"
     ]
   },
@@ -491,7 +492,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Win Multiplier",
       "Free Game"
     ]
@@ -572,7 +573,7 @@
     "lineMechanic": "40 Lines",
     "tags": [
       "Split Symbol",
-      "Selcet Free Game"
+      "Select Free Game"
     ]
   },
   {
@@ -587,7 +588,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Win Multiplier",
       "Free Game",
       "Bonus Game"
@@ -605,7 +606,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Win Multiplier",
       "Free Game",
       "Bonus Game"
@@ -749,7 +750,7 @@
     "boardSize": "3x5",
     "lineMechanic": "9 Lines",
     "tags": [
-      "Expanding Wild",
+      "Expand Wild",
       "Win Multiplier",
       "Free Game",
       "Bonus Game"
@@ -945,7 +946,7 @@
     "boardSize": "4x5",
     "lineMechanic": "40 Lines",
     "tags": [
-      "Expanding Wild",
+      "Expand Wild",
       "Free Game"
     ]
   },
@@ -961,8 +962,8 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Cascading Reels",
-      "Transform Symbol",
+      "Cascade Reel",
+      "Symbol Transform",
       "Free Game"
     ]
   },
@@ -1010,7 +1011,7 @@
     "boardSize": "3x5",
     "lineMechanic": "20 Lines",
     "tags": [
-      "Mix Symbol",
+      "Mixed Symbol",
       "Bonus Wheel"
     ]
   },
@@ -1041,7 +1042,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Wild Muliplier",
+      "Multiplier Wild",
       "Free Game"
     ]
   },
@@ -1057,7 +1058,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Wild Muliplier",
+      "Multiplier Wild",
       "Free Game"
     ]
   },
@@ -1073,7 +1074,7 @@
     "boardSize": "3x5",
     "lineMechanic": "25 Lines",
     "tags": [
-      "Wild Muliplier",
+      "Multiplier Wild",
       "Symbol Transform",
       "Free Game"
     ]
@@ -1090,7 +1091,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Wild Muliplier",
+      "Multiplier Wild",
       "Win Multiplier",
       "Free Game"
     ]
@@ -1107,7 +1108,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Wild Muliplier",
+      "Multiplier Wild",
       "Free Game"
     ]
   },
@@ -1239,7 +1240,7 @@
     "tags": [
       "Extra Reel",
       "Win Multiplier",
-      "Expanding Wild",
+      "Expand Wild",
       "Random Wild",
       "Free Game"
     ]
@@ -1304,7 +1305,7 @@
     "boardSize": "35553x5",
     "lineMechanic": "7776 Ways",
     "tags": [
-      "Expanding Reel",
+      "Expand Reel",
       "Select Free Game"
     ]
   },
@@ -1320,7 +1321,7 @@
     "boardSize": "35553x5",
     "lineMechanic": "7776 Ways",
     "tags": [
-      "Expanding Reel",
+      "Expand Reel",
       "Select Free Game"
     ]
   },
@@ -1369,7 +1370,8 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Symbol Upgrade、Multiplier Wild",
+      "Symbol Upgrade",
+      "Multiplier Wild",
       "Expand Reel",
       "Select Free Game"
     ]
@@ -1405,7 +1407,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Cascading Reel",
+      "Cascade Reel",
       "Random Wild",
       "Win Multiplier",
       "Free Game"
@@ -1456,7 +1458,7 @@
     "boardSize": "3x3",
     "lineMechanic": "1 Lines",
     "tags": [
-      "Mix Symbol",
+      "Mixed Symbol",
       "Bonus Wheel"
     ]
   },
@@ -1714,7 +1716,7 @@
     "boardSize": "5x5",
     "lineMechanic": "88 Lines",
     "tags": [
-      "Cascading Reel",
+      "Cascade Reel",
       "Multiplier Wild",
       "Win Multiplier",
       "Free Game"
@@ -1978,7 +1980,7 @@
     "boardSize": "7x6",
     "lineMechanic": "117649 Ways",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Maximun Ways",
       "Bonus Game"
     ]
@@ -2031,7 +2033,7 @@
     "lineMechanic": "243 Ways",
     "tags": [
       "Win Multiplier",
-      "Walking Wild",
+      "Shift Wild",
       "Respin",
       "Free Game"
     ]
@@ -2048,7 +2050,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Increasing Multiplier",
       "Free Game"
     ]
@@ -2065,7 +2067,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Collect Symbol",
+      "Symbol Collect",
       "Free Game",
       "Bonus Game"
     ]
@@ -2082,7 +2084,7 @@
     "boardSize": "5x5",
     "lineMechanic": "50 Lines",
     "tags": [
-      "Collect Symbol",
+      "Symbol Collect",
       "Multiplier Wild",
       "Free Game",
       "Bonus Game"
@@ -2102,7 +2104,7 @@
     "tags": [
       "Random Wild",
       "Wild Reel",
-      "Walking Wild",
+      "Shift Wild",
       "Infinite Spins",
       "Free Game",
       "Bonus Game"
@@ -2120,7 +2122,7 @@
     "boardSize": "3x5",
     "lineMechanic": "243 Ways",
     "tags": [
-      "Duplicated Winning",
+      "Repeat Win",
       "Free Game"
     ]
   },
@@ -2138,8 +2140,8 @@
     "tags": [
       "Triple Power",
       "Extra Reward",
-      "Extra Reels",
-      "Extra Spins",
+      "Extra Reel",
+      "Extra Spin",
       "Bonus Game"
     ]
   },
@@ -2258,7 +2260,7 @@
     "boardSize": "5x6",
     "lineMechanic": "Any 8",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Win Multiplier",
       "Respin",
       "Free Game"
@@ -2276,7 +2278,7 @@
     "boardSize": "7x5",
     "lineMechanic": "117649 Ways",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Random Wild",
       "Multiplier Wild",
       "Free Game"
@@ -2332,7 +2334,7 @@
     "lineMechanic": "243 Ways",
     "tags": [
       "Random Prize",
-      "Expanding Reels",
+      "Expand Reel",
       "Bonus Game"
     ]
   },
@@ -2401,7 +2403,7 @@
     "boardSize": "34443 to 67776x5",
     "lineMechanic": "576 to 12348 Ways",
     "tags": [
-      "Expanding Reel",
+      "Expand Reel",
       "Random Symbol",
       "Respin",
       "Free Game"
@@ -2489,8 +2491,8 @@
     "boardSize": "3x5",
     "lineMechanic": "486 Ways",
     "tags": [
-      "BothWays",
-      "Cascading Reels",
+      "Both Way",
+      "Cascade Reel",
       "Increasing Multiplier",
       "Free Game"
     ]
@@ -2507,7 +2509,7 @@
     "boardSize": "6x6",
     "lineMechanic": "46656 Ways",
     "tags": [
-      "Cascading Reels",
+      "Cascade Reel",
       "Sticky Wild",
       "Free Game"
     ]
@@ -2526,7 +2528,7 @@
     "tags": [
       "Random Wild",
       "Sticky Wild",
-      "Upgrade Symbol",
+      "Symbol Upgrade",
       "Free Game"
     ]
   }

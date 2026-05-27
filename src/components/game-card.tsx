@@ -1,4 +1,15 @@
-import { Activity, Grid3X3, Percent, RadioTower, Waves } from "lucide-react";
+import {
+  Activity,
+  ArrowBigUp,
+  BarChart3,
+  Cable,
+  FileText,
+  Grid3X3,
+  Percent,
+  Play,
+  RadioTower,
+  Waves
+} from "lucide-react";
 import { getDictionary } from "@/lib/i18n";
 import { getVolatilityLevel } from "@/lib/volatility";
 import type { Game, Locale, VolatilityLevel } from "@/types/game";
@@ -10,6 +21,8 @@ type GameCardProps = {
 
 export function GameCard({ game, locale }: GameCardProps) {
   const dictionary = getDictionary(locale);
+  const gameInfoHref = `/premium/${game.id}/spec-${locale}.md`;
+  const simulationHref = `/premium/${game.id}/simulation.txt`;
 
   return (
     <article className="group overflow-hidden rounded border border-white/10 bg-panel/80 shadow-2xl shadow-black/20 transition hover:-translate-y-1 hover:border-neon/40 hover:shadow-glow">
@@ -46,7 +59,7 @@ export function GameCard({ game, locale }: GameCardProps) {
 
           <div className="grid gap-3 sm:grid-cols-2">
             <SpecPanel
-              icon={<Activity size={16} />}
+              icon={<ArrowBigUp size={16} />}
               label={dictionary.features.maxWin}
               value={formatNumber(game.maxWin)}
             />
@@ -63,14 +76,34 @@ export function GameCard({ game, locale }: GameCardProps) {
               value={game.boardSize}
             />
             <SpecPanel
-              icon={<RadioTower size={16} />}
+              icon={<Cable size={16} />}
               label={dictionary.features.lineMechanic}
               value={formatLineMechanic(game.lineMechanic)}
             />
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="grid gap-2 border-t border-white/10 pt-4 sm:grid-cols-2">
+          <ActionLink
+            href={gameInfoHref}
+            icon={<FileText size={16} />}
+            label={dictionary.actions.gameInfo}
+          />
+          <ActionLink
+            href={simulationHref}
+            icon={<BarChart3 size={16} />}
+            label={dictionary.actions.simulation}
+          />
+          {game.demoUrl ? (
+            <ActionLink
+              href={game.demoUrl}
+              icon={<Play size={16} />}
+              label={dictionary.actions.demo}
+            />
+          ) : null}
+        </div>
+
+        <div className="flex flex-wrap gap-2 border-t border-white/10 pt-4">
           {game.tags.map((tag) => (
             <span
               key={tag}
@@ -80,6 +113,7 @@ export function GameCard({ game, locale }: GameCardProps) {
             </span>
           ))}
         </div>
+
       </div>
     </article>
   );
@@ -102,6 +136,26 @@ function SpecPanel({
       </div>
       <p className="mt-2 text-lg font-black text-white">{value}</p>
     </div>
+  );
+}
+
+function ActionLink({
+  href,
+  icon,
+  label
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <a
+      href={href}
+      className="inline-flex h-10 items-center justify-center gap-2 rounded border border-white/10 bg-white/[0.04] px-3 text-sm font-black text-slate-200 transition hover:border-neon/50 hover:text-neon"
+    >
+      {icon}
+      {label}
+    </a>
   );
 }
 
