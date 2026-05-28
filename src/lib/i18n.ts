@@ -48,7 +48,7 @@ export const dictionaries = {
       featured: "精選遊戲",
       pipeline: "資料整理流程",
       pipelineText:
-        "先建立試算表，再開發驗證程式，最後將模擬數據填進資料庫。"
+        "所有資料透過試算表建模定義規格，並以程式化模擬進行驗證與調整，以確保數值結果的一致性與可重現性。"
     },
     games: {
       title: "遊戲資料",
@@ -77,7 +77,7 @@ export const dictionaries = {
     },
     common: {
       studio: "CASINO GAME DATABASE",
-      badge: "Slot Math Model",
+      badge: "Casino Game Database",
       viewGames: "Browse Database",
       viewAbout: "View Notes",
       all: "All",
@@ -100,7 +100,7 @@ export const dictionaries = {
       demo: "Demo"
     },
     home: {
-      title: "A database for game specs, numerical traits, and play categories",
+      title: "Slot Math Model",
       intro:
         "All data is generated through custom spreadsheet models, validation programs, and simulation testing.\nRather than manual estimation, the data is built through reproducible and verifiable processes to ensure practical value for real production and commercial use.",
       metricGames: "game records",
@@ -109,17 +109,17 @@ export const dictionaries = {
       featured: "Featured Games",
       pipeline: "Data Workflow",
       pipelineText:
-        "Standardize fields, fill in the values, then use categories and tags to make the database searchable and maintainable."
+        "All data is defined through spreadsheet-based modeling and validated via programmatic simulation, ensuring consistency and reproducibility of results."
     },
     games: {
       title: "Game Database",
-      intro: "Filter game specs by genre, volatility, and keyword.",
+      intro: "Filter game specs by ID, tags and volatility.",
       search: "Search ID",
       empty: "No games match the current filters."
     },
     about: {
       title: "About",
-      role: "Game Data / Spec Comparison / Frontend Display",
+      role: "Game Spec / Data Comparison / Game Demo",
       intro:
         "This is a database and showcase platform centered on game mathematical models, focusing on the numerical design behind game systems, including probability structures, balancing models, and simulation-based validation. All data is constructed through spreadsheet modeling, programmatic verification, and iterative simulations rather than intuition or ad-hoc tuning.\n\nThe focus of this platform is not visual presentation or final product polish, but the verifiability and reproducibility of the underlying data and systems. Some demos may still contain development-stage UI or performance characteristics, without affecting the correctness or practical applicability of the core mathematical models.\n\nThese models can be directly applied to game design, economy system development, balancing adjustments, and full project licensing integration, providing a verifiable, simulation-driven, and production-ready mathematical foundation for game development.",
       experience: "Data Focus",
