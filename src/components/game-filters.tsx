@@ -88,7 +88,7 @@ export function GameFilters({
             value={tag}
             options={["all", ...tags]}
             getLabel={(value) =>
-              value === "all" ? dictionary.common.all : value
+              value === "all" ? dictionary.common.tags : value
             }
             onChange={setTag}
           />
@@ -98,7 +98,7 @@ export function GameFilters({
             options={["all", ...volatilities.map(String)]}
             getLabel={(value) =>
               value === "all"
-                ? dictionary.common.all
+                ? dictionary.features.volatility
                 : `${dictionary.features.volatility} ${value}/5`
             }
             onChange={(value) =>
