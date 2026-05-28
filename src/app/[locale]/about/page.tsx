@@ -37,26 +37,30 @@ export default async function AboutPage({
   const dataFocus =
     locale === "zh"
       ? [
-          "每款遊戲只保留資料庫真正需要的規格欄位",
-          "用 genre 與 tags 做分類，用波動度做快速篩選",
-          "中獎率、RTP、盤面大小與連線方式統一以文字格式維護"
-        ]
+        "六種核心數值模型，用於完整描述一款遊戲的數學行為與風險分布。",
+        "遊戲規格文件與模擬數據，包含完整規則定義、參數設定與大量模擬結果。",
+        "特色標籤系統，用於快速分類遊戲特性，方便快速檢索與比較不同模型。"
+      ]
       : [
-          "Each game keeps only the fields needed by the database",
-          "Genre and tags handle classification, while volatility supports quick filtering",
-          "Hit rate, RTP, board size, and line mechanics are maintained as text values"
-        ];
+        "Six core numerical metrics used to fully describe a game’s mathematical behavior and risk distribution.",
+        "Game specification documents and simulation data, including complete rule definitions, parameter settings, and large-scale simulation results.",
+        "A feature tagging system for quickly categorizing game characteristics, enabling fast retrieval and comparison across different models."
+      ];
 
+  // const fields = [
+  //   "id",
+  //   "rtp",
+  //   "hitRate",
+  //   "volatility",
+  //   "boardSize",
+  //   "lineMechanic",
+  //   "tags",
+  // ];
   const fields = [
-    "id",
-    "genre",
-    "hitRate",
-    "volatility",
-    "rtp",
-    "boardSize",
-    "lineMechanic",
-    "tags"
-  ];
+    ...Object.values(dictionary.features),
+    ...Object.values(dictionary.actions),
+    , dictionary.common.tags
+  ].flat() as string[]
 
   return (
     <section className="px-5 py-14">
@@ -75,7 +79,7 @@ export default async function AboutPage({
             <p className="mt-4 text-lg font-bold text-slate-200">
               {dictionary.about.role}
             </p>
-            <p className="mt-5 leading-8 text-slate-300">
+            <p className="mt-5 leading-8 text-slate-300 whitespace-pre-line">
               {dictionary.about.intro}
             </p>
           </aside>
@@ -98,7 +102,7 @@ export default async function AboutPage({
             </ResumeSection>
 
             <ResumeSection icon={<Code2 size={22} />} title={dictionary.about.skills}>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-rows-2 grid-flow-col gap-2">
                 {fields.map((field) => (
                   <span
                     key={field}
@@ -114,7 +118,7 @@ export default async function AboutPage({
               icon={<Sparkles size={22} />}
               title={dictionary.about.contact}
             >
-              <p className="leading-8 text-slate-300">
+              <p className="leading-8 text-slate-300 whitespace-pre-line">
                 {dictionary.about.contactText}
               </p>
             </ResumeSection>

@@ -30,7 +30,7 @@ export default async function HomePage({
             <h1 className="mt-6 max-w-4xl text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
               {dictionary.home.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg whitespace-pre-line">
               {dictionary.home.intro}
             </p>
 
