@@ -11,6 +11,8 @@ type GameFiltersProps = {
   games: Game[];
   genres: string[];
   volatilities: VolatilityLevel[];
+  boardSizes: string[];
+  lineMechanics: string[];
   tags: string[];
   locale: Locale;
 };
@@ -19,6 +21,8 @@ export function GameFilters({
   games,
   genres,
   volatilities,
+  boardSizes,
+  lineMechanics,
   tags,
   locale
 }: GameFiltersProps) {
@@ -26,6 +30,8 @@ export function GameFilters({
   const [query, setQuery] = useState("");
   const [genre, setGenre] = useState("all");
   const [volatility, setVolatility] = useState<VolatilityLevel | "all">("all");
+  const [boardSize, setBoardSize] = useState("all");
+  const [lineMechanic, setLineMechanic] = useState("all");
   const [tag, setTag] = useState("all");
 
   const filteredGames = useMemo(() => {
@@ -35,14 +41,14 @@ export function GameFilters({
       const volatilityLevel = getVolatilityLevel(game.volatility);
       const searchable = [
         game.id,
-        ...game.tags,
         ...game.genre,
+        String(game.rtp),
         String(game.hitRate),
         String(game.volatility),
-        String(volatilityLevel),
-        String(game.rtp),
         game.boardSize,
-        game.lineMechanic
+        game.lineMechanic,
+        ...game.tags,
+        String(volatilityLevel),
       ]
         .join(" ")
         .toLowerCase();
@@ -52,23 +58,27 @@ export function GameFilters({
       const matchesGenre = genre === "all" || game.genre.includes(genre);
       const matchesVolatility =
         volatility === "all" || volatilityLevel === volatility;
+      const matchesBoardSize = boardSize === "all" || game.boardSize === boardSize;
+      const matchesLineMechanic = lineMechanic === "all" || game.lineMechanic === lineMechanic;
       const matchesTags = tag === "all" || game.tags.includes(tag);
 
-      return matchesQuery && matchesGenre && matchesVolatility && matchesTags;
+      return matchesQuery && matchesGenre && matchesVolatility && matchesBoardSize && matchesLineMechanic && matchesTags;
     });
-  }, [games, genre, query, volatility, tag]);
+  }, [games, genre, query, volatility, boardSize, lineMechanic, tag]);
 
   function resetFilters() {
     setQuery("");
     setGenre("all");
     setTag("all");
     setVolatility("all");
+    setBoardSize("all");
+    setLineMechanic("all");
   }
 
   return (
     <div className="space-y-8">
       <section className="rounded border border-white/10 bg-white/[0.04] p-4">
-        <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr_1fr_auto]">
+        <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr_auto]">
           <label className="relative">
             <span className="sr-only">{dictionary.games.search}</span>
             <Search
@@ -106,6 +116,28 @@ export function GameFilters({
                 value === "all" ? "all" : (Number(value) as VolatilityLevel)
               )
             }
+          />
+          <SelectFilter
+            label={dictionary.features.boardSize}
+            value={String(boardSize)}
+            options={["all", ...boardSizes]}
+            getLabel={(value) =>
+              value === "all"
+                ? dictionary.features.boardSize
+                : value
+            }
+            onChange={setBoardSize}
+          />
+          <SelectFilter
+            label={dictionary.features.lineMechanic}
+            value={String(lineMechanic)}
+            options={["all", ...lineMechanics]}
+            getLabel={(value) =>
+              value === "all"
+                ? dictionary.features.lineMechanic
+                : value
+            }
+            onChange={setLineMechanic}
           />
 
           <button

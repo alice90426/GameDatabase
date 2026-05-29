@@ -73,16 +73,19 @@ export default async function HomePage({
               </div>
               <div className="grid gap-px bg-white/10 md:grid-cols-3">
                 {[
-                  ["RTP", "Ready"],
-                  ["Volatility", "Filter"],
-                  ["Layout", "Tracked"]
+                  ["RTP", ""],
+                  ["Hit Rate", ""],
+                  ["Max Win", ""],
+                  ["Volatility", ""],
+                  ["Board Size", ""],
+                  ["Line Mechanic", ""]
                 ].map(([label, value]) => (
                   <div key={label} className="bg-panel p-4">
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                    {/* <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
                       {label}
-                    </p>
-                    <p className="mt-3 text-xl font-black text-white">
-                      {value}
+                    </p> */}
+                    <p className="font-black text-white">
+                      {label}
                     </p>
                   </div>
                 ))}

@@ -1175,7 +1175,7 @@
     "hitRate": 41.888,
     "maxWin": 859.9,
     "volatility": 5.5095,
-    "boardSize": "34543x5",
+    "boardSize": "34543",
     "lineMechanic": "720 Ways",
     "tags": [
       "Sticky Wild",
@@ -1308,7 +1308,7 @@
     "hitRate": 31.133,
     "maxWin": 2618.181818,
     "volatility": 6.1474,
-    "boardSize": "35553x5",
+    "boardSize": "35553",
     "lineMechanic": "7776 Ways",
     "tags": [
       "Expand Reel",
@@ -1324,7 +1324,7 @@
     "hitRate": 29.16,
     "maxWin": 23138.238636,
     "volatility": 9.1504,
-    "boardSize": "35553x5",
+    "boardSize": "35553",
     "lineMechanic": "7776 Ways",
     "tags": [
       "Expand Reel",
@@ -1464,7 +1464,7 @@
     "maxWin": 900,
     "volatility": 8.3583,
     "boardSize": "3x3",
-    "lineMechanic": "1 Lines",
+    "lineMechanic": "1 Line",
     "tags": [
       "Mixed Symbol",
       "Bonus Wheel"
@@ -1709,7 +1709,7 @@
     "hitRate": 31.52,
     "maxWin": 2334.772727,
     "volatility": 7.7571,
-    "boardSize": "35553x5",
+    "boardSize": "35553",
     "lineMechanic": "1125 Ways",
     "tags": [
       "Multiplier Wild",
@@ -1874,7 +1874,7 @@
     "hitRate": 29.79,
     "maxWin": 5639.5,
     "volatility": 6.8472,
-    "boardSize": "34443x5",
+    "boardSize": "34443",
     "lineMechanic": "576 Ways",
     "tags": [
       "Multiplier Wild",
@@ -2414,8 +2414,8 @@
     "hitRate": 31.8746,
     "maxWin": 7154,
     "volatility": 9.312,
-    "boardSize": "34443 to 67776x5",
-    "lineMechanic": "576 to 12348 Ways",
+    "boardSize": "67776",
+    "lineMechanic": "12348 Ways",
     "tags": [
       "Expand Reel",
       "Random Symbol",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GameFilters } from "@/components/game-filters";
-import { allGames, getGameGenres, getGameTags, getGameVolatilities } from "@/lib/games";
+import { allGames, getGameBoardSizes, getGameGenres, getGameLines, getGameTags, getGameVolatilities } from "@/lib/games";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import type { Locale } from "@/types/game";
 
@@ -54,6 +54,8 @@ export default async function GamesPage({
           games={allGames}
           genres={getGameGenres()}
           volatilities={getGameVolatilities()}
+          boardSizes={getGameBoardSizes()}
+          lineMechanics={getGameLines()}
           tags={getGameTags()}
           locale={locale}
         />

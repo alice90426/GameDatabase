@@ -16,6 +16,10 @@ export function getGameTags() {
   return Array.from(new Set(allGames.flatMap((game) => game.tags))).sort();
 }
 
+export function getGameBoardSizes() {
+  return Array.from(new Set(allGames.map((game) => game.boardSize))).sort();
+}
+
 export function getGameLines() {
   return Array.from(new Set(allGames.flatMap((game) => game.lineMechanic))).sort();
 }

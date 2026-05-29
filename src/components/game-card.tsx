@@ -208,7 +208,7 @@ function formatLineMechanic(value: string) {
     return `${trimmedValue} ${trimmedValue === "1" ? "Line" : "Lines"}`;
   }
 
-  return trimmedValue.replace(/^1 Lines$/i, "1 Line");
+  return trimmedValue.replace(/^1 Line$/i, "1 Line");
 }
 
 function formatGameName(id: string) {

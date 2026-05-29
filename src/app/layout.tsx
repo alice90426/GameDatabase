@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
   title: {
     default: "GAME DATABASE",
-    template: "%s | GAME DATABASE"
+    template: "%s"
   },
   description:
     "A structured database for slot game specs, hit rate, volatility, RTP, board size, and line mechanics.",
@@ -14,7 +14,13 @@ export const metadata: Metadata = {
     "slot game",
     "RTP",
     "hit rate",
-    "volatility"
+    "max win",
+    "volatility",
+    "board size",
+    "line mechanic",
+    "game specs",
+    "simulation data",
+    "game analytics",
   ],
   openGraph: {
     title: "GAME DATABASE",

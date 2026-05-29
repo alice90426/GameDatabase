@@ -2,7 +2,7 @@
 
 ## Introduction
 - Size: 3 reels, 3 rows.
-- Lines: 1 Lines.
+- Lines: 1 Line.
 - Features: Mix Symbol, Bonus Wheel.
 ---
 

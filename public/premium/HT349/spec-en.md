@@ -1,8 +1,8 @@
 # Game Information
 
 ## Introduction
-- Size: 5 reels, 34443 to 67776 rowss.
-- Lines: 576 to 12348 Ways.
+- Size: 5 reels, 67776 rows.
+- Lines: 12348 Ways.
 - Features: Expanding Reel, Random Symbol, Respin, Free Game.
 ---
 

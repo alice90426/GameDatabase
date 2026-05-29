@@ -15,7 +15,7 @@ export const dictionaries = {
       language: "EN"
     },
     common: {
-      studio: "娛樂遊戲資料庫",
+      studio: "Javier",
       badge: "娛樂遊戲資料庫",
       viewGames: "查看資料庫",
       viewAbout: "查看說明",
@@ -41,7 +41,7 @@ export const dictionaries = {
     home: {
       title: "老虎機數學模型",
       intro:
-        "所有遊戲數據皆透過自建試算表模型、驗證程式與模擬測試產生，並非人工估算；\n而是以可驗證、可重現的方式建立，確保數據具備實際開發與商業使用價值。",
+        "所有遊戲數據皆透過自建試算表模型、驗證程式與模擬測試產生，並非人工估算；\n而是以可驗證、可重現的方式建立，確保數據具備實際開發與使用價值。",
       metricGames: "款遊戲資料",
       metricTags: "種遊戲特色",
       metricLines: "種連線方式",
@@ -76,7 +76,7 @@ export const dictionaries = {
       language: "中文"
     },
     common: {
-      studio: "CASINO GAME DATABASE",
+      studio: "Javier",
       badge: "Casino Game Database",
       viewGames: "Browse Database",
       viewAbout: "View Notes",
@@ -102,7 +102,7 @@ export const dictionaries = {
     home: {
       title: "Slot Math Model",
       intro:
-        "All data is generated through custom spreadsheet models, validation programs, and simulation testing.\nRather than manual estimation, the data is built through reproducible and verifiable processes to ensure practical value for real production and commercial use.",
+        "All data is generated through custom spreadsheet models, validation programs, and simulation testing.\nRather than manual estimation, the data is built through reproducible and verifiable processes to ensure practical value for real production use.",
       metricGames: "game records",
       metricTags: "game tags",
       metricLines: "line mechanisms",
