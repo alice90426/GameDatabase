@@ -19,7 +19,6 @@ type GameFiltersProps = {
 
 export function GameFilters({
   games,
-  genres,
   volatilities,
   boardSizes,
   lineMechanics,
@@ -33,38 +32,121 @@ export function GameFilters({
   const [boardSize, setBoardSize] = useState("all");
   const [lineMechanic, setLineMechanic] = useState("all");
   const [tag, setTag] = useState("all");
+  const [demoOnly, setDemoOnly] = useState("all");
 
-  const filteredGames = useMemo(() => {
+  type FilterKey = "tag" | "volatility" | "boardSize" | "lineMechanic" | "demo";
+
+  function matchesGame(game: Game, ignoredFilter?: FilterKey) {
     const normalizedQuery = query.trim().toLowerCase();
+    const volatilityLevel = getVolatilityLevel(game.volatility);
+    const searchable = [
+      game.id,
+      ...game.genre,
+      String(game.rtp),
+      String(game.hitRate),
+      String(game.volatility),
+      game.boardSize,
+      game.lineMechanic,
+      ...game.tags,
+      game.demoUrl ? "demo" : "",
+      String(volatilityLevel)
+    ]
+      .join(" ")
+      .toLowerCase();
 
-    return games.filter((game) => {
-      const volatilityLevel = getVolatilityLevel(game.volatility);
-      const searchable = [
-        game.id,
-        ...game.genre,
-        String(game.rtp),
-        String(game.hitRate),
-        String(game.volatility),
-        game.boardSize,
-        game.lineMechanic,
-        ...game.tags,
-        String(volatilityLevel),
-      ]
-        .join(" ")
-        .toLowerCase();
+    const matchesQuery =
+      normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
+    const matchesVolatility =
+      ignoredFilter === "volatility" ||
+      volatility === "all" ||
+      volatilityLevel === volatility;
+    const matchesBoardSize =
+      ignoredFilter === "boardSize" ||
+      boardSize === "all" ||
+      game.boardSize === boardSize;
+    const matchesLineMechanic =
+      ignoredFilter === "lineMechanic" ||
+      lineMechanic === "all" ||
+      game.lineMechanic === lineMechanic;
+    const matchesTags =
+      ignoredFilter === "tag" || tag === "all" || game.tags.includes(tag);
+    const matchesDemo =
+      ignoredFilter === "demo" || demoOnly === "all" || Boolean(game.demoUrl);
 
-      const matchesQuery =
-        normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
-      const matchesGenre = genre === "all" || game.genre.includes(genre);
-      const matchesVolatility =
-        volatility === "all" || volatilityLevel === volatility;
-      const matchesBoardSize = boardSize === "all" || game.boardSize === boardSize;
-      const matchesLineMechanic = lineMechanic === "all" || game.lineMechanic === lineMechanic;
-      const matchesTags = tag === "all" || game.tags.includes(tag);
+    return (
+      matchesQuery &&
+      matchesVolatility &&
+      matchesBoardSize &&
+      matchesLineMechanic &&
+      matchesTags &&
+      matchesDemo
+    );
+  }
 
-      return matchesQuery && matchesGenre && matchesVolatility && matchesBoardSize && matchesLineMechanic && matchesTags;
-    });
-  }, [games, genre, query, volatility, boardSize, lineMechanic, tag]);
+  const filteredGames = useMemo(
+    () => games.filter((game) => matchesGame(game)),
+    [games, query, volatility, boardSize, lineMechanic, tag, demoOnly]
+  );
+
+  const availableTags = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          games
+            .filter((game) => matchesGame(game, "tag"))
+            .flatMap((game) => game.tags)
+        )
+      ).sort(),
+    [games, query, volatility, boardSize, lineMechanic, demoOnly]
+  );
+
+  const availableVolatilities = useMemo(() => {
+    const values = new Set(
+      games
+        .filter((game) => matchesGame(game, "volatility"))
+        .map((game) => getVolatilityLevel(game.volatility))
+    );
+
+    return volatilities.filter((value) => values.has(value));
+  }, [games, volatilities, query, boardSize, lineMechanic, tag, demoOnly]);
+
+  const availableBoardSizes = useMemo(
+    () =>
+      boardSizes.filter((value) =>
+        games
+          .filter((game) => matchesGame(game, "boardSize"))
+          .some((game) => game.boardSize === value)
+      ),
+    [games, boardSizes, query, volatility, lineMechanic, tag, demoOnly]
+  );
+
+  const availableLineMechanics = useMemo(
+    () =>
+      lineMechanics.filter((value) =>
+        games
+          .filter((game) => matchesGame(game, "lineMechanic"))
+          .some((game) => game.lineMechanic === value)
+      ),
+    [games, lineMechanics, query, volatility, boardSize, tag, demoOnly]
+  );
+
+  const hasAvailableDemo = useMemo(
+    () =>
+      games
+        .filter((game) => matchesGame(game, "demo"))
+        .some((game) => game.demoUrl),
+    [games, query, volatility, boardSize, lineMechanic, tag]
+  );
+  const demoFilterLabel =
+    locale === "zh" ? "\u6709 Demo" : "Has demo";
+
+  function keepSelectedOption(options: string[], selectedValue: string) {
+    if (selectedValue === "all" || options.includes(selectedValue)) {
+      return options;
+    }
+
+    return [selectedValue, ...options];
+  }
 
   function resetFilters() {
     setQuery("");
@@ -73,12 +155,13 @@ export function GameFilters({
     setVolatility("all");
     setBoardSize("all");
     setLineMechanic("all");
+    setDemoOnly("all");
   }
 
   return (
     <div className="space-y-8">
       <section className="rounded border border-white/10 bg-white/[0.04] p-4">
-        <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr_auto]">
+        <div className="grid gap-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_auto]">
           <label className="relative">
             <span className="sr-only">{dictionary.games.search}</span>
             <Search
@@ -96,7 +179,7 @@ export function GameFilters({
           <SelectFilter
             label={dictionary.common.tags}
             value={tag}
-            options={["all", ...tags]}
+            options={["all", ...keepSelectedOption(availableTags, tag)]}
             getLabel={(value) =>
               value === "all" ? dictionary.common.tags : value
             }
@@ -105,7 +188,13 @@ export function GameFilters({
           <SelectFilter
             label={dictionary.features.volatility}
             value={String(volatility)}
-            options={["all", ...volatilities.map(String)]}
+            options={[
+              "all",
+              ...keepSelectedOption(
+                availableVolatilities.map(String),
+                String(volatility)
+              )
+            ]}
             getLabel={(value) =>
               value === "all"
                 ? dictionary.features.volatility
@@ -120,7 +209,7 @@ export function GameFilters({
           <SelectFilter
             label={dictionary.features.boardSize}
             value={String(boardSize)}
-            options={["all", ...boardSizes]}
+            options={["all", ...keepSelectedOption(availableBoardSizes, boardSize)]}
             getLabel={(value) =>
               value === "all"
                 ? dictionary.features.boardSize
@@ -131,13 +220,30 @@ export function GameFilters({
           <SelectFilter
             label={dictionary.features.lineMechanic}
             value={String(lineMechanic)}
-            options={["all", ...lineMechanics]}
+            options={[
+              "all",
+              ...keepSelectedOption(availableLineMechanics, lineMechanic)
+            ]}
             getLabel={(value) =>
               value === "all"
                 ? dictionary.features.lineMechanic
                 : value
             }
             onChange={setLineMechanic}
+          />
+          <SelectFilter
+            label={demoFilterLabel}
+            value={demoOnly}
+            options={[
+              "all",
+              ...(hasAvailableDemo || demoOnly === "demo" ? ["demo"] : [])
+            ]}
+            getLabel={(value) =>
+              locale === "en" ?
+                (value === "all" ? "All Games" : "Demo Only") :
+                (value === "all" ? "所有遊戲" : "可試玩遊戲")
+            }
+            onChange={setDemoOnly}
           />
 
           <button
@@ -148,6 +254,11 @@ export function GameFilters({
             <RotateCcw size={16} />
             {dictionary.common.reset}
           </button>
+        </div>
+        <div className="mt-4 border-t border-white/10 pt-4 text-sm font-bold text-slate-300">
+          {locale === "zh"
+            ? `目前顯示 ${filteredGames.length}  款遊戲`
+            : `Showing ${filteredGames.length}  games`}
         </div>
       </section>
 
