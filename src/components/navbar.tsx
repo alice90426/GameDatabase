@@ -15,7 +15,8 @@ export function Navbar({ locale }: NavbarProps) {
   const navItems = [
     { label: dictionary.nav.home, href: localizedPath(locale) },
     { label: dictionary.nav.games, href: localizedPath(locale, "/games") },
-    { label: dictionary.nav.about, href: localizedPath(locale, "/about") }
+    { label: dictionary.nav.about, href: localizedPath(locale, "/about") },
+    { label: "Career", href: localizedPath(locale, "/career") }
   ];
 
   return (
