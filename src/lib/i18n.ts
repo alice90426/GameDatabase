@@ -36,7 +36,8 @@ export const dictionaries = {
     actions: {
       gameInfo: "遊戲說明",
       simulation: "模擬數據",
-      demo: "遊戲試玩"
+      demo: "遊戲試玩",
+      close: "關閉"
     },
     home: {
       title: "老虎機數學模型",
@@ -97,7 +98,8 @@ export const dictionaries = {
     actions: {
       gameInfo: "Game Info",
       simulation: "Simulation",
-      demo: "Demo"
+      demo: "Demo",
+      close: "Close"
     },
     home: {
       title: "Slot Math Model",

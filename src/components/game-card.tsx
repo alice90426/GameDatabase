@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Activity,
   ArrowBigUp,
@@ -8,8 +10,10 @@ import {
   Percent,
   Play,
   RadioTower,
+  X,
   Waves
 } from "lucide-react";
+import { useState } from "react";
 import { getDictionary } from "@/lib/i18n";
 import { getVolatilityLevel } from "@/lib/volatility";
 import type { Game, Locale, VolatilityLevel } from "@/types/game";
@@ -21,6 +25,7 @@ type GameCardProps = {
 
 export function GameCard({ game, locale }: GameCardProps) {
   const dictionary = getDictionary(locale);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
   const gameInfoHref = `/premium/${game.id}/spec-${locale}.md`;
   const simulationHref = `/premium/${game.id}/simulation.txt`;
 
@@ -94,8 +99,8 @@ export function GameCard({ game, locale }: GameCardProps) {
             label={dictionary.actions.simulation}
           />
           {game.demoUrl ? (
-            <ActionLink
-              href={game.demoUrl}
+            <ActionButton
+              onClick={() => setIsDemoOpen(true)}
               icon={<Play size={16} />}
               label={dictionary.actions.demo}
             />
@@ -113,6 +118,30 @@ export function GameCard({ game, locale }: GameCardProps) {
           ))}
         </div>
       </div>
+
+      {isDemoOpen && game.demoUrl ? (
+        <div className="fixed inset-0 z-50 bg-void">
+          <div className="flex h-14 items-center justify-between border-b border-white/10 bg-panel px-4">
+            <p className="text-sm font-black text-white">
+              {formatGameName(game.id)}
+            </p>
+            <button
+              type="button"
+              onClick={() => setIsDemoOpen(false)}
+              className="inline-flex h-10 items-center gap-2 rounded border border-white/10 px-3 text-sm font-bold text-slate-200 transition hover:border-ember/70 hover:text-ember"
+            >
+              <X size={16} />
+              {dictionary.actions.close}
+            </button>
+          </div>
+          <iframe
+            src={game.demoUrl}
+            title={`${game.id} demo`}
+            className="h-[calc(100vh-3.5rem)] w-full border-0 bg-black"
+            allow="fullscreen; autoplay"
+          />
+        </div>
+      ) : null}
     </article>
   );
 }
@@ -154,6 +183,27 @@ function ActionLink({
       {icon}
       {label}
     </a>
+  );
+}
+
+function ActionButton({
+  onClick,
+  icon,
+  label
+}: {
+  onClick: () => void;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="inline-flex h-10 items-center justify-center gap-2 rounded border border-white/10 bg-white/[0.04] px-3 text-sm font-black text-slate-200 transition hover:border-neon/50 hover:text-neon"
+    >
+      {icon}
+      {label}
+    </button>
   );
 }
 

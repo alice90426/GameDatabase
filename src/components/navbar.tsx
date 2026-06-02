@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Gamepad2, Languages } from "lucide-react";
+import { Gamepad2 } from "lucide-react";
 import { getDictionary } from "@/lib/i18n";
 import { localizedPath } from "@/lib/routes";
+import { LanguageSwitch } from "@/components/language-switch";
 import type { Locale } from "@/types/game";
 
 type NavbarProps = {
@@ -10,7 +11,6 @@ type NavbarProps = {
 
 export function Navbar({ locale }: NavbarProps) {
   const dictionary = getDictionary(locale);
-  const nextLocale: Locale = locale === "zh" ? "en" : "zh";
 
   const navItems = [
     { label: dictionary.nav.home, href: localizedPath(locale) },
@@ -44,14 +44,7 @@ export function Navbar({ locale }: NavbarProps) {
         </div>
 
         <div className="flex items-center gap-2">
-          <Link
-            href={localizedPath(nextLocale)}
-            className="inline-flex h-10 items-center gap-2 rounded border border-white/10 px-3 text-sm font-semibold text-slate-200 transition hover:border-neon/50 hover:text-neon"
-            aria-label="Switch language"
-          >
-            <Languages size={16} />
-            {dictionary.nav.language}
-          </Link>
+          <LanguageSwitch locale={locale} label={dictionary.nav.language} />
         </div>
       </nav>
       <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 pb-4 md:hidden">
