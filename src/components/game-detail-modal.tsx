@@ -39,8 +39,10 @@ export function GameDetailModal({
   const [activeTab, setActiveTab] = useState<DetailTab>("info");
 
   useEffect(() => {
-    setActiveTab("info");
-  }, [game.id]);
+    if (activeTab === "demo" && !game.githubUrl) {
+      setActiveTab("info");
+    }
+  }, [activeTab, game.githubUrl]);
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
