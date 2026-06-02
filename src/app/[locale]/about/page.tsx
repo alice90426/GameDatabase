@@ -47,15 +47,6 @@ export default async function AboutPage({
         "A feature tagging system for quickly categorizing game characteristics, enabling fast retrieval and comparison across different models."
       ];
 
-  // const fields = [
-  //   "id",
-  //   "rtp",
-  //   "hitRate",
-  //   "volatility",
-  //   "boardSize",
-  //   "lineMechanic",
-  //   "tags",
-  // ];
   const fields = [
     ...Object.values(dictionary.features),
     ...Object.values(dictionary.actions),

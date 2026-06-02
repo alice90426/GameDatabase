@@ -21,7 +21,7 @@ export async function generateMetadata({
   const dictionary = getDictionary(locale);
 
   return {
-    title: dictionary.common.studio,
+    title: dictionary.common.badge,
     description:
       locale === "zh"
         ? "整理遊戲規格、數值特徵與玩法分類的資料庫。"
