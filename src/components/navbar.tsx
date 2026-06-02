@@ -16,7 +16,7 @@ export function Navbar({ locale }: NavbarProps) {
     { label: dictionary.nav.home, href: localizedPath(locale) },
     { label: dictionary.nav.games, href: localizedPath(locale, "/games") },
     { label: dictionary.nav.about, href: localizedPath(locale, "/about") },
-    { label: "Career", href: localizedPath(locale, "/career") }
+    { label: dictionary.nav.career, href: localizedPath(locale, "/career") }
   ];
 
   return (
@@ -29,7 +29,7 @@ export function Navbar({ locale }: NavbarProps) {
           <span className="grid h-10 w-10 place-items-center rounded border border-neon/35 bg-neon/10 text-neon shadow-glow">
             <Gamepad2 size={22} />
           </span>
-          <span>DATABASE</span>
+          <span>{dictionary.common.brand}</span>
         </Link>
 
         <div className="hidden items-center gap-1 rounded border border-white/10 bg-white/[0.04] p-1 md:flex">
@@ -45,7 +45,11 @@ export function Navbar({ locale }: NavbarProps) {
         </div>
 
         <div className="flex items-center gap-2">
-          <LanguageSwitch locale={locale} label={dictionary.nav.language} />
+          <LanguageSwitch
+            locale={locale}
+            label={dictionary.nav.language}
+            ariaLabel={dictionary.common.switchLanguage}
+          />
         </div>
       </nav>
       <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 pb-4 md:hidden">

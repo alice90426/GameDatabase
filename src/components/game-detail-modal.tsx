@@ -75,7 +75,7 @@ export function GameDetailModal({
       role="presentation"
     >
       <section
-        aria-label={`${game.id} details`}
+        aria-label={`${game.id} ${dictionary.modal.details}`}
         aria-modal="true"
         className="flex h-[min(88vh,860px)] w-full max-w-6xl flex-col overflow-hidden rounded border border-white/15 bg-panel shadow-2xl shadow-black/60"
         onClick={(event) => event.stopPropagation()}
@@ -84,7 +84,7 @@ export function GameDetailModal({
         <header className="flex items-center gap-2 border-b border-white/10 bg-void/70 px-3 py-3 sm:px-4">
           <button
             type="button"
-            aria-label={locale === "zh" ? "\u4e0a\u4e00\u6b3e\u904a\u6232" : "Previous game"}
+            aria-label={dictionary.modal.previousGame}
             disabled={!hasPrevious}
             onClick={onPrevious}
             className="inline-flex size-10 shrink-0 items-center justify-center rounded border border-white/10 text-slate-200 transition hover:border-neon/50 hover:text-neon disabled:cursor-not-allowed disabled:opacity-30"
@@ -101,7 +101,7 @@ export function GameDetailModal({
           </div>
           <button
             type="button"
-            aria-label={locale === "zh" ? "\u4e0b\u4e00\u6b3e\u904a\u6232" : "Next game"}
+            aria-label={dictionary.modal.nextGame}
             disabled={!hasNext}
             onClick={onNext}
             className="inline-flex size-10 shrink-0 items-center justify-center rounded border border-white/10 text-slate-200 transition hover:border-neon/50 hover:text-neon disabled:cursor-not-allowed disabled:opacity-30"
@@ -164,20 +164,20 @@ export function GameDetailModal({
               {game.githubUrl || game.itchUrl ? (
                 <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-white/10 bg-void/80 px-3 py-2 sm:px-4">
                   <span className="mr-1 text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-                    {locale === "zh" ? "其他連結" : "LINKS"}
+                    {dictionary.modal.links}
                   </span>
                   {game.githubUrl ? (
                     <SourceLink
                       href={game.githubUrl}
                       icon={<Github size={15} />}
-                      label="GitHub"
+                      label={dictionary.modal.github}
                     />
                   ) : null}
                   {game.itchUrl ? (
                     <SourceLink
                       href={game.itchUrl}
                       icon={<ExternalLink size={15} />}
-                      label="itch.io"
+                      label={dictionary.modal.itch}
                     />
                   ) : null}
                 </div>
@@ -246,6 +246,7 @@ function TabButton({
 }
 
 function TextContent({ src, locale }: { src: string; locale: Locale }) {
+  const dictionary = getDictionary(locale);
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -288,13 +289,13 @@ function TextContent({ src, locale }: { src: string; locale: Locale }) {
   }, [src]);
 
   if (isLoading) {
-    return <ContentMessage>{locale === "zh" ? "\u8f09\u5165\u4e2d..." : "Loading..."}</ContentMessage>;
+    return <ContentMessage>{dictionary.modal.loading}</ContentMessage>;
   }
 
   if (hasError) {
     return (
       <ContentMessage>
-        {locale === "zh" ? "\u7121\u6cd5\u8f09\u5165\u8cc7\u6599\u3002" : "Unable to load content."}
+        {dictionary.modal.loadError}
       </ContentMessage>
     );
   }

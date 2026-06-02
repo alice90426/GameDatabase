@@ -67,23 +67,13 @@ export default async function HomePage({
             <div className="mt-5 overflow-hidden rounded border border-white/10 bg-void">
               <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
                 <span className="text-xs font-black uppercase tracking-[0.22em] text-slate-400">
-                  Data Fields
+                  {dictionary.home.dataFields}
                 </span>
                 <span className="h-2 w-2 rounded-full bg-neon shadow-glow" />
               </div>
               <div className="grid gap-px bg-white/10 md:grid-cols-3">
-                {[
-                  ["RTP", ""],
-                  ["Hit Rate", ""],
-                  ["Max Win", ""],
-                  ["Volatility", ""],
-                  ["Board Size", ""],
-                  ["Line Mechanic", ""]
-                ].map(([label, value]) => (
+                {Object.values(dictionary.features).map((label) => (
                   <div key={label} className="bg-panel p-4">
-                    {/* <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                      {label}
-                    </p> */}
                     <p className="font-black text-white">
                       {label}
                     </p>
@@ -100,7 +90,7 @@ export default async function HomePage({
           <div className="mb-6 flex items-end justify-between gap-4">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.22em] text-neon">
-                Catalog
+                {dictionary.home.catalog}
               </p>
               <h2 className="mt-2 text-3xl font-black text-white">
                 {dictionary.home.featured}
@@ -125,7 +115,7 @@ export default async function HomePage({
         <div className="mx-auto grid max-w-7xl gap-6 rounded border border-white/10 bg-white/[0.04] p-6 md:grid-cols-[0.8fr_1.2fr] md:p-8">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.22em] text-ember">
-              Workflow
+              {dictionary.home.workflow}
             </p>
             <h2 className="mt-2 text-3xl font-black text-white">
               {dictionary.home.pipeline}
@@ -135,9 +125,9 @@ export default async function HomePage({
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            <ProcessCard icon={<Database size={22} />} title="Collect" />
-            <ProcessCard icon={<Boxes size={22} />} title="Classify" />
-            <ProcessCard icon={<BadgeCheck size={22} />} title="Compare" />
+            <ProcessCard icon={<Database size={22} />} title={dictionary.home.collect} />
+            <ProcessCard icon={<Boxes size={22} />} title={dictionary.home.classify} />
+            <ProcessCard icon={<BadgeCheck size={22} />} title={dictionary.home.compare} />
           </div>
         </div>
       </section>

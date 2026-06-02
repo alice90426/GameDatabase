@@ -8,9 +8,10 @@ import type { Locale } from "@/types/game";
 type LanguageSwitchProps = {
   locale: Locale;
   label: string;
+  ariaLabel: string;
 };
 
-export function LanguageSwitch({ locale, label }: LanguageSwitchProps) {
+export function LanguageSwitch({ locale, label, ariaLabel }: LanguageSwitchProps) {
   const pathname = usePathname();
   const nextLocale: Locale = locale === "zh" ? "en" : "zh";
   const pathParts = pathname.split("/");
@@ -27,7 +28,7 @@ export function LanguageSwitch({ locale, label }: LanguageSwitchProps) {
     <Link
       href={href}
       className="inline-flex h-10 items-center gap-2 rounded border border-white/10 px-3 text-sm font-semibold text-slate-200 transition hover:border-neon/50 hover:text-neon"
-      aria-label="Switch language"
+      aria-label={ariaLabel}
     >
       <Languages size={16} />
       {label}

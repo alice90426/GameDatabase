@@ -40,7 +40,7 @@ export default async function GamesPage({
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.22em] text-neon">
-            Database
+            {dictionary.games.eyebrow}
           </p>
           <h1 className="mt-3 text-4xl font-black text-white sm:text-5xl">
             {dictionary.games.title}

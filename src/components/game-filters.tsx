@@ -144,8 +144,7 @@ export function GameFilters({
         .some((game) => game.githubUrl),
     [games, query, volatility, boardSize, lineMechanic, tag]
   );
-  const demoFilterLabel =
-    locale === "zh" ? "\u6709 Demo" : "Has demo";
+  const demoFilterLabel = dictionary.games.hasDemo;
 
   function keepSelectedOption(options: string[], selectedValue: string) {
     if (selectedValue === "all" || options.includes(selectedValue)) {
@@ -246,9 +245,9 @@ export function GameFilters({
               ...(hasAvailableDemo || demoOnly === "demo" ? ["demo"] : [])
             ]}
             getLabel={(value) =>
-              locale === "en" ?
-                (value === "all" ? "All Games" : "Demo Only") :
-                (value === "all" ? "所有遊戲" : "可試玩遊戲")
+              value === "all"
+                ? dictionary.games.allGames
+                : dictionary.games.demoOnly
             }
             onChange={setDemoOnly}
           />
@@ -263,9 +262,8 @@ export function GameFilters({
           </button>
         </div>
         <div className="mt-4 border-t border-white/10 pt-4 text-sm font-bold text-slate-300">
-          {locale === "zh"
-            ? `目前顯示 ${filteredGames.length}  款遊戲`
-            : `Showing ${filteredGames.length}  games`}
+          {dictionary.games.showingPrefix} {filteredGames.length}{" "}
+          {dictionary.games.showingSuffix}
         </div>
       </section>
 

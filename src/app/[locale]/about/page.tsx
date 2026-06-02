@@ -34,19 +34,6 @@ export default async function AboutPage({
   const locale = (isLocale(localeParam) ? localeParam : "zh") as Locale;
   const dictionary = getDictionary(locale);
 
-  const dataFocus =
-    locale === "zh"
-      ? [
-        "六種核心數值模型，用於完整描述一款遊戲的數學行為與風險分布。",
-        "遊戲規格文件與模擬數據，包含完整規則定義、參數設定與大量模擬結果。",
-        "特色標籤系統，用於快速分類遊戲特性，方便快速檢索與比較不同模型。"
-      ]
-      : [
-        "Six core numerical metrics used to fully describe a game’s mathematical behavior and risk distribution.",
-        "Game specification documents and simulation data, including complete rule definitions, parameter settings, and large-scale simulation results.",
-        "A feature tagging system for quickly categorizing game characteristics, enabling fast retrieval and comparison across different models."
-      ];
-
   const fields = [
     ...Object.values(dictionary.features),
     ...Object.values(dictionary.actions),
@@ -81,7 +68,7 @@ export default async function AboutPage({
               title={dictionary.about.experience}
             >
               <div className="grid gap-3">
-                {dataFocus.map((item) => (
+                {dictionary.about.dataFocus.map((item) => (
                   <div
                     key={item}
                     className="rounded border border-white/10 bg-white/[0.04] p-4 text-slate-300"

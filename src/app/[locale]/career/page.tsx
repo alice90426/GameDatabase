@@ -14,7 +14,7 @@ import {
   NotebookText,
   Play
 } from "lucide-react";
-import { isLocale } from "@/lib/i18n";
+import { getDictionary, isLocale } from "@/lib/i18n";
 import { localizedPath } from "@/lib/routes";
 import type { Locale } from "@/types/game";
 
@@ -25,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale = isLocale(localeParam) ? localeParam : "en";
-  const content = getCareerContent(locale);
+  const content = getDictionary(locale).career;
 
   return {
     title: content.position,
@@ -47,7 +47,7 @@ export default async function CareerPage({
 }) {
   const { locale: localeParam } = await params;
   const locale = (isLocale(localeParam) ? localeParam : "en") as Locale;
-  const content = getCareerContent(locale);
+  const content = getDictionary(locale).career;
 
   const services = [
     {
@@ -70,26 +70,26 @@ export default async function CareerPage({
   const resources = [
     {
       icon: <BookOpen size={20} />,
-      title: "Blogger",
-      text: content.resources.blogger,
+      title: content.resources.blogger.title,
+      text: content.resources.blogger.text,
       href: "https://slotmathmodel.blogspot.com/"
     },
     {
       icon: <NotebookText size={20} />,
-      title: "Notion",
-      text: content.resources.notion,
+      title: content.resources.notion.title,
+      text: content.resources.notion.text,
       href: "https://app.notion.com/p/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae"
     },
     {
       icon: <Github size={20} />,
-      title: "GitHub",
-      text: content.resources.github,
+      title: content.resources.github.title,
+      text: content.resources.github.text,
       href: "https://github.com/alice90426"
     },
     {
       icon: <Play size={20} />,
-      title: "itch.io",
-      text: content.resources.itch,
+      title: content.resources.itch.title,
+      text: content.resources.itch.text,
       href: "https://alice90426.itch.io"
     }
   ];
@@ -109,7 +109,7 @@ export default async function CareerPage({
             {content.intro}
           </p>
 
-          <div className="mt-8 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded border border-white/10 bg-white/10 sm:grid-cols-4">
+          <div className="mt-8 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded border border-white/10 bg-white/10 sm:grid-cols-4">
             {content.metrics.map((metric) => (
               <div key={metric} className="bg-panel/90 px-4 py-4 text-sm font-black text-white">
                 {metric}
@@ -223,7 +223,7 @@ function IconBox({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BulletList({ items, columns = false }: { items: string[]; columns?: boolean }) {
+function BulletList({ items, columns = false }: { items: readonly string[]; columns?: boolean }) {
   return (
     <div className={`mt-4 grid gap-2 ${columns ? "sm:grid-cols-3" : ""}`}>
       {items.map((item) => (
@@ -245,7 +245,7 @@ function WorkCard({
 }: {
   icon: React.ReactNode;
   title: string;
-  items: string[];
+  items: readonly string[];
   href?: string;
   linkLabel?: string;
 }) {
@@ -298,68 +298,4 @@ function ResourceCard({
   ) : (
     <div className="rounded border border-white/10 bg-panel/75 p-4">{content}</div>
   );
-}
-
-function getCareerContent(locale: Locale) {
-  if (locale === "zh") {
-    return {
-      eyebrow: "\u670d\u52d9\u5b9a\u4f4d",
-      position: "Game Mathematics Model Designer",
-      intro: "\u6211\u63d0\u4f9b\u904a\u6232\u6578\u5b78\u6a21\u578b\u8a2d\u8a08\u3001\u6a5f\u7387\u5206\u6790\u3001\u6a21\u64ec\u9a57\u8b49\u8207\u7d50\u69cb\u5316\u904a\u6232\u898f\u683c\u6587\u4ef6\u3002",
-      metrics: ["100+ \u904a\u6232\u6a21\u578b", "\u6a21\u64ec\u6578\u64da", "\u96d9\u8a9e\u6587\u4ef6", "\u6a5f\u7387\u7814\u7a76"],
-      browseModels: "\u700f\u89bd\u904a\u6232\u6a21\u578b",
-      contactMe: "\u806f\u7d61\u6211",
-      servicesEyebrow: "\u670d\u52d9",
-      servicesTitle: "\u6211\u63d0\u4f9b\u7684\u670d\u52d9",
-      services: {
-        model: { title: "\u6578\u5b78\u6a21\u578b", items: ["RTP", "\u4e2d\u734e\u7387", "\u6ce2\u52d5\u5ea6", "\u6700\u5927\u500d\u6578"] },
-        simulation: { title: "\u6a21\u64ec\u9a57\u8b49", items: ["\u6a21\u64ec\u6e2c\u8a66", "\u6578\u64da\u5206\u6790", "\u9577\u671f\u8868\u73fe\u9a57\u8b49"] },
-        specification: { title: "\u898f\u683c\u6587\u4ef6", items: ["\u904a\u6232\u898f\u5247", "\u529f\u80fd\u5b9a\u7fa9", "\u4e2d\u82f1\u6587\u6587\u4ef6"] }
-      },
-      workEyebrow: "\u4f5c\u54c1",
-      workTitle: "\u4ee3\u8868\u4f5c\u54c1",
-      work: {
-        database: { title: "\u904a\u6232\u6a21\u578b\u8cc7\u6599\u5eab", items: ["100+ \u904a\u6232\u6a21\u578b", "\u516d\u5927\u6838\u5fc3\u6578\u503c", "\u6a21\u64ec\u6578\u64da"] },
-        research: { title: "\u6a5f\u7387\u7cfb\u7d71\u7814\u7a76", items: ["Slot \u8207\u975e Slot \u904a\u6232\u7814\u7a76", "\u6a5f\u7387\u8207\u734e\u52f5\u6a5f\u5236\u5206\u6790"] }
-      },
-      resourcesEyebrow: "\u4f50\u8b49\u8cc7\u6599",
-      resourcesTitle: "\u5916\u90e8\u8cc7\u6e90",
-      resources: { blogger: "\u6559\u5b78\u6587\u7ae0", notion: "\u7814\u7a76\u7b46\u8a18", github: "\u7a0b\u5f0f\u8207\u5de5\u5177", itch: "\u8a66\u73a9\u4f5c\u54c1" },
-      contactEyebrow: "\u5408\u4f5c",
-      contactTitle: "\u806f\u7d61\u6211",
-      contactText: "\u53ef\u63d0\u4f9b\u6578\u5b78\u6a21\u578b\u8a2d\u8a08\u3001\u6a21\u64ec\u9a57\u8b49\u8207\u904a\u6232\u898f\u683c\u6587\u4ef6\u3002",
-      contactItems: ["\u6578\u5b78\u6a21\u578b\u8a2d\u8a08", "\u6a21\u64ec\u9a57\u8b49", "\u904a\u6232\u898f\u683c\u6587\u4ef6"],
-      contactButton: "\u806f\u7d61\u65b9\u5f0f\u5f85\u88dc"
-    };
-  }
-
-  return {
-    eyebrow: "Service Profile",
-    position: "Game Mathematics Model Designer",
-    intro: "I provide game mathematics model design, probability analysis, simulation validation, and structured game specification documents.",
-    metrics: ["100+ Game Models", "Simulation Data", "Bilingual Docs", "Probability Research"],
-    browseModels: "Browse Game Models",
-    contactMe: "Contact Me",
-    servicesEyebrow: "Services",
-    servicesTitle: "What I Provide",
-    services: {
-      model: { title: "Mathematics Models", items: ["RTP", "Hit Rate", "Volatility", "Max Win"] },
-      simulation: { title: "Simulation Validation", items: ["Simulation Testing", "Data Analysis", "Long-run Validation"] },
-      specification: { title: "Specification Documents", items: ["Game Rules", "Feature Definitions", "Chinese and English Docs"] }
-    },
-    workEyebrow: "Portfolio",
-    workTitle: "Selected Work",
-    work: {
-      database: { title: "Game Model Database", items: ["100+ Game Models", "Six Core Metrics", "Simulation Data"] },
-      research: { title: "Probability System Research", items: ["Slot and Non-slot Game Research", "Probability and Reward Mechanism Analysis"] }
-    },
-    resourcesEyebrow: "Supporting Proof",
-    resourcesTitle: "External Resources",
-    resources: { blogger: "Tutorial Articles", notion: "Research Notes", github: "Code and Tools", itch: "Playable Work" },
-    contactEyebrow: "Collaboration",
-    contactTitle: "Contact Me",
-    contactText: "Available for mathematics model design, simulation validation, and structured game specification documents.",
-    contactItems: ["Mathematics Model Design", "Simulation Validation", "Game Specification Documents"],
-    contactButton: "Contact details pending"
-  };
 }
