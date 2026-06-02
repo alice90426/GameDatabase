@@ -3,6 +3,7 @@
 import { RotateCcw, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { GameCard } from "@/components/game-card";
+import { GameDetailModal } from "@/components/game-detail-modal";
 import { getDictionary } from "@/lib/i18n";
 import { getVolatilityLevel } from "@/lib/volatility";
 import type { Game, Locale, VolatilityLevel } from "@/types/game";
@@ -33,6 +34,7 @@ export function GameFilters({
   const [lineMechanic, setLineMechanic] = useState("all");
   const [tag, setTag] = useState("all");
   const [demoOnly, setDemoOnly] = useState("all");
+  const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
 
   type FilterKey = "tag" | "volatility" | "boardSize" | "lineMechanic" | "demo";
 
@@ -48,7 +50,7 @@ export function GameFilters({
       game.boardSize,
       game.lineMechanic,
       ...game.tags,
-      game.demoUrl ? "demo" : "",
+      game.githubUrl ? "demo" : "",
       String(volatilityLevel)
     ]
       .join(" ")
@@ -71,7 +73,7 @@ export function GameFilters({
     const matchesTags =
       ignoredFilter === "tag" || tag === "all" || game.tags.includes(tag);
     const matchesDemo =
-      ignoredFilter === "demo" || demoOnly === "all" || Boolean(game.demoUrl);
+      ignoredFilter === "demo" || demoOnly === "all" || Boolean(game.githubUrl);
 
     return (
       matchesQuery &&
@@ -87,6 +89,11 @@ export function GameFilters({
     () => games.filter((game) => matchesGame(game)),
     [games, query, volatility, boardSize, lineMechanic, tag, demoOnly]
   );
+  const selectedGameIndex = filteredGames.findIndex(
+    (game) => game.id === selectedGameId
+  );
+  const selectedGame =
+    selectedGameIndex >= 0 ? filteredGames[selectedGameIndex] : null;
 
   const availableTags = useMemo(
     () =>
@@ -134,7 +141,7 @@ export function GameFilters({
     () =>
       games
         .filter((game) => matchesGame(game, "demo"))
-        .some((game) => game.demoUrl),
+        .some((game) => game.githubUrl),
     [games, query, volatility, boardSize, lineMechanic, tag]
   );
   const demoFilterLabel =
@@ -265,7 +272,12 @@ export function GameFilters({
       {filteredGames.length > 0 ? (
         <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {filteredGames.map((game) => (
-            <GameCard key={game.id} game={game} locale={locale} />
+            <GameCard
+              key={game.id}
+              game={game}
+              locale={locale}
+              onOpen={() => setSelectedGameId(game.id)}
+            />
           ))}
         </section>
       ) : (
@@ -273,6 +285,22 @@ export function GameFilters({
           {dictionary.games.empty}
         </div>
       )}
+
+      {selectedGame ? (
+        <GameDetailModal
+          game={selectedGame}
+          locale={locale}
+          hasPrevious={selectedGameIndex > 0}
+          hasNext={selectedGameIndex < filteredGames.length - 1}
+          onClose={() => setSelectedGameId(null)}
+          onPrevious={() =>
+            setSelectedGameId(filteredGames[selectedGameIndex - 1]?.id ?? null)
+          }
+          onNext={() =>
+            setSelectedGameId(filteredGames[selectedGameIndex + 1]?.id ?? null)
+          }
+        />
+      ) : null}
     </div>
   );
 }

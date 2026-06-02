@@ -3,34 +3,39 @@
 import {
   Activity,
   ArrowBigUp,
-  BarChart3,
   Cable,
-  FileText,
   Grid3X3,
   Percent,
-  Play,
-  RadioTower,
-  X,
   Waves
 } from "lucide-react";
-import { useState } from "react";
 import { getDictionary } from "@/lib/i18n";
 import { getVolatilityLevel } from "@/lib/volatility";
-import type { Game, Locale, VolatilityLevel } from "@/types/game";
+import type { Game, Locale } from "@/types/game";
 
 type GameCardProps = {
   game: Game;
   locale: Locale;
+  onOpen?: () => void;
 };
 
-export function GameCard({ game, locale }: GameCardProps) {
+export function GameCard({ game, locale, onOpen }: GameCardProps) {
   const dictionary = getDictionary(locale);
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
-  const gameInfoHref = `/premium/${game.id}/spec-${locale}.md`;
-  const simulationHref = `/premium/${game.id}/simulation.txt`;
 
   return (
-    <article className="group overflow-hidden rounded border border-white/10 bg-panel/80 shadow-2xl shadow-black/20 transition hover:-translate-y-1 hover:border-neon/40 hover:shadow-glow">
+    <article
+      className={`group overflow-hidden rounded border border-white/10 bg-panel/80 shadow-2xl shadow-black/20 transition hover:-translate-y-1 hover:border-neon/40 hover:shadow-glow ${
+        onOpen ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-neon/60" : ""
+      }`}
+      onClick={onOpen}
+      onKeyDown={(event) => {
+        if (onOpen && (event.key === "Enter" || event.key === " ")) {
+          event.preventDefault();
+          onOpen();
+        }
+      }}
+      role={onOpen ? "button" : undefined}
+      tabIndex={onOpen ? 0 : undefined}
+    >
       <div className="relative min-h-40 bg-[linear-gradient(135deg,rgba(77,227,255,0.22),rgba(168,85,247,0.22)_48%,rgba(255,122,61,0.18)),linear-gradient(45deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%)] bg-[length:auto,18px_18px]">
         <div className="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent" />
         <div className="absolute left-4 top-4 rounded border border-neon/35 bg-black/35 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-neon">
@@ -87,26 +92,6 @@ export function GameCard({ game, locale }: GameCardProps) {
           </div>
         </div>
 
-        <div className="grid gap-2 border-t border-white/10 pt-4 sm:grid-cols-2">
-          <ActionLink
-            href={gameInfoHref}
-            icon={<FileText size={16} />}
-            label={dictionary.actions.gameInfo}
-          />
-          <ActionLink
-            href={simulationHref}
-            icon={<BarChart3 size={16} />}
-            label={dictionary.actions.simulation}
-          />
-          {game.demoUrl ? (
-            <ActionButton
-              onClick={() => setIsDemoOpen(true)}
-              icon={<Play size={16} />}
-              label={dictionary.actions.demo}
-            />
-          ) : null}
-        </div>
-
         <div className="flex flex-wrap gap-2 border-t border-white/10 pt-4">
           {game.tags.map((tag) => (
             <span
@@ -119,29 +104,6 @@ export function GameCard({ game, locale }: GameCardProps) {
         </div>
       </div>
 
-      {isDemoOpen && game.demoUrl ? (
-        <div className="fixed inset-0 z-50 bg-void">
-          <div className="flex h-14 items-center justify-between border-b border-white/10 bg-panel px-4">
-            <p className="text-sm font-black text-white">
-              {formatGameName(game.id)}
-            </p>
-            <button
-              type="button"
-              onClick={() => setIsDemoOpen(false)}
-              className="inline-flex h-10 items-center gap-2 rounded border border-white/10 px-3 text-sm font-bold text-slate-200 transition hover:border-ember/70 hover:text-ember"
-            >
-              <X size={16} />
-              {dictionary.actions.close}
-            </button>
-          </div>
-          <iframe
-            src={game.demoUrl}
-            title={`${game.id} demo`}
-            className="h-[calc(100vh-3.5rem)] w-full border-0 bg-black"
-            allow="fullscreen; autoplay"
-          />
-        </div>
-      ) : null}
     </article>
   );
 }
@@ -163,47 +125,6 @@ function SpecPanel({
       </div>
       <p className="mt-2 text-lg font-black text-white">{value}</p>
     </div>
-  );
-}
-
-function ActionLink({
-  href,
-  icon,
-  label
-}: {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <a
-      href={href}
-      className="inline-flex h-10 items-center justify-center gap-2 rounded border border-white/10 bg-white/[0.04] px-3 text-sm font-black text-slate-200 transition hover:border-neon/50 hover:text-neon"
-    >
-      {icon}
-      {label}
-    </a>
-  );
-}
-
-function ActionButton({
-  onClick,
-  icon,
-  label
-}: {
-  onClick: () => void;
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="inline-flex h-10 items-center justify-center gap-2 rounded border border-white/10 bg-white/[0.04] px-3 text-sm font-black text-slate-200 transition hover:border-neon/50 hover:text-neon"
-    >
-      {icon}
-      {label}
-    </button>
   );
 }
 

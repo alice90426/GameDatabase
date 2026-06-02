@@ -11,6 +11,7 @@ export type Game = {
   volatility: number;
   boardSize: string;
   lineMechanic: string;
-  demoUrl?: string;
+  githubUrl?: string;
+  itchUrl?: string;
   tags: string[];
 };
