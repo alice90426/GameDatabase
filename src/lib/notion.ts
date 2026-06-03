@@ -81,35 +81,43 @@ async function fetchPublishedResearchArticles(): Promise<ResearchArticle[]> {
     const dataSource = await getDataSource();
     const hasPublished = hasProperty(dataSource, "Published");
     const hasDate = hasProperty(dataSource, "Date");
+    const pages: PageObjectResponse[] = [];
+    let startCursor: string | undefined;
 
-    const response = await notion.dataSources.query({
-      data_source_id: dataSourceId,
-      ...(hasPublished
-        ? {
-            filter: {
-              property: "Published",
-              checkbox: {
-                equals: true
+    do {
+      const response = await notion.dataSources.query({
+        data_source_id: dataSourceId,
+        start_cursor: startCursor,
+        page_size: 100,
+        ...(hasPublished
+          ? {
+              filter: {
+                property: "Published",
+                checkbox: {
+                  equals: true
+                }
               }
             }
-          }
-        : {}),
-      sorts: [
-        hasDate
-          ? {
-              property: "Date",
-              direction: "descending"
-            }
-          : {
-              timestamp: "last_edited_time",
-              direction: "descending"
-            }
-      ],
-      result_type: "page"
-    });
+          : {}),
+        sorts: [
+          hasDate
+            ? {
+                property: "Date",
+                direction: "descending"
+              }
+            : {
+                timestamp: "last_edited_time",
+                direction: "descending"
+              }
+        ],
+        result_type: "page"
+      });
 
-    return response.results
-      .filter(isPageObjectResponse)
+      pages.push(...response.results.filter(isPageObjectResponse));
+      startCursor = response.next_cursor ?? undefined;
+    } while (startCursor);
+
+    return pages
       .map(pageToArticle)
       .filter((article): article is ResearchArticle => Boolean(article))
       .filter((article) => article.published);

@@ -72,8 +72,8 @@ export const dictionaries = {
       intro:
         "所有遊戲數據皆透過自建試算表模型、驗證程式與模擬測試產生，並非人工估算；\n而是以可驗證、可重現的方式建立，確保數據具備實際開發與使用價值。",
       metricGames: "款遊戲資料",
-      metricTags: "種遊戲特色",
-      metricLines: "種連線方式",
+      metricResearch: "款研究筆記",
+      metricArticles: "款教學文章",
       featured: "精選遊戲",
       pipeline: "資料整理流程",
       pipelineText:
@@ -277,8 +277,8 @@ export const dictionaries = {
       intro:
         "All data is generated through custom spreadsheet models, validation programs, and simulation testing.\nRather than manual estimation, the data is built through reproducible and verifiable processes to ensure practical value for real production use.",
       metricGames: "game records",
-      metricTags: "game tags",
-      metricLines: "line mechanisms",
+      metricResearch: "research notes",
+      metricArticles: "tutorial articles",
       featured: "Featured Games",
       pipeline: "Data Workflow",
       pipelineText:
