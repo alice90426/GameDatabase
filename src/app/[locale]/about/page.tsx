@@ -49,8 +49,8 @@ export default async function AboutPage({
 
   return (
     <div className="px-5 py-14 sm:py-16">
-      <section className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-        <aside className="rounded border border-white/10 bg-panel/80 p-6 shadow-2xl shadow-black/25">
+      <section className="mx-auto grid max-w-6xl items-stretch gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+        <aside className="rounded border border-neon/25 bg-panel/85 p-6 shadow-2xl shadow-black/25">
           <p className="text-sm font-black uppercase tracking-[0.22em] text-neon">
             {content.eyebrow}
           </p>
@@ -60,69 +60,94 @@ export default async function AboutPage({
           <p className="mt-4 text-lg font-bold text-slate-200">
             {content.role}
           </p>
-          <p className="mt-5 leading-8 text-slate-300">{content.intro}</p>
+          <p className="mt-5 whitespace-pre-line leading-8 text-slate-300">
+            {content.intro}
+          </p>
         </aside>
 
-        <div className="space-y-5">
-          <section className="rounded border border-white/10 bg-white/[0.04] p-5">
-            <div className="flex items-center gap-3">
-              <Sparkles className="text-neon" size={22} />
-              <h2 className="text-xl font-black text-white">
-                {content.strengthsTitle}
-              </h2>
-            </div>
-            <div className="mt-4 grid gap-2">
-              {content.strengths.map((item) => (
-                <div
-                  key={item}
-                  className="rounded border border-white/10 bg-void/70 px-3 py-3 text-sm font-bold text-slate-200"
-                >
-                  {item}
+        <section className="rounded border border-sky-300/15 bg-sky-300/[0.055] p-5">
+          <div className="flex items-center gap-3">
+            <Sparkles className="text-neon" size={22} />
+            <h2 className="text-xl font-black text-white">
+              {content.strengthsTitle}
+            </h2>
+          </div>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {content.strengths.map((item) => (
+              <div
+                key={item}
+                className="rounded border border-sky-300/10 bg-void/75 px-3 py-3 text-sm font-bold text-slate-200"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded border border-emerald-300/15 bg-emerald-300/[0.045] p-5">
+          <h2 className="text-xl font-black text-white">
+            {content.websitePurposeTitle}
+          </h2>
+          <p className="mt-3 whitespace-pre-line leading-8 text-slate-300">
+            {content.websitePurpose}
+          </p>
+        </section>
+
+        <section className="rounded border border-violet-300/15 bg-violet-300/[0.045] p-5">
+          <h2 className="text-xl font-black text-white">
+            {content.researchDirectionTitle}
+          </h2>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {content.researchDirections.map((item) => (
+              <div
+                key={item}
+                className="rounded border border-violet-300/10 bg-void/75 px-3 py-3 text-sm font-bold text-slate-200"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded border border-cyan-300/20 bg-cyan-300/[0.06] p-5">
+          <h2 className="text-xl font-black text-white">
+            {content.contact}
+          </h2>
+          <p className="mt-3 leading-7 text-slate-300">
+            {content.contactText}
+          </p>
+        </section>
+
+        <section className="rounded border border-white/10 bg-panel/80 p-5">
+          <h2 className="text-xl font-black text-white">
+            {content.resourcesTitle}
+          </h2>
+          <p className="mt-3 leading-7 text-slate-300">
+            {content.resourcesIntro}
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {resources.map((resource) => (
+              <a
+                key={resource.title}
+                href={resource.href}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded border border-white/10 bg-white/[0.04] p-4 transition hover:border-neon/50"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-neon">{resource.icon}</span>
+                  <ExternalLink size={15} className="text-slate-500" />
                 </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded border border-white/10 bg-panel/70 p-5">
-            <h2 className="text-xl font-black text-white">
-              {content.resourcesTitle}
-            </h2>
-            <p className="mt-3 leading-7 text-slate-300">
-              {content.resourcesIntro}
-            </p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {resources.map((resource) => (
-                <a
-                  key={resource.title}
-                  href={resource.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded border border-white/10 bg-white/[0.04] p-4 transition hover:border-neon/50"
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-neon">{resource.icon}</span>
-                    <ExternalLink size={15} className="text-slate-500" />
-                  </div>
-                  <h3 className="mt-4 font-black text-white">
-                    {resource.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-400">
-                    {resource.text}
-                  </p>
-                </a>
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded border border-neon/20 bg-neon/[0.06] p-5">
-            <h2 className="text-xl font-black text-white">
-              {content.contact}
-            </h2>
-            <p className="mt-3 leading-7 text-slate-300">
-              {content.contactText}
-            </p>
-          </section>
-        </div>
+                <h3 className="mt-4 font-black text-white">
+                  {resource.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-400">
+                  {resource.text}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
       </section>
     </div>
   );

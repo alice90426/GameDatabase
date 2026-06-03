@@ -145,34 +145,49 @@ export const dictionaries = {
       title: "關於創作者",
       role: "遊戲數學模型設計師",
       intro:
-        "我專注於遊戲數學模型、機率結構與模擬驗證，將遊戲規則轉換為可檢查、可比較、可文件化的數值系統。",
+        "專注於遊戲數學模型、機率系統分析與模擬驗證。\n透過遊戲模型資料庫、規格文件、模擬數據與研究文章，將遊戲機制轉化為可量化、可分析、可比較的資料。",
       strengthsTitle: "專業重點",
       strengths: [
-        "機率與獎勵機制研究",
-        "模擬數據驗證與結果解讀",
-        "中英文規格文件整理"
+        "遊戲數學模型設計",
+        "RTP 與波動度分析",
+        "中獎率與獎勵結構設計",
+        "模擬驗證與數據分析",
+        "遊戲規格文件撰寫",
+        "機率系統研究"
+      ],
+      websitePurposeTitle: "建立網站原因",
+      websitePurpose:
+        "建立這個網站的目的，是將遊戲數學模型相關資料進行結構化整理。\n除了展示模型本身，也希望透過規格文件、模擬數據與研究內容，呈現從分析、設計到驗證的完整流程。\n網站中的資料涵蓋遊戲模型、機率分析、研究筆記與教學內容，作為長期累積的知識庫與作品集。",
+      researchDirectionTitle: "研究方向",
+      researchDirections: [
+        "老虎機數學模型",
+        "機率設計與分析",
+        "獎勵結構設計",
+        "波動度分析",
+        "玩家體驗",
+        "非老虎機遊戲機制"
       ],
       resourcesTitle: "外部資源",
       resourcesIntro: "以下連結用於了解研究筆記、文章、程式工具與試玩作品。",
       resources: {
         blogger: {
           title: sharedCopy.resourceTitles.blogger,
-          text: "教學文章",
+          text: "教學文章與遊戲分析",
           href: sharedCopy.links.blogger
         },
         notion: {
           title: sharedCopy.resourceTitles.notion,
-          text: "研究筆記",
+          text: "研究筆記與試玩心得",
           href: sharedCopy.links.notion
         },
         github: {
           title: sharedCopy.resourceTitles.github,
-          text: "程式與工具",
+          text: "網站與工具開發",
           href: sharedCopy.links.github
         },
         itch: {
           title: sharedCopy.resourceTitles.itch,
-          text: "試玩作品",
+          text: "互動作品與實驗專案",
           href: sharedCopy.links.itch
         }
       },
@@ -299,9 +314,24 @@ export const dictionaries = {
         "I focus on game mathematics models, probability structures, and simulation validation, turning game rules into systems that can be checked, compared, and documented.",
       strengthsTitle: "Professional Focus",
       strengths: [
-        "Probability and reward-system research",
-        "Simulation validation and result interpretation",
-        "Chinese and English specification writing"
+        "Game Mathematics Model Design",
+        "RTP and Volatility Analysis",
+        "Hit Rate and Reward Structure Design",
+        "Simulation Validation and Data Analysis",
+        "Game Specification Document Writing",
+        "Probability Systems Research"
+      ],
+      websitePurposeTitle: "Why I Built This Website",
+      websitePurpose:
+        "I built this website to organize game mathematics model-related materials in a structured way.\nBeyond presenting the models themselves, I also use specification documents, simulation data, and research content to show the complete workflow from analysis and design to validation.\nThe site covers game models, probability analysis, research notes, and tutorial content, serving as a long-term knowledge base and portfolio.",
+      researchDirectionTitle: "Research Direction",
+      researchDirections: [
+        "Slot Game Mathematics",
+        "Probability Systems",
+        "Reward Structure Design",
+        "Volatility Analysis",
+        "Player Experience",
+        "Non-Slot Game Mechanics"
       ],
       resourcesTitle: "External Resources",
       resourcesIntro: "Use these links to review research notes, articles, code tools, and playable supporting work.",
