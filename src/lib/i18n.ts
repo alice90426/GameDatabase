@@ -11,22 +11,18 @@ export const dictionaries = {
     nav: {
       home: "首頁",
       games: "遊戲資料",
-      about: "關於本站",
-      career: "服務項目",
+      services: "服務項目",
+      about: "關於創作者",
       language: "EN"
     },
     common: {
       brand: "老虎機數學模型",
-      studio: "Javier",
       badge: "娛樂遊戲資料庫",
       description: "整理遊戲規格、數值特徵與玩法分類的資料庫。",
       viewGames: "查看遊戲資料",
-      viewAbout: "關於本站",
-      all: "全部",
-      genres: "類型",
+      viewAbout: "服務項目",
       tags: "遊戲特色",
       reset: "重置",
-      featured: "精選遊戲",
       footer: "老虎機數學模型由 Javier 建立",
       switchLanguage: "切換語言"
     },
@@ -42,7 +38,7 @@ export const dictionaries = {
       gameInfo: "遊戲說明",
       simulation: "模擬數據",
       demo: "遊戲試玩",
-      // close: "關閉"
+      close: "關閉"
     },
     home: {
       title: "老虎機數學模型",
@@ -85,76 +81,74 @@ export const dictionaries = {
       loadError: "無法載入資料。"
     },
     about: {
-      title: "關於本站",
-      role: "遊戲規格整理 / 數據比較 / 遊戲試玩",
+      eyebrow: "創作者",
+      title: "關於創作者",
+      role: "遊戲數學模型設計師",
       intro:
-        "這是一個以遊戲數學模型為核心的資料庫與展示平台，專注於遊戲系統背後的數值設計，包括機率結構、平衡模型與模擬驗證流程。所有數據皆透過試算表建模、程式化驗證與多輪模擬測試建立，而非經驗性或隨機調整。\n\n本平台的重點不在於視覺呈現或最終產品包裝，而在於數據與系統本身的可驗證性與可重現性。部分試玩內容可能仍保留開發階段的介面或效能特徵，但不影響核心數學模型的正確性與實際應用價值。\n\n這些模型可直接用於遊戲設計、經濟系統建構、數值平衡調整與完整專案授權整合，提供的是一套可驗證、可模擬並可實際投入開發的遊戲數學基礎系統。",
-      experience: "資料重點",
-      skills: "欄位",
-      contact: "備註",
-      contactText:
-        "這些試玩版本主要用於展示底層數學模型與遊戲系統設計。\n視覺包裝與介面細節並非目前重點，核心價值在於遊戲數學的正確性與可靠性。",
-      dataFocus: [
-        "六種核心數值模型，用於完整描述一款遊戲的數學行為與風險分布。",
-        "遊戲規格文件與模擬數據，包含完整規則定義、參數設定與大量模擬結果。",
-        "特色標籤系統，用於快速分類遊戲特性，方便快速檢索與比較不同模型。"
-      ]
-    },
-    career: {
-      eyebrow: "服務定位",
-      position: "數學模型設計師",
-      intro: "提供遊戲數學模型設計、機率分析、模擬驗證與結構化遊戲規格文件。",
-      metrics: ["100+ 遊戲模型", "模擬數據", "雙語文件", "機率研究"],
-      browseModels: "查看遊戲資料",
-      contactMe: "聯絡我",
-      servicesEyebrow: "服務項目",
-      servicesTitle: "符合 GLI、BMM 認證標準",
-      services: {
-        model: { title: "數學模型", items: ["RTP", "中獎率", "波動度", "最大倍數"] },
-        simulation: { title: "模擬驗證", items: ["模擬測試", "數據分析", "長期表現驗證"] },
-        specification: { title: "規格文件", items: ["遊戲規則", "特色說明", "中英文文件"] }
-      },
-      workEyebrow: "作品",
-      workTitle: "代表作品",
-      work: {
-        database: { title: "遊戲模型資料庫", items: ["100+ 遊戲模型", "六大核心數值", "模擬數據"] },
-        research: { title: "機率系統研究", items: ["Slot 與非 Slot 遊戲研究", "機率與獎勵機制分析"] }
-      },
-      resourcesEyebrow: "佐證資料",
+        "我專注於遊戲數學模型、機率結構與模擬驗證，將遊戲規則轉換為可檢查、可比較、可文件化的數值系統。",
+      strengthsTitle: "專業重點",
+      strengths: [
+        "機率與獎勵機制研究",
+        "模擬數據驗證與結果解讀",
+        "中英文規格文件整理"
+      ],
       resourcesTitle: "外部資源",
+      resourcesIntro: "以下連結用於了解研究筆記、文章、程式工具與試玩作品。",
       resources: {
-        blogger: { title: "Blogger", text: "教學文章" },
-        notion: { title: "Notion", text: "研究筆記" },
-        github: { title: "GitHub", text: "程式與工具" },
-        itch: { title: "itch.io", text: "試玩作品" }
+        blogger: { title: "Blogger", text: "教學文章", href: "https://slotmathmodel.blogspot.com/" },
+        notion: { title: "Notion", text: "研究筆記", href: "https://app.notion.com/p/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae" },
+        github: { title: "GitHub", text: "程式與工具", href: "https://github.com/alice90426" },
+        itch: { title: "itch.io", text: "試玩作品", href: "https://alice90426.itch.io" }
       },
-      contactEyebrow: "合作",
-      contactTitle: "聯絡我",
-      contactText: "可提供數學模型設計、模擬驗證與遊戲規格文件。",
-      contactItems: ["數學模型設計", "模擬驗證", "遊戲規格文件"],
-      contactButton: "聯絡方式待補"
+      contact: "合作方向",
+      contactText:
+        "適合需要遊戲數學模型、機率分析、模擬驗證或規格文件整理的團隊。"
+    },
+    services: {
+      eyebrow: "客製化服務",
+      title: "遊戲數學模型服務",
+      intro: "為遊戲團隊提供老虎機數學模型設計、機率分析、模擬驗證與結構化規格文件。",
+      primaryCta: "查看遊戲資料",
+      secondaryCta: "關於創作者",
+      cards: [
+        {
+          title: "老虎機數學模型設計",
+          text: "建立 RTP、中獎率、波動度、最大倍數與核心獎勵結構。"
+        },
+        {
+          title: "機率分析",
+          text: "分析賠付分布、風險區間與特色機制對長期表現的影響。"
+        },
+        {
+          title: "模擬驗證",
+          text: "透過程式模擬驗證理論目標與長期輸出是否一致。"
+        },
+        {
+          title: "遊戲規格文件",
+          text: "整理可供溝通、審查與實作的中英文遊戲規格文件。"
+        }
+      ],
+      processTitle: "交付重點",
+      process: ["試算表", "驗證程式", "模擬結果", "規格文件"],
+      note: "此服務聚焦於遊戲數學與規格設計；可試玩作品與外部連結僅作為佐證，不作為主要服務項目。"
     }
   },
   en: {
     nav: {
       home: "Home",
       games: "Games",
+      services: "Services",
       about: "About",
-      career: "Career",
       language: "中文"
     },
     common: {
       brand: "Slot Math Model",
-      studio: "Javier",
       badge: "Casino Game Database",
       description: "A database for game specs, numerical traits, and play categories.",
       viewGames: "Browse Games",
       viewAbout: "View About",
-      all: "All",
-      genres: "Genres",
       tags: "Game Features",
       reset: "Reset",
-      featured: "Featured Games",
       footer: "Slot Math Model created by Javier",
       switchLanguage: "Switch language"
     },
@@ -170,7 +164,7 @@ export const dictionaries = {
       gameInfo: "Game Info",
       simulation: "Simulation",
       demo: "Demo",
-      // close: "Close"
+      close: "Close"
     },
     home: {
       title: "Slot Math Model",
@@ -213,54 +207,56 @@ export const dictionaries = {
       loadError: "Unable to load content."
     },
     about: {
+      eyebrow: "Creator",
       title: "About",
-      role: "Game Spec / Data Comparison / Game Demo",
+      role: "Game Mathematics Model Designer",
       intro:
-        "This is a database and showcase platform centered on game mathematical models, focusing on the numerical design behind game systems, including probability structures, balancing models, and simulation-based validation. All data is constructed through spreadsheet modeling, programmatic verification, and iterative simulations rather than intuition or ad-hoc tuning.\n\nThe focus of this platform is not visual presentation or final product polish, but the verifiability and reproducibility of the underlying data and systems. Some demos may still contain development-stage UI or performance characteristics, without affecting the correctness or practical applicability of the core mathematical models.\n\nThese models can be directly applied to game design, economy system development, balancing adjustments, and full project licensing integration, providing a verifiable, simulation-driven, and production-ready mathematical foundation for game development.",
-      experience: "Data Focus",
-      skills: "Fields",
-      contact: "Notes",
-      contactText:
-        "These demos are provided to demonstrate the underlying mathematical models and gameplay systems.\nVisual polish and UI refinement are outside the current scope, as the primary focus is the accuracy and reliability of the game mathematics.",
-      dataFocus: [
-        "Six core numerical metrics used to fully describe a game’s mathematical behavior and risk distribution.",
-        "Game specification documents and simulation data, including complete rule definitions, parameter settings, and large-scale simulation results.",
-        "A feature tagging system for quickly categorizing game characteristics, enabling fast retrieval and comparison across different models."
-      ]
-    },
-    career: {
-      eyebrow: "Service Profile",
-      position: "Math Model Designer",
-      intro: "I provide game mathematics model design, probability analysis, simulation validation, and structured game specification documents.",
-      metrics: ["100+ Game Models", "Simulation Data", "Bilingual Docs", "Probability Research"],
-      browseModels: "Browse Games",
-      contactMe: "Contact Me",
-      servicesEyebrow: "Services",
-      servicesTitle: "GLI and BMM Compliant",
-      services: {
-        model: { title: "Mathematics Models", items: ["RTP", "Hit Rate", "Volatility", "Max Win"] },
-        simulation: { title: "Simulation Validation", items: ["Simulation Testing", "Data Analysis", "Long-run Validation"] },
-        specification: { title: "Specification Documents", items: ["Game Rules", "Feature Definitions", "Chinese and English Docs"] }
-      },
-      workEyebrow: "Portfolio",
-      workTitle: "Selected Work",
-      work: {
-        database: { title: "Game Model Database", items: ["100+ Game Models", "Six Core Metrics", "Simulation Data"] },
-        research: { title: "Probability System Research", items: ["Slot and Non-slot Game Research", "Probability and Reward Mechanism Analysis"] }
-      },
-      resourcesEyebrow: "Supporting Proof",
+        "I focus on game mathematics models, probability structures, and simulation validation, turning game rules into systems that can be checked, compared, and documented.",
+      strengthsTitle: "Professional Focus",
+      strengths: [
+        "Probability and reward-system research",
+        "Simulation validation and result interpretation",
+        "Chinese and English specification writing"
+      ],
       resourcesTitle: "External Resources",
+      resourcesIntro: "Use these links to review research notes, articles, code tools, and playable supporting work.",
       resources: {
-        blogger: { title: "Blogger", text: "Tutorial Articles" },
-        notion: { title: "Notion", text: "Research Notes" },
-        github: { title: "GitHub", text: "Code and Tools" },
-        itch: { title: "itch.io", text: "Playable Work" }
+        blogger: { title: "Blogger", text: "Tutorial Articles", href: "https://slotmathmodel.blogspot.com/" },
+        notion: { title: "Notion", text: "Research Notes", href: "https://app.notion.com/p/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae" },
+        github: { title: "GitHub", text: "Code and Tools", href: "https://github.com/alice90426" },
+        itch: { title: "itch.io", text: "Playable Work", href: "https://alice90426.itch.io" }
       },
-      contactEyebrow: "Collaboration",
-      contactTitle: "Contact Me",
-      contactText: "Available for mathematics model design, simulation validation, and structured game specification documents.",
-      contactItems: ["Mathematics Model Design", "Simulation Validation", "Game Specification Documents"],
-      contactButton: "Contact details pending"
+      contact: "Collaboration Fit",
+      contactText:
+        "Best suited for teams that need game mathematics models, probability analysis, simulation validation, or structured specification documents."
+    },
+    services: {
+      eyebrow: "Client Services",
+      title: "Game Mathematics Model Services",
+      intro: "I provide slot game mathematics model design, probability analysis, simulation validation, and structured specification documents for game teams.",
+      primaryCta: "Browse Games",
+      secondaryCta: "About Creator",
+      cards: [
+        {
+          title: "Slot Math Model Design",
+          text: "Build RTP, hit rate, volatility, max win, and core reward structures."
+        },
+        {
+          title: "Probability Analysis",
+          text: "Analyze payout distribution, risk ranges, and how features affect long-run behavior."
+        },
+        {
+          title: "Simulation Validation",
+          text: "Use programmatic simulation to verify that theoretical targets match long-run outputs."
+        },
+        {
+          title: "Game Specification Documents",
+          text: "Prepare Chinese and English specifications for review, communication, and implementation."
+        }
+      ],
+      processTitle: "Delivery Focus",
+      process: ["Model Parameters", "Probability Structure", "Simulation Summary", "Specification Docs"],
+      note: "This service focuses on game mathematics and specification design. Playable work and external links are supporting proof, not the primary service."
     }
   }
 } as const;

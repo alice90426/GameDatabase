@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Code2, Database, Layers3, Sparkles } from "lucide-react";
+import {
+  BookOpen,
+  ExternalLink,
+  Github,
+  NotebookText,
+  Play,
+  Sparkles
+} from "lucide-react";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import type { Locale } from "@/types/game";
 
@@ -32,99 +39,91 @@ export default async function AboutPage({
 }) {
   const { locale: localeParam } = await params;
   const locale = (isLocale(localeParam) ? localeParam : "zh") as Locale;
-  const dictionary = getDictionary(locale);
-
-  const fields = [
-    ...Object.values(dictionary.features),
-    ...Object.values(dictionary.actions),
-    , dictionary.common.tags
-  ].flat() as string[]
+  const content = getDictionary(locale).about;
+  const resources = [
+    { icon: <BookOpen size={20} />, ...content.resources.blogger },
+    { icon: <NotebookText size={20} />, ...content.resources.notion },
+    { icon: <Github size={20} />, ...content.resources.github },
+    { icon: <Play size={20} />, ...content.resources.itch }
+  ];
 
   return (
-    <section className="px-5 py-14">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <aside className="rounded border border-white/10 bg-panel/80 p-6 shadow-2xl shadow-black/25">
-            <div className="grid h-20 w-20 place-items-center rounded border border-neon/30 bg-neon/10 text-neon shadow-glow">
-              <Database size={36} />
+    <div className="px-5 py-14 sm:py-16">
+      <section className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <aside className="rounded border border-white/10 bg-panel/80 p-6 shadow-2xl shadow-black/25">
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-neon">
+            {content.eyebrow}
+          </p>
+          <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl">
+            {content.title}
+          </h1>
+          <p className="mt-4 text-lg font-bold text-slate-200">
+            {content.role}
+          </p>
+          <p className="mt-5 leading-8 text-slate-300">{content.intro}</p>
+        </aside>
+
+        <div className="space-y-5">
+          <section className="rounded border border-white/10 bg-white/[0.04] p-5">
+            <div className="flex items-center gap-3">
+              <Sparkles className="text-neon" size={22} />
+              <h2 className="text-xl font-black text-white">
+                {content.strengthsTitle}
+              </h2>
             </div>
-            <p className="mt-8 text-sm font-black uppercase tracking-[0.22em] text-neon">
-              {dictionary.common.studio}
-            </p>
-            <h1 className="mt-3 text-4xl font-black text-white">
-              {dictionary.about.title}
-            </h1>
-            <p className="mt-4 text-lg font-bold text-slate-200">
-              {dictionary.about.role}
-            </p>
-            <p className="mt-5 leading-8 text-slate-300 whitespace-pre-line">
-              {dictionary.about.intro}
-            </p>
-          </aside>
+            <div className="mt-4 grid gap-2">
+              {content.strengths.map((item) => (
+                <div
+                  key={item}
+                  className="rounded border border-white/10 bg-void/70 px-3 py-3 text-sm font-bold text-slate-200"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </section>
 
-          <div className="space-y-6">
-            <ResumeSection
-              icon={<Layers3 size={22} />}
-              title={dictionary.about.experience}
-            >
-              <div className="grid gap-3">
-                {dictionary.about.dataFocus.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded border border-white/10 bg-white/[0.04] p-4 text-slate-300"
-                  >
-                    {item}
+          <section className="rounded border border-white/10 bg-panel/70 p-5">
+            <h2 className="text-xl font-black text-white">
+              {content.resourcesTitle}
+            </h2>
+            <p className="mt-3 leading-7 text-slate-300">
+              {content.resourcesIntro}
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {resources.map((resource) => (
+                <a
+                  key={resource.title}
+                  href={resource.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded border border-white/10 bg-white/[0.04] p-4 transition hover:border-neon/50"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-neon">{resource.icon}</span>
+                    <ExternalLink size={15} className="text-slate-500" />
                   </div>
-                ))}
-              </div>
-            </ResumeSection>
+                  <h3 className="mt-4 font-black text-white">
+                    {resource.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-400">
+                    {resource.text}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </section>
 
-            <ResumeSection icon={<Code2 size={22} />} title={dictionary.about.skills}>
-              <div className="grid grid-rows-2 grid-flow-col gap-2">
-                {fields.map((field) => (
-                  <span
-                    key={field}
-                    className="rounded border border-white/10 bg-void/80 px-3 py-2 text-sm font-semibold text-slate-200"
-                  >
-                    {field}
-                  </span>
-                ))}
-              </div>
-            </ResumeSection>
-
-            <ResumeSection
-              icon={<Sparkles size={22} />}
-              title={dictionary.about.contact}
-            >
-              <p className="leading-8 text-slate-300 whitespace-pre-line">
-                {dictionary.about.contactText}
-              </p>
-            </ResumeSection>
-          </div>
+          <section className="rounded border border-neon/20 bg-neon/[0.06] p-5">
+            <h2 className="text-xl font-black text-white">
+              {content.contact}
+            </h2>
+            <p className="mt-3 leading-7 text-slate-300">
+              {content.contactText}
+            </p>
+          </section>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function ResumeSection({
-  icon,
-  title,
-  children
-}: {
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="rounded border border-white/10 bg-panel/70 p-6">
-      <div className="mb-5 flex items-center gap-3">
-        <span className="grid h-11 w-11 place-items-center rounded border border-neon/30 bg-neon/10 text-neon">
-          {icon}
-        </span>
-        <h2 className="text-2xl font-black text-white">{title}</h2>
-      </div>
-      {children}
-    </section>
+      </section>
+    </div>
   );
 }
