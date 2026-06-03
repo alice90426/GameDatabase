@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 
-const routes = ["", "/games", "/services", "/about"];
+const routes = ["", "/games", "/research", "/services", "/about"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>

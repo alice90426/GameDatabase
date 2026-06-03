@@ -34,6 +34,7 @@ export const dictionaries = {
     nav: {
       home: "首頁",
       games: "遊戲資料",
+      research: "研究筆記",
       services: "服務項目",
       about: "關於創作者",
       language: "EN"
@@ -91,6 +92,14 @@ export const dictionaries = {
       demoOnly: "可試玩遊戲",
       showingPrefix: "目前顯示",
       showingSuffix: "款遊戲"
+    },
+    research: {
+      eyebrow: "Research Notes",
+      title: "Research Notes",
+      intro:
+        "從 Notion 匯入的試玩筆記與遊戲分析，聚焦機率行為、獎勵結構與玩家體驗。",
+      empty: "目前沒有已發布的研究文章。",
+      backToResearch: "返回研究筆記"
     },
     modal: {
       details: "遊戲詳情",
@@ -175,6 +184,7 @@ export const dictionaries = {
     nav: {
       home: "Home",
       games: "Games",
+      research: "Research",
       services: "Services",
       about: "About",
       language: "中文"
@@ -232,6 +242,14 @@ export const dictionaries = {
       demoOnly: "Demo Only",
       showingPrefix: "Showing",
       showingSuffix: "games"
+    },
+    research: {
+      eyebrow: "Research Notes",
+      title: "Research Notes",
+      intro:
+        "Playtest notes and game analysis imported from Notion, focused on probability behavior, reward structures, and player experience.",
+      empty: "No published research articles are available yet.",
+      backToResearch: "Back to Research"
     },
     modal: {
       details: "Game details",
