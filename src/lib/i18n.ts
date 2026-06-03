@@ -6,6 +6,29 @@ export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
 }
 
+const sharedCopy = {
+  links: {
+    blogger: "https://slotmathmodel.blogspot.com/",
+    notion:
+      "https://app.notion.com/p/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae",
+    github: "https://github.com/alice90426",
+    itch: "https://alice90426.itch.io"
+  },
+  resourceTitles: {
+    blogger: "Blogger",
+    notion: "Notion",
+    github: "GitHub",
+    itch: "itch.io"
+  },
+  featureLabels: {
+    rtp: "RTP"
+  },
+  modalLabels: {
+    github: "GitHub",
+    itch: "itch.io"
+  }
+} as const;
+
 export const dictionaries = {
   zh: {
     nav: {
@@ -27,7 +50,7 @@ export const dictionaries = {
       switchLanguage: "切換語言"
     },
     features: {
-      rtp: "RTP",
+      rtp: sharedCopy.featureLabels.rtp,
       hitRate: "中獎率",
       maxWin: "最大倍數",
       volatility: "波動度",
@@ -75,34 +98,10 @@ export const dictionaries = {
       previousGame: "上一款遊戲",
       nextGame: "下一款遊戲",
       links: "其他連結",
-      github: "GitHub",
-      itch: "itch.io",
+      github: sharedCopy.modalLabels.github,
+      itch: sharedCopy.modalLabels.itch,
       loading: "載入中...",
       loadError: "無法載入資料。"
-    },
-    about: {
-      eyebrow: "創作者",
-      title: "關於創作者",
-      role: "遊戲數學模型設計師",
-      intro:
-        "我專注於遊戲數學模型、機率結構與模擬驗證，將遊戲規則轉換為可檢查、可比較、可文件化的數值系統。",
-      strengthsTitle: "專業重點",
-      strengths: [
-        "機率與獎勵機制研究",
-        "模擬數據驗證與結果解讀",
-        "中英文規格文件整理"
-      ],
-      resourcesTitle: "外部資源",
-      resourcesIntro: "以下連結用於了解研究筆記、文章、程式工具與試玩作品。",
-      resources: {
-        blogger: { title: "Blogger", text: "教學文章", href: "https://slotmathmodel.blogspot.com/" },
-        notion: { title: "Notion", text: "研究筆記", href: "https://app.notion.com/p/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae" },
-        github: { title: "GitHub", text: "程式與工具", href: "https://github.com/alice90426" },
-        itch: { title: "itch.io", text: "試玩作品", href: "https://alice90426.itch.io" }
-      },
-      contact: "合作方向",
-      contactText:
-        "適合需要遊戲數學模型、機率分析、模擬驗證或規格文件整理的團隊。"
     },
     services: {
       eyebrow: "客製化服務",
@@ -131,6 +130,46 @@ export const dictionaries = {
       processTitle: "交付重點",
       process: ["試算表", "驗證程式", "模擬結果", "規格文件"],
       note: "此服務聚焦於遊戲數學與規格設計；可試玩作品與外部連結僅作為佐證，不作為主要服務項目。"
+    },
+    about: {
+      eyebrow: "創作者",
+      title: "關於創作者",
+      role: "遊戲數學模型設計師",
+      intro:
+        "我專注於遊戲數學模型、機率結構與模擬驗證，將遊戲規則轉換為可檢查、可比較、可文件化的數值系統。",
+      strengthsTitle: "專業重點",
+      strengths: [
+        "機率與獎勵機制研究",
+        "模擬數據驗證與結果解讀",
+        "中英文規格文件整理"
+      ],
+      resourcesTitle: "外部資源",
+      resourcesIntro: "以下連結用於了解研究筆記、文章、程式工具與試玩作品。",
+      resources: {
+        blogger: {
+          title: sharedCopy.resourceTitles.blogger,
+          text: "教學文章",
+          href: sharedCopy.links.blogger
+        },
+        notion: {
+          title: sharedCopy.resourceTitles.notion,
+          text: "研究筆記",
+          href: sharedCopy.links.notion
+        },
+        github: {
+          title: sharedCopy.resourceTitles.github,
+          text: "程式與工具",
+          href: sharedCopy.links.github
+        },
+        itch: {
+          title: sharedCopy.resourceTitles.itch,
+          text: "試玩作品",
+          href: sharedCopy.links.itch
+        }
+      },
+      contact: "合作方向",
+      contactText:
+        "適合需要遊戲數學模型、機率分析、模擬驗證或規格文件整理的團隊。"
     }
   },
   en: {
@@ -153,7 +192,7 @@ export const dictionaries = {
       switchLanguage: "Switch language"
     },
     features: {
-      rtp: "RTP",
+      rtp: sharedCopy.featureLabels.rtp,
       hitRate: "Hit Rate",
       maxWin: "Max Win",
       volatility: "Volatility",
@@ -201,34 +240,10 @@ export const dictionaries = {
       previousGame: "Previous game",
       nextGame: "Next game",
       links: "Links",
-      github: "GitHub",
-      itch: "itch.io",
+      github: sharedCopy.modalLabels.github,
+      itch: sharedCopy.modalLabels.itch,
       loading: "Loading...",
       loadError: "Unable to load content."
-    },
-    about: {
-      eyebrow: "Creator",
-      title: "About",
-      role: "Game Mathematics Model Designer",
-      intro:
-        "I focus on game mathematics models, probability structures, and simulation validation, turning game rules into systems that can be checked, compared, and documented.",
-      strengthsTitle: "Professional Focus",
-      strengths: [
-        "Probability and reward-system research",
-        "Simulation validation and result interpretation",
-        "Chinese and English specification writing"
-      ],
-      resourcesTitle: "External Resources",
-      resourcesIntro: "Use these links to review research notes, articles, code tools, and playable supporting work.",
-      resources: {
-        blogger: { title: "Blogger", text: "Tutorial Articles", href: "https://slotmathmodel.blogspot.com/" },
-        notion: { title: "Notion", text: "Research Notes", href: "https://app.notion.com/p/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae" },
-        github: { title: "GitHub", text: "Code and Tools", href: "https://github.com/alice90426" },
-        itch: { title: "itch.io", text: "Playable Work", href: "https://alice90426.itch.io" }
-      },
-      contact: "Collaboration Fit",
-      contactText:
-        "Best suited for teams that need game mathematics models, probability analysis, simulation validation, or structured specification documents."
     },
     services: {
       eyebrow: "Client Services",
@@ -257,6 +272,46 @@ export const dictionaries = {
       processTitle: "Delivery Focus",
       process: ["Model Parameters", "Probability Structure", "Simulation Summary", "Specification Docs"],
       note: "This service focuses on game mathematics and specification design. Playable work and external links are supporting proof, not the primary service."
+    },
+    about: {
+      eyebrow: "Creator",
+      title: "About",
+      role: "Game Mathematics Model Designer",
+      intro:
+        "I focus on game mathematics models, probability structures, and simulation validation, turning game rules into systems that can be checked, compared, and documented.",
+      strengthsTitle: "Professional Focus",
+      strengths: [
+        "Probability and reward-system research",
+        "Simulation validation and result interpretation",
+        "Chinese and English specification writing"
+      ],
+      resourcesTitle: "External Resources",
+      resourcesIntro: "Use these links to review research notes, articles, code tools, and playable supporting work.",
+      resources: {
+        blogger: {
+          title: sharedCopy.resourceTitles.blogger,
+          text: "Tutorial Articles",
+          href: sharedCopy.links.blogger
+        },
+        notion: {
+          title: sharedCopy.resourceTitles.notion,
+          text: "Research Notes",
+          href: sharedCopy.links.notion
+        },
+        github: {
+          title: sharedCopy.resourceTitles.github,
+          text: "Code and Tools",
+          href: sharedCopy.links.github
+        },
+        itch: {
+          title: sharedCopy.resourceTitles.itch,
+          text: "Playable Work",
+          href: sharedCopy.links.itch
+        }
+      },
+      contact: "Collaboration Fit",
+      contactText:
+        "Best suited for teams that need game mathematics models, probability analysis, simulation validation, or structured specification documents."
     }
   }
 } as const;
