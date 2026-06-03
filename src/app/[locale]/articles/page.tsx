@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArticleList } from "@/components/article-list";
 import { getBloggerArticles } from "@/lib/blogger";
-import { isLocale } from "@/lib/i18n";
+import { getDictionary, isLocale } from "@/lib/i18n";
 import type { Locale } from "@/types/game";
 
 export const revalidate = 86400;
@@ -13,13 +13,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale = isLocale(localeParam) ? localeParam : "en";
+  const content = getDictionary(locale).articles;
 
   return {
-    title: locale === "zh" ? "教學文章" : "Articles",
-    description:
-      locale === "zh"
-        ? "從 Blogger 匯入的教學與長篇文章。"
-        : "Blogger tutorials and long-form posts.",
+    title: content.title,
+    description: content.description,
     alternates: {
       canonical: `/${locale}/articles`,
       languages: {

@@ -7,10 +7,11 @@ import { getDictionary } from "@/lib/i18n";
 export const revalidate = 86400;
 
 const locale = "en";
+const articleCopy = getDictionary(locale).articles;
 
 export const metadata: Metadata = {
-  title: "Articles",
-  description: "Blogger tutorials and long-form posts."
+  title: articleCopy.title,
+  description: articleCopy.description
 };
 
 export default async function ArticlesPage() {

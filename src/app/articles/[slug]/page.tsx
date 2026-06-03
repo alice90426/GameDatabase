@@ -20,18 +20,19 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const content = getDictionary(locale).articles;
   const article = await getBloggerArticleBySlug(slug);
 
   if (!article) {
     return {
-      title: "Articles",
-      description: "Blogger tutorials and long-form posts."
+      title: content.title,
+      description: content.description
     };
   }
 
   return {
     title: article.title,
-    description: article.labels.join(", ") || "Blogger article.",
+    description: article.labels.join(", ") || content.fallbackDescription,
     openGraph: {
       images: article.thumbnail ? [article.thumbnail] : []
     },

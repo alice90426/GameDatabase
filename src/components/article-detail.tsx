@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import type { ArticlePost } from "@/lib/blogger";
+import { getDictionary } from "@/lib/i18n";
 import type { Locale } from "@/types/game";
 
 type ArticleDetailProps = {
@@ -12,6 +13,7 @@ type ArticleDetailProps = {
 
 export function ArticleDetail({ article, locale, backHref }: ArticleDetailProps) {
   const content = selectLocalizedContent(article.content, locale);
+  const articleCopy = getDictionary(locale).articles;
 
   return (
     <article className="px-5 py-12 sm:py-14">
@@ -21,7 +23,7 @@ export function ArticleDetail({ article, locale, backHref }: ArticleDetailProps)
           className="inline-flex items-center gap-2 text-sm font-black text-neon transition hover:text-white"
         >
           <ArrowLeft size={16} />
-          {locale === "zh" ? "返回教學文章" : "Back to Articles"}
+          {articleCopy.backToArticles}
         </Link>
 
         <div className="mt-7 flex flex-wrap items-center gap-2">

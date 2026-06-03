@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import {
   BookOpen,
+  Compass,
   ExternalLink,
+  FileText,
   Github,
+  Handshake,
   NotebookText,
   Play,
   Sparkles
@@ -65,7 +68,7 @@ export default async function AboutPage({
           </p>
         </aside>
 
-        <section className="rounded border border-sky-300/15 bg-sky-300/[0.055] p-5">
+        <section className="rounded border border-white/25 bg-panel/85 p-5">
           <div className="flex items-center gap-3">
             <Sparkles className="text-neon" size={22} />
             <h2 className="text-xl font-black text-white">
@@ -84,19 +87,25 @@ export default async function AboutPage({
           </div>
         </section>
 
-        <section className="rounded border border-emerald-300/15 bg-emerald-300/[0.045] p-5">
-          <h2 className="text-xl font-black text-white">
-            {content.websitePurposeTitle}
-          </h2>
+        <section className="rounded border border-white/25 bg-panel/85 p-5">
+          <div className="flex items-center gap-3">
+            <FileText className="text-neon" size={22} />
+            <h2 className="text-xl font-black text-white">
+              {content.websitePurposeTitle}
+            </h2>
+          </div>
           <p className="mt-3 whitespace-pre-line leading-8 text-slate-300">
             {content.websitePurpose}
           </p>
         </section>
 
-        <section className="rounded border border-violet-300/15 bg-violet-300/[0.045] p-5">
-          <h2 className="text-xl font-black text-white">
-            {content.researchDirectionTitle}
-          </h2>
+        <section className="rounded border border-white/25 bg-panel/85 p-5">
+          <div className="flex items-center gap-3">
+            <Compass className="text-neon" size={22} />
+            <h2 className="text-xl font-black text-white">
+              {content.researchDirectionTitle}
+            </h2>
+          </div>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {content.researchDirections.map((item) => (
               <div
@@ -109,19 +118,25 @@ export default async function AboutPage({
           </div>
         </section>
 
-        <section className="rounded border border-cyan-300/20 bg-cyan-300/[0.06] p-5">
-          <h2 className="text-xl font-black text-white">
-            {content.contact}
-          </h2>
+        <section className="rounded border border-white/25 bg-panel/85 p-5">
+          <div className="flex items-center gap-3">
+            <Handshake className="text-neon" size={22} />
+            <h2 className="text-xl font-black text-white">
+              {content.contact}
+            </h2>
+          </div>
           <p className="mt-3 leading-7 text-slate-300">
             {content.contactText}
           </p>
         </section>
 
-        <section className="rounded border border-white/10 bg-panel/80 p-5">
-          <h2 className="text-xl font-black text-white">
-            {content.resourcesTitle}
-          </h2>
+        <section className="rounded border border-white/10 bg-panel/85 p-5">
+          <div className="flex items-center gap-3">
+            <ExternalLink className="text-neon" size={22} />
+            <h2 className="text-xl font-black text-white">
+              {content.resourcesTitle}
+            </h2>
+          </div>
           <p className="mt-3 leading-7 text-slate-300">
             {content.resourcesIntro}
           </p>
@@ -135,12 +150,14 @@ export default async function AboutPage({
                 className="rounded border border-white/10 bg-white/[0.04] p-4 transition hover:border-neon/50"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <span className="text-neon">{resource.icon}</span>
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="shrink-0 text-neon">{resource.icon}</span>
+                    <h3 className="truncate font-black text-white">
+                      {resource.title}
+                    </h3>
+                  </div>
                   <ExternalLink size={15} className="text-slate-500" />
                 </div>
-                <h3 className="mt-4 font-black text-white">
-                  {resource.title}
-                </h3>
                 <p className="mt-2 text-sm text-slate-400">
                   {resource.text}
                 </p>

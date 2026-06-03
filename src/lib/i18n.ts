@@ -102,6 +102,16 @@ export const dictionaries = {
       empty: "目前沒有已發布的研究文章。",
       backToResearch: "返回研究筆記"
     },
+    articles: {
+      eyebrow: "Blogger Articles",
+      title: "教學文章",
+      intro:
+        "建立老虎機數學模型試算表教學與分享。",
+      empty: "目前沒有符合條件的 Blogger 文章。",
+      backToArticles: "返回教學文章",
+      description: "從 Blogger 匯入的教學與長篇文章。",
+      fallbackDescription: "Blogger 教學文章"
+    },
     modal: {
       details: "遊戲詳情",
       previousGame: "上一款遊戲",
@@ -267,6 +277,16 @@ export const dictionaries = {
         "Playtest notes and game analysis, focused on probability behavior, reward structures, and player experience.",
       empty: "No published research articles are available yet.",
       backToResearch: "Back to Research"
+    },
+    articles: {
+      eyebrow: "Blogger Articles",
+      title: "Articles",
+      intro:
+        "Tutorials and long-form posts imported from Blogger, kept separate from Notion research notes and the game model catalog.",
+      empty: "No Blogger articles are available yet.",
+      backToArticles: "Back to Articles",
+      description: "Blogger tutorials and long-form posts.",
+      fallbackDescription: "Blogger article."
     },
     modal: {
       details: "Game details",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleDetail } from "@/components/article-detail";
 import { getBloggerArticleBySlug } from "@/lib/blogger";
-import { isLocale } from "@/lib/i18n";
+import { getDictionary, isLocale } from "@/lib/i18n";
 import type { Locale } from "@/types/game";
 
 export const revalidate = 86400;
@@ -19,21 +19,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: localeParam, slug } = await params;
   const locale = isLocale(localeParam) ? localeParam : "en";
+  const content = getDictionary(locale).articles;
   const article = await getBloggerArticleBySlug(slug);
 
   if (!article) {
     return {
-      title: locale === "zh" ? "教學文章" : "Articles",
-      description:
-        locale === "zh"
-          ? "從 Blogger 匯入的教學與長篇文章。"
-          : "Blogger tutorials and long-form posts."
+      title: content.title,
+      description: content.description
     };
   }
 
   return {
     title: article.title,
-    description: article.labels.join(", ") || "Blogger article.",
+    description: article.labels.join(", ") || content.fallbackDescription,
     openGraph: {
       images: article.thumbnail ? [article.thumbnail] : []
     },

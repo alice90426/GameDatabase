@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Newspaper } from "lucide-react";
 import type { ArticleSummary } from "@/lib/blogger";
+import { getDictionary } from "@/lib/i18n";
 import type { Locale } from "@/types/game";
 
 type ArticleListProps = {
@@ -11,13 +12,13 @@ type ArticleListProps = {
 };
 
 export function ArticleList({ articles, locale, pathPrefix }: ArticleListProps) {
-  const content = getArticleListContent(locale);
+  const content = getDictionary(locale).articles;
 
   return (
     <div className="px-5 py-14 sm:py-16">
       <section className="mx-auto max-w-6xl">
         <p className="text-sm font-black uppercase tracking-[0.22em] text-neon">
-          Blogger Articles
+          {content.eyebrow}
         </p>
         <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight text-white sm:text-5xl">
           {content.title}
@@ -114,22 +115,4 @@ function formatDate(value: string, locale: Locale) {
     month: "short",
     day: "2-digit"
   }).format(new Date(value));
-}
-
-function getArticleListContent(locale: Locale) {
-  if (locale === "zh") {
-    return {
-      title: "教學文章",
-      intro:
-        "從 Blogger 匯入的教學與長篇文章，和 Notion 研究筆記、遊戲模型資料分開呈現。",
-      empty: "目前沒有符合條件的 Blogger 文章。"
-    };
-  }
-
-  return {
-    title: "Articles",
-    intro:
-      "Tutorials and long-form posts imported from Blogger, kept separate from Notion research notes and the game model catalog.",
-    empty: "No Blogger articles are available yet."
-  };
 }
