@@ -1,112 +1,102 @@
-# Project Overview
+# Project Positioning
 
-This website serves two different audiences:
+This website has four main content areas:
 
-## Audience 1: Clients
+## Games
 
-Clients want to purchase or evaluate game mathematics models.
+Purpose:
+Show the game mathematics models that I created or prepared.
 
-They care about:
+Audience:
+Clients who may purchase or evaluate game math models.
+
+Focus:
+- Game model catalog
 - RTP
 - Hit Rate
 - Volatility
 - Max Win
-- Simulation Data
-- Game Specifications
+- Simulation data
+- Game specification documents
 
-They do NOT care about:
-- Frontend skills
-- GitHub activity
-- Personal background
+## Services
 
-For clients, the website should emphasize:
-- Game models
-- Services
-- Documentation
-- Research credibility
+Purpose:
+Explain the services I provide to clients.
 
----
+Audience:
+Studios, clients, and partners.
 
-## Audience 2: Recruiters & Hiring Managers
+Focus:
+- Slot game math model design
+- Probability analysis
+- Simulation validation
+- Game specification documentation
 
-Recruiters want to understand who created these models.
+Do not present frontend development or playable prototype development as my main service.
 
-They care about:
+## Research
+
+Purpose:
+Show research notes and playtest analysis of existing games.
+
+Audience:
+Recruiters, hiring managers, clients, and readers who want to evaluate my analysis ability.
+
+Important:
+Research content is different from Games.
+
+Games = models and data I created or prepared.
+Research = analysis, observations, and notes about other existing games.
+
+Focus:
+- Playtest notes
+- Game mechanic analysis
+- Probability observations
+- Reward system analysis
+- Slot and non-slot game research
+- Notion-based research content
+
+## About
+
+Purpose:
+Introduce the creator of the website.
+
+Audience:
+Recruiters and hiring managers.
+
+Focus:
 - Professional background
 - Research capability
-- Documentation skills
-- Technical thinking
-- Portfolio
-
-For recruiters, the website should emphasize:
-- About page
-- Research
+- External resources
 - Blogger
 - Notion
 - GitHub
 - itch.io
 
----
+## Navigation
 
-# Website Structure
+Use this structure:
 
 Home
 Games
-Services
 Research
+Services
 About
 
----
-
-# Services Page
-
-Purpose:
-Explain what services are provided.
-
-Focus:
-- Slot Math Model Design
-- Probability Analysis
-- Simulation Validation
-- Game Specification Documents
-
-Keep concise.
-
-Do not present frontend development as a service.
-
----
-
-# About Page
-
-Purpose:
-Introduce the creator.
-
-Focus:
-- Professional background
-- Research work
-- Publications
-- External resources
-
-External links:
-- Blogger
-- Notion
-- GitHub
-- itch.io
-
-Keep concise.
-
----
-
-# Design Principles
+## Design Principles
 
 - Professional
 - Technical
-- Trustworthy
 - Data-driven
+- Concise
+- Mobile friendly
+- Dark professional style
 
 Avoid:
 - Casino advertisement style
 - Excessive animations
 - Long resume pages
 - Skill progress bars
-
-Each page should be readable within 1 minute.
+- Presenting demos as the main service
+- Presenting frontend development as the main service

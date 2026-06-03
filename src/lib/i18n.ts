@@ -39,14 +39,14 @@ export const dictionaries = {
       language: "EN"
     },
     common: {
-      brand: "老虎機數學模型",
-      badge: "娛樂遊戲資料庫",
+      brand: "娛樂遊戲資料庫",
+      badge: "數學模型資料庫",
       description: "整理遊戲規格、數值特徵與玩法分類的資料庫。",
       viewGames: "查看遊戲資料",
-      viewAbout: "服務項目",
+      viewAbout: "關於創作者",
       tags: "遊戲特色",
       reset: "重置",
-      footer: "老虎機數學模型由 Javier 建立",
+      footer: "版權所有 © 2026 Javier。保留所有權利。",
       switchLanguage: "切換語言"
     },
     features: {
@@ -87,7 +87,6 @@ export const dictionaries = {
       intro: "使用ID、標籤與波動度快速篩選遊戲規格。",
       search: "搜尋 ID",
       empty: "沒有符合條件的遊戲。",
-      hasDemo: "有 Demo",
       allGames: "所有遊戲",
       demoOnly: "可試玩遊戲",
       showingPrefix: "目前顯示",
@@ -124,7 +123,7 @@ export const dictionaries = {
         },
         {
           title: "遊戲規格文件",
-          text: "整理可供溝通、審查與實作的中英文遊戲規格文件。"
+          text: "整理可供溝通、實作與通過GLI、BMM認證的中英文遊戲規格文件。"
         }
       ],
       processTitle: "交付重點",
@@ -181,14 +180,14 @@ export const dictionaries = {
       language: "中文"
     },
     common: {
-      brand: "Slot Math Model",
-      badge: "Casino Game Database",
+      brand: "Casino Game Database",
+      badge: "Math Model Database",
       description: "A database for game specs, numerical traits, and play categories.",
       viewGames: "Browse Games",
       viewAbout: "View About",
       tags: "Game Features",
       reset: "Reset",
-      footer: "Slot Math Model created by Javier",
+      footer: "Copyright © 2026 Javier. All rights reserved.",
       switchLanguage: "Switch language"
     },
     features: {
@@ -229,7 +228,6 @@ export const dictionaries = {
       intro: "Filter game specs by ID, tags and volatility.",
       search: "Search ID",
       empty: "No games match the current filters.",
-      hasDemo: "Has demo",
       allGames: "All Games",
       demoOnly: "Demo Only",
       showingPrefix: "Showing",
@@ -239,7 +237,7 @@ export const dictionaries = {
       details: "Game details",
       previousGame: "Previous game",
       nextGame: "Next game",
-      links: "Links",
+      links: "Other links",
       github: sharedCopy.modalLabels.github,
       itch: sharedCopy.modalLabels.itch,
       loading: "Loading...",
@@ -266,16 +264,16 @@ export const dictionaries = {
         },
         {
           title: "Game Specification Documents",
-          text: "Prepare Chinese and English specifications for review, communication, and implementation."
+          text: "Organize structured specification documents in English and Chinese for communication, implementation, and GLI / BMM certification."
         }
       ],
       processTitle: "Delivery Focus",
-      process: ["Model Parameters", "Probability Structure", "Simulation Summary", "Specification Docs"],
+      process: ["Spreadsheet", "Validation Program", "Simulation Summary", "Specification Docs"],
       note: "This service focuses on game mathematics and specification design. Playable work and external links are supporting proof, not the primary service."
     },
     about: {
       eyebrow: "Creator",
-      title: "About",
+      title: "About Creator",
       role: "Game Mathematics Model Designer",
       intro:
         "I focus on game mathematics models, probability structures, and simulation validation, turning game rules into systems that can be checked, compared, and documented.",

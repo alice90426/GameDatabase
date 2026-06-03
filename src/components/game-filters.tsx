@@ -144,7 +144,7 @@ export function GameFilters({
         .some((game) => game.githubUrl),
     [games, query, volatility, boardSize, lineMechanic, tag]
   );
-  const demoFilterLabel = dictionary.games.hasDemo;
+  const demoFilterLabel = dictionary.games.demoOnly;
 
   function keepSelectedOption(options: string[], selectedValue: string) {
     if (selectedValue === "all" || options.includes(selectedValue)) {
