@@ -6,6 +6,8 @@ import {
   FileText,
   Github,
   Handshake,
+  Linkedin,
+  Mail,
   NotebookText,
   Play,
   Sparkles
@@ -128,6 +130,47 @@ export default async function AboutPage({
           <p className="mt-3 leading-7 text-slate-300">
             {content.contactText}
           </p>
+          <div className="mt-5 rounded border border-white/10 bg-void/60 p-4">
+            <h3 className="text-lg font-black text-white">
+              {content.connectTitle}
+            </h3>
+            <p className="mt-2 whitespace-pre-line leading-7 text-slate-300">
+              {content.connectText}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <details className="group relative">
+                <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white">
+                  <Mail size={16} />
+                  {content.emailLabel}
+                </summary>
+                <div className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded border border-white/10 bg-void shadow-2xl shadow-black/40">
+                  {content.contactPurposes.map((purpose) => (
+                    <a
+                      key={purpose.subject}
+                      href={buildMailto(
+                        content.contactLinks.email,
+                        purpose.subject,
+                        purpose.body
+                      )}
+                      className="block border-b border-white/10 px-4 py-1 text-sm font-bold text-slate-200 last:border-b-0 hover:bg-white/[0.06] hover:text-white"
+                    >
+                      {purpose.label}
+                    </a>
+                  ))}
+                </div>
+              </details>
+
+              <a
+                href={content.contactLinks.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white"
+              >
+                <Linkedin size={16} />
+                {content.linkedinLabel}
+              </a>
+            </div>
+          </div>
         </section>
 
         <section className="rounded border border-white/10 bg-panel/85 p-5">
@@ -168,4 +211,8 @@ export default async function AboutPage({
       </section>
     </div>
   );
+}
+
+function buildMailto(email: string, subject: string, body: string) {
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

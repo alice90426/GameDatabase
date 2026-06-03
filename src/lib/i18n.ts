@@ -12,7 +12,9 @@ const sharedCopy = {
     notion:
       "https://magic-ellipse-ed8.notion.site/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae&source=copy_link",
     github: "https://github.com/alice90426",
-    itch: "https://alice90426.itch.io"
+    itch: "https://alice90426.itch.io",
+    email: "alice90426@yahoo.com.tw",
+    linkedin: "https://www.linkedin.com/in/javier-chiang-43241911a/"
   },
   resourceTitles: {
     blogger: "Blogger",
@@ -203,7 +205,36 @@ export const dictionaries = {
       },
       contact: "合作方向",
       contactText:
-        "適合需要遊戲數學模型、機率分析、模擬驗證或規格文件整理的團隊。"
+        "適合需要遊戲數學模型、機率分析、模擬驗證或規格文件整理的團隊。",
+      connectTitle: "與我聯絡",
+      connectText:
+        "對遊戲數學模型、機率系統設計與分析、或模擬驗證有興趣嗎？",
+      emailLabel: "Email",
+      linkedinLabel: "LinkedIn",
+      contactPurposes: [
+        {
+          label: "遊戲數學模型合作",
+          subject: "遊戲數學模型合作邀約",
+          body:
+            "你好 Javier，\n\n我對遊戲數學模型設計合作有興趣，想進一步討論相關細節。"
+        },
+        {
+          label: "機率系統與模擬驗證",
+          subject: "機率系統與模擬驗證合作邀約",
+          body:
+            "你好 Javier，\n\n我對機率系統與模擬驗證合作有興趣，想進一步討論相關細節。"
+        },
+        {
+          label: "規格文件與顧問服務",
+          subject: "規格文件與顧問服務合作邀約",
+          body:
+            "你好 Javier，\n\n我對規格文件與顧問服務合作有興趣，想進一步討論相關細節。"
+        }
+      ],
+      contactLinks: {
+        email: sharedCopy.links.email,
+        linkedin: sharedCopy.links.linkedin
+      }
     }
   },
   en: {
@@ -379,7 +410,36 @@ export const dictionaries = {
       },
       contact: "Collaboration Fit",
       contactText:
-        "Best suited for teams that need game mathematics models, probability analysis, simulation validation, or structured specification documents."
+        "Best suited for teams that need game mathematics models, probability analysis, simulation validation, or structured specification documents.",
+      connectTitle: "Let's Connect",
+      connectText:
+        "Interested in game mathematics models, probability systems, or simulation-based game design?",
+      emailLabel: "Email",
+      linkedinLabel: "LinkedIn",
+      contactPurposes: [
+        {
+          label: "Game math model design",
+          subject: "Game Mathematics Model Inquiry",
+          body:
+            "Hello Javier,\n\nI am interested in discussing game mathematics model design."
+        },
+        {
+          label: "Probability and simulation",
+          subject: "Probability System and Simulation Validation Inquiry",
+          body:
+            "Hello Javier,\n\nI would like to discuss probability systems or simulation validation."
+        },
+        {
+          label: "Specification documents",
+          subject: "Game Specification Document Inquiry",
+          body:
+            "Hello Javier,\n\nI would like to discuss game specification documents or consulting."
+        }
+      ],
+      contactLinks: {
+        email: sharedCopy.links.email,
+        linkedin: sharedCopy.links.linkedin
+      }
     }
   }
 } as const;
