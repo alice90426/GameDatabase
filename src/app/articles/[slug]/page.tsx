@@ -59,7 +59,7 @@ export default async function ArticleDetailPage({
       <div className="noise-overlay pointer-events-none fixed inset-0 opacity-70" />
       <Navbar locale={locale} />
       <main className="relative z-10">
-        <ArticleDetail article={article} />
+        <ArticleDetail article={article} locale={locale} backHref="/articles" />
       </main>
       <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
         {dictionary.common.footer}

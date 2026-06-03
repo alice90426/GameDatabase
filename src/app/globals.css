@@ -100,3 +100,17 @@ a {
   background: rgba(7, 10, 18, 0.8);
   padding: 1rem;
 }
+
+.blogger-content .lang-switch-button {
+  display: none;
+}
+
+.blogger-content[data-locale="zh"] .lang-en,
+.blogger-content[data-locale="en"] .lang-tw {
+  display: none;
+}
+
+.blogger-content[data-locale="zh"] .lang-tw,
+.blogger-content[data-locale="en"] .lang-en {
+  display: block;
+}

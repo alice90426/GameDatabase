@@ -22,7 +22,7 @@ export default async function ArticlesPage() {
       <div className="noise-overlay pointer-events-none fixed inset-0 opacity-70" />
       <Navbar locale={locale} />
       <main className="relative z-10">
-        <ArticleList articles={articles} />
+        <ArticleList articles={articles} locale={locale} pathPrefix="/articles" />
       </main>
       <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
         {dictionary.common.footer}

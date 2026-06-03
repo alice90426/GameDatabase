@@ -2,12 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { Newspaper } from "lucide-react";
 import type { ArticleSummary } from "@/lib/blogger";
+import type { Locale } from "@/types/game";
 
 type ArticleListProps = {
   articles: ArticleSummary[];
+  locale: Locale;
+  pathPrefix: string;
 };
 
-export function ArticleList({ articles }: ArticleListProps) {
+export function ArticleList({ articles, locale, pathPrefix }: ArticleListProps) {
+  const content = getArticleListContent(locale);
+
   return (
     <div className="px-5 py-14 sm:py-16">
       <section className="mx-auto max-w-6xl">
@@ -15,11 +20,10 @@ export function ArticleList({ articles }: ArticleListProps) {
           Blogger Articles
         </p>
         <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight text-white sm:text-5xl">
-          Articles
+          {content.title}
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-          Tutorials and long-form posts imported from Blogger, kept separate
-          from Notion research notes and the game model catalog.
+          {content.intro}
         </p>
       </section>
 
@@ -27,12 +31,17 @@ export function ArticleList({ articles }: ArticleListProps) {
         {articles.length > 0 ? (
           <div className="grid gap-5 md:grid-cols-2">
             {articles.map((article) => (
-              <ArticleCard key={article.id} article={article} />
+              <ArticleCard
+                key={article.id}
+                article={article}
+                href={`${pathPrefix}/${article.slug}`}
+                locale={locale}
+              />
             ))}
           </div>
         ) : (
           <div className="rounded border border-white/10 bg-panel/75 p-8 text-slate-300">
-            No Blogger articles are available yet.
+            {content.empty}
           </div>
         )}
       </section>
@@ -40,10 +49,18 @@ export function ArticleList({ articles }: ArticleListProps) {
   );
 }
 
-function ArticleCard({ article }: { article: ArticleSummary }) {
+function ArticleCard({
+  article,
+  href,
+  locale
+}: {
+  article: ArticleSummary;
+  href: string;
+  locale: Locale;
+}) {
   return (
     <Link
-      href={`/articles/${article.slug}`}
+      href={href}
       className="group overflow-hidden rounded border border-white/10 bg-panel/75 transition hover:border-neon/50 hover:shadow-glow"
     >
       {article.thumbnail ? (
@@ -67,7 +84,7 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
         <div className="flex flex-wrap items-center gap-2">
           {article.date ? (
             <span className="text-xs font-bold text-slate-500">
-              {formatDate(article.date)}
+              {formatDate(article.date, locale)}
             </span>
           ) : null}
         </div>
@@ -91,10 +108,28 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
   );
 }
 
-function formatDate(value: string) {
-  return new Intl.DateTimeFormat("en", {
+function formatDate(value: string, locale: Locale) {
+  return new Intl.DateTimeFormat(locale === "zh" ? "zh-TW" : "en", {
     year: "numeric",
     month: "short",
     day: "2-digit"
   }).format(new Date(value));
+}
+
+function getArticleListContent(locale: Locale) {
+  if (locale === "zh") {
+    return {
+      title: "教學文章",
+      intro:
+        "從 Blogger 匯入的教學與長篇文章，和 Notion 研究筆記、遊戲模型資料分開呈現。",
+      empty: "目前沒有符合條件的 Blogger 文章。"
+    };
+  }
+
+  return {
+    title: "Articles",
+    intro:
+      "Tutorials and long-form posts imported from Blogger, kept separate from Notion research notes and the game model catalog.",
+    empty: "No Blogger articles are available yet."
+  };
 }
