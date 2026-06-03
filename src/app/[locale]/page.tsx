@@ -60,14 +60,17 @@ export default async function HomePage({
               <Metric
                 value={String(allGames.length).padStart(2, "0")}
                 label={dictionary.home.metricGames}
+                href={localizedPath(locale, "/games")}
               />
               <Metric
                 value={String(researchArticles.length).padStart(2, "0")}
                 label={dictionary.home.metricResearch}
+                href={localizedPath(locale, "/research")}
               />
               <Metric
                 value={String(bloggerArticles.length).padStart(2, "0")}
                 label={dictionary.home.metricArticles}
+                href={localizedPath(locale, "/articles")}
               />
             </div>
             <div className="mt-5 overflow-hidden rounded border border-white/10 bg-void">
@@ -141,12 +144,23 @@ export default async function HomePage({
   );
 }
 
-function Metric({ value, label }: { value: string; label: string }) {
+function Metric({
+  value,
+  label,
+  href
+}: {
+  value: string;
+  label: string;
+  href: string;
+}) {
   return (
-    <div className="rounded border border-white/10 bg-white/[0.04] p-4">
+    <Link
+      href={href}
+      className="rounded border border-white/10 bg-white/[0.04] p-4 transition hover:border-neon/50 hover:bg-white/[0.07]"
+    >
       <p className="text-3xl font-black text-white">{value}</p>
       <p className="mt-2 text-sm leading-5 text-slate-400">{label}</p>
-    </div>
+    </Link>
   );
 }
 
