@@ -1,5 +1,6 @@
 import "server-only";
 import { Client } from "@notionhq/client";
+import { unstable_cache } from "next/cache";
 import type {
   BlockObjectResponse,
   DataSourceObjectResponse,
@@ -17,6 +18,9 @@ const notionDatabaseId = process.env.NOTION_DATABASE_ID;
 const notion = notionApiKey ? new Client({ auth: notionApiKey }) : null;
 let dataSourceIdPromise: Promise<string | null> | null = null;
 let dataSourcePromise: Promise<GetDataSourceResponse | null> | null = null;
+let coverQueue: Promise<void> = Promise.resolve();
+const NOTION_REVALIDATE_SECONDS = 3600;
+const NOTION_COVER_FETCH_DELAY_MS = 400;
 
 export type ResearchArticle = {
   id: string;
@@ -36,7 +40,37 @@ export function isNotionConfigured() {
   return Boolean(notion && notionDatabaseId);
 }
 
-export async function getPublishedResearchArticles(): Promise<ResearchArticle[]> {
+export const getPublishedResearchArticles = unstable_cache(
+  fetchPublishedResearchArticles,
+  ["notion-research-article-list"],
+  { revalidate: NOTION_REVALIDATE_SECONDS }
+);
+
+export async function getResearchArticleBySlug(
+  slug: string
+): Promise<ResearchArticle | null> {
+  const articles = await getPublishedResearchArticles();
+
+  return articles.find((article) => article.slug === slug) ?? null;
+}
+
+export const getResearchArticleBlocks = unstable_cache(
+  fetchResearchArticleBlocks,
+  ["notion-research-article-blocks"],
+  { revalidate: NOTION_REVALIDATE_SECONDS }
+);
+
+const getCachedFirstImageBlockCover = unstable_cache(
+  fetchQueuedFirstImageBlockCover,
+  ["notion-research-first-image-cover"],
+  { revalidate: NOTION_REVALIDATE_SECONDS }
+);
+
+export async function getResearchCoverByPageId(pageId: string) {
+  return getCachedFirstImageBlockCover(pageId);
+}
+
+async function fetchPublishedResearchArticles(): Promise<ResearchArticle[]> {
   const dataSourceId = await getDataSourceId();
 
   if (!notion || !dataSourceId) {
@@ -74,11 +108,9 @@ export async function getPublishedResearchArticles(): Promise<ResearchArticle[]>
       result_type: "page"
     });
 
-    const articles = await Promise.all(
-      response.results.filter(isPageObjectResponse).map(pageToArticle)
-    );
-
-    return articles
+    return response.results
+      .filter(isPageObjectResponse)
+      .map(pageToArticle)
       .filter((article): article is ResearchArticle => Boolean(article))
       .filter((article) => article.published);
   } catch (error) {
@@ -87,15 +119,7 @@ export async function getPublishedResearchArticles(): Promise<ResearchArticle[]>
   }
 }
 
-export async function getResearchArticleBySlug(
-  slug: string
-): Promise<ResearchArticle | null> {
-  const articles = await getPublishedResearchArticles();
-
-  return articles.find((article) => article.slug === slug) ?? null;
-}
-
-export async function getResearchArticleBlocks(
+async function fetchResearchArticleBlocks(
   pageId: string
 ): Promise<BlockObjectResponse[]> {
   if (!notion) {
@@ -123,15 +147,15 @@ export async function getResearchArticleBlocks(
   return blocks;
 }
 
-async function pageToArticle(
-  page: PageObjectResponse
-): Promise<ResearchArticle | null> {
+function pageToArticle(page: PageObjectResponse): ResearchArticle | null {
   const title = getFirstText(page, ["Title", "Name"]);
   const explicitSlug = getFirstText(page, ["Slug"]);
 
   if (!title) {
     return null;
   }
+
+  const directCover = getArticleCover(page);
 
   return {
     id: page.id,
@@ -148,7 +172,7 @@ async function pageToArticle(
     summary: getFirstText(page, ["Summary"]),
     published: getOptionalCheckbox(page, "Published") ?? true,
     date: getDate(page, "Date") || page.last_edited_time || page.created_time,
-    cover: await getArticleCover(page)
+    cover: directCover || `/api/research-cover/${page.id}`
   };
 }
 
@@ -175,8 +199,13 @@ async function resolveDataSourceId() {
     if ("data_sources" in database) {
       return database.data_sources[0]?.id ?? notionDatabaseId;
     }
-  } catch {
-    return notionDatabaseId;
+  } catch (error) {
+    if (getNotionErrorCode(error) === "object_not_found") {
+      return notionDatabaseId;
+    }
+
+    warnNotionError("Unable to resolve Notion data source id.", error);
+    return null;
   }
 
   return notionDatabaseId;
@@ -342,12 +371,11 @@ function getCover(page: PageObjectResponse) {
   return page.cover.file.url;
 }
 
-async function getArticleCover(page: PageObjectResponse) {
+function getArticleCover(page: PageObjectResponse) {
   return (
     getCover(page) ||
     getFirstFileCover(page, ["Cover", "cover"]) ||
-    getFirstUrlCover(page, ["Cover", "cover"]) ||
-    (await getFirstImageBlockCover(page.id))
+    getFirstUrlCover(page, ["Cover", "cover"])
   );
 }
 
@@ -387,7 +415,11 @@ function getFirstUrlCover(page: PageObjectResponse, keys: string[]) {
   return null;
 }
 
-async function getFirstImageBlockCover(pageId: string) {
+async function fetchQueuedFirstImageBlockCover(pageId: string) {
+  return enqueueCoverFetch(() => fetchFirstImageBlockCover(pageId));
+}
+
+async function fetchFirstImageBlockCover(pageId: string) {
   if (!notion) {
     return null;
   }
@@ -416,6 +448,25 @@ async function getFirstImageBlockCover(pageId: string) {
   }
 }
 
+function enqueueCoverFetch<T>(task: () => Promise<T>) {
+  const result = coverQueue.then(async () => {
+    await delay(NOTION_COVER_FETCH_DELAY_MS);
+    return task();
+  });
+
+  coverQueue = result
+    .catch(() => undefined)
+    .then(() => undefined);
+
+  return result;
+}
+
+function delay(ms: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 export function richTextToPlainText(richText: RichTextItemResponse[]) {
   return richText.map((item) => item.plain_text).join("");
 }
@@ -427,6 +478,19 @@ function warnNotionError(message: string, error: unknown) {
       : "Unknown Notion API error.";
 
   console.warn(`[Notion] ${message} ${detail}`);
+}
+
+function getNotionErrorCode(error: unknown) {
+  if (
+    typeof error === "object" &&
+    error !== null &&
+    "code" in error &&
+    typeof error.code === "string"
+  ) {
+    return error.code;
+  }
+
+  return "";
 }
 
 function slugify(value: string) {

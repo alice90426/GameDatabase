@@ -3,18 +3,16 @@ import { notFound } from "next/navigation";
 import { ResearchDetail } from "@/components/research-detail";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import {
-  getPublishedResearchArticles,
   getResearchArticleBlocks,
   getResearchArticleBySlug
 } from "@/lib/notion";
 import type { Locale } from "@/types/game";
 
 export const revalidate = 3600;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const articles = await getPublishedResearchArticles();
-
-  return articles.map((article) => ({ slug: article.slug }));
+  return [];
 }
 
 export async function generateMetadata({

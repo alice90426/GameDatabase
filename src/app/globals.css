@@ -39,3 +39,64 @@ a {
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+.blogger-content :where(p, ul, ol, blockquote, pre, table, figure) {
+  margin-block: 1rem;
+}
+
+.blogger-content :where(h1, h2, h3, h4) {
+  margin-block: 1.8rem 0.8rem;
+  color: #ffffff;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.blogger-content h1 {
+  font-size: 2rem;
+}
+
+.blogger-content h2 {
+  font-size: 1.6rem;
+}
+
+.blogger-content h3 {
+  font-size: 1.3rem;
+}
+
+.blogger-content :where(a) {
+  color: #4de3ff;
+  font-weight: 700;
+}
+
+.blogger-content :where(img) {
+  height: auto;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.blogger-content :where(ul, ol) {
+  padding-left: 1.4rem;
+}
+
+.blogger-content ul {
+  list-style: disc;
+}
+
+.blogger-content ol {
+  list-style: decimal;
+}
+
+.blogger-content blockquote {
+  border-left: 2px solid #4de3ff;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.8rem 1rem;
+  color: #e2e8f0;
+}
+
+.blogger-content pre {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(7, 10, 18, 0.8);
+  padding: 1rem;
+}

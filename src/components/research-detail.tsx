@@ -20,6 +20,7 @@ export function ResearchDetail({
   backHref
 }: ResearchDetailProps) {
   const content = getDictionary(locale).research;
+  const cover = article.cover || getFirstBlockImage(blocks);
 
   return (
     <article className="px-5 py-12 sm:py-14">
@@ -68,10 +69,10 @@ export function ResearchDetail({
           </div>
         ) : null}
 
-        {article.cover ? (
+        {cover ? (
           <div className="relative mt-8 aspect-[16/8] overflow-hidden rounded border border-white/10 bg-void">
             <Image
-              src={article.cover}
+              src={cover}
               alt={article.title}
               fill
               sizes="(min-width: 1024px) 896px, 100vw"
@@ -96,4 +97,18 @@ function formatDate(value: string, locale: Locale) {
     month: "short",
     day: "2-digit"
   }).format(new Date(value));
+}
+
+function getFirstBlockImage(blocks: NotionBlock[]) {
+  const image = blocks.find((block) => block.type === "image");
+
+  if (!image || image.type !== "image") {
+    return null;
+  }
+
+  if (image.image.type === "external") {
+    return image.image.external.url;
+  }
+
+  return image.image.file.url;
 }

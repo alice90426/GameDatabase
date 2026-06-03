@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
-import { ResearchDetail } from "@/components/research-detail";
+import { ArticleDetail } from "@/components/article-detail";
+import { getBloggerArticleBySlug } from "@/lib/blogger";
 import { getDictionary } from "@/lib/i18n";
-import {
-  getResearchArticleBlocks,
-  getResearchArticleBySlug
-} from "@/lib/notion";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 export const dynamicParams = true;
 
 const locale = "en";
@@ -23,54 +20,46 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = await getResearchArticleBySlug(slug);
-  const fallback = getDictionary(locale).research;
+  const article = await getBloggerArticleBySlug(slug);
 
   if (!article) {
     return {
-      title: fallback.title,
-      description: fallback.intro
+      title: "Articles",
+      description: "Blogger tutorials and long-form posts."
     };
   }
 
   return {
     title: article.title,
-    description: article.summary || fallback.intro,
+    description: article.labels.join(", ") || "Blogger article.",
     openGraph: {
-      images: article.cover ? [article.cover] : []
+      images: article.thumbnail ? [article.thumbnail] : []
     },
     alternates: {
-      canonical: `/research/${article.slug}`
+      canonical: `/articles/${article.slug}`
     }
   };
 }
 
-export default async function ResearchArticleEntryPage({
+export default async function ArticleDetailPage({
   params
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await getResearchArticleBySlug(slug);
+  const article = await getBloggerArticleBySlug(slug);
   const dictionary = getDictionary(locale);
 
   if (!article) {
     notFound();
   }
 
-  const blocks = await getResearchArticleBlocks(article.id);
-
   return (
     <div className="min-h-screen overflow-hidden">
       <div className="noise-overlay pointer-events-none fixed inset-0 opacity-70" />
       <Navbar locale={locale} />
       <main className="relative z-10">
-        <ResearchDetail
-          article={article}
-          blocks={blocks}
-          locale={locale}
-          backHref="/research"
-        />
+        <ArticleDetail article={article} />
       </main>
       <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
         {dictionary.common.footer}

@@ -10,7 +10,7 @@ const sharedCopy = {
   links: {
     blogger: "https://slotmathmodel.blogspot.com/",
     notion:
-      "https://app.notion.com/p/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae",
+      "https://magic-ellipse-ed8.notion.site/7143abd96b7340ccacc97bacf8f3ea48?v=995db3faa1ca41d3b31052f6a34bceae&source=copy_link",
     github: "https://github.com/alice90426",
     itch: "https://alice90426.itch.io"
   },
@@ -35,6 +35,7 @@ export const dictionaries = {
       home: "首頁",
       games: "遊戲資料",
       research: "研究筆記",
+      articles: "教學文章",
       services: "服務項目",
       about: "關於創作者",
       language: "EN"
@@ -94,10 +95,10 @@ export const dictionaries = {
       showingSuffix: "款遊戲"
     },
     research: {
-      eyebrow: "Research Notes",
-      title: "Research Notes",
+      eyebrow: "研究筆記",
+      title: "試玩心得與分析",
       intro:
-        "從 Notion 匯入的試玩筆記與遊戲分析，聚焦機率行為、獎勵結構與玩家體驗。",
+        "試玩筆記與遊戲分析，聚焦機率行為、獎勵結構與玩家體驗。",
       empty: "目前沒有已發布的研究文章。",
       backToResearch: "返回研究筆記"
     },
@@ -185,6 +186,7 @@ export const dictionaries = {
       home: "Home",
       games: "Games",
       research: "Research",
+      articles: "Articles",
       services: "Services",
       about: "About",
       language: "中文"
@@ -247,7 +249,7 @@ export const dictionaries = {
       eyebrow: "Research Notes",
       title: "Research Notes",
       intro:
-        "Playtest notes and game analysis imported from Notion, focused on probability behavior, reward structures, and player experience.",
+        "Playtest notes and game analysis, focused on probability behavior, reward structures, and player experience.",
       empty: "No published research articles are available yet.",
       backToResearch: "Back to Research"
     },
