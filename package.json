@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "sync:premium": "node scripts/sync-premium-content.mjs",
+    "check:premium": "node scripts/sync-premium-content.mjs --check",
     "validate:data": "node scripts/validate-games.mjs",
     "start": "next start",
     "lint": "eslint ."
