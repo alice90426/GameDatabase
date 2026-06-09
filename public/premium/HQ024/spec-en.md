@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: Any 5.
-- Features: Prize Symbol、Bonus Game.
+- Features: Prize Symbol, Bonus Game.
 ---
 
 ## Symbols
@@ -14,12 +14,12 @@
 
 ### Prize Symbol
 - Any 5 or more prize symbols appearing on the reels with the scatter prize.
-- Possible prizes are 400, 80, 40, 30, 20, 16, 10, 8, 6, 4, 2 multiplied by play amount during base game.
-- Possible prizes are 1200, 800, 400, 80, 40, 30, 20, 16, 10 multiplied by play amount during free game.
+- Possible prizes are 400, 80, 40, 30, 20, 16, 10, 8, 6, 4, 2 multiplied by play amount during Base Game.
+- Possible prizes are 1200, 800, 400, 80, 40, 30, 20, 16, 10 multiplied by play amount during Free Game.
 
 ### Scatter Symbol
-- Any 3 [SC] on reel 1, 2 and 3 win the credits on [SC]s and 3 Bonus Spins.
-- When the games match feature of base game and free game at the same time, the [SC] will counting twice for win prize.
+- 3 [SC] anywhere on reels 1, 2 or 3 trigger 3 bonus spins, and win the credits on [SC].
+- When the games match feature of Base Game and Free Game at the same time, the [SC] will counting twice for win prize.
 ---
 
 ## Game Features

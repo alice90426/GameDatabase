@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 5 rows, Dual-Reels.
 - Lines: 6250 Ways.
-- Features: Random Wild, Wild Reel, Walking Wild, Infinite Spins, Free Game, Bonus Game.
+- Features: Random Wild, Wild Reel, Shift Wild, Infinite Spins, Free Game, Bonus Game.
 
 ### Dual-Reels
 - There are two reels in Base Game and Free Game.
@@ -24,12 +24,12 @@
 - [WD] substitutes for all symbols except [SC] and [BN].
 
 ### Scatter Symbol
-- Only appears in Base Game.
-- When 3 or more [SC] symbols appear anywhere in one reels will trigger the Free Game with infinite free spins.
+- [SC] appears in Base Game only.
+- 3 or more [SC] anywhere on the reels trigger infinite free spins.
 
 ### Bonus Symbol
-- Only appears in Base Game.
-- When 3 or more [BN] symbols appear anywhere in one reels will trigger the Bonus Game with 3 bonus spins.
+- [BN] appears in Base Game only.
+- 3 or more [BN] anywhere on the reels trigger 3 bonus spins.
 - [B1] will collect 1 award.
 - [B2] will boost all awards and collect 1 award.
 ---

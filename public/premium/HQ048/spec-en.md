@@ -14,7 +14,8 @@
 | [SC]      | Scatter         |
 
 ### Scatter Symbol
-- [SC] only on 5th reel. 4 [SC] win 2X total bet and 3 bonus spins.
+- [SC] appears on reel 5 only.
+- 4 [SC] on reel 5 trigger 3 bonus spins, and win 2x total play amount.
 ---
 
 ## Game Features

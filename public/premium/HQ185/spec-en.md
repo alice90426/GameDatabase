@@ -16,14 +16,14 @@
 | [SC]        | Scatter         |
 
 ### Wild Symbol
-- [WD]/[W1] substitutes for all symbols except [SC].
-- [WD]/[W1] only appear on reel 2, 3, 4.
+- [WD] or [W1] substitutes for all symbols except [SC].
+- [WD] or [W1] appears on reels 2, 3 or 4.
 
 ### Scatter Symbol
 - 3 [SC] from leftmost to right on reels 2, 3, 4 trigger Free Game and win 2x total play amount.
 - Click each [SC] to get 2, 5 or 10 free spins.
 - The total free spins will be the sum of spins revealed on the [SC].
-- [SC] only appear on reel 2, 3, 4.
+- [SC] appears on reels 2, 3 or 4.
 ---
 
 ## Game Features

@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: 40 Lines.
-- Features: Split Symbol, Selcet Free Game.
+- Features: Split Symbol, Select Free Game.
 ---
 
 ## Symbols
@@ -14,7 +14,7 @@
 | [SC]      | Scatter         |
 
 ### Scatter Symbol
-- 3 [SC] from leftmost to right on reels 2, 3, 4 trigger Free Game, and win 2X total play amount.
+- 3 [SC] anywhere on reels 2, 3 or 4 trigger Select Free Game, and win 2x total play amount.
 ---
 
 ## Game Features
@@ -22,6 +22,6 @@
 ### Split Symbol
 - High pay symbols in a winning combination may reproduce in multiples of up to 3 per symbol. Up to 13 symbols can appear on a payline.
 
-### Selcet Free Game
+### Select Free Game
 - During the Free Game, only the chosen high pay symbol appears on the reels.
 ---

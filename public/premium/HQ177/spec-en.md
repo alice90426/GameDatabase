@@ -16,9 +16,9 @@
 | [SC]      | Scatter         |
 
 ### Wild Symbol
-- [WD]/[W1] substitutes for all symbols except [SC].
-- [WD]/[W1] appears on reels 2, 3, 4 or 5.
-- [W1] only appears in Free Game.
+- [WD] or [W1] substitutes for all symbols except [SC].
+- [WD] or [W1] appears on reels 2, 3, 4 or 5.
+- [W1] appears in Free Game only.
 
 ### Scatter Symbol
 - 6 [SC] anywhere on 2, 3, 4 reels trigger 5 free spins, 7 [SC] trigger 6 free spins, and so on.
@@ -27,5 +27,5 @@
 ## Game Features
 
 ### Free Game
-- When feature is triggered, [SC] will turn to [W1] and stick on the reel until free game finished.
+- When feature is triggered, [SC] will turn to [W1] and stick on the reel until Free Game finished.
 ---

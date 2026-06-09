@@ -16,16 +16,16 @@
 | [BN]      | Bonus       |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3 and 4 only.
+- [WD] appears on reels 2, 3 or 4.
 - [WD] substitutes for all symbols except [SC] and [BN].
 - [WD] may appear with a multiplier X2 or X3.
 
 ### Scatter Symbol
-- [SC] appears on reels 3, 4 and 5 only.
-- When 3 symbols appear anywhere will trigger the Free Game with 9 free spins.
+- [SC] appears on reels 3, 4 or 5.
+- 3 [SC] anywhere on the reels trigger 9 free spins.
 
 ### Bonus Symbol
-- [BN] appears on reels 2, 3 and 4 only.
+- [BN] appears on reels 2, 3 or 4.
 - When [BN] appears, the bonus wheel corresponding that reel will spin.
 ---
 

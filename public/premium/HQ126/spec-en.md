@@ -17,7 +17,7 @@
 ### Wild Symbol
 - [WD] substitutes for all symbols except [SC].
 - [WD] has a random multiplier, all wins with [WD] substituting pay its multiplier.
-- [WD] appears on reel 2 or 4.
+- [WD] appears on reels 2 or 4.
 - - [WD] on reel 2 multiplier: 1X, 2X, 3X.
 - - [WD] on reel 4 multiplier: 2X, 3X, 5X.
 

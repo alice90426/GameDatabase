@@ -20,16 +20,16 @@
 | [B3]      | Full Collect |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3, 4 and 5 only.
+- [WD] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [SC] and [BN].
 
 ### Scatter Symbol
-- When 3/4/5 [SC] symbols appear anywhere will trigger the Free Game or Bonus Game.
+- 3, 4 or 5 [SC] anywhere on the reels trigger Free Game or Bonus Game.
 
 ### Bonus Symbol
-- When 4 or more [BN] symbols appear anywhere will trigger the Bonus Game with 5 bonus spins and Dual-Reels.
+- 4 or more [BN] anywhere on the reels trigger 5 bonus spins.
 - [BN] will have random points: 0.1x, 0.2x, 0.3x, 0.5x, 0.8x, 1x, 2x, 3x.
-- [B1] and [B2] only appear in Bonus Game.
+- [B1] or [B2] appears in Bonus Game only.
 - When [B1] appears, all cross paths will increase 0.1x, 0.2x, 0.3x or 0.5x and add 1 spin to that reel.
 - When [B2] appears, player will obtain a random award: 3x, 3.5x, 4x, 5x, 10x, 50x, 1000x and add 2 spins to that reel.
 ---

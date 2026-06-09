@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels trigger 7, 12 or 25 free spins, and win 3X, 10X or 25X total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 7, 12 or 25 free spins, and win 3x, 10x or 25x total play amount.
 ---
 
 ## Game Features
@@ -28,5 +28,5 @@
 
 ### Free Game
 - Each spin has more chance to trigger Wild Reel in Free Game. The feature can arise randomly turning up to 5 reels [WD].
-- 3, 4 or 5 [SC] anywhere on the reels retrigger 7, 12 or 25 free spins, and win 3X, 10X or 25X total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels retrigger 7, 12 or 25 free spins, and win 3x, 10x or 25x total play amount.
 ---

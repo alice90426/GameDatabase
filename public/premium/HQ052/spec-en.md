@@ -28,5 +28,5 @@
 - - 5[SC]:The multiplier starts at 1 and increases by 1 for each spin.
 - - 6[SC]:The multiplier starts at 2 and increases by 2 for each spin.
 - - 7[SC]:The multiplier starts at 3 and increases by 3 for each spin.
-- Player can retrigger 12 free spins when all reels with [SC].
+- All reels with [SC] retrigger 12 free spins.
 ---

@@ -18,7 +18,7 @@
 - 4, 5, 6, 7 or more [SC] anywhere on the reels trigger 8, 12, 16, 30 free spins.
 
 ### Multiplier Symbol
-- [BN] only appear in Free Game.
+- [BN] appears in Free Game only.
 - [BN] multiple range: 2X~100X.
 ---
 

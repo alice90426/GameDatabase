@@ -16,9 +16,7 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols.
-
-### Scatter Symbol
-- 3 or more [SC] anywhere on the reels trigger Select Free Game.
+- 3, 4 or 5 [WD] anywhere on the reels trigger Select Free Game.
 ---
 
 ## Game Features

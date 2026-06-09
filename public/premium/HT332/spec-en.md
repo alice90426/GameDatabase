@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: 243 Ways.
-- Features: Random Prize, Expanding Reels, Bonus Game.
+- Features: Random Prize, Expand Reel, Bonus Game.
 ---
 
 ## Symbols
@@ -19,7 +19,7 @@
 ### Bonus Symbol
 - When 2 or more [BN] symbols adjacent to each other on the same row, the [BN] will appear up to 2 digits.
 - The digits multiplied by 0.001 total bet will be the final prize.
-- When [B1] or [B2] appearing anywhere may trigger the Bonus Game with corresponding feature.
+- 1 or more [B1] or [B2] anywhere on the reels trigger Bonus Game.
 ---
 
 ## Game Features

@@ -19,8 +19,8 @@
 - All wins with [WD] substituting pay 5X.
 
 ### Scatter Symbol
-- 3 [SC] from leftmost to right on the adjacent reels trigger Free Game.
-- During Base Game, [SC] only appear on reels 1, 2, 3. 
+- 3 [SC] anywhere on the reels trigger Select Free Game.
+- [SC] appears on reels 1, 2 or 3 in Base Game.
 ---
 
 ## Game Features

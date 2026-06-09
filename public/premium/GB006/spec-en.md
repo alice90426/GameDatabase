@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels trigger 10, 15 or 25 free spins, and win 5X, 20X or 100X total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 10, 15 or 25 free spins, and win 5x, 20x or 100x total play amount.
 ---
 
 ## Game Features

@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: 243 Ways.
-- Features: Cascading Reels, Win Multiplier, Free Game, Bonus Game.
+- Features: Cascade Reel, Win Multiplier, Free Game, Bonus Game.
 ---
 
 ## Symbols
@@ -19,23 +19,23 @@
 - [WD] substitutes for all symbols except [SC] and [BN].
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels win 2X, 5X or 50X total play amount.
-- [SC] appears on the free game only.
+- 3, 4 or 5 [SC] anywhere on the reels win 2x, 5x or 50x total play amount.
+- [SC] appears in Free Game only.
 
 ### Bonus Symbol
-- 6 [BN] on 2 and 4 reels trigger Feature Games and win 2X total play amount.
-- [BN] appears on the Base Game only.
+- 6 [BN] on reels 2 and 4 trigger Free Game or Bonus Game, and win 2x total play amount.
+- [BN] appears in Base Game only.
 ---
 
 ## Game Features
 
-### Cascading Reels
-- All winning will activate the Cascading Reels feature.
+### Cascade Reel
+- All winning will activate the Cascade Reel feature.
 - The feature will finish until no winning combinations.
 
 ### Free Game
-- All winning will activate the Cascading Reels feature and the win credits will multiply a multiplier.
-- More cascading times with high multiplier from 1X, 2X, 3X, 5X, up to 10X.
+- All winning will activate the Cascade Reel feature and the win credits will multiply a multiplier.
+- More Cascade times with high multiplier from 1X, 2X, 3X, 5X, up to 10X.
 - Free Game has 20 free spins.
 
 ### Bonus Game1

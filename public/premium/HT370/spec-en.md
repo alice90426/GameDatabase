@@ -17,14 +17,14 @@
 | [B1]      | Multiplier  |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3, 4 and 5 only.
+- [WD] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [SC], [BN] and [B1].
 
 ### Scatter Symbol
-- When 3 or more [SC] symbols appear anywhere will trigger the Free Game with 10 free spins.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 10 free spins.
 
 ### Bonus Symbol
-- When 3 or more [BN] symbols appear anywhere will trigger the Bonus Game with 5 bonus spins.
+- 3, 4 or 5 [BN] anywhere on the reels trigger 5 bonus spins.
 - The [BN] symbol has a multiplier of 0.5x, 1x, 1.5x or 2x.
 - When full reel of [WD] appears on reel 5, all rewards on [B1] will be awarded.
 - The [B1] symbol has a multiplier of 0.1x, 0.5x, 1x, 1.5x, 2x, 3x, 4x, 5x, 8x or 10x.
@@ -34,7 +34,7 @@
 
 ### Free Game
 - [L1]~[L6] symbols are removed in Free Game.
-- When [SC] on both reels 1 and 5 trigger Free Game 2 with 4 free spins.
+- 2 [SC] anywhere on reels 1 or 5 trigger Free Game 2 with 4 free spins.
 
 ### Free Game 2
 - The reel 3 are multiplier [WD] symbols.

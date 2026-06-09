@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- [SC] appearing on central position triggers 3 Bonus Spins, and win 4x total play amount.
+- [SC] appearing on central position trigger 3 Bonus Spins, and win 4x total play amount.
 - [SC] only appears on central position.
 ---
 

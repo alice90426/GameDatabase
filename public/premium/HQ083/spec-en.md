@@ -21,6 +21,6 @@
 
 ### Free Game
 - 9 the same symbols appearing on reels trigger 5 free spins.
-- During free game, any pay symbols appears on the reels wins a prize.
+- During Free Game, any pay symbols appears on the reels wins a prize.
 - The prize is the same as the full pay lines award of the symbol trigger the Free Game.
 ---

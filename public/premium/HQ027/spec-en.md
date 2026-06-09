@@ -18,12 +18,12 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] from leftmost to right on adjacent reels trigger 10, 12 or 20 free spins, and win 2X, 5X or 10X total play amount.
+- 3, 4 or 5 [SC] from leftmost to right on adjacent reels trigger 10, 12 or 20 free spins, and win 2x, 5x or 10x total play amount.
 ---
 
 ## Game Features
 
 ### Free Game
 - All high pay symbols will turn to the same high pay symbol if the can make a winning combination.
-- Player can retrigger 10, 12 or 20 free spins with 3, 4 or 5 [SC] from leftmost to right on adjacent reels during free games.
+- 3, 4 or 5 [SC] from leftmost to right on adjacent reels retrigger 10, 12 or 20 free spins.
 ---

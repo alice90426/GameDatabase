@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: 243 Ways.
-- Features: Multiplier Wild,Win Multiplier, Free Game.
+- Features: Multiplier Wild, Win Multiplier, Free Game.
 ---
 
 ## Symbols
@@ -16,8 +16,8 @@
 | [SC]        | Scatter         |
 
 ### Wild Symbol
-- [WD]/[W1] substitutes for all symbols except [SC].
-- [WD]/[W1] appears on 3, 4 or 5.
+- [WD] or [W1] substitutes for all symbols except [SC].
+- [WD] or [W1] appears on 3, 4 or 5.
 - [W1] multiplier is 2X or 3X.
 - Each 5-of-a-kind win line of high pay symbols with [WD] or [W1] trigger 5 free spins.
 

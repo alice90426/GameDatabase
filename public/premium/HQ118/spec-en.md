@@ -19,7 +19,7 @@
 - All wins with [WD] substituting pay 2X. (Does not include [WD] connection.)
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels trigger Free Game, and win 2x, 20x or 200x total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels trigger Select Free Game, and win 2x, 20x or 200x total play amount.
 ---
 
 ## Game Features
@@ -28,7 +28,7 @@
 - Base game is triggered randomly, and when triggered, 1 to 5 full reel [WD] may appear at random.
 
 ### Select Free Game
-- Two Featured Free Games can be chosen when a free game be triggered.
+- Two Featured Free Games can be chosen when a Free Game be triggered.
 - - Free Game 1: Any winning combination will multiply 5X.
 - - Free Game 2: 2X or 3X [WD] will appear randomly on the reels.
 - 3, 4 or 5 [SC] anywhere on the reels retrigger Free Game.

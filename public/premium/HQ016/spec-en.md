@@ -19,7 +19,7 @@
 - All wins with [WD] substituting pay 5X.
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels trigger 10, 15 or 25 free spins, and win 2X, 5X or 500X total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 10, 15 or 25 free spins, and win 2x, 5x or 500x total play amount.
 ---
 
 ## Game Features
@@ -27,5 +27,5 @@
 ### Free Game
 - Any winning combination will multiply 5X!
 - Any wins with [WD] substituting pay 5X!
-- Each [SC] that lands anywhere on the reels award an extra free spin during free game.
+- 1 [SC] anywhere on the reels retrigger 1 free spins.
 ---

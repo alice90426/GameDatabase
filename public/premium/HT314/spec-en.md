@@ -19,11 +19,11 @@
 - [WD] substitutes for all symbols except [SC] and [BN].
 
 ### Scatter Symbol
-- When 3/4/5 [SC] symbols appear anywhere will trigger the Free Game with 4/5/6 free spins.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 4, 5 or 6 free spins.
 
 ### Bonus Symbol
-- When 6 or more [BN] symbols appear anywhere will trigger the Bonus Game with 3 bonus spins.
-- When each reel has at least 1 [BN]/[WD] symbol, the [WD] symbols will transform to [BN] and player will obtain their multipliers.
+- 6 or more [BN] anywhere on the reels trigger 3 bonus spins.
+- When each reel has at least 1 [BN] or [WD] symbol, the [WD] symbols will transform to [BN] and player will obtain their multipliers.
 - The [BN] symbol has a multiplier of 1x, 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x, 18x, 20x or 80x.
 ---
 

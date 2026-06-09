@@ -25,7 +25,7 @@
 ## Game Features
 
 ### Free Game
-- The [SC] that triggers the Free Game will lock it on the reel and scored at the beginning of the Free Game. 
+- The [SC] that trigger the Free Game will lock it on the reel and scored at the beginning of the Free Game. 
 - 1 or more [SC] anywhere on the reel, the number of free spins remaining is reset to 3.
 - 1 or more [SC] anywhere on the reel to get the prize and lock it on the reels. The prize is the sum of the prizes of the other [SC] on the reel.
 ---

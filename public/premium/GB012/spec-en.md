@@ -16,7 +16,7 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols except [SC].
-- [WD] only appears on 2, 3, 4, 5 reel in Base Game.
+- [WD] appears on reels 2, 3, 4 or 5 in Base Game.
 
 ### Scatter Symbol
 - 3, 4 or 5 [SC] anywhere on the reels trigger 6, 8 or 12 free spins.

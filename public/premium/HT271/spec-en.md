@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 5 rows, Dual-Reels.
 - Lines: 50 Lines.
-- Features: Collect Symbol, Multiplier Wild, Free Game, Bonus Game.
+- Features: Symbol Collect, Multiplier Wild, Free Game, Bonus Game.
 
 ### Dual-Reels
 - There are two reels in Base Game and Free Game.
@@ -21,11 +21,11 @@
 | [BN]      | Bonus       |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3, 4 and 5 only.
+- [WD] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [SC] and [BN].
 
 ### Scatter Symbol
-- When 3/4/5 [SC] symbols appear anywhere will trigger the Free Game with 8/16/24 free spins.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 8, 16 or 24 free spins.
 
 ### Bonus Symbol
 - [BN] has a random prize of 0.1x, 0.15x, 0.2x, 0.3x, 0.5x, 0.8x, 1x, 1.5x 2x, 3x, 5x, 8x, 10x, 25x, 50x and 1000x.
@@ -45,6 +45,6 @@
 
 ### Free Game
 - The center [WD] will have multiplier X2, X3, X5 or X10.
-- When 3/4/5 [SC] symbols appear anywhere will retrigger the Free Game with 8/16/24 free spins.
+- 3, 4 or 5 [SC] anywhere on the reels retrigger 8, 16 or 24 free spins.
 - The remaining rules are identical to the Base Game.
 ---

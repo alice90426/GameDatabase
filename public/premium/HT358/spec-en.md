@@ -19,14 +19,14 @@
 | [B3]      | Collect     |
 
 ### Wild Symbol
-- [WD] substitutes for all symbols except [SC], [BN] and [B1]~[B3].
+- [WD] substitutes for all symbols except [SC], [BN], [B1], [B2] and [B3].
 
 ### Scatter Symbol
-- [SC] appears on reels 2, 3 and 4 only.
-- When 3 [SC] symbols appear anywhere will trigger the Free Game with 6 free spins.
+- [SC] appears on reels 2, 3 or 4.
+- 3 [SC] anywhere on the reels trigger 6 free spins.
 
 ### Bonus Symbol
-- When 6 or more [BN] symbols appear anywhere will trigger the Bonus Game with 6 bonus spins.
+- 6 or more [BN] anywhere on the reels trigger 6 bonus spins.
 - The [BN] symbol has a multiplier of 0.25x, 0.5x, 0.75x, 1x, 1.5x, 2x, 3x, 5x, 10x, 20x, 50x or 100x.
 - The [B1] symbol has a multiple of X2 to X5.
 - The [B2] symbol has a multiplier of 0.25x, 0.5x, 0.75x, 1x, 1.5x, 2x, 3x or 5x.

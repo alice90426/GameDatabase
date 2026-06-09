@@ -17,13 +17,13 @@
 | [SC]      | Scatter     |
 
 ### Wild Symbol
-- [WD]/[W1]/[W2] appears on reels 2, 3, 4 and 5 only.
+- [WD], [W1] or [W2] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [W1], [W2] and [SC].
 - [W1] substitutes for all symbols except [W2] and [SC].
 - [W2] substitutes for all symbols except [W1] and [SC].
 
 ### Scatter Symbol
-- When 4/ 5/ 6 [SC] symbols appear anywhere will trigger the Free Game with 10/ 12/ 15 free spins.
+- 4, 5 or 6 [SC] anywhere on the reels trigger 10, 12 or 15 free spins.
 ---
 
 ## Game Features
@@ -36,6 +36,6 @@
 - The multiplier is the same as that reel height.
 
 ### Free Game
-- When 3 or more [SC] symbols appear anywhere will retrigger the Free Game with 5 free spins.
+- 3 or more [SC] anywhere on the reels retrigger 5 free spins.
 - Each spin will trigger Split Symbol Feature.
 

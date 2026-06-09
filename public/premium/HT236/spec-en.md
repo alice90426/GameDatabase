@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 6 reels, 7 rows.
 - Lines: 117649 Ways.
-- Features: Cascading Reels, Maximun Ways, Bonus Game.
+- Features: Cascade Reel, Maximum Ways, Bonus Game.
 ---
 
 ## Symbols
@@ -15,7 +15,7 @@
 | [BN]      | Bonus        |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3, 4 and 5 only.
+- [WD] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [BN].
 
 ### Bonus Symbol
@@ -25,16 +25,16 @@
 ## Game Features
 
 ### Bonus Game
-- 5 or more [BN] symbols appear anywhere will trigger the Bonus Game with 3 spins.
+- 5 or more [BN] anywhere on the reels trigger 3 bonus spins.
 - When trigger Bonus Game, the triggered [BN] and the current reel height will be locked.
 - If a new [BN] appears, the number of spins will be reset to 3 and [BN] will be locked.
 - When a reel is fully, all [BN] in that reel will multiply X2 to X10.
 - When remaining spins are 0 or reels are full, the Bonus Game ends, all [BN] multipliers are awarded.
 
-### Cascading Reels
+### Cascade Reel
 - All winning symbols will explode, allowing the symbols above them to cascade down for a new round.
 - Additional winning combination will be tallied in every round until no more winning combination can be tallied.
 
-### Maximun Ways
+### Maximum Ways
 - Base Game will randomly trigger the feature. All reel height must be 7.
 ---

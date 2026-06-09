@@ -16,7 +16,7 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols except [SC].
-- [WD] appears on reel 2, 3, 4 or 5.
+- [WD] appears on reels 2, 3, 4 or 5.
 
 ### Scatter Symbol
 - 2, 3 or 4 [SC] anywhere on the 3rd reel trigger Free Game.

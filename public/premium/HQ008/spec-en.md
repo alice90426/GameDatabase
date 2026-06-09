@@ -25,5 +25,5 @@
 
 ### Free Game
 - Any winning combination will multiply 3X!
-- Player can retrigger 10, 15 or 25 free spins with 3, 4 or 5 [SC] anywhere on the reels during Free Games.
+- 3, 4 or 5 [SC] anywhere on the reels retrigger 10, 15 or 25 free spins.
 ---

@@ -15,13 +15,13 @@
 | [SC]      | Scatter     |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3 and 4 only.
+- [WD] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [SC].
-- When [WD] symbols appear on reels 2 to 5 will trigger the respin feature.
+- 4 [WD] anywhere on reels 2, 3, 4, or 5 trigger Respin.
 
 ### Scatter Symbol
-- [SC] appears on reels 1, 2 and 3 only.
-- When 3 [SC] symbols appear anywhere will trigger the Free Game with 7 free spins.
+- [SC] appears on reels 1, 2 or 3.
+- 3 [SC] anywhere on reels 1, 2 or 3 trigger 7 free spins.
 ---
 
 ## Game Features
@@ -35,5 +35,5 @@
 - [L1]~[L6] will be removed in Free Game.
 - All [WD] symbols will be locked on reels.
 - When a [WD] lands on an already sticked [WD], the [WD] multiplier will increase 1x, up to maximum of 5x.
-- When 1 [SC] symbols appear anywhere will retrigger the Free Game with 1 free spin.
+- 1 [SC] anywhere on the reels retrigger 1 free spin.
 ---

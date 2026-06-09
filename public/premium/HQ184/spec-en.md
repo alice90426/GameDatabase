@@ -15,7 +15,7 @@
 | [MS]        | Mystery Symbol  |
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] from leftmost to right on the reels trigger 8, 12, 20 free spins and win 5x, 10x or 20x total play amount.
+- 3, 4 or 5 [SC] from leftmost to right on adjacent reels trigger 8, 12 or 20 free spins, and win 5x, 10x or 20x total play amount.
 
 ### Mystery Symbol
 - [MS] will randomly turn into symbol except [SC].
@@ -25,5 +25,5 @@
 
 ### Free Game
 - Up to 15 [MS] appear randomly on the reels.
-- 3, 4 or 5 [SC] from leftmost to right on the reels retrigger 8, 12, 20 free spins and win 5x, 10x or 20x total play amount.
+- 3, 4 or 5 [SC] from leftmost to right on adjacent reels retrigger 8, 12 or 20 free spins, and win 5x, 10x or 20x total play amount.
 ---

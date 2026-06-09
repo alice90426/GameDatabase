@@ -21,8 +21,8 @@
 - Base Game Multiplier: 1X~3X.
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels trigger 4, 5 or 6 free spins, and win 5X, 20X or 50X total play amount.
-- [SC] only appears on reels 3, 4 or 5.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 4, 5 or 6 free spins, and win 5x, 20x or 50x total play amount.
+- [SC] appears on reels 3, 4 or 5.
 ---
 
 ## Game Features

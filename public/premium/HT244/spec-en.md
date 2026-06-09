@@ -15,12 +15,12 @@
 | [SC]      | Scatter     |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3, 4 and 5 only.
 - [WD] substitutes for all symbols except [SC].
+- [WD] appears on reels 2, 3, 4 or 5.
 
 ### Scatter Symbol
-- [SC] appears on reels 2, 3, 4 and 5 only.
-- When 3 [SC] symbols appear anywhere will trigger the Select Free Game.
+- 3, 4, 5 or 6 [SC] anywhere on the reels trigger Select Free Game.
+- [SC] appears on reels 2, 3, 4 or 5.
 ---
 
 ## Game Features

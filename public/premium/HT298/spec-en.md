@@ -17,15 +17,15 @@
 | [BN]      | Bonus        |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3 and 4 only.
 - [WD] substitutes for all symbols except [SC], [SC1] and [BN].
+- [WD] appears on reels 2, 3 or 4.
 
 ### Scatter Symbol
-- When 3 or more [SC]/[SC1] symbols appear anywhere will trigger the Bonus Wheel.
-- [SC1] appears on reels 5 only.
+- 3 [SC] or [SC1] anywhere on the reels trigger Bonus Wheel.
+- [SC1] appears on reel 5 only.
 
 ### Bonus Symbol
-- When 6 or more [BN] symbols appear anywhere will trigger the Free Game with 6 free spins.
+- 6 or more [BN] anywhere on the reels trigger 6 free spins.
 ---
 
 ## Game Features
@@ -44,5 +44,5 @@
 - The Free Game may have different features.
   - Giant Symbol: A 2x2 to 3x5 mega [BN] will appear on reels and marked before the Free Game starts.
   - Max Level: The marked position will be directly at LV3.
-  - Expand Reels: The reels expand to 6x5.
+  - Expand Reel: The reels expand to 6x5.
 ---

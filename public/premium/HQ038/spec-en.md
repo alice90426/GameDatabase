@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- 3 [SC] from leftmost to right on the 3, 4, 5 reels win 2X total play amount and 8 free spins.
+- 3 [SC] anywhere on reels 3, 4, or 5 trigger 8 free spins, and win 2x total play amount.
 ---
 
 ## Game Features
@@ -28,5 +28,5 @@
 
 ### Free Game
 - Reel 5 will copy to reel 1, 2, 3, 4 randomly with one reel to four reels when reel 5 full of [WD].
-- Player can retrigger 8 free spins with 3 [SC] from leftmost on reel 3, 4, 5 to right during free game.
+- 3 [SC] anywhere on reels 3, 4, or 5 retrigger 8 free spins.
 ---

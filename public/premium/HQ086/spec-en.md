@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: 25 Lines.
-- Features: Extra Reel, Win Multiplier, Expanding Wild, Random Wild, Free Game.
+- Features: Extra Reel, Win Multiplier, Expand Wild, Random Wild, Free Game.
 ---
 
 ## Symbols
@@ -13,7 +13,7 @@
 | [L1]~[L5]   | Low Pay         |
 | [WD]        | Wild            |
 | [SC]        | Scatter         |
-| [HW]        | Super Wild      |
+| [SW]        | Super Wild      |
 
 ### Wild Symbol
 - [WD] substitutes for all symbols except [SC].
@@ -21,7 +21,7 @@
 
 ### Scatter Symbol
 - 3 [SC] anywhere on the reels trigger 10 free spins, and win 1x total play amount.
-- [SC] only appears on the 1st, 3rd or 5th reel.
+- [SC] appears on reels 1, 3 or 5.
 ---
 
 ## Game Features
@@ -33,6 +33,6 @@
 - - Free Game: 2X~10X
 
 ### Free Game
-- [HW] only appears on the 6th reel during Free Game and trigger random wild feature. Each reel will random appear 1 [WD].
+- [SW] only appears on the 6th reel during Free Game and trigger random wild feature. Each reel will random appear 1 [WD].
 - 3 [SC] anywhere on the reels retrigger 10 free spins.
 ---

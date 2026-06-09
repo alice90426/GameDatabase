@@ -18,5 +18,5 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels win 2X, 10X or 100X total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels win 2x, 10x or 100x total play amount.
 ---

@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: 243 Ways.
-- Features: Cascading Reel, Random Wild, Win Multiplier, Free Game.
+- Features: Cascade Reel, Random Wild, Win Multiplier, Free Game.
 ---
 
 ## Symbols
@@ -24,14 +24,14 @@
 
 ## Game Features
 
-### Cascading Reel
-- All winning will active the cascading reel feature, except random wild feature.
+### Cascade Reel
+- All winning will active the Cascade reel feature, except random wild feature.
 - The feature will finish until no winning combinations.
 
 ### Random Wild
 - During Base Game, 3 to 9 [WD] appear randomly on reel 2, 3 and 4 to Guarante Win.
-- The feature will not trigger cascading reel feature.
+- The feature will not trigger Cascade reel feature.
 
 ### Free Game
-- More cascading reel combos makes multiplier increase from 2X, 3X, 4X, 5X, 10X.
+- More Cascade reel combos makes multiplier increase from 2X, 3X, 4X, 5X, 10X.
 ---

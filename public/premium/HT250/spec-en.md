@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 3 rows.
 - Lines: 243 Ways.
-- Features: Win Multiplier, Walking Wild, Respin, Free Game.
+- Features: Win Multiplier, Shift Wild, Respin, Free Game.
 ---
 
 ## Symbols
@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- When 3/4/5 [SC] symbols appear anywhere will trigger the Free Game with 8/12/20 free spins.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 8, 12 or 20 free spins.
 ---
 
 ## Game Features
@@ -27,7 +27,7 @@
 - When [WD] appears and have wins, the win multiplier will be activated, and the multipier will be X2, X3 or X5.
 
 ### Respin
-- When more than 2 [WD] symbols appear in Base Game will trigger Respin with 1 respin.
+- 2 or more [WD] anywhere on the reels trigger Respin.
 - When Respin trigger, [WD] will be retained and moved to a random position. ([WD] will not overlap).
 - When a new [WD] appears in Respin will retrigger another 1 respin until no new [WD].
 

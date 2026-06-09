@@ -21,12 +21,12 @@
 - [WD] substitutes for all symbols except [SC] and [BN].
 
 ### Scatter Symbol
-- When 5 or more [SC1] or [SC2] symbols appear anywhere will trigger the Free Game.
+- 5 or more [SC1] or [SC2] anywhere on the reels trigger Free Game.
 - The free spins is qual to the number of [SC1] or [SC2] that triggered it.
 - [SC1] and [SC2] carries a multiplier of 0.1x, 0.2x, 0.5x, 0.8x, 1x, 1.5x, 2x, 2.5x or 3x.
 
 ### Bonus Symbol
-- When 1 or more [BN1] appearing anywhere may trigger the Bonus Game with 1 bonus spin.
+- 1 or more [BN1] anywhere on the reels may trigger 1 bonus spin.
 ---
 
 ## Game Features

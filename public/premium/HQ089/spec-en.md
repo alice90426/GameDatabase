@@ -16,7 +16,7 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols except [SC].
-- [WD] only appear on reel 3, 4, 5.
+- [WD] appears on reels 3, 4 or 5.
 - 5 free spins are won for 5 of a kind high pay symbols with one or more [WD].
 
 ### Scatter Symbol
@@ -26,7 +26,7 @@
 ## Game Features
 
 ### Free Game
-- During the free games, any [SC] appears on the reel win a prize. 
-- The prize of each [SC] is the same as the win line that triggered the free game.
-- During free game, 5 free spins are won for 5 of a kind high pay symbols with one or more [WD].
+- During the Free Game, any [SC] appears on the reel win a prize. 
+- The prize of each [SC] is the same as the win line that triggered the Free Game.
+- During Free Game, 5 free spins are won for 5 of a kind high pay symbols with one or more [WD].
 ---

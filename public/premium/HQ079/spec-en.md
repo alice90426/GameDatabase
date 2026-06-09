@@ -25,5 +25,5 @@
 
 ### Free Game
 - All high pay symbols may turn to one of [H1]~[H5] to award additional win.
-- Player can retrigger 10, 12 or 20 free spins with 3, 4 or 5 [SC] from leftmost to right on adjacent reels.
+- 3, 4 or 5 [SC] from leftmost to right on adjacent reels retrigger 10, 12 or 20 free spins.
 ---

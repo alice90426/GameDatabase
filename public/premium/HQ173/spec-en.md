@@ -18,7 +18,7 @@
 - [WD] appears on reels 2 or 5.
 
 ### Scatter Symbol
-- 1 [SC] anywhere on the reels trigger 8 free spins, and win 8X total play amount.
+- 1 [SC] anywhere on the reels trigger 8 free spins, and win 8x total play amount.
 - [SC] appears on reel 1 only.
 ---
 

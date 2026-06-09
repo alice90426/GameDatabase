@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 6 reels, 5 rows.
 - Lines: Any 8.
-- Features: Cascading Reels, Win Multiplier, Respin, Free Game.
+- Features: Cascade Reel, Win Multiplier, Respin, Free Game.
 ---
 
 ## Symbols
@@ -15,14 +15,14 @@
 | [B1]~[B7] | Bonus Symbol |
 
 ### Bonus Symbol
-- When 3 [BN] symbols appear anywhere will trigger the respin.
-- When 4 or more [BN] symbols appear anywhere will trigger the Bonus Game with 3 bonus spins.
+- 3 [BN] anywhere on the reels trigger Respin.
+- 4 or more [BN] anywhere on the reels trigger 3 bonus spins.
 - Random carries multipliers of 1x, 2x, 3x, 4x, 5x, 6x, 8x, 10x, 12x, 15x, 20x, 25x, 50x, 100x, 250x or 500x.
 ---
 
 ## Game Features
 
-### Cascading Reels
+### Cascade Reel
 - All winning symbols will explode, allowing the symbols above them to cascade down for a new round.
 - Additional winning combination will be tallied in every round until no more winning combination can be tallied.
 

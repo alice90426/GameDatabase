@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- When 3 [SC] symbols appear anywhere will trigger the Free Game with 8 free spins. Each additional [SC] symbol awards 1 extra free spin.
+- 3 [SC] anywhere on the reels trigger 8 free spins. Each extra 1 [SC] awards 1 free spin.
 ---
 
 ## Game Features

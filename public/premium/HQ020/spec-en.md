@@ -14,7 +14,7 @@
 | [SC]      | Scatter         |
 
 ### Scatter Symbol
-- 3 [SC] from leftmost to right on reels 2, 3 and 4 trigger Bonus Wheel.
+- 3 [SC] anywhere on reels 2, 3 or 4 trigger Bonus Wheel.
 ---
 
 ## Game Features

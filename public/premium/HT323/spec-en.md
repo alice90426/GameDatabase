@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 7 rows.
 - Lines: 117649 Ways.
-- Features: Cascading Reels, Random Wild, Multiplier Wild, Free Game.
+- Features: Cascade Reel, Random Wild, Multiplier Wild, Free Game.
 ---
 
 ## Symbols
@@ -17,18 +17,18 @@
 | [SC]      | Scatter     |
 
 ### Wild Symbol
-- [WD]/[W1]/[W2] appears on reels 2, 3, 4 and 5 only.
+- [WD], [W1] or [W2] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [W1], [W2] and [SC].
 - [W1] substitutes for all symbols except [W2] and [SC].
 - [W2] substitutes for all symbols except [W1] and [SC].
 
 ### Scatter Symbol
-- When 3 [SC] symbols appear anywhere will trigger the Free Game with 8 free spins. For each additional [SC], add 2 free spins.
+- 4 [SC] anywhere on the reels trigger 8 free spins. Each extra 1 [SC] awards 2 free spin.
 ---
 
 ## Game Features
 
-### Cascading Reels
+### Cascade Reel
 - All winning symbols will explode, allowing the symbols above them to cascade down for a new round.
 - Additional winning combination will be tallied in every round until no more winning combination can be tallied.
 
@@ -40,6 +40,6 @@
 - The multiplier is X2, X3 or X5.
 
 ### Free Game
-- When 4 or more [SC] symbols appear anywhere will retrigger the Free Game with 5 free spins.
+- 4 or more [SC] anywhere on the reels retrigger 5 free spins.
 - Each spin will trigger Random Wild Feature.
 

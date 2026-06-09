@@ -19,7 +19,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- When any [SC1]~[SC3] symbol appearing anywhere may trigger the Free Game or accumulate the defferent feature.
+- 1 or more [SC1], [SC2] or [SC3] anywhere on the reels may trigger Free Game or accumulate the different feature.
   - [SC1]: Trigger Free Game with accumulate free spins.
     - The initial free spins is 9.
   - [SC2]: Trigger Free Game with multiplier [WD] feature.

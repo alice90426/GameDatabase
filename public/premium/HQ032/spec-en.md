@@ -15,14 +15,14 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols.
-- 3, 4 or 5 [WD] anywhere on the reels trigger 10 free spins, and win 2X, 20X or 200X total play amount.
-- [WD] can't replace by the special expand symbol in free games.
+- 3, 4 or 5 [WD] anywhere on the reels trigger 10 free spins, and win 2x, 20x or 200x total play amount.
+- [WD] can't replace by the special expand symbol in Free Game.
 ---
 
 ## Game Features
 
 ### Free Game
-- After enter the free game, will choose a symbol randomly and transfer it to the special symbol, then it will earn the extra reward in free game.
+- After enter the Free Game, will choose a symbol randomly and transfer it to the special symbol, then it will earn the extra reward in Free Game.
 - About the extra reward, special expand symbol will expanding and cover the whole reel.
-- 3 or more [WD] during the Free Game grant you 10 additional free spins.
+- 3 or more [WD] anywhere on the reels retrigger 10 free spins.
 ---

@@ -16,11 +16,11 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols except [SC].
-- [WD] appears on reel 1, 2, 4, 5.
-- If reel 1/2/4/5 fully appearing [WD], reel 5/4/2/1 become fully appearing [WD].
+- [WD] appears on reels 1, 2, 4 or 5.
+- If reels 1, 2, 4, or 5 fully appearing [WD], reels 5, 4, 2, or 1 become fully appearing [WD].
 
 ### Scatter Symbol
-- 3, 4, 5 [SC] anywhere on the reels trigger 12 free spins, and win 1x, 5x or 25x total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels trigger 12 free spins, and win 1x, 5x or 25x total play amount.
 ---
 
 ## Game Features

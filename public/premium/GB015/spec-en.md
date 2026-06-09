@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- When giant [SC] appears fully on the reels trigger 8 free spins.
+- 1 giant [SC] anywhere on the reels trigger 8 free spins.
 ---
 
 ## Game Features

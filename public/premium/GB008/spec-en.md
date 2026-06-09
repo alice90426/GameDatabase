@@ -16,13 +16,13 @@
 | [SC]      | Scatter         |
 
 ### Wild Symbol
-- [WD]/[W1] substitutes for all symbols except [SC].
+- [WD] or [W1] substitutes for all symbols except [SC].
 - [WD] appears on reels 2, 3, 4 or 5.
 - [W1] appears on reel 3 only.
 - When [W1] appears on reel 3, the initial multiplier of Free Game can be upgrade, max level is 5.
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] from leftmost to right on the reels trigger 8, 13 or 20 free spins.
+- 3, 4 or 5 [SC] from leftmost to right on adjacent reels trigger 8, 13 or 20 free spins.
 ---
 
 ## Game Features

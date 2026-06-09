@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 5 reels, 67776 rows.
 - Lines: 12348 Ways.
-- Features: Expanding Reel, Random Symbol, Respin, Free Game.
+- Features: Expand Reel, Random Symbol, Respin, Free Game.
 ---
 
 ## Symbols
@@ -16,16 +16,16 @@
 | [BN]      | Bonus       |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3 and 4 only.
+- [WD] appears on reels 2, 3 or 4.
 - [WD] substitutes for all symbols except [SC] and [BN].
 
 ### Scatter Symbol
-- [SC] appears on reels 2, 3 and 4 only.
-- When 3 [SC] symbols appear anywhere will trigger the Free Game with 10 free spins.
+- [SC] appears on reels 2, 3 or 4.
+- 3 [SC] anywhere on the reels trigger 10 free spins.
 
 ### Bonus Symbol
 - [BN] appears on reel 3 only.
-- When [BN] appears, it triggers 1 respin and increases the reels height by 1 row.
+- When [BN] appears, it trigger 1 respin and increases the reels height by 1 row.
 ---
 
 ## Game Features
@@ -35,5 +35,5 @@
 
 ### Free Game
 - The payment of [H1] will double.
-- When 3 [SC] symbols appear anywhere will retrigger the Free Game with 10 free spins.
+- 3 [SC] anywhere on the reels retrigger 10 free spins.
 - Reel Height is retained until Free Game ends.

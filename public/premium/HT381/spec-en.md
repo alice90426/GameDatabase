@@ -3,7 +3,7 @@
 ## Introduction
 - Size: 6 reels, 6 rows.
 - Lines: 46656 Ways.
-- Features: Cascading Reels, Sticky Wild, Free Game.
+- Features: Cascade Reel, Sticky Wild, Free Game.
 ---
 
 ## Symbols
@@ -15,13 +15,16 @@
 | [SC]      | Scatter     |
 
 ### Wild Symbol
-- [WD] appears on reels 2, 3, 4 and 5 only.
+- [WD] appears on reels 2, 3, 4 or 5.
 - [WD] substitutes for all symbols except [SC].
+
+### Scatter Symbol
+- 3 [SC] anywhere on the reels trigger 8 free spins. Each extra 1 [SC] awards 2 free spin.
 ---
 
 ## Game Features
 
-### Cascading Reels
+### Cascade Reel
 - All winning symbols will explode, allowing the symbols above them to cascade down for a new round.
 - Additional winning combination will be tallied in every round until no more winning combination can be tallied.
 
@@ -31,7 +34,7 @@
 - When [WD] connected, life decreases by 1, and [WD] will disappear when life is 0.
 
 ### Free Game
-- 3 Scatter symbols appear anywhere will trigger/retrigger the Free Game with 8 free spins. For each additional [SC], add 2 free spins.
+- 3 [SC] anywhere on the reels retrigger 8 free spins. Each extra 1 [SC] awards 2 free spin.
 - The Sticky Wild feature will trigger every free spin.
 ---
 

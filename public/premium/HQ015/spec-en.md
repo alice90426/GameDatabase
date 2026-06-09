@@ -27,5 +27,5 @@
 ### Free Game
 - Any winning combination will multiply 5X!
 - Any wins with [WD] substituting pay 5X!
-- Each [SC] that lands anywhere on the reels award an extra free spin during free game.
+- 1 [SC] anywhere on the reels retrigger 1 free spins.
 ---

@@ -18,7 +18,7 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- [SC] only appear in Base Game.
+- [SC] appears in Base Game only.
 - 3, 4 or 5 [SC] anywhere on the reels trigger 6, 10 or 20 free spins.
 ---
 
@@ -26,5 +26,5 @@
 
 ### Free Game
 - For each spin, [H1]~[H3] have a chance to transform into [WD]. The [WD] stick on reels until Free Game finished.
-- [WD] only appears on reel 2, 3, 4, 5.
+- [WD] appears on reels 2, 3, 4 or 5.
 ---

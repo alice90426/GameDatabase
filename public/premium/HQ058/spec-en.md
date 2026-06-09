@@ -19,7 +19,7 @@
 - All wins with [WD] substituting pay 5X.
 
 ### Scatter Symbol
-- [SC] only appear on reel 1, 2, 3.
+- [SC] appears on reels 1, 2 or 3.
 - 3 [SC] from leftmost to right on adjacent reels trigger Free Game.
 ---
 
@@ -35,5 +35,5 @@
 - - 25 free spins and all win X3
 - - 15 free spins and all win X5
 - - 10 free spins and all win X8
-- Each [SC] that lands anywhere on the reels awards an extra free spin during free game.
+- 1 [SC] anywhere on the reels retrigger 1 free spin.
 ---

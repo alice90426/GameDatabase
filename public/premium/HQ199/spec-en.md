@@ -16,7 +16,7 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols.
-- [WD] only appears on the reel 2 or 4.
+- [WD] appears on reels 2 or 4.
 - [WD] appears on both the reel 2 and 4 trigger 5 free spins.
 
 ### Scatter Symbol

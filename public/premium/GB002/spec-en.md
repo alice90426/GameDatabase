@@ -21,5 +21,5 @@
 
 ### Bonus Game
 - There are 3 chances of selection when the Bonus Game trigger.
-- The multiplier in the Bonus Game according to the nuber of [SC].
+- The multiplier in the Bonus Game according to the number of [SC].
 ---

@@ -18,8 +18,8 @@
 - [WD] substitutes for all symbols.
 
 ### Scatter Symbol
-- 2 [SC] appears on the reels randomly trigger 10~20 free spins.
-- [SC] only appears on reels 1 and 6.
+- 2 [SC] anywhere on the reels trigger 10~20 free spins.
+- [SC] appears on reels 1 or 6.
 ---
 
 ## Game Features

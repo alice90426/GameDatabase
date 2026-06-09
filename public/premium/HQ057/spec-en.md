@@ -16,10 +16,10 @@
 
 ### Wild Symbol
 - [WD] substitutes for all symbols except [SC].
-- [WD] appearing on reels 2, 3, 4, 5 only.
+- [WD] appears on reels 2, 3, 4 or 5.
 
 ### Scatter Symbol
-- When 9 [SC] appear on reels 2, 3, 4 trigger Free Game.
+- 9 [SC] anywhere on the reels trigger Free Game.
 ---
 
 ## Game Features
@@ -27,5 +27,5 @@
 ### Free Game
 - Select one of five symbol options, with giant symbols and super symbol stack.
 - Reels 2, 3, 4 are spun at same time.
-- Player could retrigger feature with a [SC] giant symbol on reels 2, 3 and 4.
+- 1 giant [SC] anywhere on the reels retrigger Free Game.
 ---

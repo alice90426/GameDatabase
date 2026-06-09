@@ -21,7 +21,7 @@
 
 ### Free Game
 - 9 the same symbols appearing on reels trigger 5 free spins.
-- During free game, any pay symbols appears on the reels wins a prize and a multiplier sigh will be locked on the position.
+- During Free Game, any pay symbols appears on the reels wins a prize and a multiplier sigh will be locked on the position.
 - When pay symbol appears with locked multiplier sign, player can win prize by the multiplier. And the multiplier will raise 1, maximun is 5.
 - The prize is the same as the full pay lines award of the symbol trigger the Free Game.
 ---

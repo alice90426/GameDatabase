@@ -19,7 +19,7 @@
 - All wins with [WD] substituting pay 2X.
 
 ### Scatter Symbol
-- 3, 4 or 5 [SC] anywhere on the reels trigger free spins, and win 2X, 10X or 1000X total play amount.
+- 3, 4 or 5 [SC] anywhere on the reels trigger Free Game, and win 2x, 10x or 1000x total play amount.
 - - 3[SC]: Win 5~15 free spins.
 - - 4[SC]: Win 8~18 free spins.
 - - 5[SC]: Win 10~20 free spins.
@@ -30,5 +30,5 @@
 ### Free Game
 - Free Spin wins except [SC] are multiplied by the multiplier.
 - The multiplier starts at 1 and increases by 1 for each spin.
-- Player can retrigger free spins with 3, 4 or 5 [SC] anywhere on the reels during free games.
+- 3, 4 or 5 [SC] anywhere on the reels retrigger Free Game.
 ---

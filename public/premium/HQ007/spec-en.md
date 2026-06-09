@@ -18,12 +18,12 @@
 - [WD] substitutes for all symbols except [SC].
 
 ### Scatter Symbol
-- All Reels with [SC] trigger 13 free spins.
+- All reels with [SC] trigger 13 free spins.
 ---
 
 ## Game Features
 
 ### Free Game
 - Any winning combination will multiply from 3X up to 72X!
-- Player can retrigger 13 free spins again when All Reels with [SC].
+- All reels with [SC] retrigger 13 free spins.
 ---
