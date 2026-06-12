@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     description:
       "A structured slot game database built with Next.js.",
     type: "website"
+  },
+  verification: {
+    google: 'jXNW1CBLLk_G2BeLYIEBL12ELoSVzJARd2xuTdnF5vc',
   }
 };
 
