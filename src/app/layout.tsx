@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "GAME DATABASE",
     template: "%s"
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     type: "website"
   },
   verification: {
-    google: 'jXNW1CBLLk_G2BeLYIEBL12ELoSVzJARd2xuTdnF5vc',
+    google: "jXNW1CBLLk_G2BeLYIEBL12ELoSVzJARd2xuTdnF5vc"
   }
 };
 
