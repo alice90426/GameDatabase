@@ -1,0 +1,20 @@
+{
+  "versions": {
+    "202606121112": {
+      "levels": {
+        "0": {
+          "enabled": true,
+          "expires_at": null
+        },
+        "1": {
+          "enabled": true,
+          "expires_at": "2026-12-31T23:59:59+08:00"
+        },
+        "2": {
+          "enabled": false,
+          "expires_at": null
+        }
+      }
+    }
+  }
+}
