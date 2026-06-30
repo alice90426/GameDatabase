@@ -70,14 +70,18 @@ export function GameDetailModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-3 backdrop-blur-sm sm:p-6"
+      className="fixed inset-0 z-[100] flex items-stretch justify-center bg-black/75 p-3 backdrop-blur-sm sm:items-center sm:p-6"
+      style={{
+        paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))",
+        paddingTop: "calc(0.75rem + env(safe-area-inset-top))"
+      }}
       onClick={onClose}
       role="presentation"
     >
       <section
         aria-label={`${game.id} ${dictionary.modal.details}`}
         aria-modal="true"
-        className="flex h-[min(88vh,860px)] w-full max-w-6xl flex-col overflow-hidden rounded border border-white/15 bg-panel shadow-2xl shadow-black/60"
+        className="flex h-full max-h-[calc(100dvh-1.5rem-env(safe-area-inset-top)-env(safe-area-inset-bottom))] w-full max-w-6xl flex-col overflow-hidden rounded border border-white/15 bg-panel shadow-2xl shadow-black/60 sm:h-[min(88dvh,860px)]"
         onClick={(event) => event.stopPropagation()}
         role="dialog"
       >
