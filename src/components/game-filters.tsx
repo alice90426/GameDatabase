@@ -41,23 +41,9 @@ export function GameFilters({
   function matchesGame(game: Game, ignoredFilter?: FilterKey) {
     const normalizedQuery = query.trim().toLowerCase();
     const volatilityLevel = getVolatilityLevel(game.volatility);
-    const searchable = [
-      game.id,
-      ...game.genre,
-      String(game.rtp),
-      String(game.hitRate),
-      String(game.volatility),
-      game.boardSize,
-      game.lineMechanic,
-      ...game.tags,
-      game.githubUrl ? "demo" : "",
-      String(volatilityLevel)
-    ]
-      .join(" ")
-      .toLowerCase();
-
     const matchesQuery =
-      normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
+      normalizedQuery.length === 0 ||
+      game.id.toLowerCase().includes(normalizedQuery);
     const matchesVolatility =
       ignoredFilter === "volatility" ||
       volatility === "all" ||
