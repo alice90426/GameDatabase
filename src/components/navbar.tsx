@@ -17,6 +17,7 @@ export function Navbar({ locale }: NavbarProps) {
     { label: dictionary.nav.games, href: localizedPath(locale, "/games") },
     { label: dictionary.nav.research, href: localizedPath(locale, "/research") },
     { label: dictionary.nav.articles, href: localizedPath(locale, "/articles") },
+    { label: dictionary.nav.tools, href: localizedPath(locale, "/tools") },
     { label: dictionary.nav.services, href: localizedPath(locale, "/services") },
     { label: dictionary.nav.about, href: localizedPath(locale, "/about") }
   ];
@@ -39,7 +40,7 @@ export function Navbar({ locale }: NavbarProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white"
+              className="rounded px-3 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white"
             >
               {item.label}
             </Link>

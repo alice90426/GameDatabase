@@ -3,8 +3,9 @@ import { locales } from "@/lib/i18n";
 import { getBloggerArticles } from "@/lib/blogger";
 import { getPublishedResearchArticles } from "@/lib/notion";
 import { siteUrl } from "@/lib/site";
+import { tools } from "@/data/tools";
 
-const routes = ["", "/games", "/research", "/articles", "/services", "/about"];
+const routes = ["", "/games", "/tools", "/research", "/articles", "/services", "/about"];
 const rootRoutes = ["/research", "/articles"];
 const staticLastModified = new Date("2026-06-16");
 
@@ -29,6 +30,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily" as const,
       priority: 0.7
     })),
+    ...locales.flatMap((locale) =>
+      tools.map((tool) => ({
+        url: `${siteUrl}/${locale}/tools/${tool.slug}`,
+        lastModified: new Date(tool.publishedAt),
+        changeFrequency: "monthly" as const,
+        priority: 0.7
+      }))
+    ),
     ...locales.flatMap((locale) =>
       researchArticles.map((article) => ({
         url: `${siteUrl}/${locale}/research/${article.slug}`,

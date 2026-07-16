@@ -38,6 +38,7 @@ export const dictionaries = {
       games: "遊戲資料",
       research: "研究筆記",
       articles: "教學文章",
+      tools: "輔助工具",
       services: "服務項目",
       about: "關於創作者",
       language: "EN"
@@ -113,6 +114,21 @@ export const dictionaries = {
       backToArticles: "返回教學文章",
       description: "從 Blogger 匯入的教學與長篇文章。",
       fallbackDescription: "Blogger 教學文章"
+    },
+    tools: {
+      eyebrow: "Utility Projects",
+      title: "輔助工具",
+      intro: "整理我為解決實際問題所製作的輔助工具，包含操作影片、功能重點與技術說明。",
+      viewTool: "查看工具詳情",
+      emptyTitle: "工具展示頁已準備完成",
+      empty: "加入工具名稱、說明與 YouTube 影片連結後，作品會顯示在這裡。",
+      backToTools: "返回輔助工具",
+      overview: "工具介紹",
+      features: "主要功能",
+      technologies: "使用技術",
+      watchYouTube: "在 YouTube 觀看",
+      sourceCode: "查看原始碼",
+      openProject: "開啟工具"
     },
     modal: {
       details: "遊戲詳情",
@@ -243,6 +259,7 @@ export const dictionaries = {
       games: "Games",
       research: "Research",
       articles: "Articles",
+      tools: "Tools",
       services: "Services",
       about: "About",
       language: "中文"
@@ -318,6 +335,21 @@ export const dictionaries = {
       backToArticles: "Back to Articles",
       description: "Blogger tutorials and long-form posts.",
       fallbackDescription: "Blogger article."
+    },
+    tools: {
+      eyebrow: "Utility Projects",
+      title: "Tools",
+      intro: "Small utilities built to solve practical problems, with video walkthroughs, key features, and technical notes.",
+      viewTool: "View tool details",
+      emptyTitle: "The tool showcase is ready",
+      empty: "Add a tool name, description, and YouTube URL to publish it here.",
+      backToTools: "Back to Tools",
+      overview: "Overview",
+      features: "Key Features",
+      technologies: "Technologies",
+      watchYouTube: "Watch on YouTube",
+      sourceCode: "View Source",
+      openProject: "Open Tool"
     },
     modal: {
       details: "Game details",
