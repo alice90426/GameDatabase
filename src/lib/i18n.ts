@@ -164,6 +164,14 @@ export const dictionaries = {
           text: "整理可供溝通、實作與通過GLI、BMM認證的中英文遊戲規格文件。"
         }
       ],
+      experienceTitle: "開發經驗",
+      experienceIntro: "",
+      experienceGroups: [
+        { category: "電子", games: ["老虎機", "賓果"] },
+        { category: "街機", games: ["Crash", "Miles", "Plinko"] },
+        { category: "押注", games: ["骰寶", "輪盤", "彩票", "百家樂"] },
+        { category: "棋牌", games: ["妞妞", "5PK"] }
+      ],
       processTitle: "交付重點",
       process: ["試算表", "驗證程式", "模擬結果", "規格文件"],
       note: "此服務聚焦於遊戲數學與規格設計；可試玩作品與外部連結僅作為佐證，不作為主要服務項目。"
@@ -384,6 +392,14 @@ export const dictionaries = {
           title: "Game Specification Documents",
           text: "Organize structured specification documents in English and Chinese for communication, implementation, and GLI / BMM certification."
         }
+      ],
+      experienceTitle: "Game Experience",
+      experienceIntro: "",
+      experienceGroups: [
+        { category: "Gaming", games: ["Slot", "Bingo"] },
+        { category: "Arcade", games: ["Crash", "Miles", "Plinko"] },
+        { category: "Bet Types", games: ["Dice", "Roulette", "Lottery", "Baccarat"] },
+        { category: "Card Games", games: ["NiuNiu", "5PK"] }
       ],
       processTitle: "Delivery Focus",
       process: ["Spreadsheet", "Validation Program", "Simulation Summary", "Specification Docs"],

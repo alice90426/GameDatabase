@@ -4,9 +4,13 @@ import {
   ArrowRight,
   BarChart3,
   Calculator,
+  Dices,
   FileText,
+  Gamepad2,
+  LayoutGrid,
   LineChart,
-  ShieldCheck
+  ShieldCheck,
+  Spade
 } from "lucide-react";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { localizedPath } from "@/lib/routes";
@@ -49,6 +53,12 @@ export default async function ServicesPage({
     <BarChart3 key="simulation" size={22} />,
     <FileText key="specs" size={22} />
   ];
+  const experienceIcons = [
+    <LayoutGrid key="gaming" size={22} />,
+    <Gamepad2 key="arcade" size={22} />,
+    <Dices key="bets" size={22} />,
+    <Spade key="cards" size={22} />
+  ];
 
   return (
     <div className="px-5 py-14 sm:py-16">
@@ -83,7 +93,41 @@ export default async function ServicesPage({
         </div>
       </section>
 
-      <section className="mx-auto mt-10 grid max-w-6xl gap-4 md:grid-cols-2">
+      <section className="mx-auto mt-10 max-w-6xl">
+        <article className="rounded border border-white/10 bg-panel/75 p-5">
+          <span className="grid size-11 place-items-center rounded border border-neon/30 bg-neon/10 text-neon">
+            <Gamepad2 size={22} />
+          </span>
+          <h2 className="mt-5 text-xl font-black text-white">
+            {content.experienceTitle}
+          </h2>
+          <p className="mt-3 leading-7 text-slate-300">
+            {content.experienceIntro}
+          </p>
+          <div className="mt-5 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+          {content.experienceGroups.map((group, index) => (
+            <div
+              key={group.category}
+              className="flex items-start gap-3"
+            >
+              <span className="mt-0.5 text-neon">
+                {experienceIcons[index]}
+              </span>
+              <div>
+                <h3 className="text-base font-black text-white">
+                  {group.category}
+                </h3>
+                <p className="mt-1 leading-7 text-slate-300">
+                  {group.games.join(" · ")}
+                </p>
+              </div>
+            </div>
+          ))}
+          </div>
+        </article>
+      </section>
+
+      <section className="mx-auto mt-8 grid max-w-6xl gap-4 md:grid-cols-2">
         {content.cards.map((card, index) => (
           <article
             key={card.title}
