@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "id":  "GB002",
         "genre":  [
@@ -2000,6 +2000,25 @@
                      "Respin"
                  ],
         "githubUrl":  "https://alice90426.github.io/HQ208/"
+    },
+    {
+        "id":  "HT206",
+        "genre":  [
+                      "Slot"
+                  ],
+        "rtp":  94.068,
+        "hitRate":  31.985,
+        "maxWin":  20480,
+        "volatility":  14.772,
+        "boardSize":  "566665",
+        "lineMechanic":  "32400 Ways",
+        "tags":  [
+                     "Cascade Reel",
+                     "Symbol Transform",
+                     "Multiplier Symbol",
+                     "Win Multiplier",
+                     "Free Game"
+                 ]
     },
     {
         "id":  "HT232",
