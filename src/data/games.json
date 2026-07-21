@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "id":  "GB002",
         "genre":  [
@@ -2018,7 +2018,8 @@
                      "Multiplier Symbol",
                      "Win Multiplier",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HT206/"
     },
     {
         "id":  "HT232",
