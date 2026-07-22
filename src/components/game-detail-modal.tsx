@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { getDictionary } from "@/lib/i18n";
 import type { Game, Locale } from "@/types/game";
 
@@ -155,6 +157,7 @@ export function GameDetailModal({
               key={`${game.id}-${locale}-info`}
               src={`/premium/${game.id}/spec-${locale}.md`}
               locale={locale}
+              markdown
             />
           ) : null}
           {activeTab === "simulation" ? (
@@ -251,7 +254,15 @@ function TabButton({
   );
 }
 
-function TextContent({ src, locale }: { src: string; locale: Locale }) {
+function TextContent({
+  src,
+  locale,
+  markdown = false
+}: {
+  src: string;
+  locale: Locale;
+  markdown?: boolean;
+}) {
   const dictionary = getDictionary(locale);
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -306,10 +317,37 @@ function TextContent({ src, locale }: { src: string; locale: Locale }) {
     );
   }
 
+  if (!markdown) {
+    return (
+      <pre className="whitespace-pre-wrap break-words p-5 font-mono text-sm leading-7 text-slate-200 sm:p-7">
+        {content}
+      </pre>
+    );
+  }
+
   return (
-    <pre className="whitespace-pre-wrap break-words p-5 font-sans text-sm leading-7 text-slate-200 sm:p-7">
-      {content}
-    </pre>
+    <article className="p-5 text-sm leading-7 text-slate-300 sm:p-7">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          h1: ({ children }) => <h1 className="mb-5 text-2xl font-black text-white">{children}</h1>,
+          h2: ({ children }) => <h2 className="mb-3 mt-8 border-b border-white/10 pb-2 text-xl font-black text-white first:mt-0">{children}</h2>,
+          h3: ({ children }) => <h3 className="mb-2 mt-6 text-base font-black text-neon">{children}</h3>,
+          p: ({ children }) => <p className="my-3">{children}</p>,
+          ul: ({ children }) => <ul className="my-3 list-disc space-y-1 pl-6">{children}</ul>,
+          ol: ({ children }) => <ol className="my-3 list-decimal space-y-1 pl-6">{children}</ol>,
+          hr: () => <hr className="my-6 border-white/10" />,
+          blockquote: ({ children }) => <blockquote className="my-4 border-l-2 border-neon/60 bg-neon/5 px-4 py-1 text-slate-300">{children}</blockquote>,
+          code: ({ children }) => <code className="rounded bg-black/40 px-1.5 py-0.5 font-mono text-[0.9em] text-cyan-200">{children}</code>,
+          a: ({ href, children }) => <a href={href} target="_blank" rel="noreferrer" className="font-bold text-neon underline decoration-neon/40 underline-offset-4 hover:text-white">{children}</a>,
+          table: ({ children }) => <div className="my-5 w-fit max-w-full overflow-x-auto rounded border border-white/10"><table className="w-max border-collapse text-left">{children}</table></div>,
+          th: ({ children }) => <th className="border-b border-r border-white/10 bg-white/[0.05] px-3 py-2 font-black text-white last:border-r-0">{children}</th>,
+          td: ({ children }) => <td className="border-b border-r border-white/10 px-3 py-2 align-top last:border-r-0">{children}</td>
+        }}
+      >
+        {content}
+      </ReactMarkdown>
+    </article>
   );
 }
 
