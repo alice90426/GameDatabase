@@ -11,6 +11,7 @@ import {
   X
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { getDictionary } from "@/lib/i18n";
 import type { Game, Locale } from "@/types/game";
 
@@ -68,7 +69,7 @@ export function GameDetailModal({
     };
   }, [hasNext, hasPrevious, onClose, onNext, onPrevious]);
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-stretch justify-center bg-black/75 p-3 backdrop-blur-sm sm:items-center sm:p-6"
       style={{
@@ -196,7 +197,8 @@ export function GameDetailModal({
           ) : null}
         </div>
       </section>
-    </div>
+    </div>,
+    document.body
   );
 }
 
