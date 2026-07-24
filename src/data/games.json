@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "id":  "GB002",
         "genre":  [
@@ -256,7 +256,8 @@
         "lineMechanic":  "243 Ways",
         "tags":  [
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ009/"
     },
     {
         "id":  "HQ010",
@@ -321,7 +322,8 @@
         "tags":  [
                      "Win Multiplier",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ016/"
     },
     {
         "id":  "HQ017",
@@ -479,7 +481,8 @@
         "tags":  [
                      "Mixed Symbol",
                      "Multiplier Wild"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ026/"
     },
     {
         "id":  "HQ027",
@@ -952,7 +955,8 @@
                      "Win Multiplier",
                      "Respin",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ058/"
     },
     {
         "id":  "HQ059",
@@ -1049,7 +1053,8 @@
         "lineMechanic":  "Any 5",
         "tags":  [
                      "Prize Symbol"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ067/"
     },
     {
         "id":  "HQ068",
@@ -1132,7 +1137,8 @@
         "tags":  [
                      "Multiplier Wild",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ074/"
     },
     {
         "id":  "HQ077",
@@ -1230,7 +1236,8 @@
         "tags":  [
                      "Repeat Win",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ083/"
     },
     {
         "id":  "HQ084",
@@ -1382,7 +1389,8 @@
                      "Multiplier Wild",
                      "Expand Reel",
                      "Select Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ116/"
     },
     {
         "id":  "HQ117",
@@ -1491,7 +1499,8 @@
         "tags":  [
                      "Mixed Symbol",
                      "Bonus Wheel"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ128/"
     },
     {
         "id":  "HQ130",
@@ -1609,7 +1618,8 @@
         "tags":  [
                      "Wild Reel",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ143/"
     },
     {
         "id":  "HQ147",
@@ -1692,7 +1702,8 @@
         "tags":  [
                      "Swap Reel",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ152/"
     },
     {
         "id":  "HQ153",
@@ -1708,7 +1719,8 @@
         "tags":  [
                      "Win Multiplier",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ153/"
     },
     {
         "id":  "HQ154",
@@ -1725,8 +1737,8 @@
                      "Random Wild",
                      "Free Game"
                  ],
-        "githubUrl":  "https://alice90426.github.io/154/",
-        "itchUrl":  "https://alice90426.itch.io/kronos"
+        "itchUrl":  "https://alice90426.itch.io/kronos",
+        "githubUrl":  "https://alice90426.github.io/HQ154/"
     },
     {
         "id":  "HQ160",
@@ -1880,7 +1892,8 @@
         "tags":  [
                      "Win Multiplier",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ183/"
     },
     {
         "id":  "HQ184",
@@ -1931,7 +1944,8 @@
                      "Repeat Win",
                      "Multiplier Symbol",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ186/"
     },
     {
         "id":  "HQ195",
