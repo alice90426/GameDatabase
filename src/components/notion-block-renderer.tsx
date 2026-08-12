@@ -118,5 +118,5 @@ function getImage(block: Extract<NotionBlock, { type: "image" }>) {
     return { src: image.external.url, caption };
   }
 
-  return { src: image.file.url, caption };
+  return { src: `/api/research-image/${block.id}`, caption };
 }

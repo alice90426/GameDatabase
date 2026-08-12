@@ -70,6 +70,29 @@ export async function getResearchCoverByPageId(pageId: string) {
   return getCachedFirstImageBlockCover(pageId);
 }
 
+export async function getResearchImageByBlockId(blockId: string) {
+  if (!notion) {
+    return null;
+  }
+
+  try {
+    const block = await notion.blocks.retrieve({ block_id: blockId });
+
+    if (!isBlockObjectResponse(block) || block.type !== "image") {
+      return null;
+    }
+
+    if (block.image.type === "external") {
+      return block.image.external.url;
+    }
+
+    return block.image.file.url;
+  } catch (error) {
+    warnNotionError("Unable to refresh Notion image URL.", error);
+    return null;
+  }
+}
+
 async function fetchPublishedResearchArticles(): Promise<ResearchArticle[]> {
   const dataSourceId = await getDataSourceId();
 
