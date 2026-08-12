@@ -6,21 +6,35 @@ type NotionBlockRendererProps = {
 };
 
 export function NotionBlockRenderer({ blocks }: NotionBlockRendererProps) {
+  let numberedItemIndex = 0;
+
   return (
     <div className="space-y-5">
-      {blocks.map((block, index) => (
-        <NotionBlockView key={block.id} block={block} index={index} />
-      ))}
+      {blocks.map((block) => {
+        if (block.type === "numbered_list_item") {
+          numberedItemIndex += 1;
+        } else {
+          numberedItemIndex = 0;
+        }
+
+        return (
+          <NotionBlockView
+            key={block.id}
+            block={block}
+            numberedItemIndex={numberedItemIndex}
+          />
+        );
+      })}
     </div>
   );
 }
 
 function NotionBlockView({
   block,
-  index
+  numberedItemIndex
 }: {
   block: NotionBlock;
-  index: number;
+  numberedItemIndex: number;
 }) {
   switch (block.type) {
     case "paragraph": {
@@ -61,7 +75,7 @@ function NotionBlockView({
       return (
         <div className="flex gap-3 leading-8 text-slate-300">
           <span className="min-w-6 shrink-0 font-black text-neon">
-            {index + 1}.
+            {numberedItemIndex}.
           </span>
           <span>{richTextToPlainText(block.numbered_list_item.rich_text)}</span>
         </div>
