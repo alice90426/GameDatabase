@@ -36,7 +36,7 @@
 ### Free Game
 - All winning will activate the Cascade Reel feature and the win credits will multiply a multiplier.
 - More Cascade times with high multiplier from 1X, 2X, 3X, 5X, up to 10X.
-- Free Game has 20 free spins.
+- Free Game has 16 free spins.
 
 ### Bonus Game1
 - Award from 1X, 2X, 6X, 12X, 18X, 25X, 40X, 70X, 150X, 250X, 350X, 600X, up to 1000X multiplier.
