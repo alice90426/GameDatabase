@@ -13,7 +13,8 @@
         "tags":  [
                      "Mixed Symbol",
                      "Bonus Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/GB002/"
     },
     {
         "id":  "GB003",
@@ -31,8 +32,8 @@
                      "Repeat Win",
                      "Bonus Game"
                  ],
-        "githubUrl":  "https://alice90426.github.io/GB3/",
-        "itchUrl":  "https://alice90426.itch.io/coin-spinner"
+        "itchUrl":  "https://alice90426.itch.io/coin-spinner",
+        "githubUrl":  "https://alice90426.github.io/GB003/"
     },
     {
         "id":  "GB005",
@@ -52,8 +53,8 @@
                      "Win Multiplier",
                      "Free Game"
                  ],
-        "githubUrl":  "https://alice90426.github.io/GB5/",
-        "itchUrl":  "https://alice90426.itch.io/hot-dj"
+        "itchUrl":  "https://alice90426.itch.io/hot-dj",
+        "githubUrl":  "https://alice90426.github.io/GB005/"
     },
     {
         "id":  "GB006",
@@ -71,8 +72,8 @@
                      "Nudge Wild",
                      "Free Game"
                  ],
-        "githubUrl":  "https://alice90426.github.io/GB6/",
-        "itchUrl":  "https://alice90426.itch.io/ganeshajr"
+        "itchUrl":  "https://alice90426.itch.io/ganeshajr",
+        "githubUrl":  "https://alice90426.github.io/GB006/"
     },
     {
         "id":  "GB008",
@@ -89,8 +90,8 @@
                      "Win Multiplier",
                      "Free Game"
                  ],
-        "githubUrl":  "https://alice90426.github.io/GB8/",
-        "itchUrl":  "https://alice90426.itch.io/dragon-koi"
+        "itchUrl":  "https://alice90426.itch.io/dragon-koi",
+        "githubUrl":  "https://alice90426.github.io/GB008/"
     },
     {
         "id":  "GB009",
@@ -107,8 +108,8 @@
                      "Repeat Win",
                      "Free Game"
                  ],
-        "githubUrl":  "https://alice90426.github.io/GB9/",
-        "itchUrl":  "https://alice90426.itch.io/football-fever"
+        "itchUrl":  "https://alice90426.itch.io/football-fever",
+        "githubUrl":  "https://alice90426.github.io/GB009/"
     },
     {
         "id":  "GB012",
@@ -161,7 +162,8 @@
                      "Multiplier Wild",
                      "Win Multiplier",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/GB016/"
     },
     {
         "id":  "HQ001",
@@ -210,7 +212,8 @@
         "tags":  [
                      "Multiplier Wild",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ006/"
     },
     {
         "id":  "HQ007",
@@ -360,7 +363,8 @@
         "tags":  [
                      "Expand Wild",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ018/"
     },
     {
         "id":  "HQ019",
@@ -475,7 +479,8 @@
         "lineMechanic":  "1 Line",
         "tags":  [
                      "Mixed Symbol"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ025/"
     },
     {
         "id":  "HQ026",
@@ -543,7 +548,8 @@
         "tags":  [
                      "Win Multiplier",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ030/"
     },
     {
         "id":  "HQ031",
@@ -663,7 +669,8 @@
         "lineMechanic":  "1 Line",
         "tags":  [
                      "Mixed Symbol"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ037/"
     },
     {
         "id":  "HQ038",
@@ -713,7 +720,8 @@
         "tags":  [
                      "Sticky Wild",
                      "Free Game"
-                 ]
+                 ],
+        "githubUrl":  "https://alice90426.github.io/HQ040/"
     },
     {
         "id":  "HQ042",
