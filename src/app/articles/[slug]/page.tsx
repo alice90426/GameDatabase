@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
@@ -36,9 +37,7 @@ export async function generateMetadata({
     openGraph: {
       images: article.thumbnail ? [article.thumbnail] : []
     },
-    alternates: {
-      canonical: `/articles/${article.slug}`
-    }
+    alternates: localizedAlternates(locale, `/articles/${article.slug}`)
   };
 }
 

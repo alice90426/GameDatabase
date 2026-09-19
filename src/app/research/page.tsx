@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { ResearchList } from "@/components/research-list";
@@ -14,9 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: content.title,
     description: content.intro,
-    alternates: {
-      canonical: "/research"
-    }
+    alternates: localizedAlternates(locale, "/research")
   };
 }
 

@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { ArticleList } from "@/components/article-list";
 import { getBloggerArticles } from "@/lib/blogger";
@@ -18,13 +19,7 @@ export async function generateMetadata({
   return {
     title: content.title,
     description: content.description,
-    alternates: {
-      canonical: `/${locale}/articles`,
-      languages: {
-        "zh-Hant": "/zh/articles",
-        en: "/en/articles"
-      }
-    }
+    alternates: localizedAlternates(locale, "/articles")
   };
 }
 

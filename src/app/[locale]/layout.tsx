@@ -22,14 +22,7 @@ export async function generateMetadata({
 
   return {
     title: dictionary.common.badge,
-    description: dictionary.common.description,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        "zh-Hant": "/zh",
-        en: "/en"
-      }
-    }
+    description: dictionary.common.description
   };
 }
 

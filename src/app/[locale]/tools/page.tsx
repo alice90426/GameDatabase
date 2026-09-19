@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, PlayCircle, Wrench } from "lucide-react";
@@ -10,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: value } = await params;
   const locale = isLocale(value) ? value : "en";
   const content = getDictionary(locale).tools;
-  return { title: content.title, description: content.intro };
+  return { title: content.title, description: content.intro, alternates: localizedAlternates(locale, "/tools") };
 }
 
 export default async function ToolsPage({ params }: { params: Promise<{ locale: string }> }) {

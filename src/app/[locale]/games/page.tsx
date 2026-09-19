@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { GameFilters } from "@/components/game-filters";
 import { allGames, getGameBoardSizes, getGameGenres, getGameLines, getGameTags, getGameVolatilities } from "@/lib/games";
@@ -16,13 +17,7 @@ export async function generateMetadata({
   return {
     title: dictionary.games.title,
     description: dictionary.games.intro,
-    alternates: {
-      canonical: `/${locale}/games`,
-      languages: {
-        "zh-Hant": "/zh/games",
-        en: "/en/games"
-      }
-    }
+    alternates: localizedAlternates(locale, "/games")
   };
 }
 

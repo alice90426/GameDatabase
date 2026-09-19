@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import {
   BookOpen,
@@ -27,13 +28,7 @@ export async function generateMetadata({
   return {
     title: dictionary.about.title,
     description: dictionary.about.intro,
-    alternates: {
-      canonical: `/${locale}/about`,
-      languages: {
-        "zh-Hant": "/zh/about",
-        en: "/en/about"
-      }
-    }
+    alternates: localizedAlternates(locale, "/about")
   };
 }
 

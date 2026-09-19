@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { ResearchList } from "@/components/research-list";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -18,13 +19,7 @@ export async function generateMetadata({
   return {
     title: content.title,
     description: content.intro,
-    alternates: {
-      canonical: `/${locale}/research`,
-      languages: {
-        "zh-Hant": "/zh/research",
-        en: "/en/research"
-      }
-    }
+    alternates: localizedAlternates(locale, "/research")
   };
 }
 

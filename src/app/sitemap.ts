@@ -6,7 +6,6 @@ import { siteUrl } from "@/lib/site";
 import { tools } from "@/data/tools";
 
 const routes = ["", "/games", "/tools", "/research", "/articles", "/services", "/about"];
-const rootRoutes = ["/research", "/articles"];
 const staticLastModified = new Date("2026-06-16");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -15,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getBloggerArticles()
   ]);
 
-  return [
+  const entries: MetadataRoute.Sitemap = [
     ...locales.flatMap((locale) =>
       routes.map((route) => ({
         url: `${siteUrl}/${locale}${route}`,
@@ -24,12 +23,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: route === "" ? 1 : 0.8
       }))
     ),
-    ...rootRoutes.map((route) => ({
-      url: `${siteUrl}${route}`,
-      lastModified: staticLastModified,
-      changeFrequency: "daily" as const,
-      priority: 0.7
-    })),
     ...locales.flatMap((locale) =>
       tools.map((tool) => ({
         url: `${siteUrl}/${locale}/tools/${tool.slug}`,
@@ -46,12 +39,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.65
       }))
     ),
-    ...researchArticles.map((article) => ({
-      url: `${siteUrl}/research/${article.slug}`,
-      lastModified: article.date ? new Date(article.date) : staticLastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.55
-    })),
     ...locales.flatMap((locale) =>
       bloggerArticles.map((article) => ({
         url: `${siteUrl}/${locale}/articles/${article.slug}`,
@@ -59,12 +46,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "monthly" as const,
         priority: 0.65
       }))
-    ),
-    ...bloggerArticles.map((article) => ({
-      url: `${siteUrl}/articles/${article.slug}`,
-      lastModified: article.date ? new Date(article.date) : staticLastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.55
-    }))
+    )
   ];
+
+  // Source feeds can contain repeated slugs; submit each canonical URL once.
+  return Array.from(new Map(entries.map((entry) => [entry.url, entry])).values());
 }

@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Boxes, Database } from "lucide-react";
 import { GameCard } from "@/components/game-card";
@@ -7,6 +8,11 @@ import { getDictionary, isLocale } from "@/lib/i18n";
 import { getPublishedResearchArticles } from "@/lib/notion";
 import { localizedPath } from "@/lib/routes";
 import type { Locale } from "@/types/game";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return isLocale(locale) ? { alternates: localizedAlternates(locale) } : {};
+}
 
 export default async function HomePage({
   params

@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -28,13 +29,7 @@ export async function generateMetadata({
   return {
     title: content.title,
     description: content.intro,
-    alternates: {
-      canonical: `/${locale}/services`,
-      languages: {
-        "zh-Hant": "/zh/services",
-        en: "/en/services"
-      }
-    }
+    alternates: localizedAlternates(locale, "/services")
   };
 }
 

@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: value, slug } = await params;
   const locale = (isLocale(value) ? value : "en") as Locale;
   const tool = getTool(slug);
-  return tool ? { title: tool.title[locale], description: tool.summary[locale] } : {};
+  return tool ? { title: tool.title[locale], description: tool.summary[locale], alternates: localizedAlternates(locale, `/tools/${tool.slug}`) } : {};
 }
 
 export default async function ToolDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {

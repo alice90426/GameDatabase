@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ResearchDetail } from "@/components/research-detail";
@@ -38,13 +39,7 @@ export async function generateMetadata({
     openGraph: {
       images: article.cover ? [article.cover] : []
     },
-    alternates: {
-      canonical: `/${locale}/research/${article.slug}`,
-      languages: {
-        "zh-Hant": `/zh/research/${article.slug}`,
-        en: `/en/research/${article.slug}`
-      }
-    }
+    alternates: localizedAlternates(locale, `/research/${article.slug}`)
   };
 }
 

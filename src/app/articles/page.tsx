@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { ArticleList } from "@/components/article-list";
@@ -11,7 +12,8 @@ const articleCopy = getDictionary(locale).articles;
 
 export const metadata: Metadata = {
   title: articleCopy.title,
-  description: articleCopy.description
+  description: articleCopy.description,
+  alternates: localizedAlternates(locale, "/articles")
 };
 
 export default async function ArticlesPage() {
