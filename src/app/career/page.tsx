@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function CareerEntryPage() {
-  redirect("/en/services");
+  permanentRedirect("/en/services");
 }

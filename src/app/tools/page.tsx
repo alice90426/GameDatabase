@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function ToolsEntryPage() {
-  redirect("/zh/tools");
+  permanentRedirect("/zh/tools");
 }
