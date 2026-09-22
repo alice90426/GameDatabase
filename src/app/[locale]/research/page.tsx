@@ -36,7 +36,6 @@ export default async function ResearchPage({
     <ResearchList
       articles={articles}
       locale={locale}
-      pathPrefix={`/${locale}/research`}
     />
   );
 }

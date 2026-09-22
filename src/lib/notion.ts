@@ -1,4 +1,6 @@
 import "server-only";
+import type { Locale } from "@/types/game";
+import { researchLanguage } from "@/lib/research-language";
 import { Client } from "@notionhq/client";
 import { unstable_cache } from "next/cache";
 import type {
@@ -29,6 +31,7 @@ export type ResearchArticle = {
   category: string;
   tags: string[];
   summary: string;
+  language: Locale;
   published: boolean;
   date: string;
   cover: string | null;
@@ -42,7 +45,7 @@ export function isNotionConfigured() {
 
 export const getPublishedResearchArticles = unstable_cache(
   fetchPublishedResearchArticles,
-  ["notion-research-article-list"],
+  ["notion-research-article-list-v2-language"],
   { revalidate: NOTION_REVALIDATE_SECONDS }
 );
 
@@ -201,6 +204,7 @@ function pageToArticle(page: PageObjectResponse): ResearchArticle | null {
       ])
     ],
     summary: getFirstText(page, ["Summary"]),
+    language: researchLanguage(getFirstSelect(page, ["Language", "語言"]) || getFirstText(page, ["Language", "語言"])),
     published: getOptionalCheckbox(page, "Published") ?? true,
     date: getDate(page, "Date") || page.last_edited_time || page.created_time,
     cover: directCover || `/api/research-cover/${page.id}`

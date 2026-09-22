@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { researchLanguageTag } from "@/lib/research-language";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { NotionBlockRenderer } from "@/components/notion-block-renderer";
@@ -23,9 +24,10 @@ export function ResearchDetail({
   const cover = article.cover || getFirstBlockImage(blocks);
 
   return (
-    <article className="px-5 py-12 sm:py-14">
+    <article lang={researchLanguageTag(article.language)} className="px-5 py-12 sm:py-14">
       <div className="mx-auto max-w-4xl">
         <Link
+          lang={locale === "zh" ? "zh-Hant" : "en"}
           href={backHref}
           className="inline-flex items-center gap-2 text-sm font-black text-neon transition hover:text-white"
         >

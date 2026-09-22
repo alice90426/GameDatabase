@@ -36,3 +36,17 @@ npm run dev
 ```
 
 Then open `http://localhost:3000/zh`.
+
+## Research content language
+
+Research notes default to Traditional Chinese. In Notion, optionally add a
+`Language` (or `語言`) select/text property per article: use `zh-Hant`
+for Traditional Chinese or `en` for English. An empty value uses Chinese.
+English aliases `English`, `en-US`, `en-GB`, `英文` and `英語` are also supported.
+
+The article language determines its canonical URL and sole sitemap entry.
+Research lists link to that URL. Other language URLs remain accessible for
+interface switching, but share the original article canonical and do not
+advertise hreflang translations. The article body and cards carry the content
+language; switching the interface does not translate Notion content.
+Research list pages retain their localized interface metadata.

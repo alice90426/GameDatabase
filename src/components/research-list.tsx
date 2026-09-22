@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { researchLanguageTag, researchPath } from "@/lib/research-language";
 import Link from "next/link";
 import { FileText } from "lucide-react";
 import { getDictionary } from "@/lib/i18n";
@@ -8,13 +9,11 @@ import type { Locale } from "@/types/game";
 type ResearchListProps = {
   articles: ResearchArticle[];
   locale: Locale;
-  pathPrefix: string;
 };
 
 export function ResearchList({
   articles,
-  locale,
-  pathPrefix
+  locale
 }: ResearchListProps) {
   const content = getDictionary(locale).research;
 
@@ -39,7 +38,7 @@ export function ResearchList({
               <ArticleCard
                 key={article.id}
                 article={article}
-                href={`${pathPrefix}/${article.slug}`}
+                href={researchPath(article)}
               />
             ))}
           </div>
@@ -62,6 +61,7 @@ function ArticleCard({
 }) {
   return (
     <Link
+      lang={researchLanguageTag(article.language)}
       href={href}
       className="group overflow-hidden rounded border border-white/10 bg-panel/75 transition hover:border-neon/50 hover:shadow-glow"
     >
