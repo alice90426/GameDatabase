@@ -1,7 +1,7 @@
 import { localizedAlternates } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Boxes, Database } from "lucide-react";
-import { GameCard } from "@/components/game-card";
+import { FeaturedGames } from "@/components/featured-games";
 import { allGames, getFeaturedGames } from "@/lib/games";
 import { getBloggerArticles } from "@/lib/blogger";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -118,11 +118,7 @@ export default async function HomePage({
               {dictionary.common.viewGames}
             </Link>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {featuredGames.map((game) => (
-              <GameCard key={game.id} game={game} locale={locale} />
-            ))}
-          </div>
+          <FeaturedGames games={featuredGames} locale={locale} />
         </div>
       </section>
 

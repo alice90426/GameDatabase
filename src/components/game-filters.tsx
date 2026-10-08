@@ -264,7 +264,7 @@ export function GameFilters({
       {preloadUrl && !selectedGame ? (
         <iframe
           key={preloadUrl}
-          src={preloadUrl}
+          src={`${preloadUrl}?embed=1`}
           title="preload"
           aria-hidden="true"
           tabIndex={-1}

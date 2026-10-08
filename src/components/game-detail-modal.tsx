@@ -4,9 +4,7 @@ import {
   BarChart3,
   ChevronLeft,
   ChevronRight,
-  ExternalLink,
   FileText,
-  Github,
   Play,
   X
 } from "lucide-react";
@@ -169,29 +167,8 @@ export function GameDetailModal({
           ) : null}
           {activeTab === "demo" && game.githubUrl ? (
             <div className="flex h-full flex-col">
-              {game.githubUrl || game.itchUrl ? (
-                <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-white/10 bg-void/80 px-3 py-2 sm:px-4">
-                  <span className="mr-1 text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-                    {dictionary.modal.links}
-                  </span>
-                  {game.githubUrl ? (
-                    <SourceLink
-                      href={game.githubUrl}
-                      icon={<Github size={15} />}
-                      label={dictionary.modal.github}
-                    />
-                  ) : null}
-                  {game.itchUrl ? (
-                    <SourceLink
-                      href={game.itchUrl}
-                      icon={<ExternalLink size={15} />}
-                      label={dictionary.modal.itch}
-                    />
-                  ) : null}
-                </div>
-              ) : null}
               <iframe
-                src={game.githubUrl}
+                src={embedUrl(game.githubUrl)}
                 title={`${game.id} demo`}
                 className="block min-h-0 flex-1 w-full border-0 bg-black"
                 allow="fullscreen; autoplay"
@@ -205,26 +182,8 @@ export function GameDetailModal({
   );
 }
 
-function SourceLink({
-  href,
-  icon,
-  label
-}: {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex h-8 items-center gap-2 rounded border border-white/10 bg-white/[0.04] px-2.5 text-xs font-black text-slate-200 transition hover:border-neon/50 hover:text-neon"
-    >
-      {icon}
-      {label}
-    </a>
-  );
+function embedUrl(url: string) {
+  return `${url}${url.includes("?") ? "&" : "?"}embed=1`;
 }
 
 function TabButton({
