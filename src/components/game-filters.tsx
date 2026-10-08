@@ -1,7 +1,7 @@
 "use client";
 
 import { RotateCcw, Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { GameCard } from "@/components/game-card";
 import { GameDetailModal } from "@/components/game-detail-modal";
 import { getDictionary } from "@/lib/i18n";
@@ -33,10 +33,10 @@ export function GameFilters({
   const [boardSize, setBoardSize] = useState("all");
   const [lineMechanic, setLineMechanic] = useState("all");
   const [tag, setTag] = useState("all");
-  const [demoOnly, setDemoOnly] = useState("all");
+  const [preloadId, setPreloadId] = useState<string | null>(null);
   const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
 
-  type FilterKey = "tag" | "volatility" | "boardSize" | "lineMechanic" | "demo";
+  type FilterKey = "tag" | "volatility" | "boardSize" | "lineMechanic";
 
   function matchesGame(game: Game, ignoredFilter?: FilterKey) {
     const normalizedQuery = query.trim().toLowerCase();
@@ -58,23 +58,33 @@ export function GameFilters({
       game.lineMechanic === lineMechanic;
     const matchesTags =
       ignoredFilter === "tag" || tag === "all" || game.tags.includes(tag);
-    const matchesDemo =
-      ignoredFilter === "demo" || demoOnly === "all" || Boolean(game.githubUrl);
 
     return (
       matchesQuery &&
       matchesVolatility &&
       matchesBoardSize &&
       matchesLineMechanic &&
-      matchesTags &&
-      matchesDemo
+      matchesTags
     );
   }
 
   const filteredGames = useMemo(
     () => games.filter((game) => matchesGame(game)),
-    [games, query, volatility, boardSize, lineMechanic, tag, demoOnly]
+    [games, query, volatility, boardSize, lineMechanic, tag]
   );
+  const preloadUrl = games.find((game) => game.id === preloadId)?.githubUrl;
+
+  useEffect(() => {
+    const firstId = games.find((game) => game.githubUrl)?.id ?? null;
+    const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
+    const handle = idle(() => setPreloadId((current) => current ?? firstId));
+    return () => {
+      if (window.cancelIdleCallback && typeof handle === "number") {
+        window.cancelIdleCallback(handle);
+      }
+    };
+  }, [games]);
+
   const selectedGameIndex = filteredGames.findIndex(
     (game) => game.id === selectedGameId
   );
@@ -90,7 +100,7 @@ export function GameFilters({
             .flatMap((game) => game.tags)
         )
       ).sort(),
-    [games, query, volatility, boardSize, lineMechanic, demoOnly]
+    [games, query, volatility, boardSize, lineMechanic]
   );
 
   const availableVolatilities = useMemo(() => {
@@ -101,7 +111,7 @@ export function GameFilters({
     );
 
     return volatilities.filter((value) => values.has(value));
-  }, [games, volatilities, query, boardSize, lineMechanic, tag, demoOnly]);
+  }, [games, volatilities, query, boardSize, lineMechanic, tag]);
 
   const availableBoardSizes = useMemo(
     () =>
@@ -110,7 +120,7 @@ export function GameFilters({
           .filter((game) => matchesGame(game, "boardSize"))
           .some((game) => game.boardSize === value)
       ),
-    [games, boardSizes, query, volatility, lineMechanic, tag, demoOnly]
+    [games, boardSizes, query, volatility, lineMechanic, tag]
   );
 
   const availableLineMechanics = useMemo(
@@ -120,17 +130,8 @@ export function GameFilters({
           .filter((game) => matchesGame(game, "lineMechanic"))
           .some((game) => game.lineMechanic === value)
       ),
-    [games, lineMechanics, query, volatility, boardSize, tag, demoOnly]
+    [games, lineMechanics, query, volatility, boardSize, tag]
   );
-
-  const hasAvailableDemo = useMemo(
-    () =>
-      games
-        .filter((game) => matchesGame(game, "demo"))
-        .some((game) => game.githubUrl),
-    [games, query, volatility, boardSize, lineMechanic, tag]
-  );
-  const demoFilterLabel = dictionary.games.demoOnly;
 
   function keepSelectedOption(options: string[], selectedValue: string) {
     if (selectedValue === "all" || options.includes(selectedValue)) {
@@ -147,13 +148,12 @@ export function GameFilters({
     setVolatility("all");
     setBoardSize("all");
     setLineMechanic("all");
-    setDemoOnly("all");
   }
 
   return (
     <div className="space-y-8">
       <section className="rounded border border-white/10 bg-white/[0.04] p-4">
-        <div className="grid gap-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_auto]">
+        <div className="grid gap-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_auto]">
           <label className="relative">
             <span className="sr-only">{dictionary.games.search}</span>
             <Search
@@ -223,21 +223,6 @@ export function GameFilters({
             }
             onChange={setLineMechanic}
           />
-          <SelectFilter
-            label={demoFilterLabel}
-            value={demoOnly}
-            options={[
-              "all",
-              ...(hasAvailableDemo || demoOnly === "demo" ? ["demo"] : [])
-            ]}
-            getLabel={(value) =>
-              value === "all"
-                ? dictionary.games.allGames
-                : dictionary.games.demoOnly
-            }
-            onChange={setDemoOnly}
-          />
-
           <button
             type="button"
             onClick={resetFilters}
@@ -256,12 +241,18 @@ export function GameFilters({
       {filteredGames.length > 0 ? (
         <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {filteredGames.map((game) => (
-            <GameCard
+            <div
               key={game.id}
-              game={game}
-              locale={locale}
-              onOpen={() => setSelectedGameId(game.id)}
-            />
+              onPointerEnter={() => setPreloadId(game.id)}
+              onFocus={() => setPreloadId(game.id)}
+              onTouchStart={() => setPreloadId(game.id)}
+            >
+              <GameCard
+                game={game}
+                locale={locale}
+                onOpen={() => setSelectedGameId(game.id)}
+              />
+            </div>
           ))}
         </section>
       ) : (
@@ -269,6 +260,17 @@ export function GameFilters({
           {dictionary.games.empty}
         </div>
       )}
+
+      {preloadUrl && !selectedGame ? (
+        <iframe
+          key={preloadUrl}
+          src={preloadUrl}
+          title="preload"
+          aria-hidden="true"
+          tabIndex={-1}
+          className="pointer-events-none fixed -left-[9999px] top-0 h-[360px] w-[640px] border-0 opacity-0"
+        />
+      ) : null}
 
       {selectedGame ? (
         <GameDetailModal

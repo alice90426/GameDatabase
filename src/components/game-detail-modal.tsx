@@ -39,7 +39,7 @@ export function GameDetailModal({
   onNext
 }: GameDetailModalProps) {
   const dictionary = getDictionary(locale);
-  const [activeTab, setActiveTab] = useState<DetailTab>("info");
+  const [activeTab, setActiveTab] = useState<DetailTab>(game.githubUrl ? "demo" : "info");
 
   useEffect(() => {
     if (activeTab === "demo" && !game.githubUrl) {
@@ -126,6 +126,14 @@ export function GameDetailModal({
         </header>
 
         <nav className="flex gap-1 overflow-x-auto border-b border-white/10 bg-void/40 px-3 pt-3 sm:px-4">
+          {game.githubUrl ? (
+            <TabButton
+              active={activeTab === "demo"}
+              icon={<Play size={16} />}
+              label={dictionary.actions.demo}
+              onClick={() => setActiveTab("demo")}
+            />
+          ) : null}
           <TabButton
             active={activeTab === "info"}
             icon={<FileText size={16} />}
@@ -138,14 +146,6 @@ export function GameDetailModal({
             label={dictionary.actions.simulation}
             onClick={() => setActiveTab("simulation")}
           />
-          {game.githubUrl ? (
-            <TabButton
-              active={activeTab === "demo"}
-              icon={<Play size={16} />}
-              label={dictionary.actions.demo}
-              onClick={() => setActiveTab("demo")}
-            />
-          ) : null}
         </nav>
 
         <div
