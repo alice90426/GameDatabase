@@ -25,7 +25,20 @@ export default async function HomePage({
   const locale = (isLocale(localeParam) ? localeParam : "zh") as Locale;
   const dictionary = getDictionary(locale);
   const featuredGames = getFeaturedGames();
-  const researchArticles = (await getPublishedResearchArticles()).slice(0, 3);
+  const allResearch = await getPublishedResearchArticles();
+  // Picked by analysis volume (text length); falls back to the newest notes.
+  const featuredResearchTitles = [
+    "野狼DISCO (CQ9)",
+    "King Kong Cash (Blueprint)",
+    "Blazing X (Bally)"
+  ];
+  const pinnedResearch = featuredResearchTitles
+    .map((title) => allResearch.find((article) => article.title.trim() === title))
+    .filter((article): article is NonNullable<typeof article> => Boolean(article));
+  const researchArticles =
+    pinnedResearch.length === featuredResearchTitles.length
+      ? pinnedResearch
+      : allResearch.slice(0, 3);
   const methodIcons = [Calculator, Table, BarChart3, FileText];
   const contactHref = `mailto:${dictionary.about.contactLinks.email}?subject=${encodeURIComponent(
     dictionary.common.contactSubject
