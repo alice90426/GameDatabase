@@ -49,7 +49,7 @@ export const dictionaries = {
       brand: "JAVIER CHIANG",
       badge: "遊戲數學模型設計師",
       description:
-        "江愷翔（Javier）的作品集：老虎機與遊戲數學模型設計、RTP 與波動度分析、模擬驗證，以及 GLI／BMM 規格文件。",
+        "江愷翔（Javier）的作品集：9 年以上老虎機與遊戲數學模型設計經驗，提供 RTP 與波動度設計、機率分析、10 億次模擬驗證，以及通過 GLI／BMM 認證的中英文規格文件，並公開模型資料與研究筆記。",
       viewGames: "查看遊戲資料",
       viewWorks: "查看代表作品",
       downloadCv: "下載履歷 (PDF)",
@@ -126,6 +126,8 @@ export const dictionaries = {
       title: "遊戲資料",
       eyebrow: "資料庫",
       intro: "以 ID、標籤、RTP 區間與波動度篩選，並依 RTP、波動度或最大倍數排序。",
+      seoDescription:
+        "瀏覽 150 多款老虎機數學模型：每款皆附 RTP、中獎率、波動度、最大倍數、盤面與連線方式，並提供模擬數據與規格文件，可依 RTP 區間、波動度、盤面大小與標籤篩選，並依各項數據排序比較，快速找到合適的模型。",
       rtpMin: "RTP 下限",
       rtpMax: "RTP 上限",
       sortBy: "排序",
@@ -193,6 +195,8 @@ export const dictionaries = {
       title: "老虎機與遊戲數學模型服務",
       intro:
         "為遊戲團隊提供從 RTP 與波動度設計、機率分析、大量模擬驗證，到可送測 GLI／BMM 規格文件的完整數學交付。",
+      seoDescription:
+        "為遊戲團隊提供老虎機與遊戲數學模型設計、機率分析、10 億次模擬驗證（RTP 誤差低於 0.1%），以及可送測 GLI／BMM 的中英文規格文件，專案實際通過認證，可配合跨國、跨團隊、跨框架的合作流程，從需求確認到文件交付完整支援。",
       primaryCta: "洽詢合作",
       secondaryCta: "查看模型資料",
       proofs: [
@@ -263,6 +267,8 @@ export const dictionaries = {
     },
     about: {
       eyebrow: "ABOUT",
+      seoDescription:
+        "我是 Javier，專注於老虎機與遊戲數學模型的機率工程師，擁有 9 年以上經驗與 65 款以上公司專案，專案實際通過 GLI 與 BMM 認證，也有跨國、跨團隊、跨框架的自由接案經驗，歡迎與我聯絡。",
       title: "關於我",
       role: "遊戲數學模型設計師・機率工程師",
       intro:
@@ -448,6 +454,8 @@ export const dictionaries = {
       title: "Game Database",
       eyebrow: "Database",
       intro: "Filter by ID, tags, RTP range and volatility, and sort by RTP, volatility or max win.",
+      seoDescription:
+        "Browse 150+ slot math models. Each entry lists RTP, hit rate, volatility, max win, board size and line mechanic, with simulation data and specification documents. Filter by RTP range, volatility and tags, and sort by key stats.",
       rtpMin: "RTP min",
       rtpMax: "RTP max",
       sortBy: "Sort",
@@ -515,6 +523,8 @@ export const dictionaries = {
       title: "Slot & Game Math Model Design Services",
       intro:
         "End-to-end math delivery for game teams: RTP and volatility design, probability analysis, large-scale simulation validation, and specification documents ready for GLI / BMM submission.",
+      seoDescription:
+        "Slot and game math model design, probability analysis, and 1-billion-spin simulation validation (RTP error under 0.1%), with Chinese and English specification documents ready for GLI / BMM submission. Projects have passed certification.",
       primaryCta: "Get in Touch",
       secondaryCta: "Browse Models",
       proofs: [
@@ -585,6 +595,8 @@ export const dictionaries = {
     },
     about: {
       eyebrow: "ABOUT",
+      seoDescription:
+        "I am Javier, a probability engineer focused on slot and casino game math. With 9+ years of experience, 65+ company projects, projects certified by GLI and BMM, and freelance work across countries and teams.",
       title: "About Me",
       role: "Game Math Model Designer · Probability Engineer",
       intro:

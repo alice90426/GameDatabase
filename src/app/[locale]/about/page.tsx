@@ -29,7 +29,7 @@ export async function generateMetadata({
 
   return {
     title: dictionary.about.title,
-    description: dictionary.about.intro,
+    description: dictionary.about.seoDescription,
     alternates: localizedAlternates(locale, "/about")
   };
 }

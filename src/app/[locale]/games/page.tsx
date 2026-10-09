@@ -16,7 +16,7 @@ export async function generateMetadata({
 
   return {
     title: dictionary.games.title,
-    description: dictionary.games.intro,
+    description: dictionary.games.seoDescription,
     alternates: localizedAlternates(locale, "/games")
   };
 }

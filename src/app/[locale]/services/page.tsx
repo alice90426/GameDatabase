@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   return {
     title: content.title,
-    description: content.intro,
+    description: content.seoDescription,
     alternates: localizedAlternates(locale, "/services")
   };
 }

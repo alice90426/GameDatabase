@@ -13,6 +13,16 @@ export async function generateStaticParams() {
   return [];
 }
 
+// Link previews (e.g. LinkedIn) want a description of at least ~100 characters.
+function buildDescription(title: string, summary: string, siteDescription: string) {
+  const text = `${title}：${summary}`;
+  return text.length >= 100 ? text : `${text} ${siteDescription}`;
+}
+
+function isValidDate(value: string) {
+  return Boolean(value) && !Number.isNaN(new Date(value).getTime());
+}
+
 export async function generateMetadata({
   params
 }: {
@@ -32,8 +42,16 @@ export async function generateMetadata({
 
   return {
     title: article.title,
-    description: article.labels.join(", ") || content.fallbackDescription,
+    description: buildDescription(
+      article.title,
+      article.labels.join(", ") || content.fallbackDescription,
+      getDictionary(locale).common.description
+    ),
+    authors: [{ name: "Javier Chiang" }],
     openGraph: {
+      type: "article",
+      authors: ["Javier Chiang"],
+      ...(isValidDate(article.date) ? { publishedTime: new Date(article.date).toISOString() } : {}),
       images: article.thumbnail ? [article.thumbnail] : []
     },
     alternates: localizedAlternates(locale, `/articles/${article.slug}`)

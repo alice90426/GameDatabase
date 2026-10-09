@@ -12,6 +12,21 @@ import type { Locale } from "@/types/game";
 export const revalidate = 3600;
 export const dynamicParams = true;
 
+// Link previews (e.g. LinkedIn) want a description of at least ~100 characters.
+function buildDescription(
+  title: string,
+  summary: string,
+  fallback: string,
+  siteDescription: string
+) {
+  const text = summary ? `${title}：${summary}` : `${title}：${fallback}`;
+  return text.length >= 100 ? text : `${text} ${siteDescription}`;
+}
+
+function isValidDate(value: string) {
+  return Boolean(value) && !Number.isNaN(new Date(value).getTime());
+}
+
 export async function generateStaticParams() {
   return [];
 }
@@ -35,8 +50,17 @@ export async function generateMetadata({
 
   return {
     title: article.title,
-    description: article.summary || fallback.intro,
+    description: buildDescription(
+      article.title,
+      article.summary,
+      fallback.intro,
+      getDictionary(locale).common.description
+    ),
+    authors: [{ name: "Javier Chiang" }],
     openGraph: {
+      type: "article",
+      authors: ["Javier Chiang"],
+      ...(isValidDate(article.date) ? { publishedTime: new Date(article.date).toISOString() } : {}),
       images: article.cover ? [article.cover] : []
     },
     alternates: researchAlternates(article)

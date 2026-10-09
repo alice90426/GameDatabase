@@ -29,6 +29,8 @@ export const metadata: Metadata = {
       "Slot and game math model design, RTP and volatility analysis, simulation validation, and certification-ready specifications.",
     type: "website"
   },
+  authors: [{ name: "Javier Chiang", url: siteUrl }],
+  creator: "Javier Chiang",
   verification: {
     google: "jXNW1CBLLk_G2BeLYIEBL12ELoSVzJARd2xuTdnF5vc"
   }

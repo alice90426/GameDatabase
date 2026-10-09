@@ -11,6 +11,11 @@ const ranges = {
 };
 // npm.cmd run validate:data
 
+// Verified special-gameplay games whose numbers legitimately fall outside the usual ranges.
+const allowedOutliers = {
+  HQ066: ["rtp", "hitRate"]
+};
+
 const errors = [];
 const seenIds = new Map();
 
@@ -50,6 +55,10 @@ if (!Array.isArray(games)) {
     }
 
     for (const [field, [min, max]] of Object.entries(ranges)) {
+      if (allowedOutliers[game?.id]?.includes(field)) {
+        continue;
+      }
+
       checkRange(game, index, field, min, max);
     }
   });
