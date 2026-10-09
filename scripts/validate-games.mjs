@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 
 const gamesPath = new URL("../src/data/games.json", import.meta.url);
-const games = JSON.parse(readFileSync(gamesPath, "utf8").replace(/^﻿/, ""));
+const games = JSON.parse(readFileSync(gamesPath, "utf8").replace(/^\uFEFF/, ""));
 
 const ranges = {
   rtp: [94, 97],
