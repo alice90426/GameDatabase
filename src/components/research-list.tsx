@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { researchLanguageTag, researchPath } from "@/lib/research-language";
 import Link from "next/link";
-import { FileText } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { getDictionary } from "@/lib/i18n";
+import { localizedPath } from "@/lib/routes";
 import type { ResearchArticle } from "@/lib/notion";
 import type { Locale } from "@/types/game";
 
@@ -47,6 +48,27 @@ export function ResearchList({
             {content.empty}
           </div>
         )}
+      </section>
+
+      <section className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-8">
+        <h2 className="text-lg font-black text-white">
+          {getDictionary(locale).home.moreTitle}
+        </h2>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+          {[
+            { href: localizedPath(locale, "/articles"), label: getDictionary(locale).nav.articles },
+            { href: localizedPath(locale, "/tools"), label: getDictionary(locale).nav.tools }
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="inline-flex h-12 items-center justify-between gap-3 rounded border border-white/10 px-5 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white sm:min-w-52"
+            >
+              {item.label}
+              <ArrowRight size={16} />
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   );

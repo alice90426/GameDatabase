@@ -50,7 +50,7 @@ export function ArticleList({ articles, locale, pathPrefix }: ArticleListProps) 
   );
 }
 
-function ArticleCard({
+export function ArticleCard({
   article,
   href,
   locale

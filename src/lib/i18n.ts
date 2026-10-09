@@ -104,6 +104,12 @@ export const dictionaries = {
           { title: "規格文件", text: "整理可送測 GLI／BMM 的中英文規格與模擬報告。" }
         ]
       },
+      articlesTitle: "教學文章",
+      articlesMore: "查看全部教學文章",
+      toolsTitle: "自製工具",
+      toolsText: "把建模與調表中重複的工作自動化，縮短從設計到驗證的時間。",
+      toolsMore: "查看全部工具",
+      moreTitle: "延伸閱讀",
       researchTitle: "精選研究筆記",
       researchMore: "查看全部研究筆記",
       contactTitle: "合作與聯絡",
@@ -432,6 +438,12 @@ export const dictionaries = {
           { title: "Specification", text: "Prepare bilingual specs and simulation reports ready for GLI / BMM submission." }
         ]
       },
+      articlesTitle: "Tutorial Articles",
+      articlesMore: "View all articles",
+      toolsTitle: "Tools I Built",
+      toolsText: "Automation for the repetitive parts of modeling and tuning, shortening the path from design to validation.",
+      toolsMore: "View all tools",
+      moreTitle: "Keep Exploring",
       researchTitle: "Selected Research",
       researchMore: "View all research notes",
       contactTitle: "Collaboration & Contact",

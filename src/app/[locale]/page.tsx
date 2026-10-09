@@ -1,8 +1,11 @@
 import { localizedAlternates } from "@/lib/seo";
 import Link from "next/link";
-import { ArrowRight, BarChart3, Calculator, Check, Download, FileText, Linkedin, Mail, Table } from "lucide-react";
+import { ArrowRight, BarChart3, Calculator, Check, Download, FileText, Linkedin, Mail, PlayCircle, Table } from "lucide-react";
 import { FeaturedGames } from "@/components/featured-games";
+import { ArticleCard as BloggerArticleCard } from "@/components/article-list";
 import { ArticleCard } from "@/components/research-list";
+import { getBloggerArticles } from "@/lib/blogger";
+import { tools } from "@/data/tools";
 import { getPublishedResearchArticles } from "@/lib/notion";
 import { researchPath } from "@/lib/research-language";
 import { getFeaturedGames } from "@/lib/games";
@@ -26,6 +29,7 @@ export default async function HomePage({
   const dictionary = getDictionary(locale);
   const featuredGames = getFeaturedGames();
   const allResearch = await getPublishedResearchArticles();
+  const bloggerArticles = (await getBloggerArticles()).slice(0, 3);
   // Picked by analysis volume (text length); falls back to the newest notes.
   const featuredResearchTitles = [
     "野狼DISCO (CQ9)",
@@ -184,6 +188,34 @@ export default async function HomePage({
         </section>
       ) : null}
 
+      {bloggerArticles.length > 0 ? (
+        <section className="px-5 py-14">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <h2 className="text-3xl font-black text-white">
+                {dictionary.home.articlesTitle}
+              </h2>
+              <Link
+                href={localizedPath(locale, "/articles")}
+                className="text-sm font-bold text-neon hover:text-white"
+              >
+                {dictionary.home.articlesMore}
+              </Link>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {bloggerArticles.map((article) => (
+                <BloggerArticleCard
+                  key={article.id}
+                  article={article}
+                  href={localizedPath(locale, `/articles/${article.slug}`)}
+                  locale={locale}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="px-5 py-14">
         <div className="mx-auto max-w-7xl rounded border border-white/10 bg-white/[0.04] p-6 md:p-8">
           <h2 className="text-3xl font-black text-white">{dictionary.home.method.title}</h2>
@@ -200,6 +232,52 @@ export default async function HomePage({
                 />
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-14">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-6 flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-3xl font-black text-white">
+                {dictionary.home.toolsTitle}
+              </h2>
+              <p className="mt-3 max-w-2xl leading-7 text-slate-300">
+                {dictionary.home.toolsText}
+              </p>
+            </div>
+            <Link
+              href={localizedPath(locale, "/tools")}
+              className="shrink-0 text-sm font-bold text-neon hover:text-white"
+            >
+              {dictionary.home.toolsMore}
+            </Link>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {tools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={localizedPath(locale, `/tools/${tool.slug}`)}
+                className="group flex flex-col rounded border border-white/10 bg-panel/75 p-5 transition hover:border-neon/40"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="rounded border border-neon/25 bg-neon/10 px-3 py-1 text-xs font-black text-neon">
+                    {tool.category[locale]}
+                  </span>
+                  <PlayCircle
+                    className="text-slate-400 transition group-hover:text-neon"
+                    size={24}
+                  />
+                </div>
+                <h3 className="mt-5 text-xl font-black text-white">
+                  {tool.title[locale]}
+                </h3>
+                <p className="mt-2 flex-1 leading-7 text-slate-300">
+                  {tool.summary[locale]}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

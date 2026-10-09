@@ -175,6 +175,13 @@ export default async function ServicesPage({
           <p className="mt-2 max-w-3xl leading-7 text-slate-300">
             {content.collaborationText}
           </p>
+          <Link
+            href={localizedPath(locale, "/tools")}
+            className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-neon hover:text-white"
+          >
+            {dictionary.home.toolsTitle}
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
