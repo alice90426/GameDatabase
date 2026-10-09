@@ -1,6 +1,6 @@
 import "server-only";
 import type { Locale } from "@/types/game";
-import { researchLanguage } from "@/lib/research-language";
+import { decodeSlug, researchLanguage } from "@/lib/research-language";
 import { Client } from "@notionhq/client";
 import { unstable_cache } from "next/cache";
 import type {
@@ -54,7 +54,9 @@ export async function getResearchArticleBySlug(
 ): Promise<ResearchArticle | null> {
   const articles = await getPublishedResearchArticles();
 
-  return articles.find((article) => article.slug === slug) ?? null;
+  const decoded = decodeSlug(slug);
+
+  return articles.find((article) => article.slug === decoded) ?? null;
 }
 
 export const getResearchArticleBlocks = unstable_cache(

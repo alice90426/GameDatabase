@@ -65,6 +65,23 @@ export default async function AboutPage({
           <p className="mt-5 whitespace-pre-line leading-8 text-slate-300">
             {content.intro}
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={`mailto:${content.contactLinks.email}`}
+              className="inline-flex items-center gap-2 rounded bg-neon px-4 py-2 text-sm font-black text-void transition hover:bg-white"
+            >
+              <Mail size={16} />
+              {content.emailLabel}
+            </a>
+            <a
+              href={cvPath(locale)}
+              download
+              className="inline-flex items-center gap-2 rounded border border-white/10 px-4 py-2 text-sm font-black text-slate-200 transition hover:border-neon hover:text-white"
+            >
+              <Download size={16} />
+              {getDictionary(locale).common.downloadCv}
+            </a>
+          </div>
         </aside>
 
         <section className="rounded border border-white/25 bg-panel/85 p-5">

@@ -8,8 +8,17 @@ export function researchLanguage(value: string): Locale {
   return ["en", "en-us", "en-gb", "english", "英文", "英語"].includes(language) ? "en" : "zh";
 }
 
+// Route params arrive percent-encoded for non-ASCII slugs (e.g. Chinese titles).
+export function decodeSlug(slug: string) {
+  try {
+    return decodeURIComponent(slug);
+  } catch {
+    return slug;
+  }
+}
+
 export function researchPath(article: { slug: string; language: Locale }) {
-  return `/${article.language}/research/${article.slug}`;
+  return `/${article.language}/research/${encodeURIComponent(article.slug)}`;
 }
 
 export function researchAlternates(article: { slug: string; language: Locale }): NonNullable<Metadata["alternates"]> {

@@ -1,4 +1,5 @@
 import "server-only";
+import { decodeSlug } from "@/lib/research-language";
 import { unstable_cache } from "next/cache";
 
 const bloggerApiKey = process.env.BLOGGER_API_KEY;
@@ -55,7 +56,8 @@ export const getBloggerPostById = unstable_cache(
 
 export async function getBloggerArticleBySlug(slug: string) {
   const articles = await getBloggerArticles();
-  const article = articles.find((post) => post.slug === slug);
+  const decoded = decodeSlug(slug);
+  const article = articles.find((post) => post.slug === decoded);
 
   if (!article) {
     return null;
