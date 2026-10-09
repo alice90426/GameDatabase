@@ -125,7 +125,19 @@ export const dictionaries = {
     games: {
       title: "遊戲資料",
       eyebrow: "資料庫",
-      intro: "使用ID、標籤與波動度快速篩選遊戲規格。",
+      intro: "以 ID、標籤、RTP 區間與波動度篩選，並依 RTP、波動度或最大倍數排序。",
+      rtpMin: "RTP 下限",
+      rtpMax: "RTP 上限",
+      sortBy: "排序",
+      sortOptions: {
+        id: "預設（ID）",
+        rtpDesc: "RTP 由高到低",
+        rtpAsc: "RTP 由低到高",
+        volatilityDesc: "波動度 由高到低",
+        volatilityAsc: "波動度 由低到高",
+        maxWinDesc: "最大倍數 由高到低",
+        hitRateDesc: "中獎率 由高到低"
+      },
       search: "搜尋 ID",
       empty: "沒有符合條件的遊戲。",
       allGames: "所有遊戲",
@@ -234,7 +246,7 @@ export const dictionaries = {
         { period: "2018 – 2023", role: "數值工程師", org: "長青資訊" },
         { period: "2017 – 2018", role: "數值工程師", org: "德聚科技" }
       ],
-      careerNote: "另有 5 年以上海外自由接案經驗。清華大學統計學碩士、應用數學學士。",
+      careerNote: "另有 5 年以上跨國、跨團隊、跨框架的自由接案經驗。清華大學統計學碩士、應用數學學士。",
       websitePurposeTitle: "關於這個網站",
       websitePurpose:
         "將遊戲數學模型、模擬數據與研究筆記結構化整理，呈現從分析、設計到驗證的完整流程。",
@@ -398,7 +410,19 @@ export const dictionaries = {
     games: {
       title: "Game Database",
       eyebrow: "Database",
-      intro: "Filter game specs by ID, tags and volatility.",
+      intro: "Filter by ID, tags, RTP range and volatility, and sort by RTP, volatility or max win.",
+      rtpMin: "RTP min",
+      rtpMax: "RTP max",
+      sortBy: "Sort",
+      sortOptions: {
+        id: "Default (ID)",
+        rtpDesc: "RTP high to low",
+        rtpAsc: "RTP low to high",
+        volatilityDesc: "Volatility high to low",
+        volatilityAsc: "Volatility low to high",
+        maxWinDesc: "Max win high to low",
+        hitRateDesc: "Hit rate high to low"
+      },
       search: "Search ID",
       empty: "No games match the current filters.",
       allGames: "All Games",
@@ -507,7 +531,7 @@ export const dictionaries = {
         { period: "2018 – 2023", role: "Game Math Engineer", org: "CC TECH" },
         { period: "2017 – 2018", role: "Game Math Engineer", org: "De Gather Technology Co., Ltd." }
       ],
-      careerNote: "Plus 5+ years of overseas freelance experience. M.S. in Statistics and B.S. in Applied Mathematics, National Tsing Hua University.",
+      careerNote: "Plus 5+ years of freelance experience across countries, teams and game frameworks. M.S. in Statistics and B.S. in Applied Mathematics, National Tsing Hua University.",
       websitePurposeTitle: "About This Website",
       websitePurpose:
         "A structured collection of game math models, simulation data and research notes, showing the full workflow from analysis and design to validation.",

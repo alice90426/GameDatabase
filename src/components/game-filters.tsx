@@ -8,6 +8,8 @@ import { getDictionary } from "@/lib/i18n";
 import { getVolatilityLevel } from "@/lib/volatility";
 import type { Game, Locale, VolatilityLevel } from "@/types/game";
 
+type SortKey = "id" | "rtpDesc" | "rtpAsc" | "volatilityDesc" | "volatilityAsc" | "maxWinDesc" | "hitRateDesc";
+
 type GameFiltersProps = {
   games: Game[];
   genres: string[];
@@ -33,6 +35,9 @@ export function GameFilters({
   const [boardSize, setBoardSize] = useState("all");
   const [lineMechanic, setLineMechanic] = useState("all");
   const [tag, setTag] = useState("all");
+  const [rtpMin, setRtpMin] = useState("");
+  const [rtpMax, setRtpMax] = useState("");
+  const [sortKey, setSortKey] = useState<SortKey>("id");
   const [preloadId, setPreloadId] = useState<string | null>(null);
   const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
 
@@ -59,7 +64,14 @@ export function GameFilters({
     const matchesTags =
       ignoredFilter === "tag" || tag === "all" || game.tags.includes(tag);
 
+    const minRtp = rtpMin === "" ? null : Number(rtpMin);
+    const maxRtp = rtpMax === "" ? null : Number(rtpMax);
+    const matchesRtp =
+      (minRtp === null || Number.isNaN(minRtp) || game.rtp >= minRtp) &&
+      (maxRtp === null || Number.isNaN(maxRtp) || game.rtp <= maxRtp);
+
     return (
+      matchesRtp &&
       matchesQuery &&
       matchesVolatility &&
       matchesBoardSize &&
@@ -68,10 +80,19 @@ export function GameFilters({
     );
   }
 
-  const filteredGames = useMemo(
-    () => games.filter((game) => matchesGame(game)),
-    [games, query, volatility, boardSize, lineMechanic, tag]
-  );
+  const filteredGames = useMemo(() => {
+    const result = games.filter((game) => matchesGame(game));
+    const compare: Record<SortKey, (a: Game, b: Game) => number> = {
+      id: () => 0,
+      rtpDesc: (a, b) => b.rtp - a.rtp,
+      rtpAsc: (a, b) => a.rtp - b.rtp,
+      volatilityDesc: (a, b) => b.volatility - a.volatility,
+      volatilityAsc: (a, b) => a.volatility - b.volatility,
+      maxWinDesc: (a, b) => b.maxWin - a.maxWin,
+      hitRateDesc: (a, b) => b.hitRate - a.hitRate
+    };
+    return sortKey === "id" ? result : [...result].sort(compare[sortKey]);
+  }, [games, query, volatility, boardSize, lineMechanic, tag, rtpMin, rtpMax, sortKey]);
   const preloadUrl = games.find((game) => game.id === preloadId)?.githubUrl;
 
   useEffect(() => {
@@ -100,7 +121,7 @@ export function GameFilters({
             .flatMap((game) => game.tags)
         )
       ).sort(),
-    [games, query, volatility, boardSize, lineMechanic]
+    [games, query, volatility, boardSize, lineMechanic, rtpMin, rtpMax]
   );
 
   const availableVolatilities = useMemo(() => {
@@ -111,7 +132,7 @@ export function GameFilters({
     );
 
     return volatilities.filter((value) => values.has(value));
-  }, [games, volatilities, query, boardSize, lineMechanic, tag]);
+  }, [games, volatilities, query, boardSize, lineMechanic, tag, rtpMin, rtpMax]);
 
   const availableBoardSizes = useMemo(
     () =>
@@ -120,7 +141,7 @@ export function GameFilters({
           .filter((game) => matchesGame(game, "boardSize"))
           .some((game) => game.boardSize === value)
       ),
-    [games, boardSizes, query, volatility, lineMechanic, tag]
+    [games, boardSizes, query, volatility, lineMechanic, tag, rtpMin, rtpMax]
   );
 
   const availableLineMechanics = useMemo(
@@ -130,7 +151,7 @@ export function GameFilters({
           .filter((game) => matchesGame(game, "lineMechanic"))
           .some((game) => game.lineMechanic === value)
       ),
-    [games, lineMechanics, query, volatility, boardSize, tag]
+    [games, lineMechanics, query, volatility, boardSize, tag, rtpMin, rtpMax]
   );
 
   function keepSelectedOption(options: string[], selectedValue: string) {
@@ -148,6 +169,9 @@ export function GameFilters({
     setVolatility("all");
     setBoardSize("all");
     setLineMechanic("all");
+    setRtpMin("");
+    setRtpMax("");
+    setSortKey("id");
   }
 
   return (
@@ -164,7 +188,7 @@ export function GameFilters({
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder={dictionary.games.search}
-              className="h-12 w-full rounded border border-white/10 bg-void/80 pl-10 pr-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-neon/50"
+              className="h-12 w-full rounded border border-white/10 bg-void/80 pl-10 pr-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
             />
           </label>
 
@@ -226,11 +250,55 @@ export function GameFilters({
           <button
             type="button"
             onClick={resetFilters}
-            className="inline-flex h-12 items-center justify-center gap-2 rounded border border-white/10 px-4 text-sm font-bold text-slate-200 transition hover:border-ember/70 hover:text-ember"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded border border-white/10 px-4 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white"
           >
             <RotateCcw size={16} />
             {dictionary.common.reset}
           </button>
+        </div>
+        <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_1fr_1.4fr]">
+          <label className="flex items-center gap-2 text-sm font-bold text-slate-300">
+            <span className="shrink-0">{dictionary.games.rtpMin}</span>
+            <input
+              type="number"
+              inputMode="decimal"
+              step="0.1"
+              min="0"
+              max="100"
+              value={rtpMin}
+              onChange={(event) => setRtpMin(event.target.value)}
+              placeholder="94"
+              className="h-12 w-full min-w-0 rounded border border-white/10 bg-void/80 px-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
+            />
+          </label>
+          <label className="flex items-center gap-2 text-sm font-bold text-slate-300">
+            <span className="shrink-0">{dictionary.games.rtpMax}</span>
+            <input
+              type="number"
+              inputMode="decimal"
+              step="0.1"
+              min="0"
+              max="100"
+              value={rtpMax}
+              onChange={(event) => setRtpMax(event.target.value)}
+              placeholder="97"
+              className="h-12 w-full min-w-0 rounded border border-white/10 bg-void/80 px-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
+            />
+          </label>
+          <label className="flex items-center gap-2 text-sm font-bold text-slate-300">
+            <span className="shrink-0">{dictionary.games.sortBy}</span>
+            <select
+              value={sortKey}
+              onChange={(event) => setSortKey(event.target.value as SortKey)}
+              className="h-12 w-full min-w-0 rounded border border-white/10 bg-void/80 px-3 text-sm font-semibold text-white outline-none transition focus:border-neon/50"
+            >
+              {(Object.keys(dictionary.games.sortOptions) as SortKey[]).map((key) => (
+                <option key={key} value={key}>
+                  {dictionary.games.sortOptions[key]}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <div className="mt-4 border-t border-white/10 pt-4 text-sm font-bold text-slate-300">
           {dictionary.games.showingPrefix} {filteredGames.length}{" "}
