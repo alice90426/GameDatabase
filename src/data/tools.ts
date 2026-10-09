@@ -6,7 +6,7 @@ export const tools: ToolProject[] = [
   {
     slug: "math-model-generator",
     title: {
-      zh: "Math Model Generator 數學模型產生器",
+      zh: "數學模型產生器",
       en: "Math Model Generator"
     },
     summary: {
@@ -39,7 +39,7 @@ export const tools: ToolProject[] = [
   {
     slug: "auto-adjust-strip-tool",
     title: {
-      zh: "Auto Adjust Strip Tool 自動調表工具",
+      zh: "自動調表工具",
       en: "Auto Adjust Strip Tool"
     },
     summary: {
