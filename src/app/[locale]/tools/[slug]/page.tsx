@@ -38,7 +38,7 @@ export default async function ToolDetailPage({ params }: { params: Promise<{ loc
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{tool.summary[locale]}</p>
 
         {embedUrl && (
-          <div className="mt-10 aspect-video overflow-hidden rounded border border-white/10 bg-black shadow-glow">
+          <div className="mt-10 aspect-video overflow-hidden rounded border border-white/10 bg-black">
             <iframe className="h-full w-full" src={embedUrl} title={tool.title[locale]} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
           </div>
         )}

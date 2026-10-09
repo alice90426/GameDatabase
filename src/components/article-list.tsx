@@ -62,7 +62,7 @@ function ArticleCard({
   return (
     <Link
       href={href}
-      className="group overflow-hidden rounded border border-white/10 bg-panel/75 transition hover:border-neon/50 hover:shadow-glow"
+      className="group overflow-hidden rounded border border-white/10 bg-panel/75 transition hover:border-neon/50"
     >
       {article.thumbnail ? (
         <div className="relative aspect-[16/8] border-b border-white/10 bg-void">
@@ -84,7 +84,7 @@ function ArticleCard({
       <div className="p-5">
         <div className="flex flex-wrap items-center gap-2">
           {article.date ? (
-            <span className="text-xs font-bold text-slate-500">
+            <span className="text-xs font-bold text-slate-400">
               {formatDate(article.date, locale)}
             </span>
           ) : null}

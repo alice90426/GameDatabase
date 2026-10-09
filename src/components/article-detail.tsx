@@ -28,7 +28,7 @@ export function ArticleDetail({ article, locale, backHref }: ArticleDetailProps)
 
         <div className="mt-7 flex flex-wrap items-center gap-2">
           {article.date ? (
-            <span className="text-xs font-bold text-slate-500">
+            <span className="text-xs font-bold text-slate-400">
               {formatDate(article.date, locale)}
             </span>
           ) : null}

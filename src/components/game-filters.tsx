@@ -157,7 +157,7 @@ export function GameFilters({
           <label className="relative">
             <span className="sr-only">{dictionary.games.search}</span>
             <Search
-              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
               size={18}
             />
             <input

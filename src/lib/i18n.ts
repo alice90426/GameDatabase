@@ -46,9 +46,10 @@ export const dictionaries = {
       language: "EN"
     },
     common: {
-      brand: "娛樂遊戲資料庫",
+      brand: "JAVIER CHIANG",
       badge: "遊戲數學模型設計師",
-      description: "整理遊戲規格、數值特徵與玩法分類的資料庫。",
+      description:
+        "江愷翔（Javier）的作品集：老虎機與遊戲數學模型設計、RTP 與波動度分析、模擬驗證，以及 GLI／BMM 規格文件。",
       viewGames: "查看遊戲資料",
       viewWorks: "查看代表作品",
       downloadCv: "下載履歷 (PDF)",
@@ -310,9 +311,10 @@ export const dictionaries = {
       language: "中文"
     },
     common: {
-      brand: "Casino Game Database",
+      brand: "JAVIER CHIANG",
       badge: "Game Math Model Designer",
-      description: "A database for game specs, numerical traits, and play categories.",
+      description:
+        "Portfolio of Javier Chiang, game math model designer: slot math design, RTP and volatility analysis, simulation validation, and GLI / BMM specification documents.",
       viewGames: "Browse Games",
       viewWorks: "View Selected Work",
       downloadCv: "Download CV (PDF)",

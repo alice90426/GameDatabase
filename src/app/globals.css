@@ -15,7 +15,6 @@ body {
   margin: 0;
   background:
     radial-gradient(circle at 18% 0%, rgba(77, 227, 255, 0.16), transparent 28rem),
-    radial-gradient(circle at 82% 12%, rgba(168, 85, 247, 0.14), transparent 32rem),
     #070a12;
   color: #f7fbff;
   font-family:

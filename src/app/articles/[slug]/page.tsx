@@ -61,7 +61,7 @@ export default async function ArticleDetailPage({
       <main className="relative z-10">
         <ArticleDetail article={article} locale={locale} backHref="/articles" />
       </main>
-      <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
+      <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-400">
         {dictionary.common.footer}
       </footer>
     </div>

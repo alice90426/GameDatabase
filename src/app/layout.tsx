@@ -5,28 +5,28 @@ import { siteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "GAME DATABASE",
+    default: "Javier Chiang | Game Math Model Designer",
     template: "%s"
   },
   description:
-    "A structured database for slot game specs, hit rate, volatility, RTP, board size, and line mechanics.",
+    "Portfolio of Javier Chiang, game math model designer: slot math design, RTP and volatility analysis, simulation validation, and GLI / BMM specification documents.",
   keywords: [
-    "game database",
-    "slot game",
+    "slot game math",
+    "game math model",
+    "slot math model",
     "RTP",
-    "hit rate",
-    "max win",
     "volatility",
-    "board size",
-    "line mechanic",
-    "game specs",
-    "simulation data",
-    "game analytics",
+    "hit rate",
+    "simulation",
+    "GLI",
+    "BMM",
+    "probability engineer",
+    "老虎機數學模型"
   ],
   openGraph: {
-    title: "GAME DATABASE",
+    title: "Javier Chiang | Game Math Model Designer",
     description:
-      "A structured slot game database built with Next.js.",
+      "Slot and game math model design, RTP and volatility analysis, simulation validation, and certification-ready specifications.",
     type: "website"
   },
   verification: {

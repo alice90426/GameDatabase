@@ -63,7 +63,7 @@ export function ArticleCard({
     <Link
       lang={researchLanguageTag(article.language)}
       href={href}
-      className="group overflow-hidden rounded border border-white/10 bg-panel/75 transition hover:border-neon/50 hover:shadow-glow"
+      className="group overflow-hidden rounded border border-white/10 bg-panel/75 transition hover:border-neon/50"
     >
       {article.cover ? (
         <div className="relative aspect-[16/8] border-b border-white/10 bg-void">
@@ -89,7 +89,7 @@ export function ArticleCard({
             </span>
           ) : null}
           {article.date ? (
-            <span className="text-xs font-bold text-slate-500">
+            <span className="text-xs font-bold text-slate-400">
               {formatDate(article.date)}
             </span>
           ) : null}

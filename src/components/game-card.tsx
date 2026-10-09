@@ -23,7 +23,7 @@ export function GameCard({ game, locale, onOpen }: GameCardProps) {
 
   return (
     <article
-      className={`group overflow-hidden rounded border border-white/10 bg-panel/80 shadow-2xl shadow-black/20 transition hover:-translate-y-1 hover:border-neon/40 hover:shadow-glow ${
+      className={`group overflow-hidden rounded border border-white/10 bg-panel/80 shadow-2xl shadow-black/20 transition hover:border-neon/40 ${
         onOpen ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-neon/60" : ""
       }`}
       onClick={onOpen}
@@ -36,7 +36,7 @@ export function GameCard({ game, locale, onOpen }: GameCardProps) {
       role={onOpen ? "button" : undefined}
       tabIndex={onOpen ? 0 : undefined}
     >
-      <div className="relative min-h-40 bg-[linear-gradient(135deg,rgba(77,227,255,0.22),rgba(168,85,247,0.22)_48%,rgba(255,122,61,0.18)),linear-gradient(45deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%)] bg-[length:auto,18px_18px]">
+      <div className="relative min-h-40 bg-[linear-gradient(135deg,rgba(77,227,255,0.12),rgba(13,19,36,0.9))]">
         <div className="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent" />
         <div className="absolute left-4 top-4 rounded border border-neon/35 bg-black/35 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-neon">
           {game.genre[0]}
@@ -119,7 +119,7 @@ function SpecPanel({
 }) {
   return (
     <div className="rounded border border-white/10 bg-void/60 p-3">
-      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
         <span className="text-neon">{icon}</span>
         {label}
       </div>
@@ -139,7 +139,7 @@ function VolatilityPanel({
 
   return (
     <div className="rounded border border-white/10 bg-void/60 p-3">
-      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
         <span className="text-neon">
           <Waves size={16} />
         </span>
@@ -151,7 +151,7 @@ function VolatilityPanel({
             key={barLevel}
             className={
               barLevel <= level
-                ? "block h-5 flex-1 rounded-sm bg-neon shadow-glow"
+                ? "block h-5 flex-1 rounded-sm bg-neon"
                 : "block h-5 flex-1 rounded-sm bg-white/10"
             }
             style={{ height: `${4 + barLevel * 4}px` }}

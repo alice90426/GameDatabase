@@ -32,13 +32,13 @@ export default async function ToolsPage({ params }: { params: Promise<{ locale: 
           <Link
             key={tool.slug}
             href={localizedPath(locale, `/tools/${tool.slug}`)}
-            className="group flex min-h-64 flex-col rounded border border-white/10 bg-panel/75 p-5 transition hover:-translate-y-1 hover:border-neon/40 hover:shadow-glow"
+            className="group flex min-h-64 flex-col rounded border border-white/10 bg-panel/75 p-5 transition hover:border-neon/40"
           >
             <div className="flex items-center justify-between">
               <span className="rounded border border-neon/25 bg-neon/10 px-3 py-1 text-xs font-black text-neon">
                 {tool.category[locale]}
               </span>
-              <PlayCircle className="text-slate-500 transition group-hover:text-neon" size={24} />
+              <PlayCircle className="text-slate-400 transition group-hover:text-neon" size={24} />
             </div>
             <h2 className="mt-8 text-2xl font-black text-white">{tool.title[locale]}</h2>
             <p className="mt-3 flex-1 leading-7 text-slate-300">{tool.summary[locale]}</p>

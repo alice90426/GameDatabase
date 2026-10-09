@@ -206,7 +206,7 @@ export default async function AboutPage({
                       {resource.title}
                     </h3>
                   </div>
-                  <ExternalLink size={15} className="text-slate-500" />
+                  <ExternalLink size={15} className="text-slate-400" />
                 </div>
                 <p className="mt-2 text-sm text-slate-400">
                   {resource.text}

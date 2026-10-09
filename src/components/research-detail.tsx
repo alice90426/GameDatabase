@@ -42,7 +42,7 @@ export function ResearchDetail({
             </span>
           ) : null}
           {article.date ? (
-            <span className="text-xs font-bold text-slate-500">
+            <span className="text-xs font-bold text-slate-400">
               {formatDate(article.date, locale)}
             </span>
           ) : null}

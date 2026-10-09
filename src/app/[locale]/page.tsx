@@ -8,6 +8,7 @@ import { researchPath } from "@/lib/research-language";
 import { getFeaturedGames } from "@/lib/games";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { cvPath, localizedPath } from "@/lib/routes";
+import { siteUrl } from "@/lib/site";
 import type { Locale } from "@/types/game";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -30,8 +31,26 @@ export default async function HomePage({
     dictionary.common.contactSubject
   )}&body=${encodeURIComponent(dictionary.common.contactBody)}`;
 
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: dictionary.home.name,
+    jobTitle: dictionary.common.badge,
+    url: `${siteUrl}/${locale}`,
+    sameAs: [
+      dictionary.about.contactLinks.linkedin,
+      dictionary.about.resources.github.href,
+      dictionary.about.resources.blogger.href,
+      dictionary.about.resources.itch.href
+    ]
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <section className="relative px-5 py-16 sm:py-20 lg:py-24">
         <div className="absolute inset-x-0 top-0 -z-10 h-full bg-tech-grid bg-[length:44px_44px] opacity-45" />
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -56,7 +75,7 @@ export default async function HomePage({
               </a>
               <Link
                 href="#selected-work"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded border border-white/10 px-5 text-sm font-bold text-slate-200 transition hover:border-plasma/60 hover:text-white"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded border border-white/10 px-5 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white"
               >
                 {dictionary.common.viewWorks}
                 <ArrowRight size={18} />

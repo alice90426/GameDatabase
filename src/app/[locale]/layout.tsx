@@ -20,9 +20,24 @@ export async function generateMetadata({
 
   const dictionary = getDictionary(locale);
 
+  const title = `${dictionary.home.name} | ${dictionary.common.badge}`;
+
   return {
-    title: dictionary.common.badge,
-    description: dictionary.common.description
+    title,
+    description: dictionary.common.description,
+    openGraph: {
+      title,
+      description: dictionary.common.description,
+      type: "website",
+      siteName: dictionary.common.brand,
+      locale: locale === "zh" ? "zh_TW" : "en_US",
+      url: `/${locale}`
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: dictionary.common.description
+    }
   };
 }
 
@@ -46,7 +61,7 @@ export default async function LocaleLayout({
       <div className="noise-overlay pointer-events-none fixed inset-0 opacity-70" />
       <Navbar locale={locale as Locale} />
       <main className="relative z-10">{children}</main>
-      <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
+      <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-400">
         {dictionary.common.footer}
       </footer>
     </div>

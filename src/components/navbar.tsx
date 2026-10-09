@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Gamepad2, Mail } from "lucide-react";
+import { Mail, Sigma } from "lucide-react";
 import { getDictionary } from "@/lib/i18n";
 import { localizedPath } from "@/lib/routes";
 import { LanguageSwitch } from "@/components/language-switch";
@@ -31,8 +31,8 @@ export function Navbar({ locale }: NavbarProps) {
           href={localizedPath(locale)}
           className="flex items-center gap-3 text-sm font-black tracking-[0.28em] text-white"
         >
-          <span className="grid h-10 w-10 place-items-center rounded border border-neon/35 bg-neon/10 text-neon shadow-glow">
-            <Gamepad2 size={22} />
+          <span className="grid h-10 w-10 place-items-center rounded border border-neon/35 bg-neon/10 text-neon">
+            <Sigma size={22} />
           </span>
           <span className="hidden sm:inline">{dictionary.common.brand}</span>
         </Link>
