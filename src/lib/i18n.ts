@@ -100,7 +100,7 @@ export const dictionaries = {
         steps: [
           { title: "數學設計", text: "定義 RTP、中獎率、波動度與最大倍數，規劃獎勵結構。" },
           { title: "試算表建模", text: "以公式連動的試算表建立輪帶、賠付與特色機制。" },
-          { title: "模擬驗證", text: "以程式大量模擬，確認長期輸出與理論值一致。" },
+          { title: "模擬驗證", text: "以程式進行 10 億次模擬，RTP 誤差低於 0.1%，確認長期輸出與理論值一致。" },
           { title: "規格文件", text: "整理可送測 GLI／BMM 的中英文規格與模擬報告。" }
         ]
       },
@@ -227,9 +227,17 @@ export const dictionaries = {
         "遊戲規格文件撰寫",
         "機率系統研究"
       ],
-      websitePurposeTitle: "建立網站原因",
+      careerTitle: "經歷",
+      career: [
+        { period: "2026/10 – 至今", role: "機率工程師", org: "遊戲產業（公司名稱暫不公開）" },
+        { period: "2023 – 2026", role: "資深數值企劃", org: "浩天遊戲" },
+        { period: "2018 – 2023", role: "數值工程師", org: "長青資訊" },
+        { period: "2017 – 2018", role: "數值工程師", org: "德聚科技" }
+      ],
+      careerNote: "另有 5 年以上海外自由接案經驗。清華大學統計學碩士、應用數學學士。",
+      websitePurposeTitle: "關於這個網站",
       websitePurpose:
-        "建立這個網站的目的，是將遊戲數學模型相關資料進行結構化整理。\n除了展示模型本身，也希望透過規格文件、模擬數據與研究內容，呈現從分析、設計到驗證的完整流程。\n網站中的資料涵蓋遊戲模型、機率分析、研究筆記與教學內容，作為長期累積的知識庫與作品集。",
+        "將遊戲數學模型、模擬數據與研究筆記結構化整理，呈現從分析、設計到驗證的完整流程。",
       researchDirectionTitle: "研究方向",
       researchDirections: [
         "老虎機數學模型",
@@ -365,7 +373,7 @@ export const dictionaries = {
         steps: [
           { title: "Math design", text: "Define RTP, hit rate, volatility and max win, and plan the reward structure." },
           { title: "Spreadsheet model", text: "Build reels, paytable and feature mechanics in formula-linked spreadsheets." },
-          { title: "Simulation", text: "Run large-scale simulations to confirm long-run output matches the theoretical values." },
+          { title: "Simulation", text: "Run 1 billion simulated spins with RTP error under 0.1%, confirming long-run output matches the theoretical values." },
           { title: "Specification", text: "Prepare bilingual specs and simulation reports ready for GLI / BMM submission." }
         ]
       },
@@ -492,9 +500,17 @@ export const dictionaries = {
         "Game Specification Document Writing",
         "Probability Systems Research"
       ],
-      websitePurposeTitle: "Why I Built This Website",
+      careerTitle: "Experience",
+      career: [
+        { period: "Oct 2026 – Present", role: "Probability Engineer", org: "Gaming industry (undisclosed)" },
+        { period: "2023 – 2026", role: "Senior Game Math Designer", org: "Audere Gaming Co., Ltd." },
+        { period: "2018 – 2023", role: "Game Math Engineer", org: "CC TECH" },
+        { period: "2017 – 2018", role: "Game Math Engineer", org: "De Gather Technology Co., Ltd." }
+      ],
+      careerNote: "Plus 5+ years of overseas freelance experience. M.S. in Statistics and B.S. in Applied Mathematics, National Tsing Hua University.",
+      websitePurposeTitle: "About This Website",
       websitePurpose:
-        "I built this website to organize game mathematics model-related materials in a structured way.\nBeyond presenting the models themselves, I also use specification documents, simulation data, and research content to show the complete workflow from analysis and design to validation.\nThe site covers game models, probability analysis, research notes, and tutorial content, serving as a long-term knowledge base and portfolio.",
+        "A structured collection of game math models, simulation data and research notes, showing the full workflow from analysis and design to validation.",
       researchDirectionTitle: "Research Direction",
       researchDirections: [
         "Slot Game Mathematics",

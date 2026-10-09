@@ -2,7 +2,7 @@ import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import {
   BookOpen,
-  Compass,
+  Briefcase,
   Download,
   ExternalLink,
   FileText,
@@ -88,6 +88,34 @@ export default async function AboutPage({
 
         <section className="rounded border border-white/25 bg-panel/85 p-5">
           <div className="flex items-center gap-3">
+            <Briefcase className="text-neon" size={22} />
+            <h2 className="text-xl font-black text-white">
+              {content.careerTitle}
+            </h2>
+          </div>
+          <ul className="mt-4 divide-y divide-white/10">
+            {content.career.map((item) => (
+              <li
+                key={item.period}
+                className="grid gap-1 py-3 sm:grid-cols-[9.5rem_1fr]"
+              >
+                <span className="text-sm font-bold text-slate-400">
+                  {item.period}
+                </span>
+                <span className="text-slate-200">
+                  <span className="font-black text-white">{item.role}</span>
+                  <span className="text-slate-400"> · {item.org}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm leading-6 text-slate-300">
+            {content.careerNote}
+          </p>
+        </section>
+
+        <section className="rounded border border-white/25 bg-panel/85 p-5">
+          <div className="flex items-center gap-3">
             <Handshake className="text-neon" size={22} />
             <h2 className="text-xl font-black text-white">
               {content.contact}
@@ -159,25 +187,6 @@ export default async function AboutPage({
           <p className="mt-3 whitespace-pre-line leading-8 text-slate-300">
             {content.websitePurpose}
           </p>
-        </section>
-
-        <section className="rounded border border-white/25 bg-panel/85 p-5">
-          <div className="flex items-center gap-3">
-            <Compass className="text-neon" size={22} />
-            <h2 className="text-xl font-black text-white">
-              {content.researchDirectionTitle}
-            </h2>
-          </div>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            {content.researchDirections.map((item) => (
-              <div
-                key={item}
-                className="rounded border border-violet-300/10 bg-void/75 px-3 py-3 text-sm font-bold text-slate-200"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
         </section>
 
         <section className="rounded border border-white/10 bg-panel/85 p-5">
