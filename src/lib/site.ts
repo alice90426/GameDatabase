@@ -1,1 +1,1 @@
-export const siteUrl = "https://slot-game-database.vercel.app";
+export const siteUrl = "https://javier-chiang.vercel.app";
