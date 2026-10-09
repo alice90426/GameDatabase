@@ -74,6 +74,15 @@ export default async function AboutPage({
               {content.emailLabel}
             </a>
             <a
+              href={content.contactLinks.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded border border-white/10 px-4 py-2 text-sm font-black text-slate-200 transition hover:border-neon hover:text-white"
+            >
+              <Linkedin size={16} />
+              {content.linkedinLabel}
+            </a>
+            <a
               href={cvPath(locale)}
               download
               className="inline-flex items-center gap-2 rounded border border-white/10 px-4 py-2 text-sm font-black text-slate-200 transition hover:border-neon hover:text-white"
@@ -148,32 +157,6 @@ export default async function AboutPage({
             <p className="mt-2 whitespace-pre-line leading-7 text-slate-300">
               {content.connectText}
             </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <a
-                href={`mailto:${content.contactLinks.email}`}
-                className="inline-flex items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white"
-              >
-                <Mail size={16} />
-                {content.emailLabel}
-              </a>
-              <a
-                href={content.contactLinks.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white"
-              >
-                <Linkedin size={16} />
-                {content.linkedinLabel}
-              </a>
-              <a
-                href={cvPath(locale)}
-                download
-                className="inline-flex items-center gap-2 rounded border border-white/10 px-4 py-2 text-sm font-black text-slate-200 transition hover:border-neon hover:text-white"
-              >
-                <Download size={16} />
-                {getDictionary(locale).common.downloadCv}
-              </a>
-            </div>
             <ul className="mt-4 grid gap-2 sm:grid-cols-3">
               {content.contactPurposes.map((purpose) => (
                 <li key={purpose.subject}>
