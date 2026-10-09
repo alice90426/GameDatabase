@@ -41,13 +41,19 @@ export const dictionaries = {
       tools: "輔助工具",
       services: "服務項目",
       about: "關於創作者",
+      contact: "聯絡我",
+      menu: "選單",
       language: "EN"
     },
     common: {
       brand: "娛樂遊戲資料庫",
-      badge: "數學模型資料庫",
+      badge: "遊戲數學模型設計師",
       description: "整理遊戲規格、數值特徵與玩法分類的資料庫。",
       viewGames: "查看遊戲資料",
+      viewWorks: "查看代表作品",
+      downloadCv: "下載履歷 (PDF)",
+      contactSubject: "遊戲數學模型合作邀約",
+      contactBody: "你好 Javier，\n\n我看過你的作品集，想進一步討論合作或職缺。",
       viewAbout: "關於創作者",
       tags: "遊戲特色",
       reset: "重置",
@@ -69,9 +75,38 @@ export const dictionaries = {
       close: "關閉"
     },
     home: {
-      title: "老虎機數學模型",
+      name: "Javier 江愷翔",
+      title: "老虎機與遊戲數學模型設計",
       intro:
-        "所有遊戲數據皆透過自建試算表模型、驗證程式與模擬測試產生，並非人工估算；\n而是以可驗證、可重現的方式建立，確保數據具備實際開發與使用價值。",
+        "9 年以上遊戲數值經驗，涵蓋 RTP 與波動度設計、模擬驗證，以及通過 GLI／BMM 認證的規格文件，能獨立交付完整、可上線的數學模型。",
+      proofs: [
+        { value: "9+", label: "年遊戲數值經驗" },
+        { value: "65+", label: "款商業遊戲數學模型" },
+        { value: "GLI / BMM", label: "專案實際通過認證" }
+      ],
+      capabilityTitle: "核心能力",
+      capabilities: [
+        "RTP 結構與派彩分布設計",
+        "波動度控制與中獎率調校",
+        "程式模擬與自動驗證",
+        "自動調表與試算表生成工具",
+        "中英文規格文件"
+      ],
+      selectedWork: "代表作品",
+      method: {
+        title: "從設計到送測的完整流程",
+        text: "每個模型都經過同一套可重現的流程，數據可追溯、可驗證。",
+        steps: [
+          { title: "數學設計", text: "定義 RTP、中獎率、波動度與最大倍數，規劃獎勵結構。" },
+          { title: "試算表建模", text: "以公式連動的試算表建立輪帶、賠付與特色機制。" },
+          { title: "模擬驗證", text: "以程式大量模擬，確認長期輸出與理論值一致。" },
+          { title: "規格文件", text: "整理可送測 GLI／BMM 的中英文規格與模擬報告。" }
+        ]
+      },
+      researchTitle: "精選研究筆記",
+      researchMore: "查看全部研究筆記",
+      contactTitle: "合作與聯絡",
+      contactText: "有遊戲數學模型、機率分析或職缺需求，歡迎直接來信。",
       metricGames: "款遊戲資料",
       metricResearch: "款研究筆記",
       metricArticles: "款教學文章",
@@ -270,13 +305,19 @@ export const dictionaries = {
       tools: "Tools",
       services: "Services",
       about: "About",
+      contact: "Contact",
+      menu: "Menu",
       language: "中文"
     },
     common: {
       brand: "Casino Game Database",
-      badge: "Math Model Database",
+      badge: "Game Math Model Designer",
       description: "A database for game specs, numerical traits, and play categories.",
       viewGames: "Browse Games",
+      viewWorks: "View Selected Work",
+      downloadCv: "Download CV (PDF)",
+      contactSubject: "Game math model inquiry",
+      contactBody: "Hi Javier,\n\nI reviewed your portfolio and would like to discuss a collaboration or an open role.",
       viewAbout: "View About",
       tags: "Game Features",
       reset: "Reset",
@@ -298,9 +339,38 @@ export const dictionaries = {
       close: "Close"
     },
     home: {
-      title: "Slot Math Model",
+      name: "Javier Chiang",
+      title: "Slot & Game Math Model Design",
       intro:
-        "All data is generated through custom spreadsheet models, validation programs, and simulation testing.\nRather than manual estimation, the data is built through reproducible and verifiable processes to ensure practical value for real production use.",
+        "9+ years of game math experience: RTP and volatility design, simulation-based validation, and specification documents for projects that have passed GLI / BMM certification. I deliver complete, release-ready math models on my own.",
+      proofs: [
+        { value: "9+", label: "years in game math" },
+        { value: "65+", label: "commercial game math models" },
+        { value: "GLI / BMM", label: "certified projects delivered" }
+      ],
+      capabilityTitle: "Core Capabilities",
+      capabilities: [
+        "RTP structure and payout distribution design",
+        "Volatility control and hit-rate tuning",
+        "Simulation programs and automated validation",
+        "Auto-tuning and spreadsheet generation tools",
+        "Specification documents in Chinese and English"
+      ],
+      selectedWork: "Selected Work",
+      method: {
+        title: "From design to certification submission",
+        text: "Every model follows the same reproducible process, so the numbers are traceable and verifiable.",
+        steps: [
+          { title: "Math design", text: "Define RTP, hit rate, volatility and max win, and plan the reward structure." },
+          { title: "Spreadsheet model", text: "Build reels, paytable and feature mechanics in formula-linked spreadsheets." },
+          { title: "Simulation", text: "Run large-scale simulations to confirm long-run output matches the theoretical values." },
+          { title: "Specification", text: "Prepare bilingual specs and simulation reports ready for GLI / BMM submission." }
+        ]
+      },
+      researchTitle: "Selected Research",
+      researchMore: "View all research notes",
+      contactTitle: "Collaboration & Contact",
+      contactText: "Open to game math models, probability analysis and relevant roles. Feel free to email me directly.",
       metricGames: "game records",
       metricResearch: "research notes",
       metricArticles: "tutorial articles",

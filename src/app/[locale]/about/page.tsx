@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import {
   BookOpen,
   Compass,
+  Download,
   ExternalLink,
   FileText,
   Github,
@@ -14,6 +15,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { getDictionary, isLocale } from "@/lib/i18n";
+import { cvPath } from "@/lib/routes";
 import type { Locale } from "@/types/game";
 
 export async function generateMetadata({
@@ -86,6 +88,69 @@ export default async function AboutPage({
 
         <section className="rounded border border-white/25 bg-panel/85 p-5">
           <div className="flex items-center gap-3">
+            <Handshake className="text-neon" size={22} />
+            <h2 className="text-xl font-black text-white">
+              {content.contact}
+            </h2>
+          </div>
+          <p className="mt-3 leading-7 text-slate-300">
+            {content.contactText}
+          </p>
+          <div className="mt-5 rounded border border-white/10 bg-void/60 p-4">
+            <h3 className="text-lg font-black text-white">
+              {content.connectTitle}
+            </h3>
+            <p className="mt-2 whitespace-pre-line leading-7 text-slate-300">
+              {content.connectText}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
+                href={`mailto:${content.contactLinks.email}`}
+                className="inline-flex items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white"
+              >
+                <Mail size={16} />
+                {content.emailLabel}
+              </a>
+              <a
+                href={content.contactLinks.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white"
+              >
+                <Linkedin size={16} />
+                {content.linkedinLabel}
+              </a>
+              <a
+                href={cvPath(locale)}
+                download
+                className="inline-flex items-center gap-2 rounded border border-white/10 px-4 py-2 text-sm font-black text-slate-200 transition hover:border-neon hover:text-white"
+              >
+                <Download size={16} />
+                {getDictionary(locale).common.downloadCv}
+              </a>
+            </div>
+            <ul className="mt-4 grid gap-2 sm:grid-cols-3">
+              {content.contactPurposes.map((purpose) => (
+                <li key={purpose.subject}>
+                  <a
+                    href={buildMailto(
+                      content.contactLinks.email,
+                      purpose.subject,
+                      purpose.body
+                    )}
+                    className="flex h-full items-center gap-2 rounded border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white"
+                  >
+                    <Mail size={14} className="shrink-0 text-neon" />
+                    {purpose.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="rounded border border-white/25 bg-panel/85 p-5">
+          <div className="flex items-center gap-3">
             <FileText className="text-neon" size={22} />
             <h2 className="text-xl font-black text-white">
               {content.websitePurposeTitle}
@@ -112,59 +177,6 @@ export default async function AboutPage({
                 {item}
               </div>
             ))}
-          </div>
-        </section>
-
-        <section className="rounded border border-white/25 bg-panel/85 p-5">
-          <div className="flex items-center gap-3">
-            <Handshake className="text-neon" size={22} />
-            <h2 className="text-xl font-black text-white">
-              {content.contact}
-            </h2>
-          </div>
-          <p className="mt-3 leading-7 text-slate-300">
-            {content.contactText}
-          </p>
-          <div className="mt-5 rounded border border-white/10 bg-void/60 p-4">
-            <h3 className="text-lg font-black text-white">
-              {content.connectTitle}
-            </h3>
-            <p className="mt-2 whitespace-pre-line leading-7 text-slate-300">
-              {content.connectText}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <details className="group relative">
-                <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white">
-                  <Mail size={16} />
-                  {content.emailLabel}
-                </summary>
-                <div className="absolute left-0 top-full mt-2 w-72 overflow-hidden rounded border border-white/10 bg-void shadow-2xl shadow-black/40">
-                  {content.contactPurposes.map((purpose) => (
-                    <a
-                      key={purpose.subject}
-                      href={buildMailto(
-                        content.contactLinks.email,
-                        purpose.subject,
-                        purpose.body
-                      )}
-                      className="block border-b border-white/10 px-4 py-1 text-sm font-bold text-slate-200 last:border-b-0 hover:bg-white/[0.06] hover:text-white"
-                    >
-                      {purpose.label}
-                    </a>
-                  ))}
-                </div>
-              </details>
-
-              <a
-                href={content.contactLinks.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded border border-neon/35 bg-neon/10 px-4 py-2 text-sm font-black text-white transition hover:border-neon hover:bg-neon/50 hover:text-white"
-              >
-                <Linkedin size={16} />
-                {content.linkedinLabel}
-              </a>
-            </div>
           </div>
         </section>
 

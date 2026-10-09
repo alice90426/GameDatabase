@@ -4,8 +4,12 @@ import type { Game, VolatilityLevel } from "@/types/game";
 
 export const allGames = games as Game[];
 
+const featuredGameIds = ["HT206", "HT317", "HT393"];
+
 export function getFeaturedGames() {
-  return allGames.slice(0, 3);
+  return featuredGameIds
+    .map((id) => allGames.find((game) => game.id === id))
+    .filter((game): game is Game => Boolean(game));
 }
 
 export function getGameGenres() {

@@ -52,7 +52,7 @@ export function ResearchList({
   );
 }
 
-function ArticleCard({
+export function ArticleCard({
   article,
   href
 }: {
