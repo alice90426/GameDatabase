@@ -82,6 +82,8 @@ Tutorial articles and tools are reached from Home, Research and Services, not fr
 - Say each claim once per page; avoid repeating the same stats across sections
 
 Avoid:
+- Publishing step-by-step methodology or case studies that teach the work for free; playable demos and data are the explanation, not walkthroughs
+- Exposing demo URLs as standalone pages or deep links; demos open inside the site only
 - Casino advertisement style
 - Excessive animations
 - Long resume pages

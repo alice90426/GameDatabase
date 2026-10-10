@@ -1,69 +1,11 @@
-import { localizedAlternates } from "@/lib/seo";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { Navbar } from "@/components/navbar";
-import { ArticleDetail } from "@/components/article-detail";
-import { getBloggerArticleBySlug } from "@/lib/blogger";
-import { getDictionary } from "@/lib/i18n";
+import { permanentRedirect } from "next/navigation";
 
-export const revalidate = 86400;
-export const dynamicParams = true;
-
-const locale = "en";
-
-export async function generateStaticParams() {
-  return [];
-}
-
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const content = getDictionary(locale).articles;
-  const article = await getBloggerArticleBySlug(slug);
-
-  if (!article) {
-    return {
-      title: content.title,
-      description: content.description
-    };
-  }
-
-  return {
-    title: article.title,
-    description: article.labels.join(", ") || content.fallbackDescription,
-    openGraph: {
-      images: article.thumbnail ? [article.thumbnail] : []
-    },
-    alternates: localizedAlternates(locale, `/articles/${article.slug}`)
-  };
-}
-
-export default async function ArticleDetailPage({
+export default async function ArticleEntryPage({
   params
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await getBloggerArticleBySlug(slug);
-  const dictionary = getDictionary(locale);
 
-  if (!article) {
-    notFound();
-  }
-
-  return (
-    <div className="min-h-screen overflow-hidden">
-      <div className="noise-overlay pointer-events-none fixed inset-0 opacity-70" />
-      <Navbar locale={locale} />
-      <main className="relative z-10">
-        <ArticleDetail article={article} locale={locale} backHref="/articles" />
-      </main>
-      <footer className="relative z-10 border-t border-white/10 px-5 py-8 text-center text-sm text-slate-400">
-        {dictionary.common.footer}
-      </footer>
-    </div>
-  );
+  permanentRedirect(`/en/articles/${slug}`);
 }

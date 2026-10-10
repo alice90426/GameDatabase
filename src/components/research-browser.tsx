@@ -33,11 +33,15 @@ export function ResearchBrowser({
     [articles]
   );
 
+  const hasTagPrefix = quickTags.some((value) => /^\[[A-Z]\]/.test(value));
+
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     return articles.filter(
       (article) =>
-        (normalizedQuery === "" || article.title.toLowerCase().includes(normalizedQuery)) &&
+        (normalizedQuery === "" ||
+          article.title.toLowerCase().includes(normalizedQuery) ||
+          article.tags.some((value) => value.toLowerCase().includes(normalizedQuery))) &&
         (category === "all" || article.category === category) &&
         (tag === "all" || article.tags.includes(tag))
     );
@@ -93,6 +97,9 @@ export function ResearchBrowser({
               </Chip>
             ))}
           </ChipRow>
+          {hasTagPrefix ? (
+            <p className="text-xs text-slate-400">{content.tagLegend}</p>
+          ) : null}
         </div>
         <p className="mt-4 border-t border-white/10 pt-4 text-sm font-bold text-slate-300">
           {filtered.length} {content.notesCount}
