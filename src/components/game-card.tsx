@@ -28,19 +28,13 @@ export function GameCard({ game, locale, onOpen }: GameCardProps) {
       role={onOpen ? "button" : undefined}
       tabIndex={onOpen ? 0 : undefined}
     >
-      <div className="relative min-h-40 bg-[linear-gradient(135deg,rgba(77,227,255,0.12),rgba(13,19,36,0.9))]">
-        <div className="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent" />
-        <div className="absolute left-4 top-4 rounded border border-neon/35 bg-black/35 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-neon">
-          {game.genre[0]}
-        </div>
-        <div className="absolute bottom-4 left-4 right-4">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-300">
-            {game.genre.join(" / ")}
-          </p>
-          <h3 className="mt-2 text-2xl font-black text-white">
-            {formatGameName(game.id)}
-          </h3>
-        </div>
+      <div className="border-b border-white/10 bg-[linear-gradient(135deg,rgba(77,227,255,0.12),rgba(13,19,36,0.9))] px-5 py-4">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-neon">
+          {game.genre.join(" / ")}
+        </p>
+        <h3 className="mt-1 text-2xl font-black text-white">
+          {formatGameName(game.id)}
+        </h3>
       </div>
 
       <div className="space-y-5 p-5">

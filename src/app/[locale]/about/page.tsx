@@ -5,9 +5,7 @@ import {
   Briefcase,
   Download,
   ExternalLink,
-  FileText,
   Github,
-  Handshake,
   Linkedin,
   Mail,
   NotebookText,
@@ -41,7 +39,8 @@ export default async function AboutPage({
 }) {
   const { locale: localeParam } = await params;
   const locale = (isLocale(localeParam) ? localeParam : "zh") as Locale;
-  const content = getDictionary(locale).about;
+  const dictionary = getDictionary(locale);
+  const content = dictionary.about;
   const resources = [
     { icon: <BookOpen size={20} />, ...content.resources.blogger },
     { icon: <NotebookText size={20} />, ...content.resources.notion },
@@ -51,8 +50,8 @@ export default async function AboutPage({
 
   return (
     <div className="px-5 py-14 sm:py-16">
-      <section className="mx-auto grid max-w-6xl items-stretch gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-        <aside className="rounded border border-neon/25 bg-panel/85 p-6 shadow-2xl shadow-black/25">
+      <section className="mx-auto grid max-w-6xl items-start gap-5 lg:grid-cols-2">
+        <aside className="rounded border border-neon/25 bg-panel/85 p-6 shadow-2xl shadow-black/25 lg:col-span-2">
           <p className="text-sm font-black uppercase tracking-[0.22em] text-neon">
             {content.eyebrow}
           </p>
@@ -88,29 +87,18 @@ export default async function AboutPage({
               className="inline-flex items-center gap-2 rounded border border-white/10 px-4 py-2 text-sm font-black text-slate-200 transition hover:border-neon hover:text-white"
             >
               <Download size={16} />
-              {getDictionary(locale).common.downloadCv}
+              {dictionary.common.downloadCv}
             </a>
           </div>
-        </aside>
-
-        <section className="rounded border border-white/25 bg-panel/85 p-5">
-          <div className="flex items-center gap-3">
-            <Sparkles className="text-neon" size={22} />
-            <h2 className="text-xl font-black text-white">
-              {content.strengthsTitle}
-            </h2>
-          </div>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            {content.strengths.map((item) => (
-              <div
-                key={item}
-                className="rounded border border-sky-300/10 bg-void/75 px-3 py-3 text-sm font-bold text-slate-200"
-              >
-                {item}
+          <dl className="mt-6 grid gap-3 border-t border-white/10 pt-6 sm:grid-cols-3">
+            {dictionary.home.proofs.map((proof) => (
+              <div key={proof.label} className="rounded border border-white/10 bg-void/60 p-4">
+                <dd className="whitespace-nowrap text-2xl font-black text-white">{proof.value}</dd>
+                <dt className="mt-1 text-sm text-slate-300">{proof.label}</dt>
               </div>
             ))}
-          </div>
-        </section>
+          </dl>
+        </aside>
 
         <section className="rounded border border-white/25 bg-panel/85 p-5">
           <div className="flex items-center gap-3">
@@ -142,54 +130,24 @@ export default async function AboutPage({
 
         <section className="rounded border border-white/25 bg-panel/85 p-5">
           <div className="flex items-center gap-3">
-            <Handshake className="text-neon" size={22} />
+            <Sparkles className="text-neon" size={22} />
             <h2 className="text-xl font-black text-white">
-              {content.contact}
+              {content.strengthsTitle}
             </h2>
           </div>
-          <p className="mt-3 leading-7 text-slate-300">
-            {content.contactText}
-          </p>
-          <div className="mt-5 rounded border border-white/10 bg-void/60 p-4">
-            <h3 className="text-lg font-black text-white">
-              {content.connectTitle}
-            </h3>
-            <p className="mt-2 whitespace-pre-line leading-7 text-slate-300">
-              {content.connectText}
-            </p>
-            <ul className="mt-4 grid gap-2 sm:grid-cols-3">
-              {content.contactPurposes.map((purpose) => (
-                <li key={purpose.subject}>
-                  <a
-                    href={buildMailto(
-                      content.contactLinks.email,
-                      purpose.subject,
-                      purpose.body
-                    )}
-                    className="flex h-full items-center gap-2 rounded border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white"
-                  >
-                    <Mail size={14} className="shrink-0 text-neon" />
-                    {purpose.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {content.strengths.map((item) => (
+              <div
+                key={item}
+                className="rounded border border-sky-300/10 bg-void/75 px-3 py-3 text-sm font-bold text-slate-200"
+              >
+                {item}
+              </div>
+            ))}
           </div>
         </section>
 
-        <section className="rounded border border-white/25 bg-panel/85 p-5">
-          <div className="flex items-center gap-3">
-            <FileText className="text-neon" size={22} />
-            <h2 className="text-xl font-black text-white">
-              {content.websitePurposeTitle}
-            </h2>
-          </div>
-          <p className="mt-3 whitespace-pre-line leading-8 text-slate-300">
-            {content.websitePurpose}
-          </p>
-        </section>
-
-        <section className="rounded border border-white/10 bg-panel/85 p-5">
+        <section className="rounded border border-white/25 bg-panel/85 p-5 lg:col-span-2">
           <div className="flex items-center gap-3">
             <ExternalLink className="text-neon" size={22} />
             <h2 className="text-xl font-black text-white">
@@ -227,8 +185,4 @@ export default async function AboutPage({
       </section>
     </div>
   );
-}
-
-function buildMailto(email: string, subject: string, body: string) {
-  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

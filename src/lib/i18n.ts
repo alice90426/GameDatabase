@@ -82,7 +82,7 @@ export const dictionaries = {
         "9 年以上遊戲數值經驗，涵蓋 RTP 與波動度設計、模擬驗證，以及通過 GLI／BMM 認證的規格文件，能獨立交付完整、可上線的數學模型。",
       proofs: [
         { value: "9+", label: "年遊戲數值經驗" },
-        { value: "65+", label: "款商業遊戲數學模型" },
+        { value: "65+", label: "款已上線商業遊戲" },
         { value: "GLI / BMM", label: "專案實際通過認證" }
       ],
       capabilityTitle: "核心能力",
@@ -133,7 +133,7 @@ export const dictionaries = {
       eyebrow: "資料庫",
       intro: "以 ID、標籤、RTP 區間與波動度篩選，並依 RTP、波動度或最大倍數排序。",
       seoDescription:
-        "瀏覽 150 多款老虎機數學模型：每款皆附 RTP、中獎率、波動度、最大倍數、盤面與連線方式，並提供模擬數據與規格文件，可依 RTP 區間、波動度、盤面大小與標籤篩選，並依各項數據排序比較，快速找到合適的模型。",
+        "瀏覽 {count} 款可試玩的老虎機數學模型：每款皆附 RTP、中獎率、波動度、最大倍數、盤面與連線方式，並提供模擬數據與規格文件，可依 RTP 區間、波動度、盤面大小與標籤篩選，並依各項數據排序比較，快速找到合適的模型。",
       rtpMin: "RTP 下限",
       rtpMax: "RTP 上限",
       sortBy: "排序",
@@ -145,6 +145,15 @@ export const dictionaries = {
         volatilityAsc: "波動度 由低到高",
         maxWinDesc: "最大倍數 由高到低",
         hitRateDesc: "中獎率 由高到低"
+      },
+      advanced: "進階篩選",
+      footerText: "想了解我如何分析與驗證這些模型？",
+      footerResearch: "閱讀研究筆記",
+      footerAbout: "關於我",
+      stats: {
+        models: "款可試玩模型",
+        rtpRange: "RTP 範圍",
+        note: "包含已上線專案與研究用遊戲，數量持續增加。"
       },
       search: "搜尋 ID",
       empty: "沒有符合條件的遊戲。",
@@ -159,7 +168,16 @@ export const dictionaries = {
       intro:
         "試玩筆記與遊戲分析，聚焦機率行為、獎勵結構與玩家體驗。",
       empty: "目前沒有已發布的研究文章。",
-      backToResearch: "返回研究筆記"
+      backToResearch: "返回研究筆記",
+      notesCount: "篇研究筆記",
+      featuredTitle: "精選筆記",
+      allTitle: "全部筆記",
+      searchPlaceholder: "搜尋遊戲名稱",
+      categoryLabel: "類型",
+      tagLabel: "機制",
+      all: "全部",
+      showMore: "顯示更多",
+      noResults: "沒有符合條件的研究筆記。"
     },
     articles: {
       eyebrow: "Blogger Articles",
@@ -267,9 +285,25 @@ export const dictionaries = {
       collaborationTitle: "合作方式",
       collaborationText:
         "有跨國、跨團隊、跨框架的合作經驗，可配合貴團隊既有的工具與流程，直接與企劃、工程、QA 及法規團隊溝通。",
+      deliverablesTitle: "交付內容",
+      deliverables: [
+        { title: "數學模型試算表", text: "輪帶、賠付與特色機制以公式連動，可直接調整。" },
+        { title: "驗證程式", text: "可重現的模擬程式與自動調表工具。" },
+        { title: "模擬報告", text: "10 億次模擬結果，含 RTP、中獎率、波動度與最大倍數。" },
+        { title: "規格文件", text: "中英文規格，格式符合 GLI／BMM 送測要求。" }
+      ],
+      deliverablesLink: "查看公開的規格與模擬數據範例",
+      faqTitle: "常見問題",
+      faq: [
+        { q: "涵蓋哪些遊戲類型？", a: "老虎機、賓果、Crash、Miles、Plinko、骰寶、輪盤、彩票、百家樂、妞妞與 5PK。老虎機包含 Line、Way、Megaways，以及 Free Game、Respin、Cascade 等特色功能。" },
+        { q: "RTP 如何驗證？", a: "每個模型以試算表與 10 億次模擬程式雙重核對，RTP 誤差低於 0.1%。" },
+        { q: "可以準備認證用的文件嗎？", a: "可以。規格與模擬報告依 GLI／BMM 送測要求撰寫，我的專案也實際通過這兩項認證。" },
+        { q: "能配合我們既有的工具與流程嗎？", a: "可以。有跨國、跨團隊、跨框架的合作經驗，可直接與企劃、工程、QA 及法規團隊溝通。" },
+        { q: "如何開始合作？", a: "來信說明遊戲玩法、目標 RTP 與市場，我會回覆建議的數值方案與時程。" }
+      ],
       ctaTitle: "討論您的專案",
       ctaText: "說明遊戲玩法、目標 RTP 與市場，我會回覆建議的數值方案與時程。",
-      note: "此服務聚焦於遊戲數學與規格設計；可試玩作品與外部連結僅作為佐證，不作為主要服務項目。"
+      note: "交付內容為數學模型、驗證程式、模擬報告與規格文件，不包含 Unity 試玩版或前端開發；站上的可試玩作品僅作為能力佐證。其餘合作細節，請來信洽談。"
     },
     about: {
       eyebrow: "ABOUT",
@@ -416,7 +450,7 @@ export const dictionaries = {
         "9+ years of game math experience: RTP and volatility design, simulation-based validation, and specification documents for projects that have passed GLI / BMM certification. I deliver complete, release-ready math models on my own.",
       proofs: [
         { value: "9+", label: "years in game math" },
-        { value: "65+", label: "commercial game math models" },
+        { value: "65+", label: "shipped commercial games" },
         { value: "GLI / BMM", label: "certified projects delivered" }
       ],
       capabilityTitle: "Core Capabilities",
@@ -467,7 +501,7 @@ export const dictionaries = {
       eyebrow: "Database",
       intro: "Filter by ID, tags, RTP range and volatility, and sort by RTP, volatility or max win.",
       seoDescription:
-        "Browse 150+ slot math models. Each entry lists RTP, hit rate, volatility, max win, board size and line mechanic, with simulation data and specification documents. Filter by RTP range, volatility and tags, and sort by key stats.",
+        "Browse {count} playable slot math models. Each entry lists RTP, hit rate, volatility, max win, board size and line mechanic, with simulation data and specification documents. Filter by RTP range, volatility and tags, and sort by key stats.",
       rtpMin: "RTP min",
       rtpMax: "RTP max",
       sortBy: "Sort",
@@ -479,6 +513,15 @@ export const dictionaries = {
         volatilityAsc: "Volatility low to high",
         maxWinDesc: "Max win high to low",
         hitRateDesc: "Hit rate high to low"
+      },
+      advanced: "Advanced filters",
+      footerText: "Want to see how I analyze and validate these models?",
+      footerResearch: "Read research notes",
+      footerAbout: "About me",
+      stats: {
+        models: "playable models",
+        rtpRange: "RTP range",
+        note: "Includes shipped projects and research games; the catalog keeps growing."
       },
       search: "Search ID",
       empty: "No games match the current filters.",
@@ -493,7 +536,16 @@ export const dictionaries = {
       intro:
         "Playtest notes and game analysis, focused on probability behavior, reward structures, and player experience.",
       empty: "No published research articles are available yet.",
-      backToResearch: "Back to Research"
+      backToResearch: "Back to Research",
+      notesCount: "research notes",
+      featuredTitle: "Featured Notes",
+      allTitle: "All Notes",
+      searchPlaceholder: "Search by game title",
+      categoryLabel: "Type",
+      tagLabel: "Mechanic",
+      all: "All",
+      showMore: "Show more",
+      noResults: "No notes match the current filters."
     },
     articles: {
       eyebrow: "Blogger Articles",
@@ -601,9 +653,25 @@ export const dictionaries = {
       collaborationTitle: "Collaboration",
       collaborationText:
         "Experienced across countries, teams and game frameworks. I can work with your existing tools and process, and communicate directly with design, engineering, QA and compliance teams.",
+      deliverablesTitle: "What You Receive",
+      deliverables: [
+        { title: "Math model spreadsheet", text: "Reel strips, paytable and feature mechanics linked by formulas, ready to adjust." },
+        { title: "Validation program", text: "Reproducible simulation code and auto-tuning tools." },
+        { title: "Simulation report", text: "Results from 1 billion simulations: RTP, hit rate, volatility and max win." },
+        { title: "Specification documents", text: "English and Chinese specs, formatted for GLI / BMM submission." }
+      ],
+      deliverablesLink: "See public spec and simulation examples",
+      faqTitle: "FAQ",
+      faq: [
+        { q: "Which game types do you cover?", a: "Slots, bingo, crash, miles, plinko, dice, roulette, lottery, baccarat, NiuNiu and 5PK. Slot mechanics include Line, Way and Megaways with features such as Free Game, Respin and Cascade." },
+        { q: "How is the RTP validated?", a: "Each model is checked twice: by its spreadsheet and by a simulation program running 1 billion rounds, with RTP error below 0.1%." },
+        { q: "Can you prepare documents for certification?", a: "Yes. Specs and simulation reports are written to GLI / BMM submission requirements, and my projects have passed both." },
+        { q: "Can you work with our tools and process?", a: "Yes. I have worked across countries, teams and frameworks, and communicate directly with design, engineering, QA and compliance." },
+        { q: "How do we start?", a: "Email the gameplay, target RTP and market. I reply with a suggested numeric plan and timeline." }
+      ],
       ctaTitle: "Discuss Your Project",
       ctaText: "Share the gameplay, target RTP and market, and I will reply with a proposed numeric approach and timeline.",
-      note: "This service focuses on game mathematics and specification design. Playable work and external links are supporting proof, not the primary service."
+      note: "Deliverables are the math model, validation program, simulation report and specification documents. They do not include a Unity playable build or frontend development; the playable work on this site is supporting proof only. For all other collaboration details, please contact me by email."
     },
     about: {
       eyebrow: "ABOUT",

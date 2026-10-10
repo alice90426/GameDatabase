@@ -1,8 +1,10 @@
-import Image from "next/image";
-import { researchLanguageTag, researchPath } from "@/lib/research-language";
+import { researchPath } from "@/lib/research-language";
 import Link from "next/link";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { ArticleCard } from "@/components/research-card";
+import { ResearchBrowser } from "@/components/research-browser";
 import { getDictionary } from "@/lib/i18n";
+import { pickFeaturedResearch } from "@/lib/research-featured";
 import { localizedPath } from "@/lib/routes";
 import type { ResearchArticle } from "@/lib/notion";
 import type { Locale } from "@/types/game";
@@ -16,7 +18,9 @@ export function ResearchList({
   articles,
   locale
 }: ResearchListProps) {
-  const content = getDictionary(locale).research;
+  const dictionary = getDictionary(locale);
+  const content = dictionary.research;
+  const featured = pickFeaturedResearch(articles);
 
   return (
     <div className="px-5 py-14 sm:py-16">
@@ -30,34 +34,49 @@ export function ResearchList({
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
           {content.intro}
         </p>
+        {articles.length > 0 ? (
+          <p className="mt-4 text-sm font-bold text-slate-400">
+            {articles.length} {content.notesCount}
+          </p>
+        ) : null}
       </section>
 
-      <section className="mx-auto mt-10 max-w-6xl">
-        {articles.length > 0 ? (
-          <div className="grid gap-5 md:grid-cols-2">
-            {articles.map((article) => (
-              <ArticleCard
-                key={article.id}
-                article={article}
-                href={researchPath(article)}
-              />
-            ))}
-          </div>
-        ) : (
+      {articles.length > 0 ? (
+        <>
+          <section className="mx-auto mt-10 max-w-6xl">
+            <h2 className="text-2xl font-black text-white">{content.featuredTitle}</h2>
+            <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {featured.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  href={researchPath(article)}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section className="mx-auto mt-14 max-w-6xl">
+            <h2 className="mb-5 text-2xl font-black text-white">{content.allTitle}</h2>
+            <ResearchBrowser articles={articles} locale={locale} />
+          </section>
+        </>
+      ) : (
+        <section className="mx-auto mt-10 max-w-6xl">
           <div className="rounded border border-white/10 bg-panel/75 p-8 text-slate-300">
             {content.empty}
           </div>
-        )}
-      </section>
+        </section>
+      )}
 
       <section className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-8">
         <h2 className="text-lg font-black text-white">
-          {getDictionary(locale).home.moreTitle}
+          {dictionary.home.moreTitle}
         </h2>
         <div className="mt-4 flex flex-col gap-3 sm:flex-row">
           {[
-            { href: localizedPath(locale, "/articles"), label: getDictionary(locale).nav.articles },
-            { href: localizedPath(locale, "/tools"), label: getDictionary(locale).nav.tools }
+            { href: localizedPath(locale, "/articles"), label: dictionary.nav.articles },
+            { href: localizedPath(locale, "/tools"), label: dictionary.nav.tools }
           ].map((item) => (
             <Link
               key={item.href}
@@ -72,79 +91,4 @@ export function ResearchList({
       </section>
     </div>
   );
-}
-
-export function ArticleCard({
-  article,
-  href
-}: {
-  article: ResearchArticle;
-  href: string;
-}) {
-  return (
-    <Link
-      lang={researchLanguageTag(article.language)}
-      href={href}
-      className="group overflow-hidden rounded border border-white/10 bg-panel/75 transition hover:border-neon/50"
-    >
-      {article.cover ? (
-        <div className="relative aspect-[16/8] border-b border-white/10 bg-void">
-          <Image
-            src={article.cover}
-            alt={article.title}
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-            unoptimized
-          />
-        </div>
-      ) : (
-        <div className="grid aspect-[16/8] place-items-center border-b border-white/10 bg-void/80 text-neon">
-          <FileText size={34} />
-        </div>
-      )}
-      <div className="p-5">
-        <div className="flex flex-wrap items-center gap-2">
-          {article.category ? (
-            <span className="rounded border border-neon/30 bg-neon/10 px-2.5 py-1 text-xs font-bold text-neon">
-              {article.category}
-            </span>
-          ) : null}
-          {article.date ? (
-            <span className="text-xs font-bold text-slate-400">
-              {formatDate(article.date)}
-            </span>
-          ) : null}
-        </div>
-        <h2 className="mt-4 text-xl font-black text-white transition group-hover:text-neon">
-          {article.title}
-        </h2>
-        {article.summary ? (
-          <p className="mt-3 line-clamp-3 leading-7 text-slate-300">
-            {article.summary}
-          </p>
-        ) : null}
-        {article.tags.length > 0 ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {article.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-semibold text-slate-400"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        ) : null}
-      </div>
-    </Link>
-  );
-}
-
-function formatDate(value: string) {
-  return new Intl.DateTimeFormat("en", {
-    year: "numeric",
-    month: "short",
-    day: "2-digit"
-  }).format(new Date(value));
 }

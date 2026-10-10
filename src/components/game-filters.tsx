@@ -1,6 +1,6 @@
 "use client";
 
-import { RotateCcw, Search } from "lucide-react";
+import { ChevronDown, RotateCcw, Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { GameCard } from "@/components/game-card";
 import { GameDetailModal } from "@/components/game-detail-modal";
@@ -38,6 +38,7 @@ export function GameFilters({
   const [rtpMin, setRtpMin] = useState("");
   const [rtpMax, setRtpMax] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("id");
+  const [showAdvanced, setShowAdvanced] = useState(false);
   const [preloadId, setPreloadId] = useState<string | null>(null);
   const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
 
@@ -106,6 +107,24 @@ export function GameFilters({
     };
   }, [games]);
 
+  const quickTags = useMemo(() => {
+    const counts = new Map<string, number>();
+    games.forEach((game) =>
+      game.tags.forEach((value) => counts.set(value, (counts.get(value) ?? 0) + 1))
+    );
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6)
+      .map(([value]) => value);
+  }, [games]);
+  const advancedActiveCount = [
+    tag !== "all" && !quickTags.includes(tag),
+    boardSize !== "all",
+    lineMechanic !== "all",
+    rtpMin !== "",
+    rtpMax !== ""
+  ].filter(Boolean).length;
+
   const selectedGameIndex = filteredGames.findIndex(
     (game) => game.id === selectedGameId
   );
@@ -123,16 +142,6 @@ export function GameFilters({
       ).sort(),
     [games, query, volatility, boardSize, lineMechanic, rtpMin, rtpMax]
   );
-
-  const availableVolatilities = useMemo(() => {
-    const values = new Set(
-      games
-        .filter((game) => matchesGame(game, "volatility"))
-        .map((game) => getVolatilityLevel(game.volatility))
-    );
-
-    return volatilities.filter((value) => values.has(value));
-  }, [games, volatilities, query, boardSize, lineMechanic, tag, rtpMin, rtpMax]);
 
   const availableBoardSizes = useMemo(
     () =>
@@ -177,7 +186,7 @@ export function GameFilters({
   return (
     <div className="space-y-8">
       <section className="rounded border border-white/10 bg-white/[0.04] p-4">
-        <div className="grid gap-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_auto]">
+        <div className="grid gap-3 sm:grid-cols-[1fr_14rem_auto]">
           <label className="relative">
             <span className="sr-only">{dictionary.games.search}</span>
             <Search
@@ -191,102 +200,8 @@ export function GameFilters({
               className="h-12 w-full rounded border border-white/10 bg-void/80 pl-10 pr-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
             />
           </label>
-
-          <SelectFilter
-            label={dictionary.common.tags}
-            value={tag}
-            options={["all", ...keepSelectedOption(availableTags, tag)]}
-            getLabel={(value) =>
-              value === "all" ? dictionary.common.tags : value
-            }
-            onChange={setTag}
-          />
-          <SelectFilter
-            label={dictionary.features.volatility}
-            value={String(volatility)}
-            options={[
-              "all",
-              ...keepSelectedOption(
-                availableVolatilities.map(String),
-                String(volatility)
-              )
-            ]}
-            getLabel={(value) =>
-              value === "all"
-                ? dictionary.features.volatility
-                : `${dictionary.features.volatility} ${value}/5`
-            }
-            onChange={(value) =>
-              setVolatility(
-                value === "all" ? "all" : (Number(value) as VolatilityLevel)
-              )
-            }
-          />
-          <SelectFilter
-            label={dictionary.features.boardSize}
-            value={String(boardSize)}
-            options={["all", ...keepSelectedOption(availableBoardSizes, boardSize)]}
-            getLabel={(value) =>
-              value === "all"
-                ? dictionary.features.boardSize
-                : value
-            }
-            onChange={setBoardSize}
-          />
-          <SelectFilter
-            label={dictionary.features.lineMechanic}
-            value={String(lineMechanic)}
-            options={[
-              "all",
-              ...keepSelectedOption(availableLineMechanics, lineMechanic)
-            ]}
-            getLabel={(value) =>
-              value === "all"
-                ? dictionary.features.lineMechanic
-                : value
-            }
-            onChange={setLineMechanic}
-          />
-          <button
-            type="button"
-            onClick={resetFilters}
-            className="inline-flex h-12 items-center justify-center gap-2 rounded border border-white/10 px-4 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white"
-          >
-            <RotateCcw size={16} />
-            {dictionary.common.reset}
-          </button>
-        </div>
-        <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_1fr_1.4fr]">
-          <label className="flex items-center gap-2 text-sm font-bold text-slate-300">
-            <span className="shrink-0">{dictionary.games.rtpMin}</span>
-            <input
-              type="number"
-              inputMode="decimal"
-              step="0.1"
-              min="0"
-              max="100"
-              value={rtpMin}
-              onChange={(event) => setRtpMin(event.target.value)}
-              placeholder="94"
-              className="h-12 w-full min-w-0 rounded border border-white/10 bg-void/80 px-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
-            />
-          </label>
-          <label className="flex items-center gap-2 text-sm font-bold text-slate-300">
-            <span className="shrink-0">{dictionary.games.rtpMax}</span>
-            <input
-              type="number"
-              inputMode="decimal"
-              step="0.1"
-              min="0"
-              max="100"
-              value={rtpMax}
-              onChange={(event) => setRtpMax(event.target.value)}
-              placeholder="97"
-              className="h-12 w-full min-w-0 rounded border border-white/10 bg-void/80 px-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
-            />
-          </label>
-          <label className="flex items-center gap-2 text-sm font-bold text-slate-300">
-            <span className="shrink-0">{dictionary.games.sortBy}</span>
+          <label>
+            <span className="sr-only">{dictionary.games.sortBy}</span>
             <select
               value={sortKey}
               onChange={(event) => setSortKey(event.target.value as SortKey)}
@@ -299,7 +214,126 @@ export function GameFilters({
               ))}
             </select>
           </label>
+          <button
+            type="button"
+            onClick={resetFilters}
+            className="inline-flex h-12 items-center justify-center gap-2 rounded border border-white/10 px-4 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white"
+          >
+            <RotateCcw size={16} />
+            {dictionary.common.reset}
+          </button>
         </div>
+
+        <div className="mt-4 space-y-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="mr-1 text-xs font-black text-slate-400">
+              {dictionary.features.volatility}
+            </span>
+            {volatilities.map((level) => (
+              <Chip
+                key={level}
+                active={volatility === level}
+                onClick={() => setVolatility(volatility === level ? "all" : level)}
+              >
+                {level}/5
+              </Chip>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="mr-1 text-xs font-black text-slate-400">
+              {dictionary.common.tags}
+            </span>
+            {quickTags.map((value) => (
+              <Chip
+                key={value}
+                active={tag === value}
+                onClick={() => setTag(tag === value ? "all" : value)}
+              >
+                {value}
+              </Chip>
+            ))}
+          </div>
+        </div>
+
+        <button
+          type="button"
+          aria-expanded={showAdvanced}
+          onClick={() => setShowAdvanced((open) => !open)}
+          className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-neon transition hover:text-white"
+        >
+          {dictionary.games.advanced}
+          {advancedActiveCount > 0 ? ` (${advancedActiveCount})` : ""}
+          <ChevronDown
+            size={16}
+            className={showAdvanced ? "rotate-180 transition" : "transition"}
+          />
+        </button>
+
+        {showAdvanced ? (
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <SelectFilter
+              label={dictionary.common.tags}
+              value={tag}
+              options={["all", ...keepSelectedOption(availableTags, tag)]}
+              getLabel={(value) =>
+                value === "all" ? dictionary.common.tags : value
+              }
+              onChange={setTag}
+            />
+            <SelectFilter
+              label={dictionary.features.boardSize}
+              value={String(boardSize)}
+              options={["all", ...keepSelectedOption(availableBoardSizes, boardSize)]}
+              getLabel={(value) =>
+                value === "all" ? dictionary.features.boardSize : value
+              }
+              onChange={setBoardSize}
+            />
+            <SelectFilter
+              label={dictionary.features.lineMechanic}
+              value={String(lineMechanic)}
+              options={[
+                "all",
+                ...keepSelectedOption(availableLineMechanics, lineMechanic)
+              ]}
+              getLabel={(value) =>
+                value === "all" ? dictionary.features.lineMechanic : value
+              }
+              onChange={setLineMechanic}
+            />
+            <div className="grid grid-cols-2 gap-3">
+              <label>
+                <span className="sr-only">{dictionary.games.rtpMin}</span>
+                <input
+                  type="number"
+                  inputMode="decimal"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                  value={rtpMin}
+                  onChange={(event) => setRtpMin(event.target.value)}
+                  placeholder={dictionary.games.rtpMin}
+                  className="h-12 w-full min-w-0 rounded border border-white/10 bg-void/80 px-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
+                />
+              </label>
+              <label>
+                <span className="sr-only">{dictionary.games.rtpMax}</span>
+                <input
+                  type="number"
+                  inputMode="decimal"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                  value={rtpMax}
+                  onChange={(event) => setRtpMax(event.target.value)}
+                  placeholder={dictionary.games.rtpMax}
+                  className="h-12 w-full min-w-0 rounded border border-white/10 bg-void/80 px-3 text-sm text-white outline-none transition placeholder:text-slate-400 focus:border-neon/50"
+                />
+              </label>
+            </div>
+          </div>
+        ) : null}
+
         <div className="mt-4 border-t border-white/10 pt-4 text-sm font-bold text-slate-300">
           {dictionary.games.showingPrefix} {filteredGames.length}{" "}
           {dictionary.games.showingSuffix}
@@ -389,5 +423,30 @@ function SelectFilter({
         ))}
       </select>
     </label>
+  );
+}
+
+function Chip({
+  active,
+  onClick,
+  children
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={active}
+      onClick={onClick}
+      className={
+        active
+          ? "rounded border border-neon bg-neon/15 px-3 py-1.5 text-xs font-black text-neon"
+          : "rounded border border-white/10 px-3 py-1.5 text-xs font-bold text-slate-300 transition hover:border-neon/50 hover:text-white"
+      }
+    >
+      {children}
+    </button>
   );
 }

@@ -6,6 +6,7 @@ import {
   BarChart3,
   Calculator,
   Check,
+  ChevronDown,
   Dices,
   FileText,
   Gamepad2,
@@ -108,6 +109,23 @@ export default async function ServicesPage({
         ))}
       </section>
 
+      <section className="mx-auto mt-12 max-w-6xl rounded border border-white/10 bg-panel/75 p-5">
+        <h2 className="text-xl font-black text-white">{content.experienceTitle}</h2>
+        <div className="mt-5 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+          {content.experienceGroups.map((group, index) => (
+            <div key={group.category} className="flex items-start gap-3">
+              <span className="mt-0.5 text-neon">{experienceIcons[index]}</span>
+              <div>
+                <h3 className="text-base font-black text-white">{group.category}</h3>
+                <p className="mt-1 leading-7 text-slate-300">
+                  {group.games.join(" · ")}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto mt-12 max-w-6xl">
         <h2 className="text-2xl font-black text-white">{content.servicesTitle}</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -137,21 +155,26 @@ export default async function ServicesPage({
         </div>
       </section>
 
-      <section className="mx-auto mt-12 max-w-6xl rounded border border-white/10 bg-panel/75 p-5">
-        <h2 className="text-xl font-black text-white">{content.experienceTitle}</h2>
-        <div className="mt-5 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
-          {content.experienceGroups.map((group, index) => (
-            <div key={group.category} className="flex items-start gap-3">
-              <span className="mt-0.5 text-neon">{experienceIcons[index]}</span>
-              <div>
-                <h3 className="text-base font-black text-white">{group.category}</h3>
-                <p className="mt-1 leading-7 text-slate-300">
-                  {group.games.join(" · ")}
-                </p>
-              </div>
-            </div>
+      <section className="mx-auto mt-12 max-w-6xl">
+        <h2 className="text-2xl font-black text-white">{content.deliverablesTitle}</h2>
+        <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {content.deliverables.map((item) => (
+            <li
+              key={item.title}
+              className="rounded border border-white/10 bg-panel/75 p-5"
+            >
+              <h3 className="text-lg font-black text-white">{item.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-300">{item.text}</p>
+            </li>
           ))}
-        </div>
+        </ul>
+        <Link
+          href={localizedPath(locale, "/games")}
+          className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-neon hover:text-white"
+        >
+          {content.deliverablesLink}
+          <ArrowRight size={16} />
+        </Link>
       </section>
 
       <section className="mx-auto mt-12 max-w-6xl">
@@ -182,6 +205,24 @@ export default async function ServicesPage({
             {dictionary.home.toolsTitle}
             <ArrowRight size={16} />
           </Link>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-12 max-w-6xl">
+        <h2 className="text-2xl font-black text-white">{content.faqTitle}</h2>
+        <div className="mt-5 divide-y divide-white/10 rounded border border-white/10 bg-panel/75">
+          {content.faq.map((item) => (
+            <details key={item.q} className="group px-5 py-4">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-white">
+                {item.q}
+                <ChevronDown
+                  size={18}
+                  className="shrink-0 text-slate-400 transition group-open:rotate-180"
+                />
+              </summary>
+              <p className="mt-3 max-w-3xl leading-7 text-slate-300">{item.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

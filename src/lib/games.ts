@@ -36,3 +36,13 @@ export function getGameVolatilities() {
 
   return order.filter((value) => values.has(value));
 }
+
+export function getGameStats() {
+  const rtps = allGames.map((game) => game.rtp);
+
+  return {
+    count: allGames.length,
+    rtpMin: Math.min(...rtps),
+    rtpMax: Math.max(...rtps)
+  };
+}
