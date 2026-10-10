@@ -8,6 +8,8 @@ import { getDictionary } from "@/lib/i18n";
 import { getVolatilityLevel } from "@/lib/volatility";
 import type { Game, Locale, VolatilityLevel } from "@/types/game";
 
+const PAGE_SIZE = 24;
+
 type SortKey = "id" | "rtpDesc" | "rtpAsc" | "volatilityDesc" | "volatilityAsc" | "maxWinDesc" | "hitRateDesc";
 
 type GameFiltersProps = {
@@ -39,6 +41,7 @@ export function GameFilters({
   const [rtpMax, setRtpMax] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("id");
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [preloadId, setPreloadId] = useState<string | null>(null);
   const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
 
@@ -94,6 +97,10 @@ export function GameFilters({
     };
     return sortKey === "id" ? result : [...result].sort(compare[sortKey]);
   }, [games, query, volatility, boardSize, lineMechanic, tag, rtpMin, rtpMax, sortKey]);
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [query, volatility, boardSize, lineMechanic, tag, rtpMin, rtpMax, sortKey]);
+
   const preloadUrl = games.find((game) => game.id === preloadId)?.githubUrl;
 
   useEffect(() => {
@@ -341,8 +348,9 @@ export function GameFilters({
       </section>
 
       {filteredGames.length > 0 ? (
+        <>
         <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {filteredGames.map((game) => (
+          {filteredGames.slice(0, visibleCount).map((game) => (
             <div
               key={game.id}
               onPointerEnter={() => setPreloadId(game.id)}
@@ -357,6 +365,18 @@ export function GameFilters({
             </div>
           ))}
         </section>
+        {visibleCount < filteredGames.length ? (
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+              className="inline-flex h-12 items-center justify-center rounded border border-white/10 px-6 text-sm font-bold text-slate-200 transition hover:border-neon/50 hover:text-white"
+            >
+              {dictionary.games.showMore} ({filteredGames.length - visibleCount})
+            </button>
+          </div>
+        ) : null}
+        </>
       ) : (
         <div className="rounded border border-white/10 bg-panel/80 p-10 text-center text-slate-400">
           {dictionary.games.empty}

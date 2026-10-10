@@ -3,13 +3,29 @@ import Link from "next/link";
 import { FileText } from "lucide-react";
 import { researchLanguageTag } from "@/lib/research-language";
 import type { ResearchArticle } from "@/lib/notion";
+import type { Locale } from "@/types/game";
+
+// Notes are written in one language only; flag them when the site language differs.
+export function LanguageBadge({ article, locale }: { article: ResearchArticle; locale?: Locale }) {
+  if (!locale || article.language === locale) {
+    return null;
+  }
+
+  return (
+    <span className="rounded border border-amber-300/40 bg-amber-300/10 px-2.5 py-1 text-xs font-bold text-amber-200">
+      {article.language === "zh" ? "中文" : "EN"}
+    </span>
+  );
+}
 
 export function ArticleCard({
   article,
-  href
+  href,
+  locale
 }: {
   article: ResearchArticle;
   href: string;
+  locale?: Locale;
 }) {
   return (
     <Link
@@ -35,6 +51,7 @@ export function ArticleCard({
       )}
       <div className="p-5">
         <div className="flex flex-wrap items-center gap-2">
+          <LanguageBadge article={article} locale={locale} />
           {article.category ? (
             <span className="rounded border border-neon/30 bg-neon/10 px-2.5 py-1 text-xs font-bold text-neon">
               {article.category}

@@ -155,6 +155,7 @@ export default async function HomePage({
                   key={article.id}
                   article={article}
                   href={researchPath(article)}
+                  locale={locale}
                 />
               ))}
             </div>

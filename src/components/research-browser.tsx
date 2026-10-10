@@ -107,6 +107,7 @@ export function ResearchBrowser({
                 key={article.id}
                 article={article}
                 href={researchPath(article)}
+                  locale={locale}
               />
             ))}
           </div>

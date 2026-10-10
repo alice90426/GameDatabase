@@ -55,7 +55,6 @@ export const dictionaries = {
       downloadCv: "下載履歷 (PDF)",
       contactSubject: "遊戲數學模型合作邀約",
       contactBody: "你好 Javier，\n\n我看過你的作品集，想進一步討論合作或職缺。",
-      viewAbout: "關於我",
       tags: "遊戲特色",
       reset: "重置",
       footer: "版權所有 © 2026 Javier。保留所有權利。",
@@ -85,48 +84,17 @@ export const dictionaries = {
         { value: "65+", label: "款已上線商業遊戲" },
         { value: "GLI / BMM", label: "專案實際通過認證" }
       ],
-      capabilityTitle: "核心能力",
-      capabilities: [
-        "RTP 結構與派彩分布設計",
-        "波動度控制與中獎率調校",
-        "程式模擬與自動驗證",
-        "自動調表與試算表生成工具",
-        "中英文規格文件"
-      ],
       selectedWork: "代表作品",
-      method: {
-        title: "從設計到送測的完整流程",
-        text: "每個模型都經過同一套可重現的流程，數據可追溯、可驗證。",
-        steps: [
-          { title: "數學設計", text: "定義 RTP、中獎率、波動度與最大倍數，規劃獎勵結構。" },
-          { title: "試算表建模", text: "以公式連動的試算表建立輪帶、賠付與特色機制。" },
-          { title: "模擬驗證", text: "以程式進行 10 億次模擬，RTP 誤差低於 0.1%，確認長期輸出與理論值一致。" },
-          { title: "規格文件", text: "整理可送測 GLI／BMM 的中英文規格與模擬報告。" }
-        ]
-      },
       articlesTitle: "教學文章",
       articlesMore: "查看全部教學文章",
       toolsTitle: "自製工具",
-      toolsText: "把建模與調表中重複的工作自動化，縮短從設計到驗證的時間。",
       toolsMore: "查看全部工具",
       moreTitle: "延伸閱讀",
       researchTitle: "精選研究筆記",
       researchMore: "查看全部研究筆記",
       contactTitle: "合作與聯絡",
       contactText: "有遊戲數學模型、機率分析或職缺需求，歡迎直接來信。",
-      metricGames: "款遊戲資料",
-      metricResearch: "款研究筆記",
-      metricArticles: "款教學文章",
-      featured: "精選遊戲",
-      pipeline: "資料整理流程",
-      pipelineText:
-        "所有資料透過試算表建模定義規格，並以程式化模擬進行驗證與調整，以確保數值結果的一致性與可重現性。",
-      dataFields: "資料欄位",
       catalog: "目錄",
-      workflow: "流程",
-      collect: "蒐集",
-      classify: "分類",
-      compare: "比較"
     },
     games: {
       title: "遊戲資料",
@@ -147,6 +115,7 @@ export const dictionaries = {
         hitRateDesc: "中獎率 由高到低"
       },
       advanced: "進階篩選",
+      showMore: "顯示更多",
       footerText: "想了解我如何分析與驗證這些模型？",
       footerResearch: "閱讀研究筆記",
       footerAbout: "關於我",
@@ -157,8 +126,6 @@ export const dictionaries = {
       },
       search: "搜尋 ID",
       empty: "沒有符合條件的遊戲。",
-      allGames: "所有遊戲",
-      demoOnly: "可試玩遊戲",
       showingPrefix: "目前顯示",
       showingSuffix: "款遊戲"
     },
@@ -177,7 +144,10 @@ export const dictionaries = {
       tagLabel: "機制",
       all: "全部",
       showMore: "顯示更多",
-      noResults: "沒有符合條件的研究筆記。"
+      noResults: "沒有符合條件的研究筆記。",
+      relatedTitle: "相關筆記",
+      prevNote: "上一篇",
+      nextNote: "下一篇"
     },
     articles: {
       eyebrow: "Blogger Articles",
@@ -208,7 +178,6 @@ export const dictionaries = {
       details: "遊戲詳情",
       previousGame: "上一款遊戲",
       nextGame: "下一款遊戲",
-      links: "其他連結",
       github: sharedCopy.modalLabels.github,
       itch: sharedCopy.modalLabels.itch,
       loading: "載入中...",
@@ -268,7 +237,6 @@ export const dictionaries = {
         }
       ],
       experienceTitle: "涵蓋的遊戲類型",
-      experienceIntro: "",
       experienceGroups: [
         { category: "電子", games: ["老虎機", "賓果"] },
         { category: "街機", games: ["Crash", "Miles", "Plinko"] },
@@ -330,18 +298,6 @@ export const dictionaries = {
         { period: "2017 – 2018", role: "數值工程師", org: "德聚科技" }
       ],
       careerNote: "另有 5 年以上跨國、跨團隊、跨框架的自由接案經驗。清華大學統計學碩士、應用數學學士。",
-      websitePurposeTitle: "關於這個網站",
-      websitePurpose:
-        "將遊戲數學模型、模擬數據與研究筆記結構化整理，呈現從分析、設計到驗證的完整流程。",
-      researchDirectionTitle: "研究方向",
-      researchDirections: [
-        "老虎機數學模型",
-        "機率設計與分析",
-        "獎勵結構設計",
-        "波動度分析",
-        "玩家體驗",
-        "非老虎機遊戲機制"
-      ],
       resourcesTitle: "外部資源",
       resourcesIntro: "以下連結用於了解研究筆記、文章、程式工具與試玩作品。",
       resources: {
@@ -366,34 +322,8 @@ export const dictionaries = {
           href: sharedCopy.links.itch
         }
       },
-      contact: "合作方向",
-      contactText:
-        "適合需要遊戲數學模型、機率分析、模擬驗證或規格文件整理的團隊。",
-      connectTitle: "與我聯絡",
-      connectText:
-        "對遊戲數學模型、機率系統設計與分析、或模擬驗證有興趣嗎？",
       emailLabel: "Email",
       linkedinLabel: "LinkedIn",
-      contactPurposes: [
-        {
-          label: "遊戲數學模型合作",
-          subject: "遊戲數學模型合作邀約",
-          body:
-            "你好 Javier，\n\n我對遊戲數學模型設計合作有興趣，想進一步討論相關細節。"
-        },
-        {
-          label: "機率系統與模擬驗證",
-          subject: "機率系統與模擬驗證合作邀約",
-          body:
-            "你好 Javier，\n\n我對機率系統與模擬驗證合作有興趣，想進一步討論相關細節。"
-        },
-        {
-          label: "規格文件與顧問服務",
-          subject: "規格文件與顧問服務合作邀約",
-          body:
-            "你好 Javier，\n\n我對規格文件與顧問服務合作有興趣，想進一步討論相關細節。"
-        }
-      ],
       contactLinks: {
         email: sharedCopy.links.email,
         linkedin: sharedCopy.links.linkedin
@@ -423,7 +353,6 @@ export const dictionaries = {
       downloadCv: "Download CV (PDF)",
       contactSubject: "Game math model inquiry",
       contactBody: "Hi Javier,\n\nI reviewed your portfolio and would like to discuss a collaboration or an open role.",
-      viewAbout: "View About",
       tags: "Game Features",
       reset: "Reset",
       footer: "Copyright © 2026 Javier. All rights reserved.",
@@ -453,48 +382,17 @@ export const dictionaries = {
         { value: "65+", label: "shipped commercial games" },
         { value: "GLI / BMM", label: "certified projects delivered" }
       ],
-      capabilityTitle: "Core Capabilities",
-      capabilities: [
-        "RTP structure and payout distribution design",
-        "Volatility control and hit-rate tuning",
-        "Simulation programs and automated validation",
-        "Auto-tuning and spreadsheet generation tools",
-        "Specification documents in Chinese and English"
-      ],
       selectedWork: "Selected Work",
-      method: {
-        title: "From design to certification submission",
-        text: "Every model follows the same reproducible process, so the numbers are traceable and verifiable.",
-        steps: [
-          { title: "Math design", text: "Define RTP, hit rate, volatility and max win, and plan the reward structure." },
-          { title: "Spreadsheet model", text: "Build reels, paytable and feature mechanics in formula-linked spreadsheets." },
-          { title: "Simulation", text: "Run 1 billion simulated spins with RTP error under 0.1%, confirming long-run output matches the theoretical values." },
-          { title: "Specification", text: "Prepare bilingual specs and simulation reports ready for GLI / BMM submission." }
-        ]
-      },
       articlesTitle: "Tutorial Articles",
       articlesMore: "View all articles",
       toolsTitle: "Tools I Built",
-      toolsText: "Automation for the repetitive parts of modeling and tuning, shortening the path from design to validation.",
       toolsMore: "View all tools",
       moreTitle: "Keep Exploring",
       researchTitle: "Selected Research",
       researchMore: "View all research notes",
       contactTitle: "Collaboration & Contact",
       contactText: "Open to game math models, probability analysis and relevant roles. Feel free to email me directly.",
-      metricGames: "game records",
-      metricResearch: "research notes",
-      metricArticles: "tutorial articles",
-      featured: "Featured Games",
-      pipeline: "Data Workflow",
-      pipelineText:
-        "All data is defined through spreadsheet-based modeling and validated via programmatic simulation, ensuring consistency and reproducibility of results.",
-      dataFields: "Data Fields",
       catalog: "Catalog",
-      workflow: "Workflow",
-      collect: "Collect",
-      classify: "Classify",
-      compare: "Compare"
     },
     games: {
       title: "Game Database",
@@ -515,6 +413,7 @@ export const dictionaries = {
         hitRateDesc: "Hit rate high to low"
       },
       advanced: "Advanced filters",
+      showMore: "Show more",
       footerText: "Want to see how I analyze and validate these models?",
       footerResearch: "Read research notes",
       footerAbout: "About me",
@@ -525,8 +424,6 @@ export const dictionaries = {
       },
       search: "Search ID",
       empty: "No games match the current filters.",
-      allGames: "All Games",
-      demoOnly: "Demo Only",
       showingPrefix: "Showing",
       showingSuffix: "games"
     },
@@ -545,7 +442,10 @@ export const dictionaries = {
       tagLabel: "Mechanic",
       all: "All",
       showMore: "Show more",
-      noResults: "No notes match the current filters."
+      noResults: "No notes match the current filters.",
+      relatedTitle: "Related Notes",
+      prevNote: "Previous",
+      nextNote: "Next"
     },
     articles: {
       eyebrow: "Blogger Articles",
@@ -576,7 +476,6 @@ export const dictionaries = {
       details: "Game details",
       previousGame: "Previous game",
       nextGame: "Next game",
-      links: "Other links",
       github: sharedCopy.modalLabels.github,
       itch: sharedCopy.modalLabels.itch,
       loading: "Loading...",
@@ -636,7 +535,6 @@ export const dictionaries = {
         }
       ],
       experienceTitle: "Game Types Covered",
-      experienceIntro: "",
       experienceGroups: [
         { category: "Gaming", games: ["Slot", "Bingo"] },
         { category: "Arcade", games: ["Crash", "Miles", "Plinko"] },
@@ -698,18 +596,6 @@ export const dictionaries = {
         { period: "2017 – 2018", role: "Game Math Engineer", org: "De Gather Technology Co., Ltd." }
       ],
       careerNote: "Plus 5+ years of freelance experience across countries, teams and game frameworks. M.S. in Statistics and B.S. in Applied Mathematics, National Tsing Hua University.",
-      websitePurposeTitle: "About This Website",
-      websitePurpose:
-        "A structured collection of game math models, simulation data and research notes, showing the full workflow from analysis and design to validation.",
-      researchDirectionTitle: "Research Direction",
-      researchDirections: [
-        "Slot Game Mathematics",
-        "Probability Systems",
-        "Reward Structure Design",
-        "Volatility Analysis",
-        "Player Experience",
-        "Non-Slot Game Mechanics"
-      ],
       resourcesTitle: "External Resources",
       resourcesIntro: "Use these links to review research notes, articles, code tools, and playable supporting work.",
       resources: {
@@ -734,34 +620,8 @@ export const dictionaries = {
           href: sharedCopy.links.itch
         }
       },
-      contact: "Collaboration Fit",
-      contactText:
-        "Best suited for teams that need game mathematics models, probability analysis, simulation validation, or structured specification documents.",
-      connectTitle: "Let's Connect",
-      connectText:
-        "Interested in game mathematics models, probability systems, or simulation-based game design?",
       emailLabel: "Email",
       linkedinLabel: "LinkedIn",
-      contactPurposes: [
-        {
-          label: "Game math model design",
-          subject: "Game Mathematics Model Inquiry",
-          body:
-            "Hello Javier,\n\nI am interested in discussing game mathematics model design."
-        },
-        {
-          label: "Probability and simulation",
-          subject: "Probability System and Simulation Validation Inquiry",
-          body:
-            "Hello Javier,\n\nI would like to discuss probability systems or simulation validation."
-        },
-        {
-          label: "Specification documents",
-          subject: "Game Specification Document Inquiry",
-          body:
-            "Hello Javier,\n\nI would like to discuss game specification documents or consulting."
-        }
-      ],
       contactLinks: {
         email: sharedCopy.links.email,
         linkedin: sharedCopy.links.linkedin

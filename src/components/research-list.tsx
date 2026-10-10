@@ -51,6 +51,7 @@ export function ResearchList({
                   key={article.id}
                   article={article}
                   href={researchPath(article)}
+                  locale={locale}
                 />
               ))}
             </div>

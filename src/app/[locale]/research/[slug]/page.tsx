@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import { ResearchDetail } from "@/components/research-detail";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import {
+  getPublishedResearchArticles,
   getResearchArticleBlocks,
   getResearchArticleBySlug
 } from "@/lib/notion";
+import { getResearchNeighbors } from "@/lib/research-related";
 import type { Locale } from "@/types/game";
 
 export const revalidate = 3600;
@@ -80,7 +82,10 @@ export default async function ResearchArticlePage({
     notFound();
   }
 
-  const blocks = await getResearchArticleBlocks(article.id);
+  const [blocks, allArticles] = await Promise.all([
+    getResearchArticleBlocks(article.id),
+    getPublishedResearchArticles()
+  ]);
 
   return (
     <ResearchDetail
@@ -88,6 +93,7 @@ export default async function ResearchArticlePage({
       blocks={blocks}
       locale={locale}
       backHref={`/${locale}/research`}
+      neighbors={getResearchNeighbors(article, allArticles)}
     />
   );
 }
