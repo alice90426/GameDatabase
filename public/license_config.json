@@ -1,12 +1,15 @@
 {
   "versions": {
-    "202607271645": {
+    "202611201200": {
       "levels": {
         "1": {
           "enabled": true,
-          "expires_at": "2026-12-31T23:59:59+08:00"
+          "expires_at": "2027-12-31T23:59:59+08:00"
         }
       }
     }
-  }
+  },
+  "issued_at": "2026-11-19T01:29:26+00:00",
+  "valid_until": "2026-12-19T01:29:26+00:00",
+  "signature": "4LoBqLeatWKevf4A3uoJmwJKSvI2EUKjvIg10KbgJO0Z2lH0BiCi/flDqEfbKmL77KenzzpT8/aoocYOkttVCg=="
 }
