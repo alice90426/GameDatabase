@@ -168,5 +168,6 @@ function getFirstBlockImage(blocks: NotionBlock[]) {
     return image.image.external.url;
   }
 
-  return image.image.file.url;
+  // Hosted file URLs are signed and expire after ~1 hour; use the refreshing proxy.
+  return `/api/research-image/${image.id}`;
 }

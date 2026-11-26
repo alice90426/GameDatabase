@@ -65,14 +65,16 @@ export const getResearchArticleBlocks = unstable_cache(
   { revalidate: NOTION_REVALIDATE_SECONDS }
 );
 
-const getCachedFirstImageBlockCover = unstable_cache(
-  fetchQueuedFirstImageBlockCover,
-  ["notion-research-first-image-cover"],
-  { revalidate: NOTION_REVALIDATE_SECONDS }
+// Signed Notion file URLs last ~1 hour, so the resolved URL is cached for far
+// less than that (the cover route adds a short CDN cache on top).
+const getCachedCover = unstable_cache(
+  fetchQueuedCover,
+  ["notion-research-cover-v2"],
+  { revalidate: 300 }
 );
 
 export async function getResearchCoverByPageId(pageId: string) {
-  return getCachedFirstImageBlockCover(pageId);
+  return getCachedCover(pageId);
 }
 
 export async function getResearchImageByBlockId(blockId: string) {
@@ -396,7 +398,10 @@ function getOptionalCheckbox(page: PageObjectResponse, key: string) {
   return property.checkbox;
 }
 
-function getCover(page: PageObjectResponse) {
+// Notion-hosted files use signed URLs that expire after ~1 hour. They must never
+// be stored in cached data or HTML, so unless `includeHosted` is set (only the
+// short-cached cover proxy does that) only permanent external URLs are returned.
+function getCover(page: PageObjectResponse, includeHosted: boolean) {
   if (!page.cover) {
     return null;
   }
@@ -405,18 +410,22 @@ function getCover(page: PageObjectResponse) {
     return page.cover.external.url;
   }
 
-  return page.cover.file.url;
+  return includeHosted ? page.cover.file.url : null;
 }
 
-function getArticleCover(page: PageObjectResponse) {
+function getArticleCover(page: PageObjectResponse, includeHosted = false) {
   return (
-    getCover(page) ||
-    getFirstFileCover(page, ["Cover", "cover"]) ||
+    getCover(page, includeHosted) ||
+    getFirstFileCover(page, ["Cover", "cover"], includeHosted) ||
     getFirstUrlCover(page, ["Cover", "cover"])
   );
 }
 
-function getFirstFileCover(page: PageObjectResponse, keys: string[]) {
+function getFirstFileCover(
+  page: PageObjectResponse,
+  keys: string[],
+  includeHosted: boolean
+) {
   for (const key of keys) {
     const property = getProperty(page, key);
 
@@ -434,7 +443,9 @@ function getFirstFileCover(page: PageObjectResponse, keys: string[]) {
       return file.external.url;
     }
 
-    return file.file.url;
+    if (includeHosted) {
+      return file.file.url;
+    }
   }
 
   return null;
@@ -452,8 +463,30 @@ function getFirstUrlCover(page: PageObjectResponse, keys: string[]) {
   return null;
 }
 
-async function fetchQueuedFirstImageBlockCover(pageId: string) {
-  return enqueueCoverFetch(() => fetchFirstImageBlockCover(pageId));
+async function fetchQueuedCover(pageId: string) {
+  return enqueueCoverFetch(() => fetchFreshCover(pageId));
+}
+
+async function fetchFreshCover(pageId: string) {
+  if (!notion) {
+    return null;
+  }
+
+  try {
+    const page = await notion.pages.retrieve({ page_id: pageId });
+
+    if (isPageObjectResponse(page)) {
+      const pageCover = getArticleCover(page, true);
+
+      if (pageCover) {
+        return pageCover;
+      }
+    }
+  } catch (error) {
+    warnNotionError("Unable to fetch Notion page cover.", error);
+  }
+
+  return fetchFirstImageBlockCover(pageId);
 }
 
 async function fetchFirstImageBlockCover(pageId: string) {
