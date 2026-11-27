@@ -65,16 +65,37 @@ export const getResearchArticleBlocks = unstable_cache(
   { revalidate: NOTION_REVALIDATE_SECONDS }
 );
 
-// Signed Notion file URLs last ~1 hour, so the resolved URL is cached for far
-// less than that (the cover route adds a short CDN cache on top).
-const getCachedCover = unstable_cache(
-  fetchQueuedCover,
-  ["notion-research-cover-v2"],
-  { revalidate: 300 }
+// Signed Notion file URLs last ~1 hour and unstable_cache serves stale values
+// (refreshing in the background), so a signed URL must never be cached here.
+// Only the stable *location* of a cover is cached; the URL is resolved fresh
+// on every request and the cover route adds a short CDN cache on top.
+type CoverSource =
+  | { kind: "page" }
+  | { kind: "block"; id: string }
+  | { kind: "external"; url: string };
+
+const getCachedCoverSource = unstable_cache(
+  locateCoverSource,
+  ["notion-research-cover-source-v3"],
+  { revalidate: NOTION_REVALIDATE_SECONDS }
 );
 
 export async function getResearchCoverByPageId(pageId: string) {
-  return getCachedCover(pageId);
+  const source = await getCachedCoverSource(pageId);
+
+  if (!source) {
+    return null;
+  }
+
+  if (source.kind === "external") {
+    return source.url;
+  }
+
+  if (source.kind === "block") {
+    return getResearchImageByBlockId(source.id);
+  }
+
+  return enqueueCoverFetch(() => fetchPageCover(pageId));
 }
 
 export async function getResearchImageByBlockId(blockId: string) {
@@ -463,11 +484,7 @@ function getFirstUrlCover(page: PageObjectResponse, keys: string[]) {
   return null;
 }
 
-async function fetchQueuedCover(pageId: string) {
-  return enqueueCoverFetch(() => fetchFreshCover(pageId));
-}
-
-async function fetchFreshCover(pageId: string) {
+async function fetchPageCover(pageId: string) {
   if (!notion) {
     return null;
   }
@@ -475,27 +492,35 @@ async function fetchFreshCover(pageId: string) {
   try {
     const page = await notion.pages.retrieve({ page_id: pageId });
 
-    if (isPageObjectResponse(page)) {
-      const pageCover = getArticleCover(page, true);
-
-      if (pageCover) {
-        return pageCover;
-      }
-    }
+    return isPageObjectResponse(page) ? getArticleCover(page, true) : null;
   } catch (error) {
     warnNotionError("Unable to fetch Notion page cover.", error);
+    return null;
   }
-
-  return fetchFirstImageBlockCover(pageId);
 }
 
-async function fetchFirstImageBlockCover(pageId: string) {
+// Throws on API errors so unstable_cache does not store a failed lookup.
+async function locateCoverSource(pageId: string): Promise<CoverSource | null> {
   if (!notion) {
     return null;
   }
 
-  try {
-    const response = await notion.blocks.children.list({
+  return enqueueCoverFetch(async () => {
+    const page = await notion!.pages.retrieve({ page_id: pageId });
+
+    if (isPageObjectResponse(page)) {
+      const permanent = getArticleCover(page);
+
+      if (permanent) {
+        return { kind: "external", url: permanent } as const;
+      }
+
+      if (getArticleCover(page, true)) {
+        return { kind: "page" } as const;
+      }
+    }
+
+    const response = await notion!.blocks.children.list({
       block_id: pageId,
       page_size: 20
     });
@@ -503,19 +528,16 @@ async function fetchFirstImageBlockCover(pageId: string) {
       .filter(isBlockObjectResponse)
       .find((block) => block.type === "image");
 
-    if (!image || image.type !== "image") {
+    if (!image) {
       return null;
     }
 
-    if (image.image.type === "external") {
-      return image.image.external.url;
+    if (image.type === "image" && image.image.type === "external") {
+      return { kind: "external", url: image.image.external.url } as const;
     }
 
-    return image.image.file.url;
-  } catch (error) {
-    warnNotionError("Unable to fetch first Notion image as cover.", error);
-    return null;
-  }
+    return { kind: "block", id: image.id } as const;
+  });
 }
 
 function enqueueCoverFetch<T>(task: () => Promise<T>) {
